@@ -1,0 +1,35 @@
+.flexcroll{
+width:300px;
+height:100%;
+background: -webkit-gradient(linear, bottom, left 175px, from(#CCCCCC), to(#EEEEEE));
+background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+border-color: #cccccc;
+border-radius: 25px;
+margin-top:0px;
+margin-left: -350px;
+width:300px;
+height:90%;
+font-family: Tahoma, Geneva, sans-serif;
+font-size: 24px;
+font-style: italic;
+line-height: 24px;
+font-weight: bold;
+color: #09C;
+text-decoration: none;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+padding:10px;
+border: 1px solid #999;
+border: inset 1px solid #333;
+-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+float:left;
+
+}
+.content{
+height:10px;
+text-align: center;
+
+} 
