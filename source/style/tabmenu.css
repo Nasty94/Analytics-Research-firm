@@ -28,6 +28,8 @@
   border-bottom: 7px solid #47c9af;
   font-family: Raleway, sans-serif;
   line-height: 1;
+  margin-left: 70px;
+  margin-right: 0px;
 }
 #cssmenu ul {
   background: black;
