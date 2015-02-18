@@ -2,15 +2,45 @@
 @CHARSET "ISO-8859-1";
 @CHARSET "ISO-8859-1";
 @CHARSET "ISO-8859-1";
-html {
+#bottom,#left, #right {
+	background: #a5ebff;
+	position: fixed;
+	}
+	#left, #right {
+		top: 0; bottom: 0;
+		width: 150px;
+		}
+		#left { left: 0; }
+		#right { right: 0; }
+		
+	#top, #bottom {
+		left: 0; right: 0;
+		height: 15px;
+		}
+		#top { top: 0; }
+		#bottom { bottom: 0; }
+
+body,html {
     height: 100%;
+	padding: 0px;
+    margin: 0px;
+    border: 0px none;
 }
+
 body {
-    background-color: #eaeaea;
+   
+	background-position: center; 
+	background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
-    height: 100%;
+	border-left: 100px solid #a5ebff;
+	
+	background:#E8E8E8 ;
+	position:absolute;
+
+
 }
 a {
     margin: 0;
@@ -71,6 +101,7 @@ a {
 -webkit-border-radius: 10px;
 -khtml-border-radius: 10px;
 border-radius: 10px;   
+margin-top:-120px;
 }
 
 #fg_membersite legend, #fg_membersite h2
@@ -79,7 +110,7 @@ border-radius: 10px;
    font-weight: normal;
    font-size: 18pt;
    padding-bottom: 5px;
-   color:#333;
+   color:red;
 }
 
 #fg_membersite label
