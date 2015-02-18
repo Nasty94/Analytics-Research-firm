@@ -13,8 +13,7 @@
         <link rel="stylesheet" href="style/alertify.core.css" type="text/css">
         <link rel="stylesheet" href="style/style.css" type="text/css">
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
-		<link rel="stylesheet" href="style/tabmenu.css">
-		<link rel="stylesheet" href="style/scrollbar.css">
+		<link rel="stylesheet" href="style/menubar.css" type="text/css" media="all">
 		<link rel="stylesheet" type="text/css" href="style/style.css">
         <link rel="stylesheet" type="text/css" href="style/alertify.core.css>
 
@@ -25,26 +24,56 @@
 
     </head>
 	<body> 
+			
 	      <div id="left"></div>
 		  <div id="right"></div>
 		  <div id="top"></div>
 		  <div id="bottom"></div>
-
-	      <div id="img">
-			<img src="img/LK.jpg" width=auto height=auto>
-		 </div <!-- img -->
-	      
-		   
-	      <div id='cssmenu'>
-			  <ul>
-			  <li class='active'><a href='#'>Home</a></li>
-              <li><a href='register.php'>Register</a></li>
-              <li><a href='login.php'>Login</a></li>
-              <li><a href='#'>Contact</a></li>
-			  <li><a href='#'>About us</a></li>
-			  <li><a href='#'>News&Events</a></li>
-              </ul>
-           </div> 		  
+		  
+		  <div id="img">
+     		 
+		  <img src="img/LK.jpg" width=auto height=auto>
+		  </div <!-- img -->
+		  
+       <div class="dropdownmenu">
+        <ul id="nav">
+            <li class='active'><a href='#'>Avaleht</a></li>
+            <li><a href="#">Logi sisse</a>
+                <div>
+                    <ul>
+                        <li><a href='register.php'>Registreerimine</a></li>
+                        <li><a href='login.php'>Login</a></li>
+                       
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">Meist</a>
+                <div>
+                    <ul>
+                        <li><a href="#">Personal</a></li>
+                        <li><a href="#">Ettevõte</a></li>
+  
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">Artiklid</a>
+                <div>
+                    <ul>
+                        <li><a href="#">Page 1</a></li>
+                        <li><a href="#">Page 2</a></li>
+                        <li><a href="#">Page 3</a></li>
+                        <li><a href="#">Page 4</a></li>
+                        <li><a href="#">Page 5</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">Muu</a></li>
+            <li><a href="#">KKK</a></li>
+			
+            <li class="pad"></li>
+        </ul>
+    </div>
+	  
 
 		  <div id="main">
 		   
