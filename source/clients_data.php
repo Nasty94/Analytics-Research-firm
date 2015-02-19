@@ -1,11 +1,11 @@
 <?PHP
 require_once("./include/membersite_config.php");
-
 if(!$fgmembersite->CheckLogin())
 {
     $fgmembersite->RedirectToURL("login.php");
     exit;
 }
+
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -15,7 +15,7 @@ if(!$fgmembersite->CheckLogin())
 	<meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Minu konto</title>
+    <title>Minu andmed</title>
      
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="script.js"></script>	
@@ -27,7 +27,8 @@ if(!$fgmembersite->CheckLogin())
 	<link rel="stylesheet" href="style/style.css">
 	<link rel="stylesheet" href="style/verticalmenu.css">
 	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
-    <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
+    <link rel="STYLESHEET" type="text/css" href="style/fg_membersite_form.css" />
+	
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         
     	
@@ -85,24 +86,80 @@ if(!$fgmembersite->CheckLogin())
             <li class="pad"></li>
         </ul>
     </div>
-	<div id="main">
+	<div id="main" style="height:1000px" >
 	<h2>Tere, <?= $fgmembersite->UserFullName(); ?>!</h2>
 	
-	<div id="white-box" >
+	
+	<div id="white-box" style="height:1000px" >
+	
+<!-- Form Code Start -->
+<div id='fg_membersite_form'>
+<form id='register' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
+<fieldset >
+<legend>Minu andmed</legend>
+
+<input type='hidden' name='submitted' id='submitted' value='1'/>
+
+<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
+<div class='container'>
+    <label for='name' >Nimi: </label><br/>
+    <input type='text' name='name' id='name' value='<?php echo $fgmembersite->UserFullName() ?>' maxlength="50" /><br/>
+    <span id='register_name_errorloc' class='error'></span>
+</div>
+<div class='container'>
+    <label for='email' >Email:</label><br/>
+    <input type='text' name='email' id='email' value='<?php echo $fgmembersite->UserEmail() ?>' maxlength="50" /><br/>
+    <span id='register_email_errorloc' class='error'></span>
+</div>
+<div class='container'>
+    <label for='phone_number' >Mobiilinumber:</label><br/>
+    <input type='text' name='phone_number' id='phone_number' value='<?php echo $fgmembersite->UserPhoneNumber() ?>' maxlength="50" /><br/>
+    <span id='register_phone_number_errorloc' class='error'></span>
+</div>
+<div class='container'>
+    <label for='aadress' >Aadress:</label><br/>
+    <input type='text' name='aadress' id='aadress' value='<?php echo $fgmembersite->SafeDisplay('username') ?>' maxlength="50" /><br/>
+
+    <span id='register_username_errorloc' class='error'></span>
+</div>
+<div class='container>
+    <label for='city' >Linn:</label><br/>
+    <input type='text' name='city' id='city' value='<?php echo $fgmembersite->SafeDisplay('username') ?>' maxlength="50" /><br/>
+
+    <span id='register_username_errorloc' class='error'></span>
+</div>
+<div class='fieldBlock'>
+    <label for='zip' >Zip:</label><br/>
+    <input type='text' name='zip' id='zip' value='<?php echo $fgmembersite->SafeDisplay('username') ?>' maxlength="50" /><br/>
+
+    <span id='register_username_errorloc' class='error'></span>
+</div>
+
+<div class='container' '>
+    <label for="work" >Töökoht:</label><br/>
+    <input type='text' name='work' id='work' maxlength="50" />   
+    <div id='register_password_errorloc' class='error' style='clear:both'></div>
+</div>
+
+<div class='container'>
+    <input type='submit' name='Submit' value='Submit' />
+</div>
+
+</fieldset>
+</form>
 	 <div id="contentInt">
                  <noscript>
                         <p class="note">You have disabled Javascript. This website will not function without it.</p>
                  </noscript>
-                      
-			 
-
+				 
 
 <div class="center">
-					
-					
-<div id='verticalmenu'>
+
+									
+<div id='verticalmenu' style="margin-top:-700px;">
 <ul>
-   <li><a href='index_loggedin.php'><span>Avaleht</span></a></li>
+   <li class='last'><a href='login-home.php'><span>Minu konto</span></a></li>
+   <li><a href='index.html'><span>Avaleht</span></a></li>
    <li class='active has-sub'><a href='#'><span>Minu tellimused</span></a>
       <ul>
          <li class='has-sub'><a href='#'><span>Ajalugu</span></a>
@@ -120,25 +177,28 @@ if(!$fgmembersite->CheckLogin())
       </ul>
    </li>
    <li><a href='#'><span>Minu sõnumid</span></a></li>
-   <li class='last'><a href='clients_data.php'><span>Minu andmed</span></a></li>
+   <li class='last'><a href='clients_data.html'><span>Minu andmed</span></a></li>
 </ul>
 </div>
 		
 
 </div><!--center-->
 </div> <!--contentInt-->
-		   		   
 
-             
 	</div> <!-- white box --> 
 	</div> <!-- main -->
 	
+<div id="block" >
+                     
+</div>
+
+<div id="footer2" >
+         © 2015  LK Consulting <br>
+		 This is a proof-of-concept web application.
+</div>
 
 		  
-	<div id="footer" >
-                      © 2015  LK Consulting <br>
-					  This is a proof-of-concept web application.
-	</div>
+
 
 </body>
 </html>

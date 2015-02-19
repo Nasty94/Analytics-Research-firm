@@ -20,7 +20,7 @@ class FGMembersite
     //-----Initialization -------
     function FGMembersite()
     {
-        $this->sitename = 'consultingLK.com';
+        $this->sitename = 'lkconsulting.com';
         $this->rand_key = '0iQx5oBk66oVZep';
     }
     
@@ -143,13 +143,23 @@ class FGMembersite
     
     function UserFullName()
     {
-        return isset($_SESSION['name_of_user'])?$_SESSION['name_of_user']:'';
+        return isset($_SESSION['name_of_user'])?$_SESSION['name_of_user']:'none';
     }
     
     function UserEmail()
     {
-        return isset($_SESSION['email_of_user'])?$_SESSION['email_of_user']:'';
+        return isset($_SESSION['email_of_user'])?$_SESSION['email_of_user']:'none';
     }
+	function UserPhoneNumber()
+	
+    {
+	    return isset($_SESSION['phone_of_user'])?$_SESSION['phone_of_user']:'none';
+		
+    }
+	function isAdmin()
+	{
+	   return strcmp('leena.korotych@yahoo.com',$_SESSION['email_of_user']);
+	}
     
     function LogOut()
     {
@@ -354,7 +364,7 @@ class FGMembersite
          
            
 
-        $qry = "Select name, email from $this->tablename where username='$username' and password='$hash' and confirmcode='y'";
+        $qry = "Select name, email, phone_number from $this->tablename where username='$username' and password='$hash'";
         
         $result = mysqli_query($this->connection,$qry);
         
@@ -369,6 +379,9 @@ class FGMembersite
         
         $_SESSION['name_of_user']  = $row['name'];
         $_SESSION['email_of_user'] = $row['email'];
+		$_SESSION['phone_of_user'] = $row['phone_number'];
+
+	
         
         return true;
     }
@@ -622,7 +635,7 @@ class FGMembersite
     function CollectRegistrationSubmission(&$formvars)
     {
         $formvars['name'] = $this->Sanitize($_POST['name']);
-	$formvars['username'] = $this->Sanitize($_POST['username']);
+	    $formvars['username'] = $this->Sanitize($_POST['username']);
         $formvars['email'] = $this->Sanitize($_POST['email']);
 		$formvars['phone_number'] = $this->Sanitize($_POST['phone_number']);
         $formvars['password'] = $this->Sanitize($_POST['password']);
@@ -697,7 +710,7 @@ class FGMembersite
         "Name: ".$formvars['name']."\r\n".
         "Email address: ".$formvars['email']."\r\n".
         "UserName: ".$formvars['username'];
-		"Phone_number: ".$formvars['phone_number'];
+		"phone_number: ".$formvars['phone_number'];
         
         if(!$mailer->Send())
         {

@@ -1,22 +1,4 @@
-<?PHP
-require_once("./include/membersite_config.php");
 
-if(isset($_POST['submitted']))
-{
-   if($fgmembersite->Login())
-   {
-     if($fgmembersite->IsAdmin()==0)
-	 {
-	 $fgmembersite->RedirectToURL("admin.php");
-	 }
-       
-     else{
-	 $fgmembersite->RedirectToURL("login-home.php");
-	 }
-   }
-}
-
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
@@ -24,7 +6,7 @@ if(isset($_POST['submitted']))
 	<meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
+    <title>Register</title>
      
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="script.js"></script>	
@@ -34,11 +16,16 @@ if(isset($_POST['submitted']))
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
 	<link rel="stylesheet" href="style/menubar.css">
 	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="style/verticalmenu.css">
 	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
     <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        
+    	
 </head>
+
 <body>
+
 	
 	      <div id="left"></div>
 		  <div id="right"></div>
@@ -52,12 +39,11 @@ if(isset($_POST['submitted']))
 
 <div class="dropdownmenu">
         <ul id="nav">
-            <li class='active'><a href='index.html'>Avaleht</a></li>
-            <li><a href="#">Logi sisse</a>
+            <li class='active'><a href='index_loggedin.html'>Avaleht</a></li>
+            <li><a href="#">Minu konto</a>
                 <div>
                     <ul>
-                        <li><a href='register.php'>Registreerimine</a></li>
-                        <li><a href='login.php'>Login</a></li>
+                        <li><a href='change-pwd.php'>Muuda parooli</a></li>
                        
                     </ul>
                 </div>
@@ -72,6 +58,16 @@ if(isset($_POST['submitted']))
                 </div>
             </li>
             <li><a href="#">Artiklid</a>
+			<div>
+                    <ul>
+                        <li><a href="#">Lisa artikkel</a></li>
+                        
+  
+                    </ul>
+                </div>
+			<div>
+                    <ul>
+                        <li><a href="#">Artiklide nimekiri</a></li>
                 <div>
                     <ul>
                         <li><a href="#">Page 1</a></li>
@@ -81,6 +77,7 @@ if(isset($_POST['submitted']))
                         <li><a href="#">Page 5</a></li>
                     </ul>
                 </div>
+			</div
             </li>
             <li><a href="#">Muu</a></li>
             <li><a href="#">KKK</a></li>
@@ -89,51 +86,48 @@ if(isset($_POST['submitted']))
         </ul>
     </div>
 	<div id="main">
+	<h2>Tere, <?= $fgmembersite->UserFullName(); ?>!</h2>
+	<h3>Olete administraator.</h3>
+	
 	<div id="white-box" >
 	 <div id="contentInt">
                  <noscript>
                         <p class="note">You have disabled Javascript. This website will not function without it.</p>
                  </noscript>
-                      <h1></h1>
+                      
+			 
 
 
-			   		<div class="center">
-
-<!-- Form Code Start -->
-<div id='fg_membersite'>
-<form id='login' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
-<fieldset >
-<legend>Logi sisse</legend>
-
-<input type='hidden' name='submitted' id='submitted' value='1'/>
-
-<div class='short_explanation'>* required fields</div>
-
-<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
-<div class='container'>
-    <label for='username' >UserName*:</label><br/>
-    <input type='text' name='username' id='username' value='<?php echo $fgmembersite->SafeDisplay('username') ?>' maxlength="50" /><br/>
-    <span id='login_username_errorloc' class='error'></span>
+<div class="center">
+					
+					
+<div id='verticalmenu'>
+<ul>
+   <li><a href='index.html'><span>Avaleht</span></a></li>
+   <li class='active has-sub'><a href='#'><span>Minu tellimused</span></a>
+      <ul>
+         <li class='has-sub'><a href='#'><span>Ajalugu</span></a>
+            <ul>
+               <li><a href='#'><span>Konto</span></a></li>
+               <li class='last'><a href='#'><span>Kirjeldus</span></a></li>
+            </ul>
+         </li>
+         <li class='has-sub'><a href='#'><span>Page 2</span></a>
+            <ul>
+               <li><a href='#'><span>Sub Page 2</span></a></li>
+               
+            </ul>
+         </li>
+      </ul>
+   </li>
+   <li><a href='#'><span>Minu sõnumid</span></a></li>
+   <li class='last'><a href='logout.php'><span>Lovi välja</span></a></li>
+</ul>
 </div>
-<div class='container'>
-    <label for='password' >Password*:</label><br/>
-    <input type='password' name='password' id='password' maxlength="50" /><br/>
-    <span id='login_password_errorloc' class='error'></span>
-</div>
+		
 
-<div class='container'>
-    <input type='submit' name='Submit' value='Submit' />
-</div>
-<div class='short_explanation'><a href='reset-pwd-req.php'>Forgot Password?</a></div>
-</fieldset>
-</form>
-<!-- client-side Form Validations:
-Uses the excellent form validation script from JavaScript-coder.com-->
-</div>
-</div> <!--center-->
-
-
-		      </div> <!--contentInt-->
+</div><!--center-->
+</div> <!--contentInt-->
 		   		   
 
              
@@ -145,24 +139,6 @@ Uses the excellent form validation script from JavaScript-coder.com-->
                       © 2015  LK Consulting <br>
 					  This is a proof-of-concept web application.
 	</div>
-
-<script type='text/javascript'>
-// <![CDATA[
-
-    var frmvalidator  = new Validator("login");
-    frmvalidator.EnableOnPageErrorDisplay();
-    frmvalidator.EnableMsgsTogether();
-
-    frmvalidator.addValidation("username","req","Please provide your username");
-    
-    frmvalidator.addValidation("password","req","Please provide the password");
-
-// ]]>
-</script>
-</div>
-<!--
-Form Code End (see html-form-guide.com for more info.)
--->
 
 </body>
 </html>

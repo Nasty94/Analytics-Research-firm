@@ -81,13 +81,15 @@ bodystyle {
 h1 {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
-    font-size: 50pt;
+    font-size: 18pt;
     padding-top: 100px;
     padding-bottom: 20px;
 	text-decoration: overline;
 	text-shadow: 2px 2px 4px white;
 	color:black;
-	text-align:center;
+	vertical-align:bottom;
+	text-align:right;
+	text-shadow: 1px 2px #ff0000;
 	
 	
 
@@ -105,6 +107,18 @@ h2 {
 	text-shadow: 1px 2px #ff0000;
 	
 }
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight:bold;
+    font-size: 13pt;
+    padding-bottom: 5px;
+	text-align: right;
+	color:black;
+	vertical-align:bottom;
+
+	
+}
+
 
 p {
     margin-bottom: 20px;
@@ -118,6 +132,11 @@ sup {
 
 ul {
     margin-left: 70px;
+}
+
+#block{
+     color:lightgray;
+	 height: 50px;
 }
 
 #img{
@@ -220,6 +239,17 @@ ul {
 	margin-right:0px;
 	width:auto;
 	margin-bottom:30px;
+}
+
+#footer2{
+    font-size: 7.5pt;
+    padding: 16px;
+    color: #cccccc;
+    background-color: #414141;
+	margin-left:0px;
+	margin-right:0px;
+	width:auto;
+	margin-bottom:50px;
 }
 
 

@@ -23,7 +23,7 @@ if(isset($_POST['submitted']))
 	<meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Register</title>
+    <title>Parooli muutmine</title>
      
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="script.js"></script>	
@@ -55,12 +55,12 @@ if(isset($_POST['submitted']))
 
 <div class="dropdownmenu">
         <ul id="nav">
-            <li class='active'><a href='index.html'>Avaleht</a></li>
-            <li><a href="#">Logi sisse</a>
+            <li class='active'><a href='index_loggedin.html'>Avaleht</a></li>
+            <li><a href="#">LMinu konto</a>
                 <div>
                     <ul>
-                        <li><a href='register.php'>Registreerimine</a></li>
-                        <li><a href='login.php'>Login</a></li>
+                        <li><a href='login-home.php'>Minu konto</a></li>
+                        <li><a href='logout.php'>Logi v'lja</a></li>
                        
                     </ul>
                 </div>
@@ -106,7 +106,7 @@ if(isset($_POST['submitted']))
 <div id='fg_membersite'>
 <form id='changepwd' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
 <fieldset >
-<legend>Change Password</legend>
+<legend>Muuda parooli</legend>
 
 <input type='hidden' name='submitted' id='submitted' value='1'/>
 
@@ -114,7 +114,7 @@ if(isset($_POST['submitted']))
 
 <div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
 <div class='container'>
-    <label for='oldpwd' >Old Password*:</label><br/>
+    <label for='oldpwd' >Vana parool*:</label><br/>
     <div class='pwdwidgetdiv' id='oldpwddiv' ></div><br/>
     <noscript>
     <input type='password' name='oldpwd' id='oldpwd' maxlength="50" />
@@ -123,7 +123,7 @@ if(isset($_POST['submitted']))
 </div>
 
 <div class='container'>
-    <label for='newpwd' >New Password*:</label><br/>
+    <label for='newpwd' >Uus parool*:</label><br/>
     <div class='pwdwidgetdiv' id='newpwddiv' ></div>
     <noscript>
     <input type='password' name='newpwd' id='newpwd' maxlength="50" /><br/>
@@ -164,9 +164,6 @@ Uses the excellent form validation script from JavaScript-coder.com-->
 // ]]>
 </script>
 
-<p>
-<a href='login-home.php'>Home</a>
-</p>
 
 </div>
 <!--
