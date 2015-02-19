@@ -6,7 +6,7 @@ Anastassia Ivanova, Markus Lippus, Annett Saarik
 
 Test environment:
 
-#comingsoon
+# coming soon
 
 ---------------------------------------------------------------------------------------------------------------------
 
