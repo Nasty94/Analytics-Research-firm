@@ -25,6 +25,9 @@ Read more:[PHP registration form](http://www.html-form-guide.com/php-form/php-re
     
 3. You can customize the forms and scripts as required.
 
+4. During development was used wamp server.
+
+
 ## Files
 
 * register.php 
