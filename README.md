@@ -6,9 +6,9 @@ Anastassia Ivanova, Markus Lippus, Annett Saarik
 
 Test environment:
 
-google app engine
+azure
 
-http://lk-consulting.appspot.com/index.html
+http://lk-consulting.azurewebsites.net/source/
 
 ---------------------------------------------------------------------------------------------------------------------
 
