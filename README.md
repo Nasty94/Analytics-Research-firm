@@ -6,7 +6,9 @@ Anastassia Ivanova, Markus Lippus, Annett Saarik
 
 Test environment:
 
-@ coming soon
+google app engine
+
+http://lk-consulting.appspot.com/index.html
 
 ---------------------------------------------------------------------------------------------------------------------
 
