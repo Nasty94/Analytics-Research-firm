@@ -668,11 +668,11 @@ class FGMembersite
         
         $mailer->AddAddress($formvars['email'],$formvars['name']);
         
-        $mailer->Subject = "Your registration with ".$this->sitename;
+        //$mailer->Subject = "Your registration with ".$this->sitename;
 
         $mailer->setFrom($this->GetFromAddress(),"Markus Lippus");   
-		$mailer->From ="Admin"     
-        $mail->Subject = 'PHPMailer GMail SMTP test';
+		$mailer->From ='Admin';
+        $mailer->Subject = 'PHPMailer GMail SMTP test';
 
         $confirmcode = $formvars['confirmcode'];
         	
