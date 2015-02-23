@@ -663,8 +663,9 @@ class FGMembersite
 		$mailer->Port = 587;
 		$mailer->SMTPSecure = 'tls';
 		$mailer->SMTPAuth = TRUE;
-		$mailer->Username = 'markus.lippus@gmail.com';  
-		$mailer->Password = '4ddEd205B3';  
+		$mailer->Username = 'lkcmailer@gmail.com';  
+		$mailer->Password = 'lkconsult';
+        $mail->AddReplyTo('lkcmailer@gmail.com', 'First Last');  
         
         $mailer->AddAddress($formvars['email'],$formvars['name']);
         
@@ -672,7 +673,7 @@ class FGMembersite
 
         $mailer->setFrom($this->GetFromAddress(),"Markus Lippus");   
 		$mailer->From ='Admin';
-        $mailer->Subject = 'PHPMailer GMail SMTP test';
+        $mailer->Subject = 'Registration confirmation code';
 
         $confirmcode = $formvars['confirmcode'];
         	
