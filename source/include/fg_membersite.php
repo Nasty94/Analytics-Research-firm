@@ -661,7 +661,7 @@ class FGMembersite
 		$mailer->IsSMTP();
 		$mailer->Host = 'smtp.gmail.com';
 		$mailer->Port = 587;
-		$mail->SMTPSecure = 'tls';
+		$mailer->SMTPSecure = 'tls';
 		$mailer->SMTPAuth = TRUE;
 		$mailer->Username = 'markus.lippus@gmail.com';  
 		$mailer->Password = '4ddEd205B3';  
@@ -687,8 +687,8 @@ class FGMembersite
         "Webmaster\r\n".
         $this->sitename;
 
-		if (!$mail->send()) {
-    		echo "Mailer Error: " . $mail->ErrorInfo;
+		if (!$mailer->send()) {
+    		echo "Mailer Error: " . $mailer->ErrorInfo;
 		} else {
     		echo "Message sent!";
 		}	
