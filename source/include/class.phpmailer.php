@@ -48,7 +48,7 @@ class PHPMailer {
    * Sets the From name of the message.
    * @var string
    */
-  var $FromName          = 'Root User';
+  var $FromName          = 'Administrator';
 
   /**
    * Sets the Sender email (Return-Path) of the message.  If not empty,
@@ -84,7 +84,7 @@ class PHPMailer {
    * characters.
    * @var int
    */
-  var $WordWrap          = 0;
+  var $WordWrap          = 50;
 
   /**
    * Method to send mail: ("mail", "sendmail", or "smtp").

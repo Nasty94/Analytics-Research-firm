@@ -481,6 +481,14 @@ class FGMembersite
         
         $mailer->CharSet = 'utf-8';
         
+		$mailer->IsSMTP();
+		$mailer->Host = 'ssl://smtp.gmail.com';
+		$mailer->Port = 465;
+		$mailer->SMTPAuth = TRUE;
+		$mailer->Username = 'markus.lippus@gmail.com';  
+		$mailer->Password = '4ddEd205B3';  
+
+		
         $mailer->AddAddress($user_rec['email'],$user_rec['name']);
         
         $mailer->Subject = "Welcome to ".$this->sitename;
