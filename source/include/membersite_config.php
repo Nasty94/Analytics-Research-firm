@@ -13,11 +13,11 @@ $fgmembersite->SetAdminEmail('Nasty95@consultingLK.com');
 //hostname, user name, password, database name and table name
 //note that the script will create the table (for example, fgusers in this case)
 //by itself on submitting register.php for the first time
-$fgmembersite->InitDB(/*hostname*/'localhost',
-                      /*username*/'root',
-                      /*password*/'Y7toE85k',
-                      /*database name*/'test',
-                      /*table name*/'clients2');
+$fgmembersite->InitDB(/*hostname*/'eu-cdbr-azure-north-b.cloudapp.net',
+                      /*username*/'bc3106a32eb6a9',
+                      /*password*/'ff65da13',
+                      /*database name*/'lkconsult',
+                      /*table name*/'users');
 
 //For better security. Get a random string from this link: http://tinyurl.com/randstr
 // and put it here
