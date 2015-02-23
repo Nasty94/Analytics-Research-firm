@@ -654,7 +654,7 @@ class FGMembersite
     {
 		require 'PHPMailerAutoload.php';
 		$mailer = new PHPMailer();
-		$mail->SMTPDebug = 3;
+		$mailer->SMTPDebug = 3;
         
         $mailer->CharSet = 'utf-8';
 		$mailer->IsSMTP();
