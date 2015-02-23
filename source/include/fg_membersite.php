@@ -653,27 +653,27 @@ class FGMembersite
     function SendUserConfirmationEmail(&$formvars)
     {
 		require 'PHPMailerAutoload.php'
-        $mailer = new PHPMailer();
+        $mail = new PHPMailer();
         
-        $mailer->CharSet = 'utf-8';
-		$mailer->IsSMTP();
-		$mailer->Host = 'ssl://smtp.gmail.com';
-		$mailer->Port = 465;
-		$mailer->SMTPAuth = TRUE;
-		$mailer->Username = 'markus.lippus@gmail.com';  
-		$mailer->Password = '4ddEd205B3';  
+        $mail->CharSet = 'utf-8';
+		$mail->IsSMTP();
+		$mail->Host = 'ssl://smtp.gmail.com';
+		$mail->Port = 465;
+		$mail->SMTPAuth = TRUE;
+		$mail->Username = 'markus.lippus@gmail.com';  
+		$mail->Password = '4ddEd205B3';  
         
-        $mailer->AddAddress($formvars['email'],$formvars['name']);
+        $mail->AddAddress($formvars['email'],$formvars['name']);
         
-        $mailer->Subject = "Your registration with ".$this->sitename;
+        $mail->Subject = "Your registration with ".$this->sitename;
 
-        $mailer->From = $this->GetFromAddress();        
+        $mail->From = $this->GetFromAddress();        
         
         $confirmcode = $formvars['confirmcode'];
         
         $confirm_url = $this->GetAbsoluteURLFolder().'/confirmreg.php?code='.$confirmcode;
         
-        $mailer->Body ="Hello ".$formvars['name']."\r\n\r\n".
+        $mail->Body ="Hello ".$formvars['name']."\r\n\r\n".
         "Thanks for your registration with ".$this->sitename."\r\n".
         "Please click the link below to confirm your registration.\r\n".
         "$confirm_url\r\n".
@@ -682,7 +682,7 @@ class FGMembersite
         "Webmaster\r\n".
         $this->sitename;
 
-        if(!$mailer->Send())
+        if(!$mail->Send())
         {
             $this->HandleError("Failed sending registration confirmation email.");
             return false;
