@@ -653,7 +653,8 @@ class FGMembersite
     function SendUserConfirmationEmail(&$formvars)
     {
 		require 'PHPMailerAutoload.php';
-        $mailer = new PHPMailer();
+		$mailer = new PHPMailer();
+		$mail->SMTPDebug = 3;
         
         $mailer->CharSet = 'utf-8';
 		$mailer->IsSMTP();
