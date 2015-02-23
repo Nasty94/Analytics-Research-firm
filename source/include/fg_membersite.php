@@ -477,19 +477,27 @@ class FGMembersite
     
     function SendUserWelcomeEmail(&$user_rec)
     {
-        $mailer = new PHPMailer();
+		require 'PHPMailerAutoload.php';
+		$mailer = new PHPMailer;
+		//$mailer->SMTPDebug = 2;
+		//$mailer->Debugoutput = 'html';
         
         $mailer->CharSet = 'utf-8';
-        
 		$mailer->IsSMTP();
-		$mailer->Host = 'ssl://smtp.gmail.com';
-		$mailer->Port = 465;
+		$mailer->Host = 'smtp.gmail.com';
+		$mailer->Port = 587;
+		$mailer->SMTPSecure = 'tls';
 		$mailer->SMTPAuth = TRUE;
-		$mailer->Username = 'markus.lippus@gmail.com';  
-		$mailer->Password = '4ddEd205B3';  
-
-		
+		$mailer->Username = 'lkcmailer@gmail.com';  
+		$mailer->Password = 'lkconsult';
+        $mailer->addReplyTo('lkcmailer@gmail.com', 'First Last');  
         $mailer->AddAddress($user_rec['email'],$user_rec['name']);
+        
+        //$mailer->Subject = "Your registration with ".$this->sitename;
+
+        $mailer->setFrom($this->GetFromAddress(),lkcmailer");
+		
+
         
         $mailer->Subject = "Welcome to ".$this->sitename;
 
@@ -671,7 +679,7 @@ class FGMembersite
         
         //$mailer->Subject = "Your registration with ".$this->sitename;
 
-        $mailer->setFrom($this->GetFromAddress(),"Markus Lippus");   
+        $mailer->setFrom($this->GetFromAddress(),lkcmailer");   
 		$mailer->From ='Admin';
         $mailer->Subject = 'Registration confirmation code';
 
