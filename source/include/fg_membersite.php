@@ -665,7 +665,7 @@ class FGMembersite
 		$mailer->SMTPAuth = TRUE;
 		$mailer->Username = 'lkcmailer@gmail.com';  
 		$mailer->Password = 'lkconsult';
-        $mail->AddReplyTo('lkcmailer@gmail.com', 'First Last');  
+        $mailer->addReplyTo('lkcmailer@gmail.com', 'First Last');  
         
         $mailer->AddAddress($formvars['email'],$formvars['name']);
         
