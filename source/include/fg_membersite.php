@@ -668,7 +668,8 @@ class FGMembersite
         
         $mailer->Subject = "Your registration with ".$this->sitename;
 
-        $mailer->From = $this->GetFromAddress();        
+        $mailer->FromName = $this->GetFromAddress();   
+		$mailer->From ="Admin"     
         
         $confirmcode = $formvars['confirmcode'];
         
