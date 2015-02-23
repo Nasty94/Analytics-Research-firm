@@ -495,7 +495,7 @@ class FGMembersite
         
         //$mailer->Subject = "Your registration with ".$this->sitename;
 
-        $mailer->setFrom($this->GetFromAddress(),lkcmailer");
+        $mailer->setFrom($this->GetFromAddress(),"lkcmailer");
 		
 
         
@@ -679,7 +679,7 @@ class FGMembersite
         
         //$mailer->Subject = "Your registration with ".$this->sitename;
 
-        $mailer->setFrom($this->GetFromAddress(),lkcmailer");   
+        $mailer->setFrom($this->GetFromAddress(),"lkcmailer");   
 		$mailer->From ='Admin';
         $mailer->Subject = 'Registration confirmation code';
 
