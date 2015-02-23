@@ -683,7 +683,7 @@ class FGMembersite
         "Webmaster\r\n".
         $this->sitename;
 
-        if(!$mailer->Send())
+        if(!$mailer->send())
         {
             $this->HandleError("Failed sending registration confirmation email.");
             return false;
