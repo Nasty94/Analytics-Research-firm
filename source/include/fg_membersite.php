@@ -654,12 +654,14 @@ class FGMembersite
     {
 		require 'PHPMailerAutoload.php';
 		$mailer = new PHPMailer();
-		$mailer->SMTPDebug = 3;
+		$mailer->SMTPDebug = 2;
+		$mailer->Debugoutput = 'html';
         
         $mailer->CharSet = 'utf-8';
 		$mailer->IsSMTP();
-		$mailer->Host = 'ssl://smtp.gmail.com';
-		$mailer->Port = 465;
+		$mailer->Host = 'smtp.gmail.com';
+		$mailer->Port = 587;
+		$mail->SMTPSecure = 'tls';
 		$mailer->SMTPAuth = TRUE;
 		$mailer->Username = 'markus.lippus@gmail.com';  
 		$mailer->Password = '4ddEd205B3';  
@@ -668,11 +670,12 @@ class FGMembersite
         
         $mailer->Subject = "Your registration with ".$this->sitename;
 
-        $mailer->FromName = $this->GetFromAddress();   
+        $mailer->setFrom($this->GetFromAddress(),"Markus Lippus");   
 		$mailer->From ="Admin"     
-        
+        $mail->Subject = 'PHPMailer GMail SMTP test';
+
         $confirmcode = $formvars['confirmcode'];
-        
+        	
         $confirm_url = $this->GetAbsoluteURLFolder().'/confirmreg.php?code='.$confirmcode;
         
         $mailer->Body ="Hello ".$formvars['name']."\r\n\r\n".
@@ -684,12 +687,11 @@ class FGMembersite
         "Webmaster\r\n".
         $this->sitename;
 
-        if(!$mailer->send())
-        {
-            $this->HandleError("Failed sending registration confirmation email.");
-            return false;
-        }
-        return true;
+		if (!$mail->send()) {
+    		echo "Mailer Error: " . $mail->ErrorInfo;
+		} else {
+    		echo "Message sent!";
+		}	
     }
     function GetAbsoluteURLFolder()
     {
