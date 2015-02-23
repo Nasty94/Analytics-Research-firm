@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL); ini_set('display_errors', 1);
 /**
  * PHPMailer - PHP email creation and transport class.
  * PHP Version 5
