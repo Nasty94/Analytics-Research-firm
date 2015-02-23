@@ -1,5 +1,5 @@
 <?PHP
-
+error_reporting(E_ALL); ini_set('display_errors', 1);
 require_once("class.phpmailer.php");
 require_once("formvalidator.php");
 
@@ -655,7 +655,6 @@ class FGMembersite
         $mailer = new PHPMailer();
         
         $mailer->CharSet = 'utf-8';
-		
 		$mailer->IsSMTP();
 		$mailer->Host = 'ssl://smtp.gmail.com';
 		$mailer->Port = 465;
