@@ -489,7 +489,7 @@ class FGMembersite
 		$mailer->SMTPSecure = 'tls';
 		$mailer->SMTPAuth = TRUE;
 		$mailer->Username = 'lkcmailer@gmail.com';  
-		$mailer->Password = 'lkconsult';
+		$mailer->Password = 'lkconsulting';
         $mailer->addReplyTo('lkcmailer@gmail.com', 'First Last');  
         $mailer->AddAddress($user_rec['email'],$user_rec['name']);
         
@@ -672,7 +672,7 @@ class FGMembersite
 		$mailer->SMTPSecure = 'tls';
 		$mailer->SMTPAuth = TRUE;
 		$mailer->Username = 'lkcmailer@gmail.com';  
-		$mailer->Password = 'lkconsult';
+		$mailer->Password = 'lkconsulting';
         $mailer->addReplyTo('lkcmailer@gmail.com', 'First Last');  
         
         $mailer->AddAddress($formvars['email'],$formvars['name']);
