@@ -34,7 +34,8 @@
 		  <div id="bottom"></div>
 		  <div id="english">
 		  <br>
-		  <a id="eng" href="lang/eng/index_loggedin_eng.php">EST</a>&nbsp;&nbsp;
+		  <a id="eng" href="../../index_loggedin.php">EST</a>&nbsp;&nbsp;
+	
 		  </div>
 		  
 		  <div id="img">
@@ -44,26 +45,35 @@
 		  
        <div class="dropdownmenu">
         <ul id="nav">
-            <li class='active'><a href='#'>Avaleht</a></li>
-            <li><a href="login-home.php">Minu konto</a>
+            <li class='active'><a href='#'>Home</a></li>
+            <li><a href="login-home.php">My account</a>
                 <div>
                     <ul>
 					    
-                        <li><a href='login.php'>Logi välja</a></li>
+                        <li><a href='login.php'>Log out</a></li>
                        
                     </ul>
                 </div>
             </li>
-            <li><a href="#">Meist</a>
+            <li><a href="#">Who we are?</a>
                 <div>
                     <ul>
-                        <li><a href="#">Personal</a></li>
-                        <li><a href="#">Kontakt</a></li>
+                        <li><a href="#">Our specialists</a></li>
+                        <li><a href="#">Concepts</a></li>
   
                     </ul>
                 </div>
             </li>
-            <li><a href="#">Artiklid</a>
+			<li><a href="#">Services</a>
+                <div>
+                    <ul>
+                        <li><a href="#">Market research</a></li>
+                        <li><a href="#">Medical statistics</a></li>
+  
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">Blog</a>
                 <div>
                     <ul>
                         <li><a href="#">Page 1</a></li>
@@ -74,8 +84,8 @@
                     </ul>
                 </div>
             </li>
-            <li><a href="#">Muu</a></li>
-            <li><a href="#">KKK</a></li>
+            <li><a href="contact.php">  Contact  </a></li>
+			<li><a href="#">           </a></li>
 			
             <li class="pad"></li>
         </ul>

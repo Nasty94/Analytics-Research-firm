@@ -43,7 +43,7 @@ if(isset($_POST['submitted']))
 		  <div id="bottom"></div>
 		  <div id="english">
 		  <br>
-		  <a id="eng" href="lang/eng/register_eng.php">ENG</a>&nbsp;&nbsp;
+		  <a id="eng" href="../../register.php">EST</a>&nbsp;&nbsp;
 		  </div>
 		  
 		  <div id="img">
@@ -53,26 +53,36 @@ if(isset($_POST['submitted']))
 
 <div class="dropdownmenu">
         <ul id="nav">
-            <li class='active'><a href='index.html'>Avaleht</a></li>
-            <li><a href="#">Logi sisse</a>
+            <li class='active'><a href='#'>Home</a></li>
+            <li><a href="#">My account</a>
                 <div>
                     <ul>
-                        <li><a href='register.php'>Registreerimine</a></li>
-                        <li><a href='login.php'>Login</a></li>
+                        <li><a href='../../register.php'>Create an account</a></li>
+                        <li><a href='../../login.php'>Log in</a></li>
                        
                     </ul>
                 </div>
             </li>
-            <li><a href="#">Meist</a>
+			<li><a href="#">Who we are?</a>
                 <div>
                     <ul>
-                        <li><a href="#">Personal</a></li>
-                        <li><a href="#">Ettevõte</a></li>
+                        <li><a href="#">Our specialists</a></li>
+                        <li><a href="#">Concepts</a></li>
   
                     </ul>
                 </div>
             </li>
-            <li><a href="#">Artiklid</a>
+			<li><a href="#">Services</a>
+                <div>
+                    <ul>
+                        <li><a href="#">Market research</a></li>
+                        <li><a href="#">Medical statistics</a></li>
+  
+                    </ul>
+                </div>
+            </li>
+            
+            <li><a href="#">Blog</a>
                 <div>
                     <ul>
                         <li><a href="#">Page 1</a></li>
@@ -83,8 +93,8 @@ if(isset($_POST['submitted']))
                     </ul>
                 </div>
             </li>
-            <li><a href="#">Muu</a></li>
-            <li><a href="#">KKK</a></li>
+            <li><a href="#">  Contact  </a></li>
+			<li><a href="#">           </a></li>
 			
             <li class="pad"></li>
         </ul>
