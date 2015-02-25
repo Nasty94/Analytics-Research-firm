@@ -98,7 +98,7 @@ require_once("./include/membersite_config.php");
             <li class="pad"></li>
         </ul>
     </div>
-       <h2>               </h2>
+       <br>
 
 	
 	<section id="content" class="body">
