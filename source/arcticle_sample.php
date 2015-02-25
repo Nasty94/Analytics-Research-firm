@@ -4,6 +4,15 @@ $comment_post_ID = 1;
 $db = new Persistence();
 $comments = $db->get_comments($comment_post_ID);
 $has_comments = (count($comments) > 0);
+
+
+require_once("./include/membersite_config.php");
+
+if(!$fgmembersite->CheckLogin())
+{
+    $fgmembersite->RedirectToURL("login.php");
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
