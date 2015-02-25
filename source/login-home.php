@@ -105,17 +105,11 @@ if(!$fgmembersite->CheckLogin())
    <li><a href='index_loggedin.php'><span>Avaleht</span></a></li>
    <li class='active has-sub'><a href='#'><span>Minu tellimused</span></a>
       <ul>
-         <li class='has-sub'><a href='#'><span>Ajalugu</span></a>
-            <ul>
-               <li><a href='#'><span>Konto</span></a></li>
-               <li class='last'><a href='#'><span>Kirjeldus</span></a></li>
-            </ul>
+         <li><a href='#'><span>Tellimuse tegemine</span></a>
+         <li><a href='client_orders.php'><span>Tellimuste ajalugu</span></a>
+
          </li>
-         <li class='has-sub'><a href='#'><span>Page 2</span></a>
-            <ul>
-               <li><a href='#'><span>Sub Page 2</span></a></li>
-               
-            </ul>
+        
          </li>
       </ul>
    </li>
