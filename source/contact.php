@@ -131,7 +131,7 @@
                </FORM>
 
 			  
-			   <a href="javascript:enable();" >Võta ühendus...</a>
+			   <a href="javascript:enable();" >Võta ühendust...</a>
 			   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
                <img id="facebook" src="img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
