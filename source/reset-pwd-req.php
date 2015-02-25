@@ -51,29 +51,39 @@ if(isset($_POST['submitted']))
 
 <div class="dropdownmenu">
         <ul id="nav">
-            <li class='active'><a href='index.html'>Avaleht</a></li>
-            <li><a href="#">Logi sisse</a>
+            <li class='active'><a href='#'>Avaleht</a></li>
+            <li><a href="login-home.php">Minu konto</a>
                 <div>
                     <ul>
-                        <li><a href='register.php'>Registreerimine</a></li>
-                        <li><a href='login.php'>Login</a></li>
+                        
+                        <li><a href='logout.php'>Logi välja</a></li>
                        
                     </ul>
                 </div>
             </li>
-            <li><a href="#">Meist</a>
+			<li><a href="#">Meist</a>
                 <div>
                     <ul>
                         <li><a href="#">Personal</a></li>
-                        <li><a href="#">Ettevõte</a></li>
+                        <li><a href="#">Concepts</a></li>
   
                     </ul>
                 </div>
             </li>
-            <li><a href="#">Artiklid</a>
+			<li><a href="#">Teenused</a>
                 <div>
                     <ul>
-                        <li><a href="#">Page 1</a></li>
+                        <li><a href="#">Turuuring</a></li>
+                        <li><a href="#">Med. statistika</a></li>
+  
+                    </ul>
+                </div>
+            </li>
+            
+            <li><a href="#">Blog</a>
+                <div>
+                    <ul>
+                        <li><a href="arcticle_sample.php">Page 1</a></li>
                         <li><a href="#">Page 2</a></li>
                         <li><a href="#">Page 3</a></li>
                         <li><a href="#">Page 4</a></li>
@@ -81,12 +91,13 @@ if(isset($_POST['submitted']))
                     </ul>
                 </div>
             </li>
-            <li><a href="#">Muu</a></li>
-            <li><a href="#">KKK</a></li>
+            <li><a href="contact.php">  Kontakt  </a></li>
+			<li><a href="#">           </a></li>
 			
             <li class="pad"></li>
         </ul>
     </div>
+	  
 	<div id="main">
 	<div id="white-box" >
 	 <div id="contentInt">
