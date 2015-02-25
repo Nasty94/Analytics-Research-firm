@@ -114,29 +114,7 @@ if(!$fgmembersite->CheckLogin())
                         <p class="note">You have disabled Javascript. This website will not function without it.</p>
                  </noscript>
 	<div class="center">
-	<div id='verticalmenu'>
-<ul>
-   <li><a href='index_loggedin.php'><span>Avaleht</span></a></li>
-   <li class='active has-sub'><a href='#'><span>Minu tellimused</span></a>
-      <ul>
-         <li class='has-sub'><a href='#'><span>Ajalugu</span></a>
-            <ul>
-               <li><a href='#'><span>Konto</span></a></li>
-               <li class='last'><a href='#'><span>Kirjeldus</span></a></li>
-            </ul>
-         </li>
-         <li class='has-sub'><a href='#'><span>Page 2</span></a>
-            <ul>
-               <li><a href='#'><span>Sub Page 2</span></a></li>
-               
-            </ul>
-         </li>
-      </ul>
-   </li>
-   
-   <li class='last'><a href='clients_data.php'><span>Minu andmed</span></a></li>
-</ul>
-</div>
+	
 	  <div class="textart">
 	  <article class="hentry">	
 			<header>
