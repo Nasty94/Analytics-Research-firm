@@ -99,8 +99,7 @@ require_once("./include/membersite_config.php");
         </ul>
     </div>
 
-	<h2>Tere, <?= $fgmembersite->UserFullName(); ?>!</h2>
-	
+
 	
 	<section id="content" class="body">
 
