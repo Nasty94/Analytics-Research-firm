@@ -33,6 +33,8 @@ if(!$fgmembersite->CheckLogin())
 		  <div id="right"></div>
 		  <div id="top"></div>
 		  <div id="bottom"></div>
+		  <div id="english">
+
 		  
 		  <div id="img">
      		 
