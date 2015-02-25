@@ -29,6 +29,7 @@ if(!$fgmembersite->CheckLogin())
 	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
     <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="STYLESHEET" type="text/css" href="style/fg_membersite_form.css" />
         
     	
 </head>
@@ -118,9 +119,49 @@ if(!$fgmembersite->CheckLogin())
 </ul>
 </div>
 		
+    <!-- Form Code Start -->
+
+<div id='fg_membersite_form'>
+<form id='register' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
+<fieldset >
+<legend>Minu tellimus</legend>
+
+<input type='hidden' name='submitted' id='submitted' value='1'/>
+
+<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
+
+<div class='container'>
+    <label for="company" >Ettevõte:</label><br/>
+    <input type='text' name='company' id='company' maxlength="50" />   
+    <div id='register_password_errorloc' class='error' style='clear:both'></div>
+</div>
+
+<div class='container'>
+    <label for='email' >Email:</label><br/>
+    <input type='text' name='email' id='email' value='<?php echo $fgmembersite->UserEmail() ?>' maxlength="50" /><br/>
+    <span id='register_email_errorloc' class='error'></span>
+</div>
+
+<div class='container'>
+    <label for="order" >Tellimuse kirjeldus:</label><br/>
+    <textarea name='order' id='order' maxlength="200" rows="3" required="required"></textarea>   
+    <div id='register_password_errorloc' class='error' style='clear:both'></div>
+</div>
+
+<div class='container'>
+    <input type='submit' name='Submit' value='Submit' />
+</div>
+
+
+</fieldset>
+</form>
+</div>
+  
+
+      
 
 </div><!--center--> <!-- Siia tuleb tellimuste lehe sisu, ehk ajalugu tellimuste kohta, lisaks JOIN kasutamine nende kokkupanekul. -->
-</div> <!--contentInt--> <h2>Siia tuleb tellimuse tegemise ankeet</h2>
+</div> <!--contentInt-->
 		   		   
 
              
@@ -128,7 +169,14 @@ if(!$fgmembersite->CheckLogin())
 	</div> <!-- main -->
 	
 
-		  
+  
+
+<div id="block" >
+                     
+</div>
+
+
+
 	<div id="footer" >
                       © 2015  LK Consulting <br>
 					  This is a proof-of-concept web application.
