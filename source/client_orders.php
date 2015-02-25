@@ -49,18 +49,18 @@ if(!$fgmembersite->CheckLogin())
 <div class="dropdownmenu">
         <ul id="nav">
             <li class='active'><a href='index_loggedin.php'>Avaleht</a></li>
-            li><a href="login-home.php">Minu konto</a>
+            <li><a href="login-home.php">Minu konto</a>
                 <div>
                     <ul>
                         
                         <li><a href='change-pwd.php'>Muuda parooli</a></li>
-						<li><a href='logout.php'>Logi välja</a></li>
+			<li><a href='logout.php'>Logi välja</a></li>
                        
                     </ul>
                 </div>
             </li>
   
-			<li><a href="#">Meist</a>
+	    <li><a href="#">Meist</a>
                 <div>
                     <ul>
                         <li><a href="#">Personal</a></li>
