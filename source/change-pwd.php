@@ -66,31 +66,37 @@ if(isset($_POST['submitted']))
                 </div>
             </li>
             <li><a href="#">Meist</a>
-                <div>
-                    <ul>
-                        <li><a href="#">Personal</a></li>
-                        <li><a href="#">Ettevõte</a></li>
-  
-                    </ul>
-                </div>
-            </li>
-            <li><a href="#">Artiklid</a>
-                <div>
-                    <ul>
-                        <li><a href="#">Page 1</a></li>
-                        <li><a href="#">Page 2</a></li>
-                        <li><a href="#">Page 3</a></li>
-                        <li><a href="#">Page 4</a></li>
-                        <li><a href="#">Page 5</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li><a href="#">Muu</a></li>
-            <li><a href="#">KKK</a></li>
-			
-            <li class="pad"></li>
-        </ul>
-    </div>
+<div>
+<ul>
+<li><a href="#">Personal</a></li>
+<li><a href="#">Concepts</a></li>
+</ul>
+</div>
+</li>
+<li><a href="#">Teenused</a>
+<div>
+<ul>
+<li><a href="#">Turuuring</a></li>
+<li><a href="#">Med. statistika</a></li>
+</ul>
+</div>
+</li>
+<li><a href="#">Blog</a>
+<div>
+<ul>
+<li><a href="arcticle_sample.php">Näidis</a></li>
+<li><a href="#">Page 2</a></li>
+<li><a href="#">Page 3</a></li>
+<li><a href="#">Page 4</a></li>
+<li><a href="#">Page 5</a></li>
+</ul>
+</div>
+</li>
+<li><a href="contact.php"> Kontakt </a></li>
+<li><a href="#"> </a></li>
+<li class="pad"></li>
+</ul>
+</div>
 	<div id="main">
 	<div id="white-box" >
 	 <div id="contentInt">
