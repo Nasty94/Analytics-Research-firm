@@ -105,7 +105,7 @@ if(!$fgmembersite->CheckLogin())
    <li><a href='index_loggedin.php'><span>Avaleht</span></a></li>
    <li class='active has-sub'><a href='#'><span>Minu tellimused</span></a>
       <ul>
-         <li><a href='make_order'><span>Tellimuse tegemine</span></a></li>
+         <li><a href='make_order.php'><span>Tellimuse tegemine</span></a></li>
          <li><a href='client_orders.php'><span>Tellimuste ajalugu</span></a>
             <ul>
                <li class='last'><a href='#'><span>Kirjeldus</span></a></li>
