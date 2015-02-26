@@ -823,6 +823,16 @@ class FGMembersite
         return true;
     }
     
+    function EnsureOrderstable()
+    {
+        $result = mysqli_query($this->connection,"SHOW COLUMNS FROM $this->tablename");   
+        if(!$result || mysqli_num_rows($result) <= 0)
+        {
+            return $this->CreateTableOrders();
+        }
+        return true;
+    }
+
     function CreateTable()
     {
        
@@ -847,6 +857,27 @@ class FGMembersite
         return true;
     }
     
+      function CreateTableOrders()
+    {
+    	$qry = "Create Table $this->tablename (".
+                "id_user INT NOT NULL AUTO_INCREMENT ,".
+                "name VARCHAR( 128 ) NOT NULL ,".
+                "email VARCHAR( 64 ) NOT NULL ,".
+                "phone_number VARCHAR( 16 ) NOT NULL ,".
+                "username VARCHAR( 16 ) NOT NULL ,".
+                "order_discription VARCHAR( 5000 ) NOT NULL,".
+                "PRIMARY KEY ( id_user )".
+                ")";
+	
+                
+        if(!mysqli_query($this->connection,$qry))
+        {
+            $this->HandleDBError("Error creating the table \nquery was\n $qry");
+            return false;
+        }
+        return true;
+    }
+
     function InsertIntoDB(&$formvars)
     {
     
@@ -856,14 +887,9 @@ class FGMembersite
 
 	$hash = $this->hashSSHA($formvars['password']);
 
-	$encrypted_password = $hash["encrypted"];
-        
- 
+	$encrypted_password = $hash["encrypted"];     
 
-	$salt = $hash["salt"];
-        
-      
-
+	$salt = $hash["salt"];            
  
         $insert_query = 'insert into '.$this->tablename.'(
 		name,
@@ -893,6 +919,35 @@ class FGMembersite
         }        
         return true;
     }
+
+    function InsertOrderIntoDB(&$formvars)
+    {
+    
+        $insert_query = 'insert into '.$this->tablename.'(
+		name,
+		email,
+		phone_number,
+		username,	
+		order_discription,
+		)
+		values
+		(
+		"' . $this->SanitizeForSQL($formvars['name']) . '",
+		"' . $this->SanitizeForSQL($formvars['email']) . '",
+		"' . $this->SanitizeForSQL($formvars['phone_number']) . '",
+		"' . $this->SanitizeForSQL($formvars['username']) . '",
+        "' . $this->SanitizeForSQL($formvars['order_discription']) . '",
+		)';  
+
+ 
+        if(!mysqli_query( $this->connection,$insert_query ))
+        {
+            $this->HandleDBError("Error inserting data to the table\nquery:$insert_query");
+            return false;
+        }        
+        return true;
+    }
+
     function hashSSHA($password) {
  
         $salt = sha1(rand());

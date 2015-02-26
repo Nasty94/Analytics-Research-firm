@@ -85,42 +85,14 @@ if(!$fgmembersite->CheckLogin())
 			
             <li class="pad"></li>
         </ul>
-    </div>
-	<div id="main">
+    </div> <!-- dropdownmenu -->
+
+<div id="main" style="height:1000px">
 	<h2>Tere, <?= $fgmembersite->UserFullName(); ?>!</h2>
-	
-	<div id="white-box" >
-	 <div id="contentInt">
-                 <noscript>
-                        <p class="note">You have disabled Javascript. This website will not function without it.</p>
-                 </noscript>
-                      
-			 
 
+<div id="white-box" >
 
-<div class="center">
-					
-					
-<div id='verticalmenu'>
-<ul>
-   <li><a href='index_loggedin.php'><span>Avaleht</span></a></li>
-   <li class='active has-sub'><a href='#'><span>Minu tellimused</span></a>
-      <ul>
-         <li><a href='make_order.php'><span>Tellimuse tegemine</span></a></li>
-         <li><a href='client_orders.php'><span>Tellimuste ajalugu</span></a>
-            <ul>
-               <li class='last'><a href='#'><span>Kirjeldus</span></a></li>
-            </ul>
-         </li>
-      </ul>
-   </li>
-   <li><a href='#'><span>Minu sõnumid</span></a></li>
-   <li class='last'><a href='clients_data.php'><span>Minu andmed</span></a></li>
-</ul>
-</div>
-		
-    <!-- Form Code Start -->
-
+<!-- Form Code Start -->
 <div id='fg_membersite_form'>
 <form id='register' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
 <fieldset >
@@ -131,20 +103,26 @@ if(!$fgmembersite->CheckLogin())
 <div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
 
 <div class='container'>
-    <label for="company" >Ettevõte:</label><br/>
-    <input type='text' name='company' id='company' maxlength="50" />   
+    <label for="name" >Nimi:</label><br/>
+    <input type='text' name='name' id='name' value='<?php echo $fgmembersite->UserFullName() ?>' maxlength="50" required="required" /><br/>   
     <div id='register_password_errorloc' class='error' style='clear:both'></div>
 </div>
 
 <div class='container'>
     <label for='email' >Email:</label><br/>
-    <input type='text' name='email' id='email' value='<?php echo $fgmembersite->UserEmail() ?>' maxlength="50" /><br/>
+    <input type='text' name='email' id='email' value='<?php echo $fgmembersite->UserEmail() ?>' maxlength="50" required="required"/><br/>
     <span id='register_email_errorloc' class='error'></span>
 </div>
 
 <div class='container'>
+    <label for='phone_number' >Mobiilinumber:</label><br/>
+    <input type='text' name='phone_number' id='phone_number' value='<?php echo $fgmembersite->UserPhoneNumber() ?>' maxlength="50" /><br/>
+    <span id='register_phone_number_errorloc' class='error'></span>
+</div>
+
+<div class='container'>
     <label for="order" >Tellimuse kirjeldus:</label><br/>
-    <textarea name='order' id='order' maxlength="200" rows="3" required="required"></textarea>   
+    <textarea name='order' id='order' maxlength="2000" rows="3" required="required"></textarea>   
     <div id='register_password_errorloc' class='error' style='clear:both'></div>
 </div>
 
@@ -152,32 +130,41 @@ if(!$fgmembersite->CheckLogin())
     <input type='submit' name='Submit' value='Submit' />
 </div>
 
-
 </fieldset>
-</form>
-</div>
-  
+</form>	
 
-      
+<div id="contentInt">
+                 <noscript>
+                        <p class="note">You have disabled Javascript. This website will not function without it.</p>
+                 </noscript>                  
 
-</div><!--center--> <!-- Siia tuleb tellimuste lehe sisu, ehk ajalugu tellimuste kohta, lisaks JOIN kasutamine nende kokkupanekul. -->
-</div> <!--contentInt-->
-		   		   
+<div class="center">
+    
+<div id='verticalmenu'>
+<ul>
+   <li class='active has-sub'><a href='#'><span>Minu tellimused</span></a>
+      <ul>
+         <li><a href='make_order.php'><span>Tellimuse tegemine</span></a></li>
+         <li><a href='client_orders.php'><span>Tellimuste ajalugu</span></a></li>
+      </ul>
+   </li>
+   <li class='last'><a href='clients_data.php'><span>Minu andmed</span></a></li>
+</ul>
+</div> 
 
-             
-	</div> <!-- white box --> 
-	</div> <!-- main -->
+</div><!--center-->
+</div><!--contentInt-->
 	
-
-  
+ </div>  <!-- fg_membersite_form -->   		   
+	</div> <!-- white box --> 
+	</div> <!-- main -->  
 
 <div id="block" >
                      
 </div>
 
 
-
-	<div id="footer" >
+	<div id="footer">
                       © 2015  LK Consulting <br>
 					  This is a proof-of-concept web application.
 	</div>

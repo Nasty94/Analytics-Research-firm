@@ -102,25 +102,19 @@ if(!$fgmembersite->CheckLogin())
 					
 <div id='verticalmenu'>
 <ul>
-   <li><a href='index_loggedin.php'><span>Avaleht</span></a></li>
    <li class='active has-sub'><a href='#'><span>Minu tellimused</span></a>
       <ul>
          <li><a href='make_order.php'><span>Tellimuse tegemine</span></a></li>
-         <li><a href='client_orders.php'><span>Tellimuste ajalugu</span></a>
-            <ul>
-               <li class='last'><a href='#'><span>Kirjeldus</span></a></li>
-            </ul>
-         </li>
+         <li><a href='client_orders.php'><span>Tellimuste ajalugu</span></a></li>
       </ul>
    </li>
-   <li><a href='#'><span>Minu sõnumid</span></a></li>
    <li class='last'><a href='clients_data.php'><span>Minu andmed</span></a></li>
 </ul>
 </div>
 		
 
 </div><!--center--> <!-- Siia tuleb tellimuste lehe sisu, ehk ajalugu tellimuste kohta, lisaks JOIN kasutamine nende kokkupanekul. -->
-</div> <!--contentInt--> <h2>Siia tuleb kliendi tellimuste ajalugu.</h2>
+</div> <!--contentInt--> 
 		   		   
 
              
