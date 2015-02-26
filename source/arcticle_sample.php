@@ -8,11 +8,6 @@ $has_comments = (count($comments) > 0);
 
 require_once("./include/membersite_config.php");
 
-if(!$fgmembersite->CheckLogin())
-{
-    $fgmembersite->RedirectToURL("login.php");
-    exit;
-}
 ?>
 
 <!DOCTYPE html>
@@ -89,7 +84,7 @@ if(!$fgmembersite->CheckLogin())
             <li><a href="#">Blog</a>
                 <div>
                     <ul>
-                        <li><a href="arcticle_sample.php">Page 1</a></li>
+                        <li><a href="arcticle_sample.php">Näidis</a></li>
                         <li><a href="#">Page 2</a></li>
                         <li><a href="#">Page 3</a></li>
                         <li><a href="#">Page 4</a></li>
@@ -103,9 +98,8 @@ if(!$fgmembersite->CheckLogin())
             <li class="pad"></li>
         </ul>
     </div>
+       <br> <br> <br>
 
-	<h2>Tere, <?= $fgmembersite->UserFullName(); ?>!</h2>
-	
 	
 	<section id="content" class="body">
 
@@ -114,47 +108,72 @@ if(!$fgmembersite->CheckLogin())
                         <p class="note">You have disabled Javascript. This website will not function without it.</p>
                  </noscript>
 	<div class="center">
-	<div id='verticalmenu'>
-<ul>
-   <li><a href='index_loggedin.php'><span>Avaleht</span></a></li>
-   <li class='active has-sub'><a href='#'><span>Minu tellimused</span></a>
-      <ul>
-         <li class='has-sub'><a href='#'><span>Ajalugu</span></a>
-            <ul>
-               <li><a href='#'><span>Konto</span></a></li>
-               <li class='last'><a href='#'><span>Kirjeldus</span></a></li>
-            </ul>
-         </li>
-         <li class='has-sub'><a href='#'><span>Page 2</span></a>
-            <ul>
-               <li><a href='#'><span>Sub Page 2</span></a></li>
-               
-            </ul>
-         </li>
-      </ul>
-   </li>
-   
-   <li class='last'><a href='clients_data.php'><span>Minu andmed</span></a></li>
-</ul>
-</div>
+	
 	  <div class="textart">
 	  <article class="hentry">	
 			<header>
-				<h2 class="entry-title"><a href="#" rel="bookmark" title="Permalink to this Building a Pusher-powered Real-Time Commenting System">Building a Pusher-powered Real-Time Commenting System</a></h2>
+				<h2 class="entry-title"><a href="#" rel="bookmark" title="Permalink to this What You Need from your manager to be successful">What You Need from your manager to be successful</a></h2>
 			</header>
 			
 			<footer class="post-info">
 				<abbr class="published" title="2012-02-10T14:07:00-07:00">
-					10th February 2012
+					25th February 2015
 				</abbr>
 
 				<address class="vcard author">
-					By <a class="url fn" href="#">Phil Leggetter</a>
+					By <a class="url fn" href="#">LisBeth</a>
 				</address>
 			</footer>
 			
 			<div class="entry-content">
-				<p>The web has become increasingly interactive over the years. This trend is set to continue with the next generation of applications driven by the <strong>real-time web</strong>. Adding real-time functionality to an application can result in a more interactive and engaging user experience. However, setting up and maintaining the server-side realtime components can be an unwanted distraction. But don't worry, there is a solution.</p>
+				<p>What You Need from your manager to be successful!
+
+In April I participated in the ‘Retrospective Facilitators Gathering 2013’ in North Carolina, USA, also known as the ‘RFG’.  RFG was started by Esther Derby (esther derby associates, inc.), Diana Larsen (FutureWorks Consulting, LLC) and Norm Kerth (Elite Systems) in 2002.
+
+RFG is based on Open Space principles where lightweight planning and a market place for different sessions are the main points – a self-organising system. The elements or parts that need planning are planed i.e. the venue, supplies etc. Those aspects that don’t need close planning, like the sessions, develop organically during the week. Each year, different volunteers organize the RFG, and the venue is altered between the US and Europe. So the RFG 2014 will be in Hungary.
+
+I participated in many interesting and insightful sessions during the RFG 2013 week. I would like to share, one session, which I think is valuable for a lot of organisations in understanding how managerial behaviour influences the performance of their people.
+
+The session was called ‘What You Need from your manager to be successful!’ and was hosted by Susan DiFabio (SKD Consulting).
+
+Highly motivated employees are between 52% and 127% more efficient than the average motivated employees. As a leader it is therefore worthwhile to focus on how to create a motivating work environment. There are several elements that are part of the motivating work environment, but the most important elements are Commitment, Respect and Trust.
+<br>
+Commitment
+<br>
+As a leader you must ensure that your employees are engaged through knowledge of what creates their commitment. Different people respond to different measures. To become extremely engaged some employee’s need you set up goals with them. On the other hand, others must feel safe and secure to be committed to their work.
+<br>
+Respect and trust
+<br>
+As a leader you can ensure respect by inspiring and contributing to open communication. A work environment where there is room to discuss different views and to admit mistakes. This creates mutual trust and the chance to learn from each other. Conversely many secrets and taboos typically lead to people being suspicious of each other and to sub-optimise within their own areas.
+<br>
+What You Need (WYN) from your manager to be successful!
+<br>
+For you as a leader to understand what your employees need from you to be successful, and for you to know, how you in the best way can provide an environment that enables success, I would suggest you to try WYN – What you need from your manager to be successful!
+<br>
+Why?
+<br>
+  -  For managers to understand how their behavior influences and affects their team members and their performance.<br>
+  -  Because managers do not always know, what their team members think about their behavior.<br>
+  -  To improve transparency and open communication.<br>
+  -  To improve or continue to develop commitment, respect and trust within the team.<br>
+  -  To receive constructive and appropriate feedback from team members.<br>
+
+Content?<br>
+
+    - Workshop based sessions with active participation from both manager and team members.<br>
+    - 2 workshops of 1½ hour on 2 consecutive days.<br>
+       - Workshop 1 – Data gathering – team members only.<br>
+       - Workshop 2 – Feedback and planning– team members and manager.<br>
+       - Follow-up workshop 4-5 months later.<br>
+
+What will you gain?<br>
+
+   - An open communication about how individual behavior can influence the daily performance within the team.<br>
+   - Possibility to improve team culture and trust level, which will influence the performance of the team.<br>
+   - Understand what contributes to a good team performance.<br>
+   - Identifying what could be done better.<br>
+   - Setting up a plan for what each individual should work with to improve the team performance.<br>
+</p>
 			</div>
 		</article>
 	</div>

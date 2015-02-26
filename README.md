@@ -19,7 +19,6 @@ NB!  During development was used wamp server.
 
 # Simple Registration/Login code in PHP
 
-Read more:[PHP registration form](http://www.html-form-guide.com/php-form/php-registration-form.html) [PHP login form](http://www.html-form-guide.com/php-form/php-login-form.html)
 
 ## Installation
 
@@ -65,10 +64,25 @@ If you want to edit the email message or make changes to the logic, edit this fi
     
 * includes/class.phpmailer.php
 
-    This script uses PHPMailer to send emails. See:http://sourceforge.net/projects/phpmailer/ 
+    This script uses PHPMailer to send emails. 
     
 * includes/formvalidator.php    
 
-    For form validations on the server side, the PHP form validator from HTML form guide is used See: [PHP form validation] (http://www.html-form-guide.com/php-form/php-form-validation.html)
+    For form validations on the server side, the PHP form validator from HTML form guide is used.
     
+## Real time comment system
+
+* Style: css/
+
+* Main form: arcticle_sample.php (each article pae will contain comment system)
+
+## Files
+
+* clear.php
+
+* post_comment.php
+
+* Persistance.php
+
+* txt file
 
