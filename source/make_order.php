@@ -94,22 +94,6 @@ if(!$fgmembersite->CheckLogin())
 			
             <li class="pad"></li>
         </ul>
-<<<<<<< HEAD
-    </div> <!-- dropdownmenu -->
-=======
-    </div>
-	  
-	<div id="main">
-	<h2>Tere, <?= $fgmembersite->UserFullName(); ?>!</h2>
-	
-	<div id="white-box" >
-	 <div id="contentInt">
-                 <noscript>
-                        <p class="note">You have disabled Javascript. This website will not function without it.</p>
-                 </noscript>
-                      
-			 
->>>>>>> origin/master
 
 <div id="main" style="height:1000px">
 	<h2>Tere, <?= $fgmembersite->UserFullName(); ?>!</h2>
