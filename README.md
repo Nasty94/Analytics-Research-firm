@@ -19,7 +19,6 @@ NB!  During development was used wamp server.
 
 # Simple Registration/Login code in PHP
 
-Read more:[PHP registration form](http://www.html-form-guide.com/php-form/php-registration-form.html) [PHP login form](http://www.html-form-guide.com/php-form/php-login-form.html)
 
 ## Installation
 
