@@ -137,42 +137,42 @@ I participated in many interesting and insightful sessions during the RFG 2013 w
 The session was called ‘What You Need from your manager to be successful!’ and was hosted by Susan DiFabio (SKD Consulting).
 
 Highly motivated employees are between 52% and 127% more efficient than the average motivated employees. As a leader it is therefore worthwhile to focus on how to create a motivating work environment. There are several elements that are part of the motivating work environment, but the most important elements are Commitment, Respect and Trust.
-
+<br>
 Commitment
-
+<br>
 As a leader you must ensure that your employees are engaged through knowledge of what creates their commitment. Different people respond to different measures. To become extremely engaged some employee’s need you set up goals with them. On the other hand, others must feel safe and secure to be committed to their work.
-
+<br>
 Respect and trust
-
+<br>
 As a leader you can ensure respect by inspiring and contributing to open communication. A work environment where there is room to discuss different views and to admit mistakes. This creates mutual trust and the chance to learn from each other. Conversely many secrets and taboos typically lead to people being suspicious of each other and to sub-optimise within their own areas.
-
+<br>
 What You Need (WYN) from your manager to be successful!
-
+<br>
 For you as a leader to understand what your employees need from you to be successful, and for you to know, how you in the best way can provide an environment that enables success, I would suggest you to try WYN – What you need from your manager to be successful!
-
+<br>
 Why?
+<br>
+  -  For managers to understand how their behavior influences and affects their team members and their performance.<br>
+  -  Because managers do not always know, what their team members think about their behavior.<br>
+  -  To improve transparency and open communication.<br>
+  -  To improve or continue to develop commitment, respect and trust within the team.<br>
+  -  To receive constructive and appropriate feedback from team members.<br>
 
-  -  For managers to understand how their behavior influences and affects their team members and their performance.
-  -  Because managers do not always know, what their team members think about their behavior.
-  -  To improve transparency and open communication.
-  -  To improve or continue to develop commitment, respect and trust within the team.
-  -  To receive constructive and appropriate feedback from team members.
+Content?<br>
 
-Content?
+    - Workshop based sessions with active participation from both manager and team members.<br>
+    - 2 workshops of 1½ hour on 2 consecutive days.<br>
+       - Workshop 1 – Data gathering – team members only.<br>
+       - Workshop 2 – Feedback and planning– team members and manager.<br>
+       - Follow-up workshop 4-5 months later.<br>
 
-    - Workshop based sessions with active participation from both manager and team members.
-    - 2 workshops of 1½ hour on 2 consecutive days.
-       - Workshop 1 – Data gathering – team members only.
-       - Workshop 2 – Feedback and planning– team members and manager.
-       - Follow-up workshop 4-5 months later.
+What will you gain?<br>
 
-What will you gain?
-
-   - An open communication about how individual behavior can influence the daily performance within the team.
-   - Possibility to improve team culture and trust level, which will influence the performance of the team.
-   - Understand what contributes to a good team performance.
-   - Identifying what could be done better.
-   - Setting up a plan for what each individual should work with to improve the team performance.
+   - An open communication about how individual behavior can influence the daily performance within the team.<br>
+   - Possibility to improve team culture and trust level, which will influence the performance of the team.<br>
+   - Understand what contributes to a good team performance.<br>
+   - Identifying what could be done better.<br>
+   - Setting up a plan for what each individual should work with to improve the team performance.<br>
 </p>
 			</div>
 		</article>
