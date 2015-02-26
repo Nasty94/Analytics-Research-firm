@@ -69,4 +69,20 @@ If you want to edit the email message or make changes to the logic, edit this fi
 * includes/formvalidator.php    
 
     For form validations on the server side, the PHP form validator from HTML form guide is used.
+    
+## Real time comment system
+
+* Style: css/
+
+* Main form: arcticle_sample.php (each article pae will contain comment system)
+
+## Files
+
+* clear.php
+
+* post_comment.php
+
+* Persistance.php
+
+* txt file
 
