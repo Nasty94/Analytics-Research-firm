@@ -117,16 +117,14 @@ if(isset($_POST['submitted']))
     Kontakt
 	<br><br>
 	Email: leena.ivanova@yahoo.com
+	<br>
 	Tel: XXXXXX
 	<br>
     <img id="facebook" src="img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
     <br>
 
 </div><!--center-->
-<a href="javascript:enable();" >Võta ühendust...</a>
-			   <br>
 
-<FORM name="subform" id="FORM">
 <br>			   
 <!-- Form Code Start -->
 <div id='fg_membersite_form'>
@@ -136,13 +134,14 @@ if(isset($_POST['submitted']))
 
 <input type='hidden' name='submitted' id='submitted' value='1'/>
 <input type='text'  class='spmhidip' name='<?php echo $fgmembersite->GetSpamTrapInputName(); ?>' />
+
 <div class='short_explanation'>* required fields</div>
 <div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
 
 <div class='container'>
     <label for="name" >Nimi:</label><br/>
     <input type='text' name='name' id='name' value='<?php echo $fgmembersite->SafeDisplay('name') ?>' maxlength="50" /><br/>
-    <div id='register_password_errorloc' class='error' style='clear:both'></div>
+    <div id='register_password_errorloc' class='error' ></div>
 </div>
 
 <div class='container'>
@@ -160,7 +159,7 @@ if(isset($_POST['submitted']))
 <div class='container'>
     <label for="order" >Tellimuse kirjeldus*:</label><br/>
     <textarea name='order' id='order' maxlength="2000" rows="3" required="required"></textarea>   
-    <div id='register_password_errorloc' class='error' style='clear:both'></div>
+    <div id='register_password_errorloc' class='error' ></div>
 </div>
 
 <div class='container'>
@@ -169,7 +168,7 @@ if(isset($_POST['submitted']))
 
 </fieldset>
 </form>	
- </FORM>
+
 <div id="contentInt">
                  <noscript>
                         <p class="note">You have disabled Javascript. This website will not function without it.</p>
@@ -187,7 +186,26 @@ if(isset($_POST['submitted']))
                       © 2015  LK Consulting <br>
 					  This is a proof-of-concept web application.
 		  </div>
+<script type='text/javascript'>
+// <![CDATA[
+    var pwdwidget = new PasswordWidget('thepwddiv','password');
+    pwdwidget.MakePWDWidget();
+    
+    var frmvalidator  = new Validator("register");
+    frmvalidator.EnableOnPageErrorDisplay();
+    frmvalidator.EnableMsgsTogether();
+    frmvalidator.addValidation("name","req","Please provide your name");
 
+    frmvalidator.addValidation("email","req","Please provide your email address");
+
+    frmvalidator.addValidation("email","email","Please provide a valid email address");
+
+    frmvalidator.addValidation("username","req","Please provide a username");
+    
+    frmvalidator.addValidation("password","req","Please provide a password");
+
+// ]]>
+</script>
 
 		  	
 	</body>
