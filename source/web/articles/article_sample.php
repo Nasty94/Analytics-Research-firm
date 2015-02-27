@@ -1,12 +1,12 @@
 <?php
-require('web/comment-sys/Persistence.php');
+require('../comment-sys/Persistence.php');
 $comment_post_ID = 1;
 $db = new Persistence();
 $comments = $db->get_comments($comment_post_ID);
 $has_comments = (count($comments) > 0);
 
 
-require_once("./include/membersite_config.php");
+require_once("../../include/membersite_config.php");
 
 ?>
 
@@ -16,7 +16,7 @@ require_once("./include/membersite_config.php");
 
 	<meta charset="utf-8" />
 	
-	<link rel="stylesheet" href="style/comment-main.css" type="text/css" />
+	<link rel="stylesheet" href="../../style/comment-main.css" type="text/css" />
 	<meta http-equiv="Content type" content="text/html; charset=ISO-8859-1">
 	<meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,16 +24,16 @@ require_once("./include/membersite_config.php");
     <title>Minu konto</title>
      
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <script src="script.js"></script>	
-    <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
-    <script src="scripts/pwdwidget.js" type="text/javascript"></script>   
+    <script src="../../script.js"></script>	
+    <script type='text/javascript' src='../../scripts/gen_validatorv31.js'></script>
+    <script src="../../scripts/pwdwidget.js" type="text/javascript"></script>   
 	
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
-	<link rel="stylesheet" href="style/menubar.css">
-	<link rel="stylesheet" href="style/style.css">
-	<link rel="stylesheet" href="style/verticalmenu.css">
-	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
-    <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
+	<link rel="stylesheet" href="../../style/menubar.css">
+	<link rel="stylesheet" href="../../style/style.css">
+	<link rel="stylesheet" href="../../style/verticalmenu.css">
+	<link rel="STYLESHEET" type="text/css" href="../../style/pwdwidget.css" />
+    <link rel="STYLESHEET" type="text/css" href="../../style/fg_membersite.css" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         
 </head>
@@ -51,13 +51,13 @@ require_once("./include/membersite_config.php");
 		  
 <div class="dropdownmenu">
         <ul id="nav">
-            <li class='active'><a href='index_loggedin.php'>Avaleht</a></li>
+            <li class='active'><a href='../../index_loggedin.php'>Avaleht</a></li>
             <li><a href="#">Seaded</a>
                 <div>
                     <ul>
-                        <li><a href='register.php'>Registreerimine</a></li>
-                        <li><a href='change-pwd.php'>Muuda parooli</a></li>
-						<li><a href='logout.php'>Logi välja</a></li>
+                        <li><a href='../../register.php'>Registreerimine</a></li>
+                        <li><a href='../../change-pwd.php'>Muuda parooli</a></li>
+						<li><a href='../../logout.php'>Logi välja</a></li>
                        
                     </ul>
                 </div>
@@ -92,7 +92,7 @@ require_once("./include/membersite_config.php");
                     </ul>
                 </div>
             </li>
-            <li><a href="contact.php">  Kontakt  </a></li>
+            <li><a href="../../contact.php">  Kontakt  </a></li>
 			<li><a href="#">           </a></li>
 			
             <li class="pad"></li>
@@ -220,7 +220,7 @@ What will you gain?<br>
 
       <h3>Leave a Comment</h3>
 
-      <form action="web/comment-sys/post_comment.php" method="post" id="commentform">
+      <form action="../comment-sys/post_comment.php" method="post" id="commentform">
 
         <label for="comment_author" class="required">Your name</label>
         <input type="text" name="comment_author" id="comment_author" value="" tabindex="1" required="required">
