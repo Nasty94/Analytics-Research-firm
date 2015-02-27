@@ -50,7 +50,7 @@
                 <div>
                     <ul>
 					    
-                        <li><a href='../../../login.php'>Log out</a></li>
+                        <li><a href='../../../logout.php'>Log out</a></li>
                        
                     </ul>
                 </div>
@@ -76,7 +76,7 @@
             <li><a href="#">Blog</a>
                 <div>
                     <ul>
-                        <li><a href="../../article/articele-sample.php">Article 1</a></li>
+                        <li><a href="../../article/articele_sample.php">Article 1</a></li>
                         <li><a href="#">Page 2</a></li>
                         <li><a href="#">Page 3</a></li>
                         <li><a href="#">Page 4</a></li>

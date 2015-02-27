@@ -43,7 +43,7 @@ if(isset($_POST['submitted']))
 		  <div id="bottom"></div>
 		  <div id="english">
 		  <br>
-		  <a id="eng" href="register-eng.php">EST</a>&nbsp;&nbsp;
+		  <a id="eng" href="../../../register.php">EST</a>&nbsp;&nbsp;
 		  </div>
 		  
 		  <div id="img">
@@ -57,7 +57,7 @@ if(isset($_POST['submitted']))
             <li><a href="#">My account</a>
                 <div>
                     <ul>
-                        <li><a href='../../../register.php'>Create an account</a></li>
+                        <li><a href='register_eng.php'>Create an account</a></li>
                         <li><a href='../../../login.php'>Log in</a></li>
                        
                     </ul>
@@ -85,7 +85,7 @@ if(isset($_POST['submitted']))
             <li><a href="#">Blog</a>
                 <div>
                     <ul>
-                        <li><a href="../../article/article-sample.php">Article 1</a></li>
+                        <li><a href="../../article/article_sample.php">Article 1</a></li>
                         <li><a href="#">Page 2</a></li>
                         <li><a href="#">Page 3</a></li>
                         <li><a href="#">Page 4</a></li>
