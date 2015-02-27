@@ -107,15 +107,18 @@ if(isset($_POST['submitted']))
     </div>
 	  
 
-		  <div id="main">
-	
-		   <div id="white-box" >
-		   <!-- Form Code Start -->
-		   <a href="javascript:enable();" >Võta ühendust...</a>
+		 <!--  <a href="javascript:enable();" >Võta ühendust...</a>
 			   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
                <img id="facebook" src="img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
-			   <br>
+			   <br>-->
+		   		   
+<div id="main" style="height:1000px">
+	<h2>Tere, <?= $fgmembersite->UserFullName(); ?>!</h2>
+
+<div id="white-box" >
+
+<!-- Form Code Start -->
 <div id='fg_membersite_form'>
 <form id='register' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
 <fieldset >
@@ -156,37 +159,31 @@ if(isset($_POST['submitted']))
 </fieldset>
 </form>	
 
-		   		   
-
-              <div id="contentInt">
+<div id="contentInt">
                  <noscript>
                         <p class="note">You have disabled Javascript. This website will not function without it.</p>
-                 </noscript>
-				 
-				  <h4>"The secret of business is to know something that nobody else knows."<br>
-                        <!--<sub>The purpose of this survey is to test the reliability of the system.</sub>-->
-                        <sub>(c)Aristottle Onassis</sub><br></h4><br>
-				
-					  
+                 </noscript>                  
+
+<div class="center">
+    
+<div id='verticalmenu'>
+<ul>
+   <li class='active has-sub'><a href='#'><span>Minu tellimused</span></a>
+      <ul>
+         <li><a href='make_order.php'><span>Tellimuse tegemine</span></a></li>
+         <li><a href='client_orders.php'><span>Tellimuste ajalugu</span></a></li>
+      </ul>
+   </li>
+   <li class='last'><a href='clients_data.php'><span>Minu andmed</span></a></li>
+</ul>
+</div> 
+
+</div><!--center-->
+</div><!--contentInt-->
 	
-               <FORM name="mainform" id="FORMmain">
-
-			   		<div class="center">
-					
-					Kontakti info
-                </div> <!--center-->
-
-
-			  
-			   
-		       </div> <!--mainform-->
-			   
-		      </div> <!--contentInt-->
-			  
-		      </div> <!-- white box -->
-			  
-			  
-		    </div> <!-- main -->
+ </div>  <!-- fg_membersite_form -->   		   
+	</div> <!-- white box --> 
+	</div> <!-- main -->  
 
 		  
 		  <div id="footer">
