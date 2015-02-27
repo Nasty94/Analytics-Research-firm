@@ -48,7 +48,7 @@ if(isset($_POST['submitted']))
 		  <div id="english">
 		  <br>
 		  <a id="eng" href="lang/eng/index_eng.html">ENG</a>&nbsp;&nbsp;
-		  <a id="eng" href="lang/rus/index_rus.html">RUS</a>
+	
 		  </div>
 		  <div id="img">
           
@@ -114,8 +114,10 @@ if(isset($_POST['submitted']))
 
 <div id="white-box" >
 <div class="center">
+    <h1>Kontakt</h1>
+	<br>
     <img id="facebook" src="img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
-
+    <br>
 
 </div><!--center-->
 <a href="javascript:enable();" >Võta ühendust...</a>
@@ -169,11 +171,7 @@ if(isset($_POST['submitted']))
                         <p class="note">You have disabled Javascript. This website will not function without it.</p>
                  </noscript>                  
 
-<div class="center">
-    
 
-
-</div><!--center-->
 </div><!--contentInt-->
 	
  </div>  <!-- fg_membersite_form -->   		   
