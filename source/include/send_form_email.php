@@ -244,7 +244,8 @@ $headers = 'From: '.$email_from."\r\n".
 
 <div id="white-box" >
 <div class="center">
-    Äitah! Vastem Teile tellimusele esimesel võimalusel!
+    <br><br><br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Äitah! Vastame Teile tellimusele esimesel võimalusel!
 
 </div><!--center-->
 
