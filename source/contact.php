@@ -132,6 +132,7 @@ if(isset($_POST['submitted']))
 <legend>Minu tellimus</legend>
 
 <input type='hidden' name='submitted' id='submitted' value='1'/>
+<input type='text'  class='spmhidip' name='<?php echo $fgmembersite->GetSpamTrapInputName(); ?>' />
 <div class='short_explanation'>* required fields</div>
 <div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
 
