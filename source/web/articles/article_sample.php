@@ -20,7 +20,7 @@ $has_comments = (count($comments) > 0);
 	<meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Minu konto</title>
+    <title>Artikkel 1</title>
      
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="../../script.js"></script>	
@@ -187,11 +187,11 @@ What will you gain?<br>
 
 	  
 	  <header>
-			<h2>Comments</h2>
+			<h2>Tagasiside</h2>
 		</header>
 
     <ol id="posts-list" class="hfeed<?php echo($has_comments?' has-comments':''); ?>">
-      <li class="no-comments">Be the first to add a comment.</li>
+      <li class="no-comments">Jaga oma arvamusega!</li>
       <?php
         foreach ($comments as &$comment) {
           ?>
@@ -217,17 +217,17 @@ What will you gain?<br>
 		
 		<div id="respond">
 
-      <h3>Leave a Comment</h3>
+      <h3>Mida Sina arvad artiklist?</h3>
 
       <form action="../comment-sys/post_comment.php" method="post" id="commentform">
 
-        <label for="comment_author" class="required">Your name</label>
+        <label for="comment_author" class="required">Nimi</label>
         <input type="text" name="comment_author" id="comment_author" value="" tabindex="1" required="required">
         
-        <label for="email" class="required">Your email</label>
+        <label for="email" class="required">Email</label>
         <input type="email" name="email" id="email" value="" tabindex="2" required="required">
 
-        <label for="comment" class="required">Your message</label>
+        <label for="comment" class="required">Sinu arvamus</label>
         <textarea name="comment" id="comment" rows="10" tabindex="4"  required="required"></textarea>
 
         <input type="hidden" name="comment_post_ID" value="<?php echo($comment_post_ID); ?>" id="comment_post_ID" />

@@ -7,7 +7,7 @@ if(isset($_POST['submitted']))
    {
      if($fgmembersite->IsAdmin()==0)
 	 {
-	 $fgmembersite->RedirectToURL("admin.php");
+	 $fgmembersite->RedirectToURL("./web/admin/admin.php");
 	 }
        
      else{
