@@ -6,7 +6,6 @@ $comments = $db->get_comments($comment_post_ID);
 $has_comments = (count($comments) > 0);
 
 
-require_once("../../include/membersite_config.php");
 
 ?>
 
