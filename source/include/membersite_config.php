@@ -8,7 +8,7 @@ $fgmembersite = new FGMembersite();
 $fgmembersite->SetWebsiteName('consultingLK.com');
 
 //Provide the email address where you want to get notifications
-$fgmembersite->SetAdminEmail('Nasty95@consultingLK.com');
+$fgmembersite->SetAdminEmail('anastassia.ivanova.94@gmail.com');
 
 //Provide your database login details here:
 //hostname, user name, password, database name and table name

@@ -794,6 +794,7 @@ class FGMembersite
             $this->HandleError("Failed sending user welcome email.");
             return false;
         }
+		$this->SendAdminIntimationEmail($formvars);
         return true;
     }
     
