@@ -111,6 +111,11 @@ if(isset($_POST['submitted']))
 	
 		   <div id="white-box" >
 		   <!-- Form Code Start -->
+		   <a href="javascript:enable();" >Võta ühendust...</a>
+			   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+               <img id="facebook" src="img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
+			   <br>
 <div id='fg_membersite_form'>
 <form id='register' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
 <fieldset >
@@ -171,22 +176,9 @@ if(isset($_POST['submitted']))
 					Kontakti info
                 </div> <!--center-->
 
-               </FORM>
-			   <FORM name="subform" id="FORM">
-
-                    <br>
-			   		<div class="center">
-					
-					Kontakt
-                </div> <!--center-->
-
-               </FORM>
 
 			  
-			   <a href="javascript:enable();" >Võta ühendust...</a>
-			   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-               <img id="facebook" src="img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
+			   
 		       </div> <!--mainform-->
 			   
 		      </div> <!--contentInt-->
