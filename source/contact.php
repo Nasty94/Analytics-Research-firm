@@ -128,7 +128,7 @@ if(isset($_POST['submitted']))
 <br>			   
 <!-- Form Code Start -->
 <div id='fg_membersite_form'>
-<form name="contactform" method="post" action="send_form_email.php">
+<form name="contactform" method="post" action="./include/send_form_email.php">
  
 <table width="450px">
  
