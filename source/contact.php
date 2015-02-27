@@ -115,6 +115,9 @@ if(isset($_POST['submitted']))
 <div id="white-box" >
 <div class="center">
     Kontakt
+	<br><br>
+	Email: leena.ivanova@yahoo.com
+	Tel: XXXXXX
 	<br>
     <img id="facebook" src="img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
     <br>
