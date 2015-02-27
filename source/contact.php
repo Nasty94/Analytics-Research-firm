@@ -34,8 +34,15 @@ if(isset($_POST['submitted']))
 		
 		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 		<script src="js/disable.js"></script>
+			
+        <script src="script.js"></script>	
+        <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
+        <script src="scripts/pwdwidget.js" type="text/javascript"></script>   
 		<script src="scripts/jquery-1.11.0.min.js"></script>
-
+		<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
+        <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
+	    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+   
 
     </head>
 	<body> 
