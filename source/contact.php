@@ -24,6 +24,7 @@ if(isset($_POST['submitted']))
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="script.js"></script>	
     <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
+	<script src="js/disable.js"></script>
     <script src="scripts/pwdwidget.js" type="text/javascript"></script>   
 	
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
@@ -112,12 +113,16 @@ if(isset($_POST['submitted']))
 	
 
 <div id="white-box" >
-<a href="javascript:enable();" >Võta ühendust...</a>
-			   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="center">
+    <img id="facebook" src="img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
 
-               <img id="facebook" src="img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
+
+</div><!--center-->
+<a href="javascript:enable();" >Võta ühendust...</a>
 			   <br>
-			   
+
+<FORM name="subform" id="FORM">
+<br>			   
 <!-- Form Code Start -->
 <div id='fg_membersite_form'>
 <form id='register' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
@@ -158,7 +163,7 @@ if(isset($_POST['submitted']))
 
 </fieldset>
 </form>	
-
+ </FORM>
 <div id="contentInt">
                  <noscript>
                         <p class="note">You have disabled Javascript. This website will not function without it.</p>
