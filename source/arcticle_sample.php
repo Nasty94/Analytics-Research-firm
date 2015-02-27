@@ -52,12 +52,12 @@ require_once("./include/membersite_config.php");
 <div class="dropdownmenu">
         <ul id="nav">
             <li class='active'><a href='index_loggedin.php'>Avaleht</a></li>
-            <li><a href="#">Seaded</a>
+            <li><a href="#">Minu kontro</a>
                 <div>
                     <ul>
-                        <li><a href='register.php'>Registreerimine</a></li>
+                        <li><a href='register.php'>Uus kasutaja</a></li>
                         <li><a href='change-pwd.php'>Muuda parooli</a></li>
-						<li><a href='logout.php'>Logi välja</a></li>
+						<li><a href='logout.php'>Logi sisse</a></li>
                        
                     </ul>
                 </div>
