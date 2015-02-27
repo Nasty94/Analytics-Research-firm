@@ -43,7 +43,7 @@ if(isset($_POST['submitted']))
 		  <div id="bottom"></div>
 		  <div id="english">
 		  <br>
-		  <a id="eng" href="../../../register.php">EST</a>&nbsp;&nbsp;
+		  <a id="eng" href="register-eng.php">EST</a>&nbsp;&nbsp;
 		  </div>
 		  
 		  <div id="img">
