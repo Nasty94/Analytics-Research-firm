@@ -216,7 +216,7 @@ if(isset($_POST['submitted']))
  
  <td colspan="2" style="text-align:center">
  
-  <input type="submit" value="Submit">   <a href="http://www.freecontactform.com/email_form.php">Email Form</a>
+  <input type="submit" value="Submit">  
  
  </td>
  
@@ -242,24 +242,7 @@ if(isset($_POST['submitted']))
                       © 2015  LK Consulting <br>
 					  This is a proof-of-concept web application.
 		  </div>
-<script type='text/javascript'>
-// <![CDATA[
 
-    var frmvalidator  = new Validator("contact");
-    frmvalidator.EnableOnPageErrorDisplay();
-    frmvalidator.EnableMsgsTogether();
-    frmvalidator.addValidation("name","req","Please provide your name");
-
-    frmvalidator.addValidation("email","req","Please provide your email address");
-
-    frmvalidator.addValidation("email","email","Please provide a valid email address");
-
-    frmvalidator.addValidation("username","req","Please provide a username");
-    
-    frmvalidator.addValidation("password","req","Please provide a password");
-
-// ]]>
-</script>
 
 		  	
 	</body>
