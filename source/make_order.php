@@ -81,7 +81,7 @@ if(!$fgmembersite->CheckLogin())
             <li><a href="#">Blog</a>
                 <div>
                     <ul>
-                        <li><a href="arcticle_sample.php">Page 1</a></li>
+                        <li><a href="web/articles/article_sample.php">Artikkel 1</a></li>
                         <li><a href="#">Page 2</a></li>
                         <li><a href="#">Page 3</a></li>
                         <li><a href="#">Page 4</a></li>

@@ -1,5 +1,5 @@
 <?php
-require('Persistence.php');
+require('web/comment-sys/Persistence.php');
 $comment_post_ID = 1;
 $db = new Persistence();
 $comments = $db->get_comments($comment_post_ID);
@@ -16,7 +16,7 @@ require_once("./include/membersite_config.php");
 
 	<meta charset="utf-8" />
 	
-	<link rel="stylesheet" href="css/main.css" type="text/css" />
+	<link rel="stylesheet" href="style/comment-main.css" type="text/css" />
 	<meta http-equiv="Content type" content="text/html; charset=ISO-8859-1">
 	<meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -220,7 +220,7 @@ What will you gain?<br>
 
       <h3>Leave a Comment</h3>
 
-      <form action="post_comment.php" method="post" id="commentform">
+      <form action="web/comment-sys/post_comment.php" method="post" id="commentform">
 
         <label for="comment_author" class="required">Your name</label>
         <input type="text" name="comment_author" id="comment_author" value="" tabindex="1" required="required">
