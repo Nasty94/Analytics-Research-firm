@@ -45,7 +45,7 @@ $has_comments = (count($comments) > 0);
 		  
 		  <div id="img">
      		 
-		  <img src="img/LK.jpg" width=auto height=auto>
+		  <img src="../../img/LK.jpg" width=auto height=auto>
 		  </div <!-- img -->
 		  
 <div class="dropdownmenu">
