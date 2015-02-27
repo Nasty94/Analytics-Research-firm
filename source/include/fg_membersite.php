@@ -747,56 +747,7 @@ class FGMembersite
         }
         return true;
     }
-	function CollectOrderSubmission(&$formvars)
-    {
-        $formvars['name'] = $this->Sanitize($_POST['name']);
-	   
-        $formvars['email'] = $this->Sanitize($_POST['email']);
-		$formvars['phone_number'] = $this->Sanitize($_POST['phone_number']);
-        $formvars['order'] = $this->Sanitize($_POST['order']);
-   
-    }
-	function SendOrder(&$user_rec)
-    {
-		require 'PHPMailerAutoload.php';
-		$mailer = new PHPMailer;
-		//$mailer->SMTPDebug = 2;
-		//$mailer->Debugoutput = 'html';
-        
-        $mailer->CharSet = 'utf-8';
-		$mailer->IsSMTP();
-		$mailer->Host = 'smtp.gmail.com';
-		$mailer->Port = 587;
-		$mailer->SMTPSecure = 'tls';
-		$mailer->SMTPAuth = TRUE;
-		$mailer->Username = 'lkcmailer@gmail.com';  
-		$mailer->Password = 'lkconsulting';
-        $mailer->addReplyTo('lkcmailer@gmail.com', 'First Last');  
-        $mailer->AddAddress($user_rec['email'],$user_rec['name']);
-        
-        //$mailer->Subject = "Your registration with ".$this->sitename;
 
-        $mailer->setFrom($this->GetFromAddress(),"lkcmailer");
-		
-
-        
-        $mailer->Subject = "New order received from ".$this->Sanitize($_POST['name']);
-
-        $mailer->From = $this->Sanitize($_POST['email']);       
-        
-        $mailer->Body ="Hello this is your new order: ".
-        "Phone number ".$this->Sanitize($_POST['phone_number']).
-
-        $this->Sanitize($_POST['order']);
-
-        if(!$mailer->Send())
-        {
-            $this->HandleError("Failed sending user welcome email.");
-            return false;
-        }
-		$this->SendAdminIntimationEmail($formvars);
-        return true;
-    }
     
     function SaveToDatabase(&$formvars)
     {

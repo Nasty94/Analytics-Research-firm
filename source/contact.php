@@ -188,10 +188,8 @@ if(isset($_POST['submitted']))
 		  </div>
 <script type='text/javascript'>
 // <![CDATA[
-    var pwdwidget = new PasswordWidget('thepwddiv','password');
-    pwdwidget.MakePWDWidget();
-    
-    var frmvalidator  = new Validator("register");
+
+    var frmvalidator  = new Validator("contact");
     frmvalidator.EnableOnPageErrorDisplay();
     frmvalidator.EnableMsgsTogether();
     frmvalidator.addValidation("name","req","Please provide your name");
