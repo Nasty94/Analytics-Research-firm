@@ -114,7 +114,7 @@ if(isset($_POST['submitted']))
 
 <div id="white-box" >
 <div class="center">
-    <h1>Kontakt</h1>
+    Kontakt
 	<br>
     <img id="facebook" src="img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
     <br>
