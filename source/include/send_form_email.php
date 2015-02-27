@@ -151,7 +151,6 @@ if(isset($_POST['submitted']))
 
 ?>
 
-<!DOCTYPE html >
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="et">
 <head>
@@ -159,6 +158,8 @@ if(isset($_POST['submitted']))
 	<meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
     <title>Äitah!</title>
      
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
