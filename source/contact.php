@@ -107,17 +107,17 @@ if(isset($_POST['submitted']))
     </div>
 	  
 
-		 <!--  <a href="javascript:enable();" >Võta ühendust...</a>
+		   		   
+<div id="main" style="height:1000px">
+	
+
+<div id="white-box" >
+<a href="javascript:enable();" >Võta ühendust...</a>
 			   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
                <img id="facebook" src="img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
-			   <br>-->
-		   		   
-<div id="main" style="height:1000px">
-	<h2>Tere, <?= $fgmembersite->UserFullName(); ?>!</h2>
-
-<div id="white-box" >
-
+			   <br>
+			   
 <!-- Form Code Start -->
 <div id='fg_membersite_form'>
 <form id='register' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
@@ -125,29 +125,29 @@ if(isset($_POST['submitted']))
 <legend>Minu tellimus</legend>
 
 <input type='hidden' name='submitted' id='submitted' value='1'/>
-
+<div class='short_explanation'>* required fields</div>
 <div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
 
 <div class='container'>
     <label for="name" >Nimi:</label><br/>
-    <input type='text' name='name' id='name' value='<?php echo $fgmembersite->UserFullName() ?>' maxlength="50" required="required" /><br/>   
+    <input type='text' name='name' id='name' value='<?php echo $fgmembersite->SafeDisplay('name') ?>' maxlength="50" /><br/>
     <div id='register_password_errorloc' class='error' style='clear:both'></div>
 </div>
 
 <div class='container'>
     <label for='email' >Email:</label><br/>
-    <input type='text' name='email' id='email' value='<?php echo $fgmembersite->UserEmail() ?>' maxlength="50" required="required"/><br/>
+    <input type='text' name='email' id='email' value='<?php echo $fgmembersite->SafeDisplay('email') ?>' maxlength="50" /><br/>
     <span id='register_email_errorloc' class='error'></span>
 </div>
 
 <div class='container'>
     <label for='phone_number' >Mobiilinumber:</label><br/>
-    <input type='text' name='phone_number' id='phone_number' value='<?php echo $fgmembersite->UserPhoneNumber() ?>' maxlength="50" /><br/>
+    <input type='text' name='phone_number' id='phone_number' value='<?php echo $fgmembersite->SafeDisplay('phone_number') ?>' maxlength="50" /><br/>
     <span id='register_phone_number_errorloc' class='error'></span>
 </div>
 
 <div class='container'>
-    <label for="order" >Tellimuse kirjeldus:</label><br/>
+    <label for="order" >Tellimuse kirjeldus*:</label><br/>
     <textarea name='order' id='order' maxlength="2000" rows="3" required="required"></textarea>   
     <div id='register_password_errorloc' class='error' style='clear:both'></div>
 </div>
@@ -166,17 +166,7 @@ if(isset($_POST['submitted']))
 
 <div class="center">
     
-<div id='verticalmenu'>
-<ul>
-   <li class='active has-sub'><a href='#'><span>Minu tellimused</span></a>
-      <ul>
-         <li><a href='make_order.php'><span>Tellimuse tegemine</span></a></li>
-         <li><a href='client_orders.php'><span>Tellimuste ajalugu</span></a></li>
-      </ul>
-   </li>
-   <li class='last'><a href='clients_data.php'><span>Minu andmed</span></a></li>
-</ul>
-</div> 
+
 
 </div><!--center-->
 </div><!--contentInt-->
@@ -194,7 +184,7 @@ if(isset($_POST['submitted']))
 <script type='text/javascript'>
 // <![CDATA[
         
-    var frmvalidator  = new Validator("register");
+    var frmvalidator  = new Validator("contact");
     frmvalidator.EnableOnPageErrorDisplay();
     frmvalidator.EnableMsgsTogether();
     frmvalidator.addValidation("name","req","Please provide your name");
