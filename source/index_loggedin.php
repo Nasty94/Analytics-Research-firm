@@ -34,7 +34,7 @@
 		  <div id="bottom"></div>
 		  <div id="english">
 		  <br>
-		  <a id="eng" href="lang/eng/index_loggedin_eng.php">EST</a>&nbsp;&nbsp;
+		  <a id="eng" href="lang/eng/index_loggedin_eng.php">ENG</a>&nbsp;&nbsp;
 		  </div>
 		  
 		  <div id="img">
