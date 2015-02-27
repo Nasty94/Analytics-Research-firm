@@ -1,11 +1,11 @@
 <?PHP
-require_once("./include/membersite_config.php");
+require_once("../../../include/membersite_config.php");
 
 if(isset($_POST['submitted']))
 {
    if($fgmembersite->RegisterUser())
    {
-        $fgmembersite->RedirectToURL("thank-you.html");
+        $fgmembersite->RedirectToURL("../../../thank-you.html");
    }
 }
 
@@ -21,14 +21,14 @@ if(isset($_POST['submitted']))
      
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="script.js"></script>	
-    <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
-    <script src="scripts/pwdwidget.js" type="text/javascript"></script>   
+    <script type='text/javascript' src='../../../scripts/gen_validatorv31.js'></script>
+    <script src="../../../scripts/pwdwidget.js" type="text/javascript"></script>   
 	
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
-	<link rel="stylesheet" href="style/menubar.css">
-	<link rel="stylesheet" href="style/style.css">
-	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
-    <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
+	<link rel="stylesheet" href="../../../style/menubar.css">
+	<link rel="stylesheet" href="../../../style/style.css">
+	<link rel="STYLESHEET" type="text/css" href="../../../style/pwdwidget.css" />
+    <link rel="STYLESHEET" type="text/css" href="../../../style/fg_membersite.css" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         
     	
@@ -43,12 +43,12 @@ if(isset($_POST['submitted']))
 		  <div id="bottom"></div>
 		  <div id="english">
 		  <br>
-		  <a id="eng" href="../../register.php">EST</a>&nbsp;&nbsp;
+		  <a id="eng" href="../../../register.php">EST</a>&nbsp;&nbsp;
 		  </div>
 		  
 		  <div id="img">
      		 
-		  <img src="img/LK.jpg" width=auto height=auto>
+		  <img src="../../../img/LK.jpg" width=auto height=auto>
 		  </div <!-- img -->
 
 <div class="dropdownmenu">
@@ -57,8 +57,8 @@ if(isset($_POST['submitted']))
             <li><a href="#">My account</a>
                 <div>
                     <ul>
-                        <li><a href='../../register.php'>Create an account</a></li>
-                        <li><a href='../../login.php'>Log in</a></li>
+                        <li><a href='../../../register.php'>Create an account</a></li>
+                        <li><a href='../../../login.php'>Log in</a></li>
                        
                     </ul>
                 </div>
@@ -85,7 +85,7 @@ if(isset($_POST['submitted']))
             <li><a href="#">Blog</a>
                 <div>
                     <ul>
-                        <li><a href="#">Page 1</a></li>
+                        <li><a href="../../article/article-sample.php">Article 1</a></li>
                         <li><a href="#">Page 2</a></li>
                         <li><a href="#">Page 3</a></li>
                         <li><a href="#">Page 4</a></li>
@@ -93,7 +93,7 @@ if(isset($_POST['submitted']))
                     </ul>
                 </div>
             </li>
-            <li><a href="#">  Contact  </a></li>
+            <li><a href="../../../contact.php">  Contact  </a></li>
 			<li><a href="#">           </a></li>
 			
             <li class="pad"></li>
@@ -115,7 +115,7 @@ if(isset($_POST['submitted']))
 <div id='fg_membersite'>
 <form id='register' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
 <fieldset >
-<legend>Registreerimisvorm</legend>
+<legend>Registration field</legend>
 
 <input type='hidden' name='submitted' id='submitted' value='1'/>
 

@@ -2,7 +2,7 @@
 
 <!DOCTYPE html >
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="et">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 	<head>	
 
 		<meta http-equiv="Content type" content="text/html; charset=ISO-8859-1">
@@ -13,18 +13,17 @@
 		<title>LK Consulting</title>
 		
 	    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="../../style/alertify.core.css" type="text/css">
-        <link rel="stylesheet" href="../../style/style.css" type="text/css">
+        <link rel="stylesheet" href="../../../style/alertify.core.css" type="text/css">
+        <link rel="stylesheet" href="../../../style/style.css" type="text/css">
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
-		<link rel="stylesheet" href="../../style/menubar.css" type="text/css" media="all">
-		<link rel="stylesheet" type="text/css" href="../../style/style.css">
-        
-		
+		<link rel="stylesheet" href="../../../style/menubar.css" type="text/css" media="all">
+		<link rel="stylesheet" type="text/css" href="../../../style/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../style/alertify.core.css>
+
 		
 		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-		<script src="../../js/disable.js"></script>
-		<script src="../../scripts/jquery-1.11.0.min.js"></script>
-
+		<script src="script.js"></script>
+		
 
     </head>
 	<body> 
@@ -33,29 +32,30 @@
 		  <div id="right"></div>
 		  <div id="top"></div>
 		  <div id="bottom"></div>
-		  
 		  <div id="english">
 		  <br>
-		  <a id="eng" href="../../index.html">EST</a>&nbsp;&nbsp;
+		  <a id="eng" href="../../../index_loggedin.php">EST</a>&nbsp;&nbsp;
+	
 		  </div>
+		  
 		  <div id="img">
-          
-		  <img src="../../img/LK.jpg" width=auto height=auto>
-		  </div> <!-- img -->
+     		 
+		  <img src="../../../img/LK.jpg" width=auto height=auto>
+		  </div <!-- img -->
 		  
        <div class="dropdownmenu">
         <ul id="nav">
             <li class='active'><a href='#'>Home</a></li>
-            <li><a href="#">My account</a>
+            <li><a href="../../../login-home.php">My account</a>
                 <div>
                     <ul>
-                        <li><a href='../../register.php'>Create an account</a></li>
-                        <li><a href='../../login.php'>Log in</a></li>
+					    
+                        <li><a href='../../../login.php'>Log out</a></li>
                        
                     </ul>
                 </div>
             </li>
-			<li><a href="#">Who we are?</a>
+            <li><a href="#">Who we are?</a>
                 <div>
                     <ul>
                         <li><a href="#">Our specialists</a></li>
@@ -73,11 +73,10 @@
                     </ul>
                 </div>
             </li>
-            
             <li><a href="#">Blog</a>
                 <div>
                     <ul>
-                        <li><a href="#">Page 1</a></li>
+                        <li><a href="../../article/articele-sample.php">Article 1</a></li>
                         <li><a href="#">Page 2</a></li>
                         <li><a href="#">Page 3</a></li>
                         <li><a href="#">Page 4</a></li>
@@ -85,7 +84,7 @@
                     </ul>
                 </div>
             </li>
-            <li><a href="#">  Contact  </a></li>
+            <li><a href="../../../contact.php">  Contact  </a></li>
 			<li><a href="#">           </a></li>
 			
             <li class="pad"></li>
@@ -107,13 +106,10 @@
                  <noscript>
                         <p class="note">You have disabled Javascript. This website will not function without it.</p>
                  </noscript>
-                     <h4>"The secret of business is to know something that nobody else knows."<br>
-                        <!--<sub>The purpose of this survey is to test the reliability of the system.</sub>-->
-                        <sub>(c)Aristottle Onassis</sub></h4>
-						<br>
+                      <h1></h1>
 					  
 	
-               <FORM name="mainform" id="FORMmain">
+               <FORM name="mainform">
 
 			   		<div class="center">
 					
@@ -131,23 +127,11 @@
                     Exploit the value of your brand
 					
                     Gauge customer satisfaction and loyalty
-  
+					<a href="#"><div>read more</div></a>
+				  
                 </div> <!--center-->
 
                </FORM>
-			   <FORM name="subform" id="FORM">
-                    <br>
-			   		<div class="center">
-					
-					.....
-                </div> <!--center-->
-
-               </FORM>
-
-			   <!--<input type='button' id='activate' name='Activate' class="URL" value='Loe rohkem...'  onclick="enable()";> <br><br>-->
-			   <a href="javascript:enable();" >Read more...</a>
-
-                   
 
 		       </div> <!--mainform-->
 		      </div> <!--contentInt-->
