@@ -150,7 +150,7 @@ if(isset($_POST['submitted']))
 
 </fieldset>
 </form>	
-</div>
+
 		   		   
 
               <div id="contentInt">
@@ -205,7 +205,7 @@ if(isset($_POST['submitted']))
 <script type='text/javascript'>
 // <![CDATA[
         
-    var frmvalidator  = new Validator("contact");
+    var frmvalidator  = new Validator("register");
     frmvalidator.EnableOnPageErrorDisplay();
     frmvalidator.EnableMsgsTogether();
     frmvalidator.addValidation("name","req","Please provide your name");
