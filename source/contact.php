@@ -128,47 +128,103 @@ if(isset($_POST['submitted']))
 <br>			   
 <!-- Form Code Start -->
 <div id='fg_membersite_form'>
-<form id='register' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
-<fieldset >
-<legend>Minu tellimus</legend>
-
-<input type='hidden' name='submitted' id='submitted' value='1'/>
-<input type='text'  class='spmhidip' name='<?php echo $fgmembersite->GetSpamTrapInputName(); ?>' />
-
-<div class='short_explanation'>* required fields</div>
-<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
-
-<div class='container'>
-    <label for="name" >Nimi:</label><br/>
-    <input type='text' name='name' id='name' value='<?php echo $fgmembersite->SafeDisplay('name') ?>' maxlength="50" /><br/>
-    <div id='register_password_errorloc' class='error' ></div>
-</div>
-
-<div class='container'>
-    <label for='email' >Email:</label><br/>
-    <input type='text' name='email' id='email' value='<?php echo $fgmembersite->SafeDisplay('email') ?>' maxlength="50" /><br/>
-    <span id='register_email_errorloc' class='error'></span>
-</div>
-
-<div class='container'>
-    <label for='phone_number' >Mobiilinumber:</label><br/>
-    <input type='text' name='phone_number' id='phone_number' value='<?php echo $fgmembersite->SafeDisplay('phone_number') ?>' maxlength="50" /><br/>
-    <span id='register_phone_number_errorloc' class='error'></span>
-</div>
-
-<div class='container'>
-    <label for="order" >Tellimuse kirjeldus*:</label><br/>
-    <textarea name='order' id='order' maxlength="2000" rows="3" required="required"></textarea>   
-    <div id='register_password_errorloc' class='error' ></div>
-</div>
-
-<div class='container'>
-    <input type='submit' name='Submit' value='Submit' />
-</div>
-
-</fieldset>
-</form>	
-
+<form name="contactform" method="post" action="send_form_email.php">
+ 
+<table width="450px">
+ 
+<tr>
+ 
+ <td valign="top">
+ 
+  <label for="first_name">First Name *</label>
+ 
+ </td>
+ 
+ <td valign="top">
+ 
+  <input  type="text" name="first_name" maxlength="50" size="30">
+ 
+ </td>
+ 
+</tr>
+ 
+<tr>
+ 
+ <td valign="top"">
+ 
+  <label for="last_name">Last Name *</label>
+ 
+ </td>
+ 
+ <td valign="top">
+ 
+  <input  type="text" name="last_name" maxlength="50" size="30">
+ 
+ </td>
+ 
+</tr>
+ 
+<tr>
+ 
+ <td valign="top">
+ 
+  <label for="email">Email Address *</label>
+ 
+ </td>
+ 
+ <td valign="top">
+ 
+  <input  type="text" name="email" maxlength="80" size="30">
+ 
+ </td>
+ 
+</tr>
+ 
+<tr>
+ 
+ <td valign="top">
+ 
+  <label for="telephone">Telephone Number</label>
+ 
+ </td>
+ 
+ <td valign="top">
+ 
+  <input  type="text" name="telephone" maxlength="30" size="30">
+ 
+ </td>
+ 
+</tr>
+ 
+<tr>
+ 
+ <td valign="top">
+ 
+  <label for="comments">Comments *</label>
+ 
+ </td>
+ 
+ <td valign="top">
+ 
+  <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
+ 
+ </td>
+ 
+</tr>
+ 
+<tr>
+ 
+ <td colspan="2" style="text-align:center">
+ 
+  <input type="submit" value="Submit">   <a href="http://www.freecontactform.com/email_form.php">Email Form</a>
+ 
+ </td>
+ 
+</tr>
+ 
+</table>
+ 
+</form>
 <div id="contentInt">
                  <noscript>
                         <p class="note">You have disabled Javascript. This website will not function without it.</p>
