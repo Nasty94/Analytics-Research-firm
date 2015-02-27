@@ -22,7 +22,7 @@ if(isset($_POST['submitted']))
     <title>Minu konto</title>
      
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <script src="script.js"></script>	
+
     <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
 	<script src="js/disable.js"></script>
     <script src="scripts/pwdwidget.js" type="text/javascript"></script>   
@@ -184,22 +184,7 @@ if(isset($_POST['submitted']))
                       © 2015  LK Consulting <br>
 					  This is a proof-of-concept web application.
 		  </div>
-		  
-<script type='text/javascript'>
-// <![CDATA[
-        
-    var frmvalidator  = new Validator("register");
-    frmvalidator.EnableOnPageErrorDisplay();
-    frmvalidator.EnableMsgsTogether();
-    frmvalidator.addValidation("name","req","Please provide your name");
 
-    frmvalidator.addValidation("email","req","Please provide your email address");
-
-    frmvalidator.addValidation("email","email","Please provide a valid email address");
-
-
-// ]]>
-</script>
 
 		  	
 	</body>
