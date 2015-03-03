@@ -18,7 +18,8 @@ $fgmembersite->InitDB(/*hostname*/'eu-cdbr-azure-north-b.cloudapp.net',
                       /*username*/'bc3106a32eb6a9',
                       /*password*/'ff65da13',
                       /*database name*/'lkconsult',
-                      /*table name*/'users');
+                      /*table name*/'users',
+                      /*table name*/'orders');
 
 //For better security. Get a random string from this link: http://tinyurl.com/randstr
 // and put it here
