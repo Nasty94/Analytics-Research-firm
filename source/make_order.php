@@ -1,11 +1,17 @@
 <?PHP
-require_once("./include/membersite_config.php");
+$fgmembersite->InitDB(/*hostname*/'eu-cdbr-azure-north-b.cloudapp.net',
+                      /*username*/'bc3106a32eb6a9',
+                      /*password*/'ff65da13',
+                      /*database name*/'lkconsult',
+                      /*table name*/'order');
 
 if(!$fgmembersite->CheckLogin())
 {
     $fgmembersite->RedirectToURL("login.php");
     exit;
 }
+
+if
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -102,7 +108,7 @@ if(!$fgmembersite->CheckLogin())
 
 <!-- Form Code Start -->
 <div id='fg_membersite_form'>
-<form id='register' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
+<form id='register' action='<?php echo POST->variables; ?>' method='post' accept-charset='UTF-8'>
 <fieldset >
 <legend>Minu tellimus</legend>
 
