@@ -22,7 +22,8 @@ if(isset($_POST['submitted']))
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="script.js"></script>	
     <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
-    <script src="scripts/pwdwidget.js" type="text/javascript"></script>   
+    <script src="scripts/pwdwidget.js" type="text/javascript"></script>
+    <script src="https://apis.google.com/js/client:platform.js" async defer></script> 
 	
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
 	<link rel="stylesheet" href="style/menubar.css">
@@ -156,6 +157,16 @@ if(isset($_POST['submitted']))
 <div class='container'>
     <input type='submit' name='Submit' value='Submit' />
 </div>
+<div class="container">
+<span id="signinButton">
+  <span
+    class="g-signin"
+    data-callback="onSigninCallback"
+    data-clientid="406295690407-rtsb814i5q4br11tnolgpsm8vcp4m8l4.apps.googleusercontent.com"
+    data-cookiepolicy="single_host_origin"
+    data-scope="profile email">
+  </span>
+</span></div>
 
 </fieldset>
 </form>
@@ -197,6 +208,22 @@ Uses the excellent form validation script from JavaScript-coder.com-->
     frmvalidator.addValidation("password","req","Please provide a password");
 
 // ]]>
+
+  function onSignInCallback(resp) {
+    gapi.client.load('plus', 'v1', apiClientLoaded);
+  }
+
+  function apiClientLoaded() {
+    gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
+  }
+
+  function handleEmailResponse(resp) {
+    var primaryEmail;
+    for (var i=0; i < resp.emails.length; i++) {
+      if (resp.emails[i].type === 'account') primaryEmail = resp.emails[i].value;
+    }
+}
+
 </script>
 
 <!--

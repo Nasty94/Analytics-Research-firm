@@ -29,7 +29,8 @@ if(isset($_POST['submitted']))
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="script.js"></script>	
     <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
-    <script src="scripts/pwdwidget.js" type="text/javascript"></script>   
+    <script src="scripts/pwdwidget.js" type="text/javascript"></script>  
+    <script src="https://apis.google.com/js/client:platform.js" async defer></script> 
 	
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
 	<link rel="stylesheet" href="style/menubar.css">
@@ -37,6 +38,7 @@ if(isset($_POST['submitted']))
 	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
     <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    
 </head>
 <body>
 	
@@ -134,6 +136,17 @@ if(isset($_POST['submitted']))
 <div class='container'>
     <input type='submit' name='Submit' value='Submit' />
 </div>
+<div class="container">
+<span id="signinButton">
+  <span
+    class="g-signin"
+    data-callback="signinCallback"
+    data-clientid="406295690407-rtsb814i5q4br11tnolgpsm8vcp4m8l4.apps.googleusercontent.com"
+    data-cookiepolicy="single_host_origin"
+    data-requestvisibleactions="http://schema.org/AddAction"
+    data-scope="https://www.googleapis.com/auth/plus.login">
+  </span>
+</span></div>
 <div class='short_explanation'><a href='reset-pwd-req.php'>Forgot Password?</a></div>
 </fieldset>
 </form>
@@ -168,6 +181,20 @@ Uses the excellent form validation script from JavaScript-coder.com-->
     frmvalidator.addValidation("password","req","Please provide the password");
 
 // ]]>
+function signinCallback(authResult) {
+  if (authResult['status']['signed_in']) {
+    // Update the app to reflect a signed in user
+    // Hide the sign-in button now that the user is authorized, for example:
+    document.getElementById('signinButton').setAttribute('style', 'display: none');
+  } else {
+    // Update the app to reflect a signed out user
+    // Possible error values:
+    //   "user_signed_out" - User is signed-out
+    //   "access_denied" - User denied access to your app
+    //   "immediate_failed" - Could not automatically log in the user
+    console.log('Sign-in state: ' + authResult['error']);
+  }
+}
 </script>
 </div>
 <!--
