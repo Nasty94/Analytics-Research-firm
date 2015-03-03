@@ -31,7 +31,7 @@ class FGMembersite
         $this->pwd  = $pwd;
         $this->database  = $database;
         $this->tablename = $tablename1;
-        $this->tablenam2 = $tablename2;
+        $this->tablename2 = $tablename2;
       
         
     }
@@ -81,6 +81,36 @@ class FGMembersite
         
         return true;
     }
+
+    // ------------- Code to register user order to db.----------------------------------------------
+
+    function RegisterUserOrder(){
+        if(!isset($_POST['submitted']))
+        {
+           return false;
+        }
+
+        $formvars = array();
+        
+        $this->CollectOrderSubmission($formvars);
+        
+        if(!$this->SaveOrderToDatabase($formvars))
+        {
+            return false;
+        }
+        
+        // Here is the place to put a conformation e-mail function
+
+        //if(!$this->SendUserConfirmationEmail($formvars))
+        //{
+        //    return false;
+        //}
+
+        $this->SendAdminIntimationEmail($formvars);
+        
+        return true;
+    }
+
 
     function ConfirmUser()
     {
@@ -660,6 +690,17 @@ class FGMembersite
         $formvars['password'] = $this->Sanitize($_POST['password']);
    
     }
+
+    // ---------------- Code for order submission -------------------
+
+    function CollectOrderSubmission(&$formvars)
+    {
+        $formvars['name'] = $this->Sanitize($_POST['name']);
+        $formvars['email'] = $this->Sanitize($_POST['email']);
+		$formvars['phone_number'] = $this->Sanitize($_POST['phone_number']);
+        $formvars['order'] = $this->Sanitize($_POST['order']);
+   
+    }
     
     function SendUserConfirmationEmail(&$formvars)
     {
@@ -782,6 +823,28 @@ class FGMembersite
         return true;
     }
     
+    // ---------- Save order to db code here.-------------
+
+     function SaveOrderToDatabase(&$formvars)
+    {
+        if(!$this->DBLogin())
+        {
+            $this->HandleError("Database login failed!");
+            return false;
+        }
+        if(!$this->EnsureOrderstable())
+        {
+            return false;
+        }
+        
+        if(!$this->InsertOrderIntoDB($formvars))
+        {
+            $this->HandleError("Inserting to Database failed!");
+            return false;
+        }
+        return true;
+    }
+
     function IsFieldUnique($formvars,$fieldname)
     {
         $field_val = $this->SanitizeForSQL($formvars[$fieldname]);
@@ -864,12 +927,11 @@ class FGMembersite
       function CreateTableOrders()
     {
     	$qry = "Create Table $this->tablename (".
-                "id_user INT NOT NULL AUTO_INCREMENT ,".
+                "id_order INT NOT NULL AUTO_INCREMENT ,".
                 "name VARCHAR( 128 ) NOT NULL ,".
                 "email VARCHAR( 64 ) NOT NULL ,".
                 "phone_number VARCHAR( 16 ) NOT NULL ,".
-                "username VARCHAR( 16 ) NOT NULL ,".
-                "order_discription VARCHAR( 5000 ) NOT NULL,".
+                "order VARCHAR( 5000 ) NOT NULL,".
                 "PRIMARY KEY ( id_user )".
                 ")";
 	
@@ -927,20 +989,18 @@ class FGMembersite
     function InsertOrderIntoDB(&$formvars)
     {
     
-        $insert_query = 'insert into '.$this->tablename.'(
+        $insert_query = 'insert into orders (
 		name,
 		email,
-		phone_number,
-		username,	
-		order_discription,
+		phone_number,	
+		order,
 		)
 		values
 		(
 		"' . $this->SanitizeForSQL($formvars['name']) . '",
 		"' . $this->SanitizeForSQL($formvars['email']) . '",
 		"' . $this->SanitizeForSQL($formvars['phone_number']) . '",
-		"' . $this->SanitizeForSQL($formvars['username']) . '",
-        "' . $this->SanitizeForSQL($formvars['order_discription']) . '",
+        "' . $this->SanitizeForSQL($formvars['order']) . '",
 		)';  
 
  

@@ -3,16 +3,8 @@ require_once("./include/membersite_config.php");
 
 if(!$fgmembersite->CheckLogin())
 {
-    $fgmembersite->RedirectToURL();
+    $fgmembersite->RedirectToURL("login.php");
     exit;
-}
-
-if(isset($_POST['submitted']))
-{
-   if($fgmembersite->RegisterUserOrder())
-   {
-        $fgmembersite->RedirectToURL("thank_you_order.php");
-   }
 }
 
 ?>
@@ -37,7 +29,6 @@ if(isset($_POST['submitted']))
 	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
     <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="STYLESHEET" type="text/css" href="style/fg_membersite_form.css" />
         
     	
 </head>
@@ -57,17 +48,19 @@ if(isset($_POST['submitted']))
 
 <div class="dropdownmenu">
         <ul id="nav">
-            <li class='active'><a href='#'>Avaleht</a></li>
+            <li class='active'><a href='index_loggedin.php'>Avaleht</a></li>
             <li><a href="login-home.php">Minu konto</a>
                 <div>
                     <ul>
                         
-                        <li><a href='logout.php'>Logi välja</a></li>
+                        <li><a href='change-pwd.php'>Muuda parooli</a></li>
+			<li><a href='logout.php'>Logi välja</a></li>
                        
                     </ul>
                 </div>
             </li>
-			<li><a href="#">Meist</a>
+  
+	    <li><a href="#">Meist</a>
                 <div>
                     <ul>
                         <li><a href="#">Personal</a></li>
@@ -89,7 +82,7 @@ if(isset($_POST['submitted']))
             <li><a href="#">Blog</a>
                 <div>
                     <ul>
-                        <li><a href="web/articles/article_sample.php">Artikkel 1</a></li>
+                        <li><a href="web/articles/article_sample.php">Page 1</a></li>
                         <li><a href="#">Page 2</a></li>
                         <li><a href="#">Page 3</a></li>
                         <li><a href="#">Page 4</a></li>
@@ -103,60 +96,22 @@ if(isset($_POST['submitted']))
             <li class="pad"></li>
         </ul>
     </div>
-
-<div id="main" style="height:1000px">
-	<h2>Tere, <?= $fgmembersite->UserFullName(); ?>!</h2>
-
-<div id="white-box" >
-
-<!-- Form Code Start -->
-<div id='fg_membersite_form'>
-<form id='register' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
-<fieldset >
-<legend>Minu tellimus</legend>
-
-<input type='hidden' name='submitted' id='submitted' value='1'/>
-
-<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
-
-<div class='container'>
-    <label for="name" >Nimi:</label><br/>
-    <input type='text' name='name' id='name' value='<?php echo $fgmembersite->UserFullName() ?>' maxlength="50" required="required" /><br/>   
-    <div id='register_password_errorloc' class='error' style='clear:both'></div>
-</div>
-
-<div class='container'>
-    <label for='email' >Email:</label><br/>
-    <input type='text' name='email' id='email' value='<?php echo $fgmembersite->UserEmail() ?>' maxlength="50" required="required"/><br/>
-    <span id='register_email_errorloc' class='error'></span>
-</div>
-
-<div class='container'>
-    <label for='phone_number' >Mobiilinumber:</label><br/>
-    <input type='text' name='phone_number' id='phone_number' value='<?php echo $fgmembersite->UserPhoneNumber() ?>' maxlength="50" /><br/>
-    <span id='register_phone_number_errorloc' class='error'></span>
-</div>
-
-<div class='container'>
-    <label for="order" >Tellimuse kirjeldus:</label><br/>
-    <textarea name='order' id='order' maxlength="255" rows="3" required="required"></textarea>   
-    <div id='register_password_errorloc' class='error' style='clear:both'></div>
-</div>
-
-<div class='container'>
-    <input type='submit' name='Submit' value='Submit' />
-</div>
-
-</fieldset>
-</form>	
-
-<div id="contentInt">
+	<div id="main">
+	
+	
+	<div id="white-box" >
+        <h2>Aitäh. Tegeleme teie tellimusega esimesel võimalusel!</h2>
+	 <div id="contentInt">
                  <noscript>
                         <p class="note">You have disabled Javascript. This website will not function without it.</p>
-                 </noscript>                  
+                 </noscript>
+                      
+			 
+
 
 <div class="center">
-    
+					
+					
 <div id='verticalmenu'>
 <ul>
    <li class='active has-sub'><a href='#'><span>Minu tellimused</span></a>
@@ -167,21 +122,20 @@ if(isset($_POST['submitted']))
    </li>
    <li class='last'><a href='clients_data.php'><span>Minu andmed</span></a></li>
 </ul>
-</div> 
-
-</div><!--center-->
-</div><!--contentInt-->
-	
- </div>  <!-- fg_membersite_form -->   		   
-	</div> <!-- white box --> 
-	</div> <!-- main -->  
-
-<div id="block" >
-                     
 </div>
+		
 
+</div><!--center--> <!-- Siia tuleb tellimuste lehe sisu, ehk ajalugu tellimuste kohta, lisaks JOIN kasutamine nende kokkupanekul. -->
+</div> <!--contentInt--> 
+		   		   
 
-	<div id="footer">
+             
+	</div> <!-- white box --> 
+	</div> <!-- main -->
+	
+
+		  
+	<div id="footer" >
                       © 2015  LK Consulting <br>
 					  This is a proof-of-concept web application.
 	</div>
