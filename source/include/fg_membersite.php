@@ -24,14 +24,13 @@ class FGMembersite
         $this->rand_key = '0iQx5oBk66oVZep';
     }
     
-    function InitDB($host,$uname,$pwd,$database,$tablename1,$tablename2)
+    function InitDB($host,$uname,$pwd,$database,$tablename)
     {
         $this->db_host  = $host;
         $this->username = $uname;
         $this->pwd  = $pwd;
         $this->database  = $database;
-        $this->tablename = $tablename1;
-        $this->tablename2 = $tablename2;
+        $this->tablename = $tablename;
       
         
     }
@@ -396,7 +395,7 @@ class FGMembersite
          
            
 
-        $qry = "Select name, email, phone_number from $this->tablename where username='$username' and password='$hash'";
+        $qry = "Select name, email, phone_number, id_user from $this->tablename where username='$username' and password='$hash'";
         
         $result = mysqli_query($this->connection,$qry);
         
@@ -412,6 +411,7 @@ class FGMembersite
         $_SESSION['name_of_user']  = $row['name'];
         $_SESSION['email_of_user'] = $row['email'];
 		$_SESSION['phone_of_user'] = $row['phone_number'];
+        $_SESSION['id_of_user'] = $row['id_user'];
 
 	
         
@@ -924,26 +924,7 @@ class FGMembersite
         return true;
     }
     
-      function CreateTableOrders()
-    {
-    	$qry = "Create Table $this->tablename (".
-                "id_order INT NOT NULL AUTO_INCREMENT ,".
-                "name VARCHAR( 128 ) NOT NULL ,".
-                "email VARCHAR( 64 ) NOT NULL ,".
-                "phone_number VARCHAR( 16 ) NOT NULL ,".
-                "order VARCHAR( 5000 ) NOT NULL,".
-                "PRIMARY KEY ( id_user )".
-                ")";
-	
-                
-        if(!mysqli_query($this->connection,$qry))
-        {
-            $this->HandleDBError("Error creating the table \nquery was\n $qry");
-            return false;
-        }
-        return true;
-    }
-
+     
     function InsertIntoDB(&$formvars)
     {
     
@@ -986,21 +967,22 @@ class FGMembersite
         return true;
     }
 
+    function UserID(){
+
+        return isset($_SESSION['id_of_user'])?$_SESSION['id_of_user']:'none';
+        
+    }
+
     function InsertOrderIntoDB(&$formvars)
     {
-    
-        $insert_query = 'insert into orders (
-		name,
-		email,
-		phone_number,	
-		order,
+        $insert_query = 'insert into '.$this->tablename.' (
+		user_id,
+        order_content
 		)
 		values
 		(
-		"' . $this->SanitizeForSQL($formvars['name']) . '",
-		"' . $this->SanitizeForSQL($formvars['email']) . '",
-		"' . $this->SanitizeForSQL($formvars['phone_number']) . '",
-        "' . $this->SanitizeForSQL($formvars['order']) . '",
+        ' . $this->SanitizeForSQL($_SESSION['id_of_user']) . ',
+        "' . $this->SanitizeForSQL($formvars['order']) . '"
 		)';  
 
  
@@ -1011,6 +993,8 @@ class FGMembersite
         }        
         return true;
     }
+
+    
 
     function hashSSHA($password) {
  

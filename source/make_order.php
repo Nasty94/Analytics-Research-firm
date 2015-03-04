@@ -1,5 +1,5 @@
 <?PHP
-require_once("./include/membersite_config.php");
+require_once("./include/order_config.php");
 
 if(!$fgmembersite->CheckLogin())
 {
@@ -144,7 +144,7 @@ if(isset($_POST['submitted']))
 </div>
 
 <div class='container'>
-    <input type='submit' name='Submit' value='Submit' />
+    <input type='submit' name='Submit' value='Sisesta tellimus!' />
 </div>
 
 </fieldset>
