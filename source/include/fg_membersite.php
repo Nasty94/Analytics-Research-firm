@@ -446,7 +446,7 @@ class FGMembersite
         
         $qry = "Update $this->tablename Set confirmcode='y' Where  confirmcode='$confirmcode'";
         
-        if(!mysqli_query( $qry ,$this->connection))
+        if(!mysqli_query( $this->connection,$qry ))
         {
             $this->HandleDBError("Error inserting data to the table\nquery:$qry");
             return false;
