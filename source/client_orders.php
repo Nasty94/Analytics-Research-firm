@@ -26,6 +26,7 @@ if(!$fgmembersite->CheckLogin())
 	<link rel="stylesheet" href="style/menubar.css">
 	<link rel="stylesheet" href="style/style.css">
 	<link rel="stylesheet" href="style/verticalmenu.css">
+    <link rel="stylesheet" href="style/order_history_table.css">
 	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
     <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -109,7 +110,46 @@ if(!$fgmembersite->CheckLogin())
 
 
 <div class="center">
-					
+    <h3>Teie tellimused:</h3>
+    <div class="OrderHistoryTable" >
+                <table >
+                    <thead>
+                        <tr>
+                            <td>
+                                Tellimuse ID
+                            </td>
+                            <td >
+                                Tellija nimi
+                            </td>
+                             <td>
+                                Tellija kontakt
+                            </td>
+                            <td>
+                                Tellimuse kirjeldus
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            $results = $fgmembersite->GetOrderData();
+                            while($row = mysql_fetch_array($results))
+                            {
+                            ?>
+                                <tr> 
+                                    <td>?php echo $numrows ?></td>
+                                    <td>?php echo $row['order_id']?></td>
+                                    <td>?php echo $row['name']</td>
+                                    <td>?php echo $row['email']</td>
+                                    <td>?php echo $row['order_content']</td>
+
+
+                         <?php
+                            }
+                            ?>
+                        
+                    </tbody>
+                </table>
+            </div>	
 					
 <div id='verticalmenu'>
 <ul>
@@ -121,10 +161,10 @@ if(!$fgmembersite->CheckLogin())
    </li>
    <li class='last'><a href='clients_data.php'><span>Minu andmed</span></a></li>
 </ul>
-</div>
-		
+</div>       
 
-</div><!--center--> <!-- Siia tuleb tellimuste lehe sisu, ehk ajalugu tellimuste kohta, lisaks JOIN kasutamine nende kokkupanekul. -->
+
+</div><!--center--> 
 </div> <!--contentInt--> 
 		   		   
 

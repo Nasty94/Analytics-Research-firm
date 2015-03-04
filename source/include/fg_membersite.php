@@ -384,7 +384,7 @@ class FGMembersite
         }          
         $username = $this->SanitizeForSQL($username);
 
-  	$nresult = mysqli_query($this->connection, "SELECT * FROM $this->tablename WHERE username = '$username'") or die(mysqli_error($this->connection));
+  	    $nresult = mysqli_query($this->connection, "SELECT * FROM $this->tablename WHERE username = '$username'") or die(mysqli_error($this->connection));
         // check for result 
         $no_of_rows = mysqli_num_rows($nresult);
   
@@ -889,6 +889,8 @@ class FGMembersite
         }
         return true;
     }
+
+    // ----- This is to ensure that there is an orders table. ---------
     
     function EnsureOrderstable()
     {
@@ -994,6 +996,21 @@ class FGMembersite
         return true;
     }
 
+    //------------- Here is the code to fetch order data from the db. ------------
+
+    function GetOrderData()
+    {
+
+        $sql_orders = "
+            SELECT order_id, name, email, order_content, 
+            FROM $this->tablename 
+            INNER JOIN users 
+            ON orders.user_id = users.id_user
+            ";
+
+        return mysqli_query($this->connection, $sql_orders);
+
+    }
     
 
     function hashSSHA($password) {
