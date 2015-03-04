@@ -434,7 +434,7 @@ class FGMembersite
         }   
         $confirmcode = $this->SanitizeForSQL($_GET['code']);
         
-        $result = mysqli_query("Select name, email from $this->tablename where confirmcode='$confirmcode'",$this->connection);   
+        $result = mysqli_query($this->connection,"Select name, email from $this->tablename where confirmcode='$confirmcode'");   
         if(!$result || mysqli_num_rows($result) <= 0)
         {
             $this->HandleError("Wrong confirm code.");
