@@ -1,5 +1,5 @@
 <?php
-require('../comment-sys/Persistence.php');
+require('../../web/comment-sys/Persistence.php');
 $comment_post_ID = 1;
 $db = new Persistence();
 $comments = $db->get_comments($comment_post_ID);
