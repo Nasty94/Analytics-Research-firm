@@ -83,7 +83,7 @@ $has_comments = (count($comments) > 0);
             <li><a href="#">Blog</a>
                 <div>
                     <ul>
-                        <li><a href="arcticle_sample.php">Näidis</a></li>
+                        <li><a href="#">Näidis</a></li>
                         <li><a href="#">Page 2</a></li>
                         <li><a href="#">Page 3</a></li>
                         <li><a href="#">Page 4</a></li>
