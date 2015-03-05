@@ -50,7 +50,7 @@ $has_comments = (count($comments) > 0);
 		  
 <div class="dropdownmenu">
         <ul id="nav">
-            <li class='active'><a href='../../index_loggedin.php'>Avaleht</a></li>
+            <li class='active'><a href='../../index.html'>Avaleht</a></li>
             <li><a href="#">Minu konto</a>
                 <div>
                     <ul>
