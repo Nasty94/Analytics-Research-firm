@@ -43,7 +43,7 @@ if(!$fgmembersite->CheckLogin())
 		  <div id="img">
      		 
 		  <img src="img/LK.jpg" width=auto height=auto>
-		  </div <!-- img -->
+		  </div> <!-- img -->
 
 
 <div class="dropdownmenu">
@@ -53,8 +53,11 @@ if(!$fgmembersite->CheckLogin())
                 <div>
                     <ul>
                         
+                        <li><a href='clients_data.php'>Minu andmed</a></li>
+                        <li><a href='make_order.php'>Tellimuse tegemine</a></li>
+                        <li><a href='client_orders.php'>Tellimuste ajalugu</a></li>
                         <li><a href='change-pwd.php'>Muuda parooli</a></li>
-		             	<li><a href='logout.php'>Logi välja</a></li>
+			            <li><a href='logout.php'>Logi välja</a></li>
                        
                     </ul>
                 </div>
@@ -170,22 +173,7 @@ if(!$fgmembersite->CheckLogin())
                  </noscript>
 				 
 
-<div class="center">
-
-									
-<div id='verticalmenu' >
-<ul>
-
-
-   <li class='active has-sub'><a href='client_orders.php'><span>Minu tellimused</span></a></li>
-      <ul>
-         <li><a href='make_order.php'><span>Tellimuse tegemine</span></a></li>
-         <li><a href='client_orders.php'><span>Tellimuste ajalugu</span></a></li>
-      </ul>
- 
-   <li class='last'><a href='clients_data.php'><span>Minu andmed</span></a></li>
-</ul>
-</div>
+<div class="center">						
 		
 
 </div><!--center-->

@@ -51,16 +51,20 @@ if(isset($_POST['submitted']))
 		  <div id="img">
      		 
 		  <img src="img/LK.jpg" width=auto height=auto>
-		  </div <!-- img -->
+		  </div> <!-- img -->
 
 <div class="dropdownmenu">
         <ul id="nav">
             <li class='active'><a href='index_loggedin.html'>Avaleht</a></li>
-            <li><a href="#">LMinu konto</a>
+            <li><a href="#">Minu konto</a>
                 <div>
                     <ul>
-                        <li><a href='login-home.php'>Minu konto</a></li>
-                        <li><a href='logout.php'>Logi v'lja</a></li>
+
+                        <li><a href='clients_data.php'>Minu andmed</a></li>
+                        <li><a href='make_order.php'>Tellimuse tegemine</a></li>
+                        <li><a href='client_orders.php'>Tellimuste ajalugu</a></li>
+                        <li><a href='change-pwd.php'>Muuda parooli</a></li>
+			            <li><a href='logout.php'>Logi välja</a></li>
                        
                     </ul>
                 </div>
@@ -144,6 +148,7 @@ if(isset($_POST['submitted']))
 
 </fieldset>
 </form>
+
 <!-- client-side Form Validations:
 Uses the excellent form validation script from JavaScript-coder.com-->
 
@@ -172,6 +177,8 @@ Uses the excellent form validation script from JavaScript-coder.com-->
 
 
 </div>
+
+                           <!-- What is this? A-->
 <!--
 Form Code End (see html-form-guide.com for more info.)
 -->

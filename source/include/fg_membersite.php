@@ -999,6 +999,32 @@ class FGMembersite
 	)";
     $this->mysqli_query_execute($insert_query);
     }
+<<<<<<< HEAD
+    
+    function GetAllOrders()
+    {
+
+        if(!$this->DBLogin())
+        {
+            $this->HandleError("Database login failed!");
+            return false;
+        } 
+        
+        $id_of_user = $_SESSION['id_of_user'];
+
+        $sql_orders = "
+            SELECT order_id, name, email, order_content 
+            FROM orders 
+            INNER JOIN users 
+            ON orders.user_id = users.id_user";
+
+        $result = mysqli_query($this->connection, $sql_orders);
+              
+        return $result;
+
+    }
+=======
+>>>>>>> 47a1d4af121e724d0ead9d98389e75985b9f4df9
 
     function hashSSHA($password) {
  

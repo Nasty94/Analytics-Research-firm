@@ -1,4 +1,14 @@
+<?PHP
+require_once("./include/membersite_config.php");
 
+//if(!$fgmembersite->isAdmin())
+//{
+//    $fgmembersite->RedirectToURL("login.php");
+//    exit;
+//}
+
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
@@ -35,7 +45,7 @@
 		  <div id="img">
      		 
 		  <img src="img/LK.jpg" width=auto height=auto>
-		  </div <!-- img -->
+		  </div> <!-- img -->
 
 <div class="dropdownmenu">
         <ul id="nav">
@@ -43,8 +53,11 @@
             <li><a href="#">Minu konto</a>
                 <div>
                     <ul>
+                        <li><a href='clients_data.php'>Minu andmed</a></li>
+                        <li><a href='all_orders.php'>Tellimuste ajalugu</a></li>
+                        <li><a href='all_users.php'>Klientide kontod</a></li>
                         <li><a href='change-pwd.php'>Muuda parooli</a></li>
-                        <li><a href='login.php'>Logi sisse</a></li>
+			            <li><a href='logout.php'>Logi välja</a></li>
                        
                     </ul>
                 </div>
