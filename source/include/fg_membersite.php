@@ -1029,6 +1029,28 @@ class FGMembersite
 
     }
     
+    function GetAllOrders()
+    {
+
+        if(!$this->DBLogin())
+        {
+            $this->HandleError("Database login failed!");
+            return false;
+        } 
+        
+        $id_of_user = $_SESSION['id_of_user'];
+
+        $sql_orders = "
+            SELECT order_id, name, email, order_content 
+            FROM orders 
+            INNER JOIN users 
+            ON orders.user_id = users.id_user";
+
+        $result = mysqli_query($this->connection, $sql_orders);
+              
+        return $result;
+
+    }
 
     function hashSSHA($password) {
  
