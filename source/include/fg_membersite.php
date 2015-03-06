@@ -160,7 +160,7 @@ class FGMembersite
     }
 	function isAdmin()
 	{
-	   return strcmp('leena.korotych@yahoo.com',$_SESSION['email_of_user']);
+	   return strcmp('anastassia.ivanova.94@gmail.com',$_SESSION['email_of_user']);
 	}
     
     function LogOut()
