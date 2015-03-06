@@ -849,7 +849,9 @@ class FGMembersite
 	         	"salt VARCHAR( 50 ) NOT NULL ,".
                 "password VARCHAR( 80 ) NOT NULL ,".
                 "confirmcode VARCHAR(32) ,".
-                "PRIMARY KEY ( id_user )".
+                "PRIMARY KEY ( id_user ), ".
+                "hybridauth_provider_name, ".
+	            "hybridauth_provider_uid".
                 ")";
 	
                 
@@ -963,7 +965,7 @@ class FGMembersite
  
 	    $result = mysqli_query($this->connection, $sql );
  
-	    if(!$result )
+	    if(!$result)
 	    {
 		    die( printf( "Error: %s\n", mysqli_error($this->connection) ) );
 	    }
