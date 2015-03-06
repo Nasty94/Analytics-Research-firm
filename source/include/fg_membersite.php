@@ -1022,8 +1022,6 @@ class FGMembersite
         return $result;
 
     }
-=======
->>>>>>> 47a1d4af121e724d0ead9d98389e75985b9f4df9
 
     function hashSSHA($password) {
  
