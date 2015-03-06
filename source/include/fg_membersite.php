@@ -979,7 +979,7 @@ class FGMembersite
  
     function create_new_hybridauth_user( $email, $first_name, $last_name, $provider_name, $provider_user_id )
     {
-
+    die("Kohal!");
 	// let generate a random password for the user
 	$password = md5( str_shuffle( "0123456789abcdefghijklmnoABCDEFGHIJ" ) );
     //die($first_name.' '.$last_name);
