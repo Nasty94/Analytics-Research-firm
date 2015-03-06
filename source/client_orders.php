@@ -1,5 +1,6 @@
 <?PHP
 require_once("./include/membersite_config.php");
+require_once("./include/fg_membersite.php");
 
 if(!$fgmembersite->CheckLogin())
 {
@@ -26,6 +27,7 @@ if(!$fgmembersite->CheckLogin())
 	<link rel="stylesheet" href="style/menubar.css">
 	<link rel="stylesheet" href="style/style.css">
 	<link rel="stylesheet" href="style/verticalmenu.css">
+    <link rel="stylesheet" href="style/order_history_table.css">
 	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
     <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -54,7 +56,7 @@ if(!$fgmembersite->CheckLogin())
                     <ul>
                         
                         <li><a href='change-pwd.php'>Muuda parooli</a></li>
-			<li><a href='logout.php'>Logi välja</a></li>
+			            <li><a href='logout.php'>Logi välja</a></li>
                        
                     </ul>
                 </div>
@@ -90,7 +92,7 @@ if(!$fgmembersite->CheckLogin())
                     </ul>
                 </div>
             </li>
-            <li><a href="contact.php">  Kontakt  </a></li>
+            <li><a href="login-contact.php">  Kontakt  </a></li>
 			<li><a href="#">           </a></li>
 			
             <li class="pad"></li>
@@ -109,7 +111,51 @@ if(!$fgmembersite->CheckLogin())
 
 
 <div class="center">
-					
+    <h3>Teie tellimused:</h3>
+    <div class="OrderHistoryTable" >
+                <table >
+                   
+                        <tr>
+                            <th>
+                                Rida
+                            </th>
+                            <th>
+                                ID
+                            </th>
+                            <th>
+                                Tellija nimi
+                            </th>
+                             <th>
+                                Tellija kontakt
+                            </th>
+                            <th>
+                                Tellimuse kirjeldus
+                            </th>
+                        </tr>
+                    
+                    <?php
+                        
+                            $results = $fgmembersite->GetOrderData();
+                            $i = 1;
+                            while($row = mysqli_fetch_array($results))
+                            {
+                            ?>
+                                <tr> 
+                                    <td><?php echo $i ?></td>
+                                    <td><?php echo $row['order_id']?></td>
+                                    <td><?php echo $row['name']?></td>
+                                    <td><?php echo $row['email']?></td>
+                                    <td><?php echo $row['order_content']?></td>
+                                    
+
+                         <?php
+                             $i++;
+                            }
+                            ?>
+                        
+               
+                </table>
+            </div>	
 					
 <div id='verticalmenu'>
 <ul>
@@ -121,10 +167,10 @@ if(!$fgmembersite->CheckLogin())
    </li>
    <li class='last'><a href='clients_data.php'><span>Minu andmed</span></a></li>
 </ul>
-</div>
-		
+</div>       
 
-</div><!--center--> <!-- Siia tuleb tellimuste lehe sisu, ehk ajalugu tellimuste kohta, lisaks JOIN kasutamine nende kokkupanekul. -->
+
+</div><!--center--> 
 </div> <!--contentInt--> 
 		   		   
 

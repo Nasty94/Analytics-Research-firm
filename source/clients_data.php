@@ -54,7 +54,7 @@ if(!$fgmembersite->CheckLogin())
                     <ul>
                         
                         <li><a href='change-pwd.php'>Muuda parooli</a></li>
-			<li><a href='logout.php'>Logi välja</a></li>
+		             	<li><a href='logout.php'>Logi välja</a></li>
                        
                     </ul>
                 </div>
@@ -90,7 +90,7 @@ if(!$fgmembersite->CheckLogin())
                     </ul>
                 </div>
             </li>
-            <li><a href="contact.php">  Kontakt  </a></li>
+            <li><a href="login-contact.php">  Kontakt  </a></li>
 			<li><a href="#">           </a></li>
 			
             <li class="pad"></li>

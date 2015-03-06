@@ -1,5 +1,5 @@
 <?PHP
-require_once("./include/membersite_config.php");
+require_once("./include/order_config.php");
 
 if(!$fgmembersite->CheckLogin())
 {
@@ -9,9 +9,9 @@ if(!$fgmembersite->CheckLogin())
 
 if(isset($_POST['submitted']))
 {
-   if($fgmembersite->RegisterUser())
+   if($fgmembersite->RegisterUserOrder())
    {
-        $fgmembersite->RedirectToURL("thank-you.html");
+        $fgmembersite->RedirectToURL("thank_you_order.php");
    }
 }
 
@@ -26,7 +26,7 @@ if(isset($_POST['submitted']))
     <title>Minu konto</title>
      
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <script src="script.js"></script>	
+    
     <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
     <script src="scripts/pwdwidget.js" type="text/javascript"></script>   
 	
@@ -97,11 +97,12 @@ if(isset($_POST['submitted']))
                     </ul>
                 </div>
             </li>
-            <li><a href="contact.php">  Kontakt  </a></li>
+            <li><a href="login-contact.php">  Kontakt  </a></li>
 			<li><a href="#">           </a></li>
 			
             <li class="pad"></li>
         </ul>
+    </div>
 
 <div id="main" style="height:1000px">
 	<h2>Tere, <?= $fgmembersite->UserFullName(); ?>!</h2>
@@ -138,12 +139,12 @@ if(isset($_POST['submitted']))
 
 <div class='container'>
     <label for="order" >Tellimuse kirjeldus:</label><br/>
-    <textarea name='order' id='order' maxlength="2000" rows="3" required="required"></textarea>   
+    <textarea name='order' id='order' maxlength="255" rows="3" required="required"></textarea>   
     <div id='register_password_errorloc' class='error' style='clear:both'></div>
 </div>
 
 <div class='container'>
-    <input type='submit' name='Submit' value='Submit' />
+    <input type='submit' name='Submit' value='Sisesta tellimus!' />
 </div>
 
 </fieldset>

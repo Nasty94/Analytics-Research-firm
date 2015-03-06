@@ -1,12 +1,10 @@
 <?PHP
 require_once("./include/membersite_config.php");
 
-if(isset($_GET['code']))
+if(!$fgmembersite->CheckLogin())
 {
-   if($fgmembersite->ConfirmUser())
-   {
-        $fgmembersite->RedirectToURL("thank-you-regd.html");
-   }
+    $fgmembersite->RedirectToURL("login.php");
+    exit;
 }
 
 ?>
@@ -17,16 +15,17 @@ if(isset($_GET['code']))
 	<meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Register</title>
+    <title>Minu konto</title>
      
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-	
+    <script src="script.js"></script>	
     <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
     <script src="scripts/pwdwidget.js" type="text/javascript"></script>   
 	
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
 	<link rel="stylesheet" href="style/menubar.css">
 	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="style/verticalmenu.css">
 	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
     <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -44,8 +43,9 @@ if(isset($_GET['code']))
 		  
 		  <div id="img">
      		 
-		  <img src="img/LK.jpg" width=auto height=auto>
-		  </div <!-- img -->
+		  <img src="img/LK.jpg" width=auto height=auto alt="img/LK.jpg">
+		  </div> <!-- img -->
+
 <div class="dropdownmenu">
         <ul id="nav">
             <li class='active'><a href='index_loggedin.php'>Avaleht</a></li>
@@ -90,78 +90,55 @@ if(isset($_GET['code']))
                     </ul>
                 </div>
             </li>
-            <li><a href="contact.php">  Kontakt  </a></li>
+            <li><a href="login-contact.php">  Kontakt  </a></li>
 			<li><a href="#">           </a></li>
 			
             <li class="pad"></li>
         </ul>
     </div>
 	<div id="main">
+	
+	
 	<div id="white-box" >
+        <h2>Aitäh. Tegeleme teie tellimusega esimesel võimalusel!</h2>
 	 <div id="contentInt">
                  <noscript>
                         <p class="note">You have disabled Javascript. This website will not function without it.</p>
                  </noscript>
-                      <h1></h1>
+                      
+			 
 
 
-			   		<div class="center">
+<div class="center">
+					
+					
+<div id='verticalmenu'>
+<ul>
+   <li class='active has-sub'><a href='#'><span>Minu tellimused</span></a>
+      <ul>
+         <li><a href='make_order.php'><span>Tellimuse tegemine</span></a></li>
+         <li><a href='client_orders.php'><span>Tellimuste ajalugu</span></a></li>
+      </ul>
+   </li>
+   <li class='last'><a href='clients_data.php'><span>Minu andmed</span></a></li>
+</ul>
+</div>
 		
 
-
-<h2>Confirm registration</h2>
-<p>
-Please enter the confirmation code in the box below
-</p>
-
-<!-- Form Code Start -->
-<div id='fg_membersite'>
-<form id='confirm' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='get' accept-charset='UTF-8'>
-<div class='short_explanation'>* required fields</div>
-<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
-<div class='container'>
-    <label for='code' >Confirmation Code:* </label><br/>
-    <input type='text' name='code' id='code' maxlength="50" /><br/>
-    <span id='register_code_errorloc' class='error'></span>
-</div>
-<div class='container'>
-    <input type='submit' name='Submit' value='Submit' />
-</div>
-
-</form>
-<!-- client-side Form Validations:
-Uses the excellent form validation script from JavaScript-coder.com-->
-</div>
-</div> <!--center-->
-
-
-		      </div> <!--contentInt-->
+</div><!--center--> <!-- Siia tuleb tellimuste lehe sisu, ehk ajalugu tellimuste kohta, lisaks JOIN kasutamine nende kokkupanekul. -->
+</div> <!--contentInt--> 
 		   		   
 
              
 	</div> <!-- white box --> 
 	</div> <!-- main -->
+	
 
 		  
-	<div id="footer">
+	<div id="footer" >
                       © 2015  LK Consulting <br>
 					  This is a proof-of-concept web application.
 	</div>
-
-<script type='text/javascript'>
-// <![CDATA[
-
-    var frmvalidator  = new Validator("confirm");
-    frmvalidator.EnableOnPageErrorDisplay();
-    frmvalidator.EnableMsgsTogether();
-    frmvalidator.addValidation("code","req","Please enter the confirmation code");
-
-// ]]>
-</script>
-</div>
-<!--
-Form Code End (see html-form-guide.com for more info.)
--->
 
 </body>
 </html>

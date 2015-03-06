@@ -1,5 +1,5 @@
 <?php
-require('../comment-sys/Persistence.php');
+require('../../web/comment-sys/Persistence.php');
 $comment_post_ID = 1;
 $db = new Persistence();
 $comments = $db->get_comments($comment_post_ID);
@@ -50,7 +50,7 @@ $has_comments = (count($comments) > 0);
 		  
 <div class="dropdownmenu">
         <ul id="nav">
-            <li class='active'><a href='../../index_loggedin.php'>Avaleht</a></li>
+            <li class='active'><a href='../../index.html'>Avaleht</a></li>
             <li><a href="#">Minu konto</a>
                 <div>
                     <ul>
@@ -83,7 +83,7 @@ $has_comments = (count($comments) > 0);
             <li><a href="#">Blog</a>
                 <div>
                     <ul>
-                        <li><a href="arcticle_sample.php">Näidis</a></li>
+                        <li><a href="#">Näidis</a></li>
                         <li><a href="#">Page 2</a></li>
                         <li><a href="#">Page 3</a></li>
                         <li><a href="#">Page 4</a></li>
