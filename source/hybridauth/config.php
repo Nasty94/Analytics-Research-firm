@@ -11,7 +11,7 @@
 
 return 
 	array(
-		"base_url" => "http://localhost/hybridauth/", 
+		"base_url" => "http://lk-consulting.azurewebsites.net/source/hybridauth/", 
 
 		"providers" => array ( 
 			// openid providers
