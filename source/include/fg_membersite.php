@@ -999,7 +999,6 @@ class FGMembersite
 	)";
     $this->mysqli_query_execute($insert_query);
     }
-<<<<<<< HEAD
     
     function GetAllOrders()
     {
