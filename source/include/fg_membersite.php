@@ -411,6 +411,7 @@ class FGMembersite
         $_SESSION['name_of_user']  = $row['name'];
         $_SESSION['email_of_user'] = $row['email'];
 		$_SESSION['phone_of_user'] = $row['phone_number'];
+        //<!-- 
         $_SESSION['id_of_user'] = $row['id_user'];
 
 	
@@ -1001,14 +1002,30 @@ class FGMembersite
     function GetOrderData()
     {
 
+        if(!$this->DBLogin())
+        {
+            $this->HandleError("Database login failed!");
+            return false;
+        } 
+
+        //$connection = mysqli_connect('eu-cdbr-azure-north-b.cloudapp.net', 'bc3106a32eb6a9', 'ff65da13', 'lkconsult');
+        
+        $id_of_user = $_SESSION['id_of_user'];
+
+        //echo $id_of_user;
+
         $sql_orders = "
-            SELECT order_id, name, email, order_content, 
-            FROM $this->tablename 
+            SELECT order_id, name, email, order_content 
+            FROM orders 
             INNER JOIN users 
             ON orders.user_id = users.id_user
-            ";
+            WHERE user_id = ".$id_of_user;
 
-        return mysqli_query($this->connection, $sql_orders);
+        $result = mysqli_query($this->connection, $sql_orders);
+              
+        return $result;
+    
+        //return mysqli_query($this->connection, $sql_orders);
 
     }
     

@@ -1,5 +1,6 @@
 <?PHP
 require_once("./include/membersite_config.php");
+require_once("./include/fg_membersite.php");
 
 if(!$fgmembersite->CheckLogin())
 {
@@ -113,41 +114,46 @@ if(!$fgmembersite->CheckLogin())
     <h3>Teie tellimused:</h3>
     <div class="OrderHistoryTable" >
                 <table >
-                    <thead>
+                   
                         <tr>
-                            <td>
-                                Tellimuse ID
-                            </td>
-                            <td >
+                            <th>
+                                Rida
+                            </th>
+                            <th>
+                                ID
+                            </th>
+                            <th>
                                 Tellija nimi
-                            </td>
-                             <td>
+                            </th>
+                             <th>
                                 Tellija kontakt
-                            </td>
-                            <td>
+                            </th>
+                            <th>
                                 Tellimuse kirjeldus
-                            </td>
+                            </th>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <?php
+                    
+                    <?php
+                        
                             $results = $fgmembersite->GetOrderData();
-                            while($row = mysql_fetch_array($results))
+                            $i = 1;
+                            while($row = mysqli_fetch_array($results))
                             {
                             ?>
                                 <tr> 
-                                    <td>?php echo $numrows ?></td>
-                                    <td>?php echo $row['order_id']?></td>
-                                    <td>?php echo $row['name']</td>
-                                    <td>?php echo $row['email']</td>
-                                    <td>?php echo $row['order_content']</td>
-
+                                    <td><?php echo $i ?></td>
+                                    <td><?php echo $row['order_id']?></td>
+                                    <td><?php echo $row['name']?></td>
+                                    <td><?php echo $row['email']?></td>
+                                    <td><?php echo $row['order_content']?></td>
+                                    
 
                          <?php
+                             $i++;
                             }
                             ?>
                         
-                    </tbody>
+               
                 </table>
             </div>	
 					
