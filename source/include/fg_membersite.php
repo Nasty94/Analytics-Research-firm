@@ -850,7 +850,7 @@ class FGMembersite
                 "password VARCHAR( 80 ) NOT NULL ,".
                 "confirmcode VARCHAR(32) ,".
                 "PRIMARY KEY ( id_user ), ".
-                "hybridauth_provider_name, SET DEAFULT 'google account'.
+                "hybridauth_provider_name, SET DEAFULT 'google account'".
 	            "hybridauth_provider_uid".
                 ")";
 	
