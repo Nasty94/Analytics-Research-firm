@@ -43,7 +43,7 @@ if($fgmembersite->ResetPassword())
 		  <div id="img">
      		 
 		  <img src="img/LK.jpg" width=auto height=auto>
-		  </div <!-- img -->
+		  </div> <!-- img -->
 		  
 <div class="dropdownmenu">
         <ul id="nav">
@@ -52,7 +52,11 @@ if($fgmembersite->ResetPassword())
                 <div>
                     <ul>
                         
-                        <li><a href='logout.php'>Logi välja</a></li>
+                        <li><a href='clients_data.php'>Minu andmed</a></li>
+                        <li><a href='make_order.php'>Tellimuse tegemine</a></li>
+                        <li><a href='client_orders.php'>Tellimuste ajalugu</a></li>
+                        <li><a href='change-pwd.php'>Muuda parooli</a></li>
+			            <li><a href='logout.php'>Logi välja</a></li>
                        
                     </ul>
                 </div>

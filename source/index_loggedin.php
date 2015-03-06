@@ -18,7 +18,7 @@
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
 		<link rel="stylesheet" href="style/menubar.css" type="text/css" media="all">
 		<link rel="stylesheet" type="text/css" href="style/style.css">
-        <link rel="stylesheet" type="text/css" href="style/alertify.core.css>
+        <link rel="stylesheet" type="text/css" href="style/alertify.core.css">
 
 		
 		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
@@ -40,7 +40,7 @@
 		  <div id="img">
      		 
 		  <img src="img/LK.jpg" width=auto height=auto>
-		  </div <!-- img -->
+		  </div> <!-- img -->
 		  
        <div class="dropdownmenu">
         <ul id="nav">
@@ -48,8 +48,11 @@
             <li><a href="login-home.php">Minu konto</a>
                 <div>
                     <ul>
-                        
-                        <li><a href='logout.php'>Logi välja</a></li>
+                        <li><a href='clients_data.php'>Minu andmed</a></li>
+                        <li><a href='make_order.php'>Tellimuse tegemine</a></li>
+                        <li><a href='client_orders.php'>Tellimuste ajalugu</a></li>
+                        <li><a href='change-pwd.php'>Muuda parooli</a></li>
+			            <li><a href='logout.php'>Logi välja</a></li>
                        
                     </ul>
                 </div>

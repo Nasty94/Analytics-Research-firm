@@ -62,7 +62,11 @@ if(isset($_POST['submitted']))
                 <div>
                     <ul>
                         
-                        <li><a href='logout.php'>Logi välja</a></li>
+                        <li><a href='clients_data.php'>Minu andmed</a></li>
+                        <li><a href='make_order.php'>Tellimuse tegemine</a></li>
+                        <li><a href='client_orders.php'>Tellimuste ajalugu</a></li>
+                        <li><a href='change-pwd.php'>Muuda parooli</a></li>
+			            <li><a href='logout.php'>Logi välja</a></li>
                        
                     </ul>
                 </div>
@@ -156,18 +160,7 @@ if(isset($_POST['submitted']))
                  </noscript>                  
 
 <div class="center">
-    
-<div id='verticalmenu'>
-<ul>
-   <li class='active has-sub'><a href='#'><span>Minu tellimused</span></a>
-      <ul>
-         <li><a href='make_order.php'><span>Tellimuse tegemine</span></a></li>
-         <li><a href='client_orders.php'><span>Tellimuste ajalugu</span></a></li>
-      </ul>
-   </li>
-   <li class='last'><a href='clients_data.php'><span>Minu andmed</span></a></li>
-</ul>
-</div> 
+   
 
 </div><!--center-->
 </div><!--contentInt-->
