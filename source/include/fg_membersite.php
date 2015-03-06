@@ -24,13 +24,14 @@ class FGMembersite
         $this->rand_key = '0iQx5oBk66oVZep';
     }
     
-    function InitDB($host,$uname,$pwd,$database,$tablename)
+    function InitDB($host,$uname,$pwd,$database,$tablename1,$tablename2)
     {
         $this->db_host  = $host;
         $this->username = $uname;
         $this->pwd  = $pwd;
         $this->database  = $database;
-        $this->tablename = $tablename;
+        $this->tablename = $tablename1;
+        $this->tablenam2 = $tablename2;
       
         
     }
@@ -80,36 +81,6 @@ class FGMembersite
         
         return true;
     }
-
-    // ------------- Code to register user order to db.----------------------------------------------
-
-    function RegisterUserOrder(){
-        if(!isset($_POST['submitted']))
-        {
-           return false;
-        }
-
-        $formvars = array();
-        
-        $this->CollectOrderSubmission($formvars);
-        
-        if(!$this->SaveOrderToDatabase($formvars))
-        {
-            return false;
-        }
-        
-        // Here is the place to put a conformation e-mail function
-
-        //if(!$this->SendUserConfirmationEmail($formvars))
-        //{
-        //    return false;
-        //}
-
-        $this->SendAdminIntimationEmail($formvars);
-        
-        return true;
-    }
-
 
     function ConfirmUser()
     {
@@ -384,7 +355,7 @@ class FGMembersite
         }          
         $username = $this->SanitizeForSQL($username);
 
-  	    $nresult = mysqli_query($this->connection, "SELECT * FROM $this->tablename WHERE username = '$username'") or die(mysqli_error($this->connection));
+  	$nresult = mysqli_query($this->connection, "SELECT * FROM $this->tablename WHERE username = '$username'") or die(mysqli_error($this->connection));
         // check for result 
         $no_of_rows = mysqli_num_rows($nresult);
   
@@ -395,7 +366,7 @@ class FGMembersite
          
            
 
-        $qry = "Select name, email, phone_number, id_user from $this->tablename where username='$username' and password='$hash'";
+        $qry = "Select name, email, phone_number from $this->tablename where username='$username' and password='$hash'";
         
         $result = mysqli_query($this->connection,$qry);
         
@@ -411,15 +382,13 @@ class FGMembersite
         $_SESSION['name_of_user']  = $row['name'];
         $_SESSION['email_of_user'] = $row['email'];
 		$_SESSION['phone_of_user'] = $row['phone_number'];
-        //<!-- 
-        $_SESSION['id_of_user'] = $row['id_user'];
 
 	
         
         return true;
     }
 
- public function checkhashSSHA($salt, $password) {
+    public function checkhashSSHA($salt, $password) {
  
         $hash = base64_encode(sha1($password . $salt, true) . $salt);
  
@@ -435,7 +404,7 @@ class FGMembersite
         }   
         $confirmcode = $this->SanitizeForSQL($_GET['code']);
         
-        $result = mysqli_query($this->connection,"Select name, email from $this->tablename where confirmcode='$confirmcode'");   
+        $result = mysqli_query("Select name, email from $this->tablename where confirmcode='$confirmcode'",$this->connection);   
         if(!$result || mysqli_num_rows($result) <= 0)
         {
             $this->HandleError("Wrong confirm code.");
@@ -447,7 +416,7 @@ class FGMembersite
         
         $qry = "Update $this->tablename Set confirmcode='y' Where  confirmcode='$confirmcode'";
         
-        if(!mysqli_query( $this->connection,$qry ))
+        if(!mysqli_query( $qry ,$this->connection))
         {
             $this->HandleDBError("Error inserting data to the table\nquery:$qry");
             return false;
@@ -691,17 +660,6 @@ class FGMembersite
         $formvars['password'] = $this->Sanitize($_POST['password']);
    
     }
-
-    // ---------------- Code for order submission -------------------
-
-    function CollectOrderSubmission(&$formvars)
-    {
-        $formvars['name'] = $this->Sanitize($_POST['name']);
-        $formvars['email'] = $this->Sanitize($_POST['email']);
-		$formvars['phone_number'] = $this->Sanitize($_POST['phone_number']);
-        $formvars['order'] = $this->Sanitize($_POST['order']);
-   
-    }
     
     function SendUserConfirmationEmail(&$formvars)
     {
@@ -824,28 +782,6 @@ class FGMembersite
         return true;
     }
     
-    // ---------- Save order to db code here.-------------
-
-     function SaveOrderToDatabase(&$formvars)
-    {
-        if(!$this->DBLogin())
-        {
-            $this->HandleError("Database login failed!");
-            return false;
-        }
-        if(!$this->EnsureOrderstable())
-        {
-            return false;
-        }
-        
-        if(!$this->InsertOrderIntoDB($formvars))
-        {
-            $this->HandleError("Inserting to Database failed!");
-            return false;
-        }
-        return true;
-    }
-
     function IsFieldUnique($formvars,$fieldname)
     {
         $field_val = $this->SanitizeForSQL($formvars[$fieldname]);
@@ -890,8 +826,6 @@ class FGMembersite
         }
         return true;
     }
-
-    // ----- This is to ensure that there is an orders table. ---------
     
     function EnsureOrderstable()
     {
@@ -927,7 +861,27 @@ class FGMembersite
         return true;
     }
     
-     
+      function CreateTableOrders()
+    {
+    	$qry = "Create Table $this->tablename (".
+                "id_user INT NOT NULL AUTO_INCREMENT ,".
+                "name VARCHAR( 128 ) NOT NULL ,".
+                "email VARCHAR( 64 ) NOT NULL ,".
+                "phone_number VARCHAR( 16 ) NOT NULL ,".
+                "username VARCHAR( 16 ) NOT NULL ,".
+                "order_discription VARCHAR( 5000 ) NOT NULL,".
+                "PRIMARY KEY ( id_user )".
+                ")";
+	
+                
+        if(!mysqli_query($this->connection,$qry))
+        {
+            $this->HandleDBError("Error creating the table \nquery was\n $qry");
+            return false;
+        }
+        return true;
+    }
+
     function InsertIntoDB(&$formvars)
     {
     
@@ -970,22 +924,23 @@ class FGMembersite
         return true;
     }
 
-    function UserID(){
-
-        return isset($_SESSION['id_of_user'])?$_SESSION['id_of_user']:'none';
-        
-    }
-
     function InsertOrderIntoDB(&$formvars)
     {
-        $insert_query = 'insert into '.$this->tablename.' (
-		user_id,
-        order_content
+    
+        $insert_query = 'insert into '.$this->tablename.'(
+		name,
+		email,
+		phone_number,
+		username,	
+		order_discription,
 		)
 		values
 		(
-        ' . $this->SanitizeForSQL($_SESSION['id_of_user']) . ',
-        "' . $this->SanitizeForSQL($formvars['order']) . '"
+		"' . $this->SanitizeForSQL($formvars['name']) . '",
+		"' . $this->SanitizeForSQL($formvars['email']) . '",
+		"' . $this->SanitizeForSQL($formvars['phone_number']) . '",
+		"' . $this->SanitizeForSQL($formvars['username']) . '",
+        "' . $this->SanitizeForSQL($formvars['order_discription']) . '",
 		)';  
 
  
@@ -997,37 +952,52 @@ class FGMembersite
         return true;
     }
 
-    //------------- Here is the code to fetch order data from the db. ------------
-
-    function GetOrderData()
+    #Hybriduth user generation and calling
+    function mysqli_query_execute($sql)
     {
-
         if(!$this->DBLogin())
         {
             $this->HandleError("Database login failed!");
             return false;
-        } 
-
-        //$connection = mysqli_connect('eu-cdbr-azure-north-b.cloudapp.net', 'bc3106a32eb6a9', 'ff65da13', 'lkconsult');
-        
-        $id_of_user = $_SESSION['id_of_user'];
-
-        //echo $id_of_user;
-
-        $sql_orders = "
-            SELECT order_id, name, email, order_content 
-            FROM orders 
-            INNER JOIN users 
-            ON orders.user_id = users.id_user
-            WHERE user_id = ".$id_of_user;
-
-        $result = mysqli_query($this->connection, $sql_orders);
-              
-        return $result;
-    
-        //return mysqli_query($this->connection, $sql_orders);
-
+        }   
+ 
+	    $result = mysqli_query($this->connection, $sql );
+ 
+	    if(!$result )
+	    {
+		    die( printf( "Error: %s\n", mysqli_error($this->connection) ) );
+	    }
+ 
+	    return $result->fetch_object();
+    }  
+    function get_user_by_provider_and_id( $provider_name, $provider_user_id )
+    {
+	    return $this->mysqli_query_execute( "SELECT * FROM users WHERE hybridauth_provider_name = '$provider_name' AND hybridauth_provider_uid = '$provider_user_id'" );
     }
+ 
+    function create_new_hybridauth_user( $email, $first_name, $last_name, $provider_name, $provider_user_id )
+    {
+
+	// let generate a random password for the user
+	$password = md5( str_shuffle( "0123456789abcdefghijklmnoABCDEFGHIJ" ) );
+    //die($first_name.' '.$last_name);
+	$insert_query ="INSERT INTO users(
+    email, 
+	password, 
+	name, 
+	hybridauth_provider_name, 
+	hybridauth_provider_uid 
+	) 
+	VALUES(	
+    '$email',
+	'$password',
+	'$first_name.' '.$last_name',
+	'$provider_name',
+	'$provider_user_id'
+	)";
+    $this->mysqli_query_execute($insert_query);
+    }
+<<<<<<< HEAD
     
     function GetAllOrders()
     {
@@ -1051,6 +1021,8 @@ class FGMembersite
         return $result;
 
     }
+=======
+>>>>>>> 47a1d4af121e724d0ead9d98389e75985b9f4df9
 
     function hashSSHA($password) {
  
@@ -1111,7 +1083,8 @@ class FGMembersite
             $str = stripslashes($str);
         }
         return $str;
-    }    
+    }
+  
 	
 }
 ?>

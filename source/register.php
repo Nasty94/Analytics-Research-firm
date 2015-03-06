@@ -20,6 +20,7 @@ if(isset($_POST['submitted']))
     <title>Register</title>
      
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="script.js"></script>	
     <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
     <script src="scripts/pwdwidget.js" type="text/javascript"></script>
     <script src="https://apis.google.com/js/client:platform.js" async defer></script> 
@@ -53,7 +54,7 @@ if(isset($_POST['submitted']))
 
 <div class="dropdownmenu">
         <ul id="nav">
-            <li class='active'><a href='index.html'>Avaleht</a></li>
+            <li class='active'><a href='#'>Avaleht</a></li>
             <li><a href="#">Minu konto</a>
                 <div>
                     <ul>
