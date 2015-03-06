@@ -388,7 +388,7 @@ class FGMembersite
         return true;
     }
 
- public function checkhashSSHA($salt, $password) {
+    public function checkhashSSHA($salt, $password) {
  
         $hash = base64_encode(sha1($password . $salt, true) . $salt);
  
@@ -952,6 +952,52 @@ class FGMembersite
         return true;
     }
 
+    #Hybriduth user generation and calling
+    function mysqli_query_execute($sql)
+    {
+        if(!$this->DBLogin())
+        {
+            $this->HandleError("Database login failed!");
+            return false;
+        }   
+ 
+	    $result = mysqli_query($this->connection, $sql );
+ 
+	    if(!$result )
+	    {
+		    die( printf( "Error: %s\n", mysqli_error($this->connection) ) );
+	    }
+ 
+	    return $result->fetch_object();
+    }  
+    function get_user_by_provider_and_id( $provider_name, $provider_user_id )
+    {
+	    return $this->mysqli_query_execute( "SELECT * FROM users WHERE hybridauth_provider_name = '$provider_name' AND hybridauth_provider_uid = '$provider_user_id'" );
+    }
+ 
+    function create_new_hybridauth_user( $email, $first_name, $last_name, $provider_name, $provider_user_id )
+    {
+
+	// let generate a random password for the user
+	$password = md5( str_shuffle( "0123456789abcdefghijklmnoABCDEFGHIJ" ) );
+    //die($first_name.' '.$last_name);
+	$insert_query ="INSERT INTO users(
+    email, 
+	password, 
+	name, 
+	hybridauth_provider_name, 
+	hybridauth_provider_uid 
+	) 
+	VALUES(	
+    '$email',
+	'$password',
+	'$first_name.' '.$last_name',
+	'$provider_name',
+	'$provider_user_id'
+	)";
+    $this->mysqli_query_execute($insert_query);
+    }
+
     function hashSSHA($password) {
  
         $salt = sha1(rand());
@@ -1011,7 +1057,8 @@ class FGMembersite
             $str = stripslashes($str);
         }
         return $str;
-    }    
+    }
+  
 	
 }
 ?>
