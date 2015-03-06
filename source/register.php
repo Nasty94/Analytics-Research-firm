@@ -23,7 +23,7 @@ if(isset($_POST['submitted']))
     <script src="script.js"></script>	
     <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
     <script src="scripts/pwdwidget.js" type="text/javascript"></script>
-    <script src="https://apis.google.com/js/client:platform.js" async defer></script> 
+  
 	
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
 	<link rel="stylesheet" href="style/menubar.css">
@@ -157,16 +157,7 @@ if(isset($_POST['submitted']))
 <div class='container'>
     <input type='submit' name='Submit' value='Submit' />
 </div>
-<div class="container">
-<span id="signinButton">
-  <span
-    class="g-signin"
-    data-callback="onSigninCallback"
-    data-clientid="406295690407-rtsb814i5q4br11tnolgpsm8vcp4m8l4.apps.googleusercontent.com"
-    data-cookiepolicy="single_host_origin"
-    data-scope="profile email">
-  </span>
-</span></div>
+
 
 </fieldset>
 </form>
