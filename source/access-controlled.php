@@ -43,7 +43,7 @@ if(!$fgmembersite->CheckLogin())
 
 <div class="dropdownmenu">
         <ul id="nav">
-            <li class='active'><a href='#'>Avaleht</a></li>
+            <li class='active'><a href='index.html'>Avaleht</a></li>
             <li><a href="#">Minu konto</a>
                 <div>
                     <ul>
@@ -56,8 +56,8 @@ if(!$fgmembersite->CheckLogin())
 			<li><a href="#">Meist</a>
                 <div>
                     <ul>
-                        <li><a href="#">Personal</a></li>
-                        <li><a href="#">Concepts</a></li>
+                        <li><a href="staff.html">Personal</a></li>
+                        <li><a href="company.html">Ettevõtes</a></li>
   
                     </ul>
                 </div>
