@@ -7,13 +7,12 @@ $fgmembersite->LogOut();
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
     <meta http-equiv="Content type" content="text/html; charset=ISO-8859-1">
-	<meta charset='utf-8'>
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Log out</title>
      
-	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <script src="../../../script.js"></script>	
+     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script type='text/javascript' src='../../../scripts/gen_validatorv31.js'></script>
     <script src="../../../scripts/pwdwidget.js" type="text/javascript"></script>   
 	
@@ -22,7 +21,7 @@ $fgmembersite->LogOut();
 	<link rel="stylesheet" href="../../../style/style.css">
 	<link rel="stylesheet" href="../../../style/verticalmenu.css">
 	<link rel="STYLESHEET" type="text/css" href="../../../style/pwdwidget.css" />
-    <link rel="STYLESHEET" type="text/css" href="../../../style/fg_membersite.css" />
+        <link rel="STYLESHEET" type="text/css" href="../../../style/fg_membersite.css" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         
     	
@@ -43,7 +42,7 @@ $fgmembersite->LogOut();
 
 <div class="dropdownmenu">
         <ul id="nav">
-            <li class='active'><a href='#'>Home</a></li>
+            <li class='active'><a href='index_eng.html'>Home</a></li>
             <li><a href="#">My account</a>
                 <div>
                     <ul>
@@ -56,8 +55,8 @@ $fgmembersite->LogOut();
 			<li><a href="#">About us</a>
                 <div>
                     <ul>
-                        <li><a href="#">Our specialists</a></li>
-                        <li><a href="#">Concepts</a></li>
+                        <li><a href="../../../staff.html">Our specialists</a></li>
+                        <li><a href="../../../company.html">Concepts</a></li>
   
                     </ul>
                 </div>
