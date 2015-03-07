@@ -1,13 +1,18 @@
 <?PHP
 require_once("./include/membersite_config.php");
+require_once("./include/fg_membersite.php");
 
 if(isset($_POST['submitted']))
 {
    if($fgmembersite->Login())
    {
+
+    echo $fgmembersite->IsAdmin();
+    
+
      if($fgmembersite->IsAdmin()==0)
 	 {
-	 $fgmembersite->RedirectToURL("./web/admin/admin.php");
+	 $fgmembersite->RedirectToURL("admin.php");
 	 }
        
      else{

@@ -1,12 +1,16 @@
 <?PHP
-require_once("./include/membersite_config.php");
 
-//if(!$fgmembersite->isAdmin())
-//{
-//    $fgmembersite->RedirectToURL("login.php");
-//    exit;
-//}
+require_once('./include/fg_membersite.php');
+require_once('/include/membersite_config.php');
 
+if($fgmembersite->isAdmin()==0)
+{
+    $fgmembersite->RedirectToURL("login.php");
+    exit;
+}
+
+
+?>
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -26,9 +30,9 @@ require_once("./include/membersite_config.php");
 	<link rel="stylesheet" href="style/menubar.css">
 	<link rel="stylesheet" href="style/style.css">
 	<link rel="stylesheet" href="style/verticalmenu.css">
-    <link rel="stylesheet" href="style/order_history_table.css">
+        <link rel="stylesheet" href="style/order_history_table.css">
 	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
-    <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
+        <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         
     	
@@ -99,7 +103,7 @@ require_once("./include/membersite_config.php");
         </ul>
     </div>
 	<div id="main">
-	<h2>Tere, <?= $fgmembersite->UserFullName(); ?>!</h2>
+	<h2>Tere administraator!</h2>
 	
 	<div id="white-box" >
 	 <div id="contentInt">
@@ -111,7 +115,7 @@ require_once("./include/membersite_config.php");
 
 
 <div class="center">
-    <h3>Teie tellimused:</h3>
+    <h3>Klientide tellimused:</h3>
     <div class="OrderHistoryTable" >
                 <table >
                    
@@ -132,10 +136,9 @@ require_once("./include/membersite_config.php");
                                 Tellimuse kirjeldus
                             </th>
                         </tr>
-                    
-                    <?php
-                        
-                            $results = $fgmembersite->GetOrderData();
+                            <?php
+
+                            $results = $fgmembersite->GetAllOrders();
                             $i = 1;
                             while($row = mysqli_fetch_array($results))
                             {
@@ -146,10 +149,8 @@ require_once("./include/membersite_config.php");
                                     <td><?php echo $row['name']?></td>
                                     <td><?php echo $row['email']?></td>
                                     <td><?php echo $row['order_content']?></td>
-                                    
-
-                         <?php
-                             $i++;
+                            <?php
+                            $i++;
                             }
                             ?>
                         
@@ -166,6 +167,9 @@ require_once("./include/membersite_config.php");
 	</div> <!-- white box --> 
 	</div> <!-- main -->
 	
+    <div id="block" >
+                     
+    </div>
 
 		  
 	<div id="footer" >

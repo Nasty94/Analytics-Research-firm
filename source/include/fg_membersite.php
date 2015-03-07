@@ -170,6 +170,8 @@ class FGMembersite
     
     function UserFullName()
     {
+
+        !$this->DBLogin();
         return isset($_SESSION['name_of_user'])?$_SESSION['name_of_user']:'none';
     }
     
@@ -185,7 +187,16 @@ class FGMembersite
     }
 	function isAdmin()
 	{
-	   return strcmp('Annett.Saarik@gmail.com',$_SESSION['email_of_user']);
+
+        if(!$this->DBLogin())
+        {
+            $this->HandleError("Database login failed!");
+            return false;
+        }  
+
+        $admin_email = $_SESSION['email_of_user'];
+
+	    return strcmp('Annett.Saarik@gmail.com', $admin_email);
 
 	}
     
@@ -1013,9 +1024,6 @@ class FGMembersite
         
         $id_user = $_SESSION['id_of_user'];
 
-        
-        echo 'SEE SIIN ON TÄIS SITT'. $id_user;
-
         $insert_query = 'insert into orders (
         user_id,
         order_content
@@ -1108,6 +1116,26 @@ class FGMembersite
 
     }
 
+    function GetAllUserData()
+    {
+        
+        if(!$this->DBLogin())
+        {
+            $this->HandleError("Database login failed!");
+            return false;
+        } 
+
+        $sql_orders = "
+            SELECT id_user, name, email  
+            FROM users";
+
+        $result = mysqli_query($this->connection, $sql_orders);
+              
+        return $result;
+
+
+    }
+
     function GetOrderData()
 
     {
@@ -1128,7 +1156,8 @@ class FGMembersite
             WHERE user_id =". $id_user;
         
         $result = mysqli_query($this->connection, $sql_orders);
-              
+        echo $result;
+        die();
         return $result;
 
     }

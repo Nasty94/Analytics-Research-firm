@@ -1,15 +1,13 @@
 <?PHP
 
-$appRootPath = getenv('APP_ROOT_PATH');
-echo $appRootPath.'/include/fg_membersite.php';
-require_once($appRootPath.'./include/fg_membersite.php');
-require_once($appRootPath.'/include/membersite_config.php');
+require_once('./include/fg_membersite.php');
+require_once('/include/membersite_config.php');
 
-//if(!$fgmembersite->isAdmin())
-//{
-//    $fgmembersite->RedirectToURL("login.php");
-//    exit;
-//}
+if($fgmembersite->isAdmin()==0)
+{
+    $fgmembersite->RedirectToURL("login.php");
+    exit;
+}
 
 
 ?>
@@ -100,8 +98,8 @@ require_once($appRootPath.'/include/membersite_config.php');
 </ul>
 </div>
 	<div id="main">
-	<h2>Tere, <? = $fgmembersite->UserFullName(); ?>!</h2>
-	<h3>Olete administraator.</h3>
+	<h2>Tere, administraator!</h2>
+	
 	
 	<div id="white-box" >
 	 <div id="contentInt">

@@ -61,11 +61,15 @@ if(!$fgmembersite->CheckLogin())
                     </ul>
                 </div>
             </li>
-            <li><a href="#">Meist</a>
+            <li><a>Meist</a>
                 <div>
                     <ul>
                         <li><a href="staff.html">Personal</a></li>
+<<<<<<< HEAD
                         <li><a href="company.html">Ettevõtest</a></li>
+=======
+                        <li><a href="company.html">Ettevõttest</a></li>
+>>>>>>> Changed admin files
   
                     </ul>
                 </div>

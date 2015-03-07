@@ -1,10 +1,12 @@
 .dropdownmenu{
     position:relative;
-    background:black ;
-    width:970px;
+    background:black;
+    min-width: 90px;
+    max-width: 700px;
     height:50px;
     border:1px black solid;
     margin-left: 70px;
+    margin-right: 70px;
     padding:15px;
     border-radius:3px;
     -moz-border-radius:3px;
