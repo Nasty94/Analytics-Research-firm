@@ -65,8 +65,8 @@ require_once("./include/membersite_config.php");
             <li><a href="#">Meist</a>
                 <div>
                     <ul>
-                        <li><a href="#">Personal</a></li>
-                        <li><a href="#">Concepts</a></li>
+                        <li><a href="../../company.html">Personal</a></li>
+                        <li><a href="../../staff.html">Ettevõtest</a></li>
   
                     </ul>
                 </div>
