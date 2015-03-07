@@ -396,7 +396,7 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 
 #add-comment p.req {clear: both; margin: 0 .5em 1em 0; text-align: right;}
 
-#add-comment input[type='submit'] {float: right; margin: 0 .5em;}
+#add-comment input[type='submit'] {float: right; margin: 0 .5em; width:auto;}
 #add-comment * {margin-bottom: .5em;}
 
 
