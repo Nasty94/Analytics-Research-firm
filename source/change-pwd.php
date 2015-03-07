@@ -72,8 +72,8 @@ if(isset($_POST['submitted']))
             <li><a href="#">Meist</a>
 <div>
 <ul>
-<li><a href="company.html">Personal</a></li>
-<li><a href="staff.html">Ettevõtest</a></li>
+<li><a href="staff.html.html">Personal</a></li>
+<li><a href="company.html">Ettevõtest</a></li>
 </ul>
 </div>
 </li>
