@@ -12,17 +12,17 @@
 		
 		<title>LK Consulting</title>
 		
-	    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="style/alertify.core.css" type="text/css">
         <link rel="stylesheet" href="style/style.css" type="text/css">
-		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
-		<link rel="stylesheet" href="style/menubar.css" type="text/css" media="all">
-		<link rel="stylesheet" type="text/css" href="style/style.css">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
+	<link rel="stylesheet" href="style/menubar.css" type="text/css" media="all">
+	<link rel="stylesheet" type="text/css" href="style/style.css">
         <link rel="stylesheet" type="text/css" href="style/alertify.core.css">
 
 		
 		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-		<script src="script.js"></script>
+	
 		
 
     </head>
@@ -52,7 +52,7 @@
                         <li><a href='make_order.php'>Tellimuse tegemine</a></li>
                         <li><a href='client_orders.php'>Tellimuste ajalugu</a></li>
                         <li><a href='change-pwd.php'>Muuda parooli</a></li>
-			            <li><a href='logout.php'>Logi välja</a></li>
+			<li><a href='logout.php'>Logi välja</a></li>
                        
                     </ul>
                 </div>
@@ -60,8 +60,8 @@
 			<li><a href="#">Meist</a>
                 <div>
                     <ul>
-                        <li><a href="#">Personal</a></li>
-                        <li><a href="#">Concepts</a></li>
+                        <li><a href="staff.html">Personal</a></li>
+                        <li><a href="company.html">Ettevõtest</a></li>
   
                     </ul>
                 </div>
