@@ -23,8 +23,7 @@ require_once("./include/membersite_config.php");
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Minu konto</title>
      
-	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <script src="script.js"></script>	
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
     <script src="scripts/pwdwidget.js" type="text/javascript"></script>   
 	
@@ -33,7 +32,7 @@ require_once("./include/membersite_config.php");
 	<link rel="stylesheet" href="style/style.css">
 	<link rel="stylesheet" href="style/verticalmenu.css">
 	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
-    <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
+        <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         
 </head>
@@ -65,8 +64,8 @@ require_once("./include/membersite_config.php");
             <li><a href="#">Meist</a>
                 <div>
                     <ul>
-                        <li><a href="../../company.html">Personal</a></li>
-                        <li><a href="../../staff.html">Ettevõtest</a></li>
+                        <li><a href="staff.html">Personal</a></li>
+                        <li><a href="company.html">Ettevõtest</a></li>
   
                     </ul>
                 </div>
@@ -84,7 +83,7 @@ require_once("./include/membersite_config.php");
             <li><a href="#">Blog</a>
                 <div>
                     <ul>
-                        <li><a href="arcticle_sample.php">Näidis</a></li>
+                        <li><a href="article_sample.php">Näidis</a></li>
                         <li><a href="#">Page 2</a></li>
                         <li><a href="#">Page 3</a></li>
                         <li><a href="#">Page 4</a></li>
