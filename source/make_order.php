@@ -3,8 +3,15 @@ require_once("./include/membersite_config.php");
 
 if(!$fgmembersite->CheckLogin())
 {
-    $fgmembersite->RedirectToURL("thank_you_order.php");
+    $fgmembersite->RedirectToURL("login.php");
     exit;
+}
+if(isset($_POST['submitted']))
+{
+   if($fgmembersite->RegisterUserOrder())
+   {
+        $fgmembersite->RedirectToURL("thank_you_order.php");
+   }
 }
 ?>
 
