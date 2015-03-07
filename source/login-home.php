@@ -53,8 +53,11 @@ if(!$fgmembersite->CheckLogin())
                 <div>
                     <ul>
                         
+                       <li><a href='clients_data.php'>Minu andmed</a></li>
+                        <li><a href='make_order.php'>Tellimuse tegemine</a></li>
+                        <li><a href='client_orders.php'>Tellimuste ajalugu</a></li>
                         <li><a href='change-pwd.php'>Muuda parooli</a></li>
-						<li><a href='logout.php'>Logi välja</a></li>
+			            <li><a href='logout.php'>Logi välja</a></li>
                        
                     </ul>
                 </div>
@@ -96,7 +99,7 @@ if(!$fgmembersite->CheckLogin())
         </ul>
     </div>
 	<div id="main">
-	<h2>Tere, <?= $fgmembersite->UserFullName(); ?>!</h2>
+	<h2>Tere, <?= $fgmembersite->UserFullName(); ?>, olete edukalt sisse loginud!</h2>
 	
 	<div id="white-box" >
 	 <div id="contentInt">
@@ -108,22 +111,6 @@ if(!$fgmembersite->CheckLogin())
 
 
 <div class="center">
-					
-					
-<div id='verticalmenu'>
-<ul>
-   <li><a href='index_loggedin.php'><span>Avaleht</span></a></li>
-   <li class='active has-sub'><a href='#'><span>Minu tellimused</span></a>
-      <ul>
-         <li><a href='make_order.php'><span>Tellimuse tegemine</span></a></li>
-         <li><a href='client_orders.php'><span>Tellimuste ajalugu</span></a></li>
-         </li>
-      </ul>
-   </li>
-   
-   <li class='last'><a href='clients_data.php'><span>Minu andmed</span></a></li>
-</ul>
-</div>
 		
 
 </div><!--center-->

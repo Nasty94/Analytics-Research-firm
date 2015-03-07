@@ -39,7 +39,7 @@ $fgmembersite->LogOut();
 		  <div id="img">
      		 
 		  <img src="img/LK.jpg" width=auto height=auto>
-		  </div <!-- img -->
+		  </div> <!-- img -->
 
 <div class="dropdownmenu">
         <ul id="nav">
