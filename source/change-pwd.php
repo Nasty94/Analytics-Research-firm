@@ -64,7 +64,7 @@ if(isset($_POST['submitted']))
                         <li><a href='make_order.php'>Tellimuse tegemine</a></li>
                         <li><a href='client_orders.php'>Tellimuste ajalugu</a></li>
                         <li><a href='change-pwd.php'>Muuda parooli</a></li>
-			            <li><a href='logout.php'>Logi välja</a></li>
+			<li><a href='logout.php'>Logi välja</a></li>
                        
                     </ul>
                 </div>
@@ -72,8 +72,8 @@ if(isset($_POST['submitted']))
             <li><a href="#">Meist</a>
 <div>
 <ul>
-<li><a href="#">Personal</a></li>
-<li><a href="#">Concepts</a></li>
+<li><a href="company.html">Personal</a></li>
+<li><a href="staff.html">Ettevõtest</a></li>
 </ul>
 </div>
 </li>
