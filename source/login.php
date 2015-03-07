@@ -195,7 +195,7 @@ elseif( isset( $_REQUEST["provider"] ) )
 </fieldset>
 </form>
 <fieldset>
-    <legend>Or use another service</legend>
+    <legend>Või kasuta muud teenusepakkujat:</legend>
     <a href="login.php?provider=google"><img src="img/google_plus_sm.png" /></a>
 </fieldset>
 <!-- client-side Form Validations:

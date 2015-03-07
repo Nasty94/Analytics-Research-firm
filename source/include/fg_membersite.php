@@ -31,12 +31,7 @@ class FGMembersite
         $this->pwd  = $pwd;
         $this->database  = $database;
         $this->tablename = $tablename;
-<<<<<<< HEAD
-      
-        
-=======
-            
->>>>>>> 58b96c244ba9302cba757c8c7b054f649106dd8d
+
     }
     function SetAdminEmail($email)
     {
@@ -400,7 +395,7 @@ class FGMembersite
             return false;
         }        
                
-        $qry = "Select name, email, phone_number from $this->tablename where hybridauth_provider_uid = '$identifier'";
+        $qry = "Select name, email, phone_number, id_user from $this->tablename where hybridauth_provider_uid = '$identifier'";
         
         $result = mysqli_query($this->connection,$qry);
         
@@ -412,7 +407,7 @@ class FGMembersite
         
         $row = mysqli_fetch_assoc($result);
         
-        
+        $_SESSION['id_of_user']  = $row['id_user'];
         $_SESSION['name_of_user']  = $row['name'];
         $_SESSION['email_of_user'] = $row['email'];
 		$_SESSION['phone_of_user'] = $row['phone_number'];
@@ -883,15 +878,11 @@ class FGMembersite
 	         	"salt VARCHAR( 50 ),".
                 "password VARCHAR( 80 ) NOT NULL ,".
                 "confirmcode VARCHAR(32) ,".
-<<<<<<< HEAD
                 "PRIMARY KEY ( id_user ), ".
                 "hybridauth_provider_name VARCHAR(255), ". 
 	            "hybridauth_provider_uid VARCHAR(255))";
-        #die($qry);
-=======
                 "PRIMARY KEY ( id_user )".
                 ")";
->>>>>>> 58b96c244ba9302cba757c8c7b054f649106dd8d
 	
                 
         if(!mysqli_query($this->connection,$qry))
@@ -1003,13 +994,11 @@ class FGMembersite
         }   
 
 	    $result = mysqli_query($this->connection, $sql );
-<<<<<<< HEAD
+
 
 	    if(!$result)
-=======
- 
 	    if(!$result )
->>>>>>> 58b96c244ba9302cba757c8c7b054f649106dd8d
+
 	    {
 		    die( printf( "Error: %s\n", mysqli_error($this->connection) ) );
 	    }
@@ -1023,10 +1012,7 @@ class FGMembersite
  
     function create_new_hybridauth_user( $email, $first_name, $last_name, $provider_name, $provider_user_id )
     {
-<<<<<<< HEAD
-=======
 
->>>>>>> 58b96c244ba9302cba757c8c7b054f649106dd8d
 	// let generate a random password for the user
 	$password = md5( str_shuffle( "0123456789abcdefghijklmnoABCDEFGHIJ" ) );
 	$insert_query ="INSERT INTO users(
@@ -1089,7 +1075,7 @@ class FGMembersite
             INNER JOIN users 
             ON orders.user_id = users.id_user
             WHERE user_id =". $id_of_user;
-
+        
         $result = mysqli_query($this->connection, $sql_orders);
               
         return $result;
