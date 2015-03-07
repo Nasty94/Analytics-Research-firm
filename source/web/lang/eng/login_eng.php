@@ -21,13 +21,12 @@ if(isset($_POST['submitted']))
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
     <meta http-equiv="Content type" content="text/html; charset=ISO-8859-1">
-	<meta charset='utf-8'>
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
      
-	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <script src="script.js"></script>	
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script type='text/javascript' src='../../../scripts/gen_validatorv31.js'></script>
     <script src="../../../scripts/pwdwidget.js" type="text/javascript"></script>   
 	
@@ -35,7 +34,7 @@ if(isset($_POST['submitted']))
 	<link rel="stylesheet" href="../../../style/menubar.css">
 	<link rel="stylesheet" href="../../../style/style.css">
 	<link rel="STYLESHEET" type="text/css" href="../../../style/pwdwidget.css" />
-    <link rel="STYLESHEET" type="text/css" href="../../../style/fg_membersite.css" />
+        <link rel="STYLESHEET" type="text/css" href="../../../style/fg_membersite.css" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -65,8 +64,8 @@ if(isset($_POST['submitted']))
 			<li><a href="#">Who we are?</a>
                 <div>
                     <ul>
-                        <li><a href="#">Our specialists</a></li>
-                        <li><a href="#">Concepts</a></li>
+                        <li><a href="../../../staff.html">Our specialists</a></li>
+                        <li><a href="../../../company.html">Concepts</a></li>
   
                     </ul>
                 </div>
@@ -92,7 +91,7 @@ if(isset($_POST['submitted']))
                     </ul>
                 </div>
             </li>
-            <li><a href="../../../contact.php"> Contact  </a></li>
+            <li><a href="../../../login-contact.php"> Contact  </a></li>
 			<li><a href="#">           </a></li>
 			
             <li class="pad"></li>
