@@ -24,7 +24,7 @@ if(isset($_POST['submitted']))
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 
     <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
-	<script src="js/disable.js"></script>
+    <script src="js/disable.js"></script>
     <script src="scripts/pwdwidget.js" type="text/javascript"></script>   
 	
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
@@ -32,9 +32,9 @@ if(isset($_POST['submitted']))
 	<link rel="stylesheet" href="style/style.css">
 	<link rel="stylesheet" href="style/verticalmenu.css">
 	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
-    <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
+        <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="STYLESHEET" type="text/css" href="style/fg_membersite_form.css" />
+        <link rel="STYLESHEET" type="text/css" href="style/fg_membersite_form.css" />
         
     	
 </head>
@@ -70,8 +70,8 @@ if(isset($_POST['submitted']))
 			<li><a href="#">Meist</a>
                 <div>
                     <ul>
-                        <li><a href="#">Personal</a></li>
-                        <li><a href="#">Concepts</a></li>
+                        <li><a href="staff.html">Personal</a></li>
+                        <li><a href="company.html">Ettevõtest</a></li>
   
                     </ul>
                 </div>
