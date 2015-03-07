@@ -82,8 +82,7 @@ elseif( isset( $_REQUEST["provider"] ) )
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
      
-	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <script src="script.js"></script>	
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
     <script src="scripts/pwdwidget.js" type="text/javascript"></script>  
 	
@@ -91,7 +90,7 @@ elseif( isset( $_REQUEST["provider"] ) )
 	<link rel="stylesheet" href="style/menubar.css">
 	<link rel="stylesheet" href="style/style.css">
 	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
-    <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
+        <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     
 </head>
@@ -109,7 +108,7 @@ elseif( isset( $_REQUEST["provider"] ) )
 
 <div class="dropdownmenu">
         <ul id="nav">
-            <li class='active'><a href='#'>Avaleht</a></li>
+            <li class='active'><a href='index_loggedin.html'>Avaleht</a></li>
             <li><a href="#">Minu konto</a>
                 <div>
                     <ul>
@@ -122,8 +121,8 @@ elseif( isset( $_REQUEST["provider"] ) )
 			<li><a href="#">Meist</a>
                 <div>
                     <ul>
-                        <li><a href="#">Personal</a></li>
-                        <li><a href="#">Concepts</a></li>
+                        <li><a href="staff.html">Personal</a></li>
+                        <li><a href="company.html">Ettevõtest</a></li>
   
                     </ul>
                 </div>
