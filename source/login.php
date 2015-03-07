@@ -28,15 +28,13 @@ elseif( isset( $_REQUEST["provider"] ) )
 		// change the following paths if necessary 
 		$config   = dirname(__FILE__) . '/hybridauth/config.php';
 		require_once( "hybridauth/Hybrid/Auth.php" );
- 
 		// initialize Hybrid_Auth class with the config file
 		$hybridauth = new Hybrid_Auth( $config );
- 
 		// try to authenticate with the selected provider
 		$adapter = $hybridauth->authenticate( $provider_name );
- 
 		// then grab the user profile 
 		$user_profile = $adapter->getUserProfile();
+
 	}
  
 	// something went wrong?
@@ -48,6 +46,7 @@ elseif( isset( $_REQUEST["provider"] ) )
  
 	// check if the current user already have authenticated using this provider before 
 	$user_exist = $fgmembersite->get_user_by_provider_and_id( $provider_name, $user_profile->identifier );
+
  
 	// if the used didn't authenticate using the selected provider before 
 	// we create a new entry on database.users for him
@@ -61,11 +60,15 @@ elseif( isset( $_REQUEST["provider"] ) )
 			$user_profile->identifier
 		);
 	}
- 
+    
 	// set the user as connected and redirect him
-	$_SESSION["user_connected"] = true;
- 
-	header("Location: login-home.php");
+    $username = $user_profile->identifier;
+    if(!isset($_SESSION)){
+        session_start(); 
+    }
+    $fgmembersite->CheckLoginInDB_Hybrid($user_profile->identifier);
+    $_SESSION[$fgmembersite->GetLoginSessionVar()] = $username;
+	$fgmembersite->RedirectToURL("login-home.php");
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">

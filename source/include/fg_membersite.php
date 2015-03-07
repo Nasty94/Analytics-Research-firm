@@ -388,6 +388,36 @@ class FGMembersite
         return true;
     }
 
+    function CheckLoginInDB_Hybrid($identifier)
+    {
+        if(!$this->DBLogin())
+        {
+            $this->HandleError("Database login failed!");
+            return false;
+        }        
+               
+        $qry = "Select name, email, phone_number from $this->tablename where hybridauth_provider_uid = '$identifier'";
+        
+        $result = mysqli_query($this->connection,$qry);
+        
+        if(!$result || mysqli_num_rows($result) <= 0)
+        {
+            $this->HandleError("Error logging in. The username or password does not match");
+            return false;
+        }
+        
+        $row = mysqli_fetch_assoc($result);
+        
+        
+        $_SESSION['name_of_user']  = $row['name'];
+        $_SESSION['email_of_user'] = $row['email'];
+		$_SESSION['phone_of_user'] = $row['phone_number'];
+
+	
+        
+        return true;
+    }
+
     public function checkhashSSHA($salt, $password) {
  
         $hash = base64_encode(sha1($password . $salt, true) . $salt);
@@ -974,26 +1004,26 @@ class FGMembersite
     }  
     function get_user_by_provider_and_id( $provider_name, $provider_user_id )
     {
-	    return $this->mysqli_query_execute( "SELECT * FROM users WHERE hybridauth_provider_name = '$provider_name' AND hybridauth_provider_uid = '$provider_user_id'" );
+	    return $this->mysqli_query_execute( "SELECT * FROM users WHERE hybridauth_provider_name = '$provider_name' AND hybridauth_provider_uid = '$provider_user_id'" );     
     }
  
     function create_new_hybridauth_user( $email, $first_name, $last_name, $provider_name, $provider_user_id )
     {
-    die("Kohal!");
 	// let generate a random password for the user
 	$password = md5( str_shuffle( "0123456789abcdefghijklmnoABCDEFGHIJ" ) );
-    //die($first_name.' '.$last_name);
 	$insert_query ="INSERT INTO users(
+    username,
     email, 
 	password, 
 	name, 
 	hybridauth_provider_name, 
 	hybridauth_provider_uid 
 	) 
-	VALUES(	
+	VALUES(
+    '$provider_user_id',
     '$email',
 	'$password',
-	'$first_name.' '.$last_name',
+	'$first_name $last_name',
 	'$provider_name',
 	'$provider_user_id'
 	)";

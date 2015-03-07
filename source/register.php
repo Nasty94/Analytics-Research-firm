@@ -199,22 +199,6 @@ Uses the excellent form validation script from JavaScript-coder.com-->
     frmvalidator.addValidation("password","req","Please provide a password");
 
 // ]]>
-
-  function onSignInCallback(resp) {
-    gapi.client.load('plus', 'v1', apiClientLoaded);
-  }
-
-  function apiClientLoaded() {
-    gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
-  }
-
-  function handleEmailResponse(resp) {
-    var primaryEmail;
-    for (var i=0; i < resp.emails.length; i++) {
-      if (resp.emails[i].type === 'account') primaryEmail = resp.emails[i].value;
-    }
-}
-
 </script>
 
 <!--
