@@ -535,53 +535,28 @@ class FGMembersite
 		$mailer->SMTPAuth = TRUE;
 		$mailer->Username = 'lkcmailer@gmail.com';  
 		$mailer->Password = 'lkconsulting';
-        $mailer->addReplyTo('lkcmailer@gmail.com', 'First Last');  
+        $mailer->addReplyTo('anastassia.ivanova.94@gmail.com', 'First Last');  
         $mailer->AddAddress($user_rec['email'],$user_rec['name']);
         
         //$mailer->Subject = "Your registration with ".$this->sitename;
         $mailer->setFrom($this->GetFromAddress(),"lkcmailer");
 		
         
-        $mailer->Subject = "Welcome to ".$this->sitename;
-        $mailer->From = $this->GetFromAddress();        
-        
-        $mailer->Body ="Hello ".$user_rec['name']."\r\n\r\n".
-        "Welcome! Your registration  with ".$this->sitename." is completed.\r\n".
-        "\r\n".
-        "Regards,\r\n".
-        "Webmaster\r\n".
-        $this->sitename;
-        if(!$mailer->Send())
-        {
-            $this->HandleError("Failed sending user welcome email.");
-            return false;
-        }
-        return true;
-    }
-        if(empty($this->admin_email))
-        {
-            return false;
-        }
-        $mailer = new PHPMailer();
-        
-        $mailer->CharSet = 'utf-8';
-        
-        $mailer->AddAddress($this->admin_email);
-        
         $mailer->Subject = "Registration Completed: ".$user_rec['name'];
-
-        $mailer->From = $this->GetFromAddress();         
+        $mailer->From = $this->GetFromAddress();        
         
         $mailer->Body ="A new user registered at ".$this->sitename."\r\n".
         "Name: ".$user_rec['name']."\r\n".
         "Email address: ".$user_rec['email']."\r\n";
-        
+        "phone_number: ".$formvars['phone_number'];
         if(!$mailer->Send())
         {
+            $this->HandleError("Failed sending admin intimation email on reg complete.");
             return false;
         }
         return true;
     }
+        
     
     function GetResetPasswordCode($email)
     {
@@ -763,29 +738,40 @@ class FGMembersite
         {
             return false;
         }
-        $mailer = new PHPMailer();
+        require 'PHPMailerAutoload.php';
+		$mailer = new PHPMailer;
+		//$mailer->SMTPDebug = 2;
+		//$mailer->Debugoutput = 'html';
         
         $mailer->CharSet = 'utf-8';
+		$mailer->IsSMTP();
+		$mailer->Host = 'smtp.gmail.com';
+		$mailer->Port = 587;
+		$mailer->SMTPSecure = 'tls';
+		$mailer->SMTPAuth = TRUE;
+		$mailer->Username = 'lkcmailer@gmail.com';  
+		$mailer->Password = 'lkconsulting';
+        $mailer->addReplyTo('anastassia.ivanova.94@gmail.com', 'Anastasia Ivanova ');  
+        $mailer->AddAddress($user_rec['email'],$user_rec['name']);
         
-        $mailer->AddAddress($this->admin_email);
+        //$mailer->Subject = "Your registration with ".$this->sitename;
+        $mailer->setFrom($this->GetFromAddress(),"lkcmailer");
+		
         
-        $mailer->Subject = "New registration: ".$formvars['name'];
-
-        $mailer->From = $this->GetFromAddress();         
+        $mailer->Subject = "New user: ".$user_rec['name'];
+        $mailer->From = $this->GetFromAddress();        
         
-        $mailer->Body ="A new user registered at ".$this->sitename."\r\n".
-        "Name: ".$formvars['name']."\r\n".
-        "Email address: ".$formvars['email']."\r\n".
-        "UserName: ".$formvars['username'];
-		"phone_number: ".$formvars['phone_number'];
-        
+        $mailer->Body ="A new user  at ".$this->sitename."\r\n".
+        "Name: ".$user_rec['name']."\r\n".
+        "Email address: ".$user_rec['email']."\r\n";
+        "phone_number: ".$formvars['phone_number'];
         if(!$mailer->Send())
         {
+            $this->HandleError("Failed sending admin intimation email on reg complete.");
             return false;
         }
         return true;
     }
-
     
     function SaveToDatabase(&$formvars)
     {
