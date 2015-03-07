@@ -381,6 +381,7 @@ class FGMembersite
         $_SESSION['name_of_user']  = $row['name'];
         $_SESSION['email_of_user'] = $row['email'];
 		$_SESSION['phone_of_user'] = $row['phone_number'];
+		$_SESSION['id_of_user']  = $row['id_user'];
 
 	
         
