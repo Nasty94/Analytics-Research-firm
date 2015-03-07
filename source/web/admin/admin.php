@@ -1,6 +1,6 @@
 <?PHP
-require('../../source/include/membersite_config.php');
-require('../../include/fg_membersite.php');
+require_once('../../membersite_config.php');
+require_once('../../fg_membersite.php');
 
 if(!$fgmembersite->isAdmin())
 {
