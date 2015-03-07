@@ -8,7 +8,7 @@ $fgmembersite = new FGMembersite();
 $fgmembersite->SetWebsiteName('consultingLK.com');
 
 //Provide the email address where you want to get notifications
-$fgmembersite->SetAdminEmail('anastassia.ivanova.94@gmail.com');
+$fgmembersite->SetAdminEmail('Annett.Saarik@gmail.com');
 
 //Provide your database login details here:
 //hostname, user name, password, database name and table name
@@ -18,8 +18,7 @@ $fgmembersite->InitDB(/*hostname*/'eu-cdbr-azure-north-b.cloudapp.net',
                       /*username*/'bc3106a32eb6a9',
                       /*password*/'ff65da13',
                       /*database name*/'lkconsult',
-                      /*table name*/'users',
-                      /*table name*/'orders');
+                      /*table name*/'users');
 
 //For better security. Get a random string from this link: http://tinyurl.com/randstr
 // and put it here

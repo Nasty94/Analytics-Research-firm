@@ -31,8 +31,12 @@ class FGMembersite
         $this->pwd  = $pwd;
         $this->database  = $database;
         $this->tablename = $tablename;
+<<<<<<< HEAD
       
         
+=======
+            
+>>>>>>> 58b96c244ba9302cba757c8c7b054f649106dd8d
     }
     function SetAdminEmail($email)
     {
@@ -159,7 +163,8 @@ class FGMembersite
     }
 	function isAdmin()
 	{
-	   return strcmp('anastassia.ivanova.94@gmail.com',$_SESSION['email_of_user']);
+	   return strcmp('Annett.Saarik@gmail.com',$_SESSION['email_of_user']);
+
 	}
     
     function LogOut()
@@ -878,10 +883,15 @@ class FGMembersite
 	         	"salt VARCHAR( 50 ),".
                 "password VARCHAR( 80 ) NOT NULL ,".
                 "confirmcode VARCHAR(32) ,".
+<<<<<<< HEAD
                 "PRIMARY KEY ( id_user ), ".
                 "hybridauth_provider_name VARCHAR(255), ". 
 	            "hybridauth_provider_uid VARCHAR(255))";
         #die($qry);
+=======
+                "PRIMARY KEY ( id_user )".
+                ")";
+>>>>>>> 58b96c244ba9302cba757c8c7b054f649106dd8d
 	
                 
         if(!mysqli_query($this->connection,$qry))
@@ -993,8 +1003,13 @@ class FGMembersite
         }   
 
 	    $result = mysqli_query($this->connection, $sql );
+<<<<<<< HEAD
 
 	    if(!$result)
+=======
+ 
+	    if(!$result )
+>>>>>>> 58b96c244ba9302cba757c8c7b054f649106dd8d
 	    {
 		    die( printf( "Error: %s\n", mysqli_error($this->connection) ) );
 	    }
@@ -1008,6 +1023,10 @@ class FGMembersite
  
     function create_new_hybridauth_user( $email, $first_name, $last_name, $provider_name, $provider_user_id )
     {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 58b96c244ba9302cba757c8c7b054f649106dd8d
 	// let generate a random password for the user
 	$password = md5( str_shuffle( "0123456789abcdefghijklmnoABCDEFGHIJ" ) );
 	$insert_query ="INSERT INTO users(
@@ -1028,8 +1047,32 @@ class FGMembersite
 	)";
     $this->mysqli_query_execute($insert_query);
     }
-    
+
+
     function GetAllOrders()
+    
+    {
+
+        if(!$this->DBLogin())
+        {
+            $this->HandleError("Database login failed!");
+            return false;
+        } 
+
+        $sql_orders = "
+            SELECT order_id, name, email, order_content 
+            FROM orders 
+            INNER JOIN users 
+            ON orders.user_id = users.id_user";
+
+        $result = mysqli_query($this->connection, $sql_orders);
+              
+        return $result;
+
+    }
+
+    function GetOrderData()
+
     {
 
         if(!$this->DBLogin())
@@ -1044,7 +1087,8 @@ class FGMembersite
             SELECT order_id, name, email, order_content 
             FROM orders 
             INNER JOIN users 
-            ON orders.user_id = users.id_user";
+            ON orders.user_id = users.id_user
+            WHERE user_id =". $id_of_user;
 
         $result = mysqli_query($this->connection, $sql_orders);
               

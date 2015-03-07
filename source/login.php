@@ -23,6 +23,7 @@ elseif( isset( $_REQUEST["provider"] ) )
  
 	try
 	{
+        
 
 		// inlcude HybridAuth library
 		// change the following paths if necessary 
@@ -43,9 +44,10 @@ elseif( isset( $_REQUEST["provider"] ) )
         echo $e;
 		//header("Location: http://www.example.com/login-error.php");
 	}
- 
+
 	// check if the current user already have authenticated using this provider before 
 	$user_exist = $fgmembersite->get_user_by_provider_and_id( $provider_name, $user_profile->identifier );
+
 
  
 	// if the used didn't authenticate using the selected provider before 
