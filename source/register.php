@@ -50,11 +50,11 @@ if(isset($_POST['submitted']))
 		  <div id="img">
      		 
 		  <img src="img/LK.jpg" width=auto height=auto>
-		  </div <!-- img -->
+		  </div> <!-- img -->
 
 <div class="dropdownmenu">
         <ul id="nav">
-            <li class='active'><a href='#'>Avaleht</a></li>
+            <li class='active'><a href='index.html'>Avaleht</a></li>
             <li><a href="#">Minu konto</a>
                 <div>
                     <ul>

@@ -1,15 +1,19 @@
 <?PHP
-require_once('../../membersite_config.php');
-require_once('../../fg_membersite.php');
 
-if(!$fgmembersite->isAdmin())
-{
-    $fgmembersite->RedirectToURL("login.php");
-    exit;
-}
+$appRootPath = getenv('APP_ROOT_PATH');
+echo $appRootPath.'/include/fg_membersite.php';
+require_once($appRootPath.'./include/fg_membersite.php');
+require_once($appRootPath.'/include/membersite_config.php');
+
+//if(!$fgmembersite->isAdmin())
+//{
+//    $fgmembersite->RedirectToURL("login.php");
+//    exit;
+//}
 
 
 ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
@@ -29,7 +33,7 @@ if(!$fgmembersite->isAdmin())
 	<link rel="stylesheet" href="style/style.css">
 	<link rel="stylesheet" href="style/verticalmenu.css">
 	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
-    <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
+  <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         
     	
@@ -58,7 +62,7 @@ if(!$fgmembersite->isAdmin())
                         <li><a href='all_orders.php'>Tellimuste ajalugu</a></li>
                         <li><a href='all_users.php'>Klientide kontod</a></li>
                         <li><a href='change-pwd.php'>Muuda parooli</a></li>
-			            <li><a href='logout.php'>Logi välja</a></li>
+			                  <li><a href='logout.php'>Logi välja</a></li>
                        
                     </ul>
                 </div>
@@ -97,7 +101,7 @@ if(!$fgmembersite->isAdmin())
 </ul>
 </div>
 	<div id="main">
-	<h2>Tere, <?= $fgmembersite->UserFullName(); ?>!</h2>
+	<h2>Tere, <? = $fgmembersite->UserFullName(); ?>!</h2>
 	<h3>Olete administraator.</h3>
 	
 	<div id="white-box" >
@@ -106,35 +110,10 @@ if(!$fgmembersite->isAdmin())
                         <p class="note">You have disabled Javascript. This website will not function without it.</p>
                  </noscript>
                       
-			 
 
 
 <div class="center">
 					
-					
-<div id='verticalmenu'>
-<ul>
-   <li><a href='index.html'><span>Avaleht</span></a></li>
-   <li class='active has-sub'><a href='#'><span>Minu tellimused</span></a>
-      <ul>
-         <li class='has-sub'><a href='#'><span>Ajalugu</span></a>
-            <ul>
-               <li><a href='#'><span>Konto</span></a></li>
-               <li class='last'><a href='#'><span>Kirjeldus</span></a></li>
-            </ul>
-         </li>
-         <li class='has-sub'><a href='#'><span>Page 2</span></a>
-            <ul>
-               <li><a href='#'><span>Sub Page 2</span></a></li>
-               
-            </ul>
-         </li>
-      </ul>
-   </li>
-   <li><a href='#'><span>Minu sõnumid</span></a></li>
-   <li class='last'><a href='logout.php'><span>Lovi välja</span></a></li>
-</ul>
-</div>
 		
 
 </div><!--center-->
