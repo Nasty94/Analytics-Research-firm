@@ -31,7 +31,7 @@ class FGMembersite
         $this->pwd  = $pwd;
         $this->database  = $database;
         $this->tablename = $tablename;
-            
+
     }
     function SetAdminEmail($email)
     {
@@ -378,6 +378,36 @@ class FGMembersite
         $row = mysqli_fetch_assoc($result);
         
         
+        $_SESSION['name_of_user']  = $row['name'];
+        $_SESSION['email_of_user'] = $row['email'];
+		$_SESSION['phone_of_user'] = $row['phone_number'];
+
+	
+        
+        return true;
+    }
+
+    function CheckLoginInDB_Hybrid($identifier)
+    {
+        if(!$this->DBLogin())
+        {
+            $this->HandleError("Database login failed!");
+            return false;
+        }        
+               
+        $qry = "Select name, email, phone_number, id_user from $this->tablename where hybridauth_provider_uid = '$identifier'";
+        
+        $result = mysqli_query($this->connection,$qry);
+        
+        if(!$result || mysqli_num_rows($result) <= 0)
+        {
+            $this->HandleError("Error logging in. The username or password does not match");
+            return false;
+        }
+        
+        $row = mysqli_fetch_assoc($result);
+        
+        $_SESSION['id_of_user']  = $row['id_user'];
         $_SESSION['name_of_user']  = $row['name'];
         $_SESSION['email_of_user'] = $row['email'];
 		$_SESSION['phone_of_user'] = $row['phone_number'];
@@ -843,11 +873,14 @@ class FGMembersite
                 "id_user INT NOT NULL AUTO_INCREMENT ,".
                 "name VARCHAR( 128 ) NOT NULL ,".
                 "email VARCHAR( 64 ) NOT NULL ,".
-                "phone_number VARCHAR( 16 ) NOT NULL ,".
-                "username VARCHAR( 16 ) NOT NULL ,".
-	         	"salt VARCHAR( 50 ) NOT NULL ,".
+                "phone_number VARCHAR( 16 ),".
+                "username VARCHAR( 16 ),".
+	         	"salt VARCHAR( 50 ),".
                 "password VARCHAR( 80 ) NOT NULL ,".
                 "confirmcode VARCHAR(32) ,".
+                "PRIMARY KEY ( id_user ), ".
+                "hybridauth_provider_name VARCHAR(255), ". 
+	            "hybridauth_provider_uid VARCHAR(255))";
                 "PRIMARY KEY ( id_user )".
                 ")";
 	
@@ -959,19 +992,22 @@ class FGMembersite
             $this->HandleError("Database login failed!");
             return false;
         }   
- 
+
 	    $result = mysqli_query($this->connection, $sql );
- 
+
+
+	    if(!$result)
 	    if(!$result )
+
 	    {
 		    die( printf( "Error: %s\n", mysqli_error($this->connection) ) );
 	    }
- 
+        
 	    return $result->fetch_object();
     }  
     function get_user_by_provider_and_id( $provider_name, $provider_user_id )
-    {
-	    return $this->mysqli_query_execute( "SELECT * FROM users WHERE hybridauth_provider_name = '$provider_name' AND hybridauth_provider_uid = '$provider_user_id'" );
+    {    
+	    return $this->mysqli_query_execute( "SELECT * FROM users WHERE hybridauth_provider_name = '$provider_name' AND hybridauth_provider_uid = '$provider_user_id'" );     
     }
  
     function create_new_hybridauth_user( $email, $first_name, $last_name, $provider_name, $provider_user_id )
@@ -979,18 +1015,19 @@ class FGMembersite
 
 	// let generate a random password for the user
 	$password = md5( str_shuffle( "0123456789abcdefghijklmnoABCDEFGHIJ" ) );
-    //die($first_name.' '.$last_name);
 	$insert_query ="INSERT INTO users(
+    username,
     email, 
 	password, 
 	name, 
 	hybridauth_provider_name, 
 	hybridauth_provider_uid 
 	) 
-	VALUES(	
+	VALUES(
+    '$provider_user_id',
     '$email',
 	'$password',
-	'$first_name.' '.$last_name',
+	'$first_name $last_name',
 	'$provider_name',
 	'$provider_user_id'
 	)";
@@ -1038,7 +1075,7 @@ class FGMembersite
             INNER JOIN users 
             ON orders.user_id = users.id_user
             WHERE user_id =". $id_of_user;
-
+        
         $result = mysqli_query($this->connection, $sql_orders);
               
         return $result;

@@ -113,6 +113,13 @@ if(!$fgmembersite->CheckLogin())
 
 <div class="center">
     <h3>Teie tellimused:</h3>
+    <?php
+    $results = $fgmembersite->GetOrderData();
+                            $i = 1;
+                            if(!$results){?>
+                                <h2>Teil ei ole tellimusi</h2><?php
+                                die();
+                            }?>
     <div class="OrderHistoryTable" >
                 <table >
                    
@@ -136,8 +143,7 @@ if(!$fgmembersite->CheckLogin())
                     
                     <?php
                         
-                            $results = $fgmembersite->GetOrderData();
-                            $i = 1;
+                            
                             while($row = mysqli_fetch_array($results))
                             {
                             ?>
