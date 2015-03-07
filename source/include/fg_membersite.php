@@ -365,7 +365,7 @@ class FGMembersite
          
            
 
-        $qry = "Select name, email, phone_number from $this->tablename where username='$username' and password='$hash'";
+        $qry = "Select name, email, phone_number, id_user from $this->tablename where username='$username' and password='$hash'";
         
         $result = mysqli_query($this->connection,$qry);
         
