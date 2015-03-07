@@ -24,16 +24,14 @@ class FGMembersite
         $this->rand_key = '0iQx5oBk66oVZep';
     }
     
-    function InitDB($host,$uname,$pwd,$database,$tablename1,$tablename2)
+    function InitDB($host,$uname,$pwd,$database,$tablename)
     {
         $this->db_host  = $host;
         $this->username = $uname;
         $this->pwd  = $pwd;
         $this->database  = $database;
-        $this->tablename = $tablename1;
-        $this->tablenam2 = $tablename2;
-      
-        
+        $this->tablename = $tablename;
+            
     }
     function SetAdminEmail($email)
     {
@@ -160,7 +158,7 @@ class FGMembersite
     }
 	function isAdmin()
 	{
-	   return strcmp('anastassia.ivanova.94@gmail.com',$_SESSION['email_of_user']);
+	   return strcmp('leena.korotych@yahoo.com',$_SESSION['email_of_user']);
 	}
     
     function LogOut()
@@ -404,7 +402,7 @@ class FGMembersite
         }   
         $confirmcode = $this->SanitizeForSQL($_GET['code']);
         
-        $result = mysqli_query($this->connection,"Select name, email from $this->tablename where confirmcode='$confirmcode'");   
+        $result = mysqli_query("Select name, email from $this->tablename where confirmcode='$confirmcode'",$this->connection);   
         if(!$result || mysqli_num_rows($result) <= 0)
         {
             $this->HandleError("Wrong confirm code.");
@@ -416,7 +414,7 @@ class FGMembersite
         
         $qry = "Update $this->tablename Set confirmcode='y' Where  confirmcode='$confirmcode'";
         
-        if(!mysqli_query($this->connection, "Update $this->tablename Set confirmcode='y' Where  confirmcode='$confirmcode'" ))
+        if(!mysqli_query( $qry ,$this->connection))
         {
             $this->HandleDBError("Error inserting data to the table\nquery:$qry");
             return false;
@@ -522,41 +520,30 @@ class FGMembersite
     
     function SendAdminIntimationOnRegComplete(&$user_rec)
     {
-    	require 'PHPMailerAutoload.php';
-		$mailer = new PHPMailer;
-		//$mailer->SMTPDebug = 2;
-		//$mailer->Debugoutput = 'html';
+        if(empty($this->admin_email))
+        {
+            return false;
+        }
+        $mailer = new PHPMailer();
         
         $mailer->CharSet = 'utf-8';
-		$mailer->IsSMTP();
-		$mailer->Host = 'smtp.gmail.com';
-		$mailer->Port = 587;
-		$mailer->SMTPSecure = 'tls';
-		$mailer->SMTPAuth = TRUE;
-		$mailer->Username = 'lkcmailer@gmail.com';  
-		$mailer->Password = 'lkconsulting';
-        $mailer->addReplyTo('anastassia.ivanova.94@gmail.com', 'First Last');  
-        $mailer->AddAddress($user_rec['email'],$user_rec['name']);
         
-        //$mailer->Subject = "Your registration with ".$this->sitename;
-        $mailer->setFrom($this->GetFromAddress(),"lkcmailer");
-		
+        $mailer->AddAddress($this->admin_email);
         
         $mailer->Subject = "Registration Completed: ".$user_rec['name'];
-        $mailer->From = $this->GetFromAddress();        
+
+        $mailer->From = $this->GetFromAddress();         
         
         $mailer->Body ="A new user registered at ".$this->sitename."\r\n".
         "Name: ".$user_rec['name']."\r\n".
         "Email address: ".$user_rec['email']."\r\n";
-        "phone_number: ".$formvars['phone_number'];
+        
         if(!$mailer->Send())
         {
-            $this->HandleError("Failed sending admin intimation email on reg complete.");
             return false;
         }
         return true;
     }
-        
     
     function GetResetPasswordCode($email)
     {
@@ -738,40 +725,29 @@ class FGMembersite
         {
             return false;
         }
-        require 'PHPMailerAutoload.php';
-		$mailer = new PHPMailer;
-		//$mailer->SMTPDebug = 2;
-		//$mailer->Debugoutput = 'html';
+        $mailer = new PHPMailer();
         
         $mailer->CharSet = 'utf-8';
-		$mailer->IsSMTP();
-		$mailer->Host = 'smtp.gmail.com';
-		$mailer->Port = 587;
-		$mailer->SMTPSecure = 'tls';
-		$mailer->SMTPAuth = TRUE;
-		$mailer->Username = 'lkcmailer@gmail.com';  
-		$mailer->Password = 'lkconsulting';
-        $mailer->addReplyTo('anastassia.ivanova.94@gmail.com', 'Anastasia Ivanova ');  
-        $mailer->AddAddress($user_rec['email'],$user_rec['name']);
         
-        //$mailer->Subject = "Your registration with ".$this->sitename;
-        $mailer->setFrom($this->GetFromAddress(),"lkcmailer");
-		
+        $mailer->AddAddress($this->admin_email);
         
-        $mailer->Subject = "New user: ".$user_rec['name'];
-        $mailer->From = $this->GetFromAddress();        
+        $mailer->Subject = "New registration: ".$formvars['name'];
+
+        $mailer->From = $this->GetFromAddress();         
         
-        $mailer->Body ="A new user  at ".$this->sitename."\r\n".
-        "Name: ".$user_rec['name']."\r\n".
-        "Email address: ".$user_rec['email']."\r\n";
-        "phone_number: ".$formvars['phone_number'];
+        $mailer->Body ="A new user registered at ".$this->sitename."\r\n".
+        "Name: ".$formvars['name']."\r\n".
+        "Email address: ".$formvars['email']."\r\n".
+        "UserName: ".$formvars['username'];
+		"phone_number: ".$formvars['phone_number'];
+        
         if(!$mailer->Send())
         {
-            $this->HandleError("Failed sending admin intimation email on reg complete.");
             return false;
         }
         return true;
     }
+
     
     function SaveToDatabase(&$formvars)
     {
@@ -871,9 +847,7 @@ class FGMembersite
 	         	"salt VARCHAR( 50 ) NOT NULL ,".
                 "password VARCHAR( 80 ) NOT NULL ,".
                 "confirmcode VARCHAR(32) ,".
-                "PRIMARY KEY ( id_user ), ".
-                "hybridauth_provider_name, SET DEAFULT 'google account'".
-	            "hybridauth_provider_uid".
+                "PRIMARY KEY ( id_user )".
                 ")";
 	
                 
@@ -987,7 +961,7 @@ class FGMembersite
  
 	    $result = mysqli_query($this->connection, $sql );
  
-	    if(!$result)
+	    if(!$result )
 	    {
 		    die( printf( "Error: %s\n", mysqli_error($this->connection) ) );
 	    }
@@ -1001,7 +975,7 @@ class FGMembersite
  
     function create_new_hybridauth_user( $email, $first_name, $last_name, $provider_name, $provider_user_id )
     {
-    die("Kohal!");
+
 	// let generate a random password for the user
 	$password = md5( str_shuffle( "0123456789abcdefghijklmnoABCDEFGHIJ" ) );
     //die($first_name.' '.$last_name);
@@ -1021,8 +995,32 @@ class FGMembersite
 	)";
     $this->mysqli_query_execute($insert_query);
     }
-    
+
+
     function GetAllOrders()
+    
+    {
+
+        if(!$this->DBLogin())
+        {
+            $this->HandleError("Database login failed!");
+            return false;
+        } 
+
+        $sql_orders = "
+            SELECT order_id, name, email, order_content 
+            FROM orders 
+            INNER JOIN users 
+            ON orders.user_id = users.id_user";
+
+        $result = mysqli_query($this->connection, $sql_orders);
+              
+        return $result;
+
+    }
+
+    function GetOrderData()
+
     {
 
         if(!$this->DBLogin())
@@ -1037,7 +1035,8 @@ class FGMembersite
             SELECT order_id, name, email, order_content 
             FROM orders 
             INNER JOIN users 
-            ON orders.user_id = users.id_user";
+            ON orders.user_id = users.id_user
+            WHERE user_id =". $id_of_user;
 
         $result = mysqli_query($this->connection, $sql_orders);
               

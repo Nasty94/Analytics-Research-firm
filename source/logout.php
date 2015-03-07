@@ -97,30 +97,7 @@ $fgmembersite->LogOut();
                  </noscript>
 
     <div class="center">
-	<div id='verticalmenu'>
-<ul>
-   
-   <li class='active has-sub'><a href='#'><span>Page1</span></a>
-      <ul>
-         <li class='has-sub'><a href='#'><span>Page1.1</span></a>
-            <ul>
-               <li><a href='#'><span>Page1.2</span></a></li>
-               <li class='last'><a href='#'><span>Page1.3</span></a></li>
-            </ul>
-         </li>
-         <li class='has-sub'><a href='#'><span>Page 2</span></a>
-            <ul>
-               <li><a href='#'><span>Page2.1</span></a></li>
-               
-            </ul>
-         </li>
-      </ul>
-   </li>
-   <li><a href='#'><span>Page3</span></a></li>
-   <li class='last'><a href='login.php'><span>Logi sisse</span></a></li>
-</ul>
-</div>
-		
+	<h2>Olete edukalt välja loginud!</h2>
 
 </div><!--center-->
 </div> <!--contentInt-->
