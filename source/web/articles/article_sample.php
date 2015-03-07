@@ -230,7 +230,7 @@ What will you gain?<br>
         <textarea name="comment" id="comment" rows="10" tabindex="4"  required="required"></textarea>
 
         <input type="hidden" name="comment_post_ID" value="<?php echo($comment_post_ID); ?>" id="comment_post_ID" />
-        <input name="submit" type="submit" value="Submit " />
+        <input name="submit" type="submit" value="Submit " style="width:50p"/>
         
       </form>
       
