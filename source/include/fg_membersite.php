@@ -24,14 +24,13 @@ class FGMembersite
         $this->rand_key = '0iQx5oBk66oVZep';
     }
     
-    function InitDB($host,$uname,$pwd,$database,$tablename1,$tablename2)
+    function InitDB($host,$uname,$pwd,$database,$tablename)
     {
         $this->db_host  = $host;
         $this->username = $uname;
         $this->pwd  = $pwd;
         $this->database  = $database;
-        $this->tablename = $tablename1;
-        $this->tablenam2 = $tablename2;
+        $this->tablename = $tablename;
       
         
     }
@@ -874,15 +873,15 @@ class FGMembersite
                 "id_user INT NOT NULL AUTO_INCREMENT ,".
                 "name VARCHAR( 128 ) NOT NULL ,".
                 "email VARCHAR( 64 ) NOT NULL ,".
-                "phone_number VARCHAR( 16 ) NOT NULL ,".
-                "username VARCHAR( 16 ) NOT NULL ,".
-	         	"salt VARCHAR( 50 ) NOT NULL ,".
+                "phone_number VARCHAR( 16 ),".
+                "username VARCHAR( 16 ),".
+	         	"salt VARCHAR( 50 ),".
                 "password VARCHAR( 80 ) NOT NULL ,".
                 "confirmcode VARCHAR(32) ,".
                 "PRIMARY KEY ( id_user ), ".
-                "hybridauth_provider_name, SET DEAFULT 'google account'".
-	            "hybridauth_provider_uid".
-                ")";
+                "hybridauth_provider_name VARCHAR(255), ". 
+	            "hybridauth_provider_uid VARCHAR(255))";
+        #die($qry);
 	
                 
         if(!mysqli_query($this->connection,$qry))
@@ -992,18 +991,18 @@ class FGMembersite
             $this->HandleError("Database login failed!");
             return false;
         }   
- 
+
 	    $result = mysqli_query($this->connection, $sql );
- 
+
 	    if(!$result)
 	    {
 		    die( printf( "Error: %s\n", mysqli_error($this->connection) ) );
 	    }
- 
+        
 	    return $result->fetch_object();
     }  
     function get_user_by_provider_and_id( $provider_name, $provider_user_id )
-    {
+    {    
 	    return $this->mysqli_query_execute( "SELECT * FROM users WHERE hybridauth_provider_name = '$provider_name' AND hybridauth_provider_uid = '$provider_user_id'" );     
     }
  
