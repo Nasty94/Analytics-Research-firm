@@ -173,6 +173,12 @@ if(isset($_POST['submitted']))
 </div>
 
 
+<div id="block" >
+
+</div>
+
+
+
 	<div id="footer">
                       © 2015  LK Consulting <br>
 					  This is a proof-of-concept web application.

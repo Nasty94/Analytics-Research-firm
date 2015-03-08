@@ -1130,9 +1130,8 @@ class FGMembersite
             FROM users";
 
         $result = mysqli_query($this->connection, $sql_orders);
-              
+ 
         return $result;
-
 
     }
 
@@ -1156,8 +1155,7 @@ class FGMembersite
             WHERE user_id =". $id_user;
         
         $result = mysqli_query($this->connection, $sql_orders);
-        echo $result;
-        die();
+    
         return $result;
 
     }

@@ -1,7 +1,7 @@
 <?PHP
 
 require_once('./include/fg_membersite.php');
-require_once('/include/membersite_config.php');
+require_once('./include/membersite_config.php');
 
 if($fgmembersite->isAdmin()==0)
 {
@@ -13,7 +13,6 @@ if($fgmembersite->isAdmin()==0)
 ?>
 
 
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
@@ -62,7 +61,7 @@ if($fgmembersite->isAdmin()==0)
                         <li><a href='all_orders.php'>Tellimuste ajalugu</a></li>
                         <li><a href='all_users.php'>Klientide kontod</a></li>
                         <li><a href='change-pwd.php'>Muuda parooli</a></li>
-			<li><a href='logout.php'>Logi välja</a></li>
+			            <li><a href='logout.php'>Logi välja</a></li>
                     </ul>
                 </div>
             </li>
@@ -104,21 +103,30 @@ if($fgmembersite->isAdmin()==0)
         </ul>
     </div>
 	<div id="main">
-	<h2>Tere, administraator!</h2>
-	
+	<h2>Tere, administraator! Kuupäev: <span id='time'></span></h2> 
+
 	<div id="white-box" >
 	 <div id="contentInt">
                  <noscript>
                         <p class="note">You have disabled Javascript. This website will not function without it.</p>
                  </noscript>
                       
-			 
-
 
 <div class="center">
+
     <h3>Kõik kliendid:</h3>
+
+        <script type="text/javascript">
+        var sse = new EventSource('./scripts/server-side-script.php');
+        sse.addEventListener('LoggedInUsers',function(e){
+        var data = e.data;
+        //handle your data here
+
+        },false);
+        </script>
+
     <div class="OrderHistoryTable" >
-                <table >
+                <table>
                    
                         <tr>
                             <th>
@@ -131,36 +139,33 @@ if($fgmembersite->isAdmin()==0)
                                 Kasutaja nimi
                             </th>
                              <th>
-                                Tellija email
+                                Kasutaja email
                             </th>
                         </tr>
                     
                         <?php
-                        
                             $results = $fgmembersite->GetAllUserData();
                             $i = 1;
                             while($row = mysqli_fetch_array($results))
                             {
-                            ?>
+                        ?>
+
                                 <tr> 
                                     <td><?php echo $i ?></td>
                                     <td><?php echo $row['id_user']?></td>
                                     <td><?php echo $row['name']?></td>
                                     <td><?php echo $row['email']?></td> 
                                 </tr>
-                            <?php
+                        <?php
                             $i++;
                             }
-                            ?>
-                        
-               
+                        ?>           
                 </table>
-                </div>
-            </div>	
+    </div>	
 					
      
 </div><!--center--> 
-</div> <!--contentInt--> 
+</div><!--contentInt--> 
 		   		   
 
              
@@ -170,11 +175,27 @@ if($fgmembersite->isAdmin()==0)
 <div id="block" >
                      
 </div>
+
+<div id="block" >
+                     
+</div>
 		  
 	<div id="footer" >
                       © 2015  LK Consulting <br>
 					  This is a proof-of-concept web application.
 	</div>
+
+
+
+<!-- This is the code for JavaScript, for streaming server time -->
+    <script>
+    var source = new EventSource('streaming_data.php');
+    var d = document.getElementById('time');
+    source.addEventListener('time',function(e){
+        var time = e.data;
+        d.innerHTML = time;
+    },false);
+    </script>
 
 </body>
 </html>
