@@ -12,13 +12,14 @@ http://lk-consulting.azurewebsites.net/source/
 
 ---------------------------------------------------------------------------------------------------------------------
 
-NB!  During development was used wamp server.
+NB!  During development was used wamp server, php, MYSQL workbenc etc
 
 ---------------------------------------------------------------------------------------------------------------------
 
 
 # Simple Registration/Login code in PHP
 
+NB! We provide privacy-preserving registration form, which save passwords using salt with hash functions.
 
 ## Installation
 
