@@ -13,8 +13,8 @@
 		<title>LK Consulting</title>
 		
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="style/alertify.core.css" type="text/css">
-        <link rel="stylesheet" href="style/style.css" type="text/css">
+    <link rel="stylesheet" href="style/alertify.core.css" type="text/css">
+    <link rel="stylesheet" href="style/style.css" type="text/css">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
 	<link rel="stylesheet" href="style/menubar.css" type="text/css" media="all">
 	<link rel="stylesheet" type="text/css" href="style/style.css">
@@ -22,6 +22,7 @@
 
 		
 		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+		<script src="js/disable.js"></script>
 	
 		
 
@@ -127,6 +128,15 @@
 						<li>Turu-uuringud</li>
 					</ul>
 					<p></p>
+					
+  
+                </div> <!--center-->
+
+               </FORM>
+			   <FORM name="subform" id="FORM">
+                    <br>
+			   		<div class="center">
+					
 					<p>Me saame oma klientide vajadustest aru, kuna me:</p>
 					<ul>
 						<li>mõtleme alati kliendiga kaasa</li>
@@ -135,10 +145,12 @@
 						<li>lähtume heast tavast ja kasutame parimaid metoodikaid</li>
 						<li>austame inimesi ning erinevaid maailmavaateid</li>
 					</ul>
-  
                 </div> <!--center-->
 
                </FORM>
+
+			   <!--<input type='button' id='activate' name='Activate' class="URL" value='Loe rohkem...'  onclick="enable()";> <br><br>-->
+			   <a href="javascript:enable();" >Loe rohkem...</a>      
 
 		       </div> <!--mainform-->
 		      </div> <!--contentInt-->
