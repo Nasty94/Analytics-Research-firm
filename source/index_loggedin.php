@@ -110,7 +110,7 @@
                  <noscript>
                         <p class="note">You have disabled Javascript. This website will not function without it.</p>
                  </noscript>
-                      <h1></h1>
+                 
 					  
 	
                <FORM name="mainform">
