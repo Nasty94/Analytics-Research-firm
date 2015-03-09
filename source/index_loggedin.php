@@ -13,8 +13,8 @@
 		<title>LK Consulting</title>
 		
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="style/alertify.core.css" type="text/css">
-        <link rel="stylesheet" href="style/style.css" type="text/css">
+    <link rel="stylesheet" href="style/alertify.core.css" type="text/css">
+    <link rel="stylesheet" href="style/style.css" type="text/css">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
 	<link rel="stylesheet" href="style/menubar.css" type="text/css" media="all">
 	<link rel="stylesheet" type="text/css" href="style/style.css">
@@ -22,6 +22,7 @@
 
 		
 		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+		<script src="js/disable.js"></script>
 	
 		
 
@@ -109,32 +110,47 @@
                  <noscript>
                         <p class="note">You have disabled Javascript. This website will not function without it.</p>
                  </noscript>
-                      <h1></h1>
+                 
 					  
 	
                <FORM name="mainform">
 
 			   		<div class="center">
 					
-					We apply innovative solutions to today's complex market research problems.
-					You should expect your research team to help you solve your business challenges using custom solutions, not solutions that worked for someone else. We offer expertise across many methodologies, and developed unique and innovative solutions you can use to understand consumer choice and solve business problems: Bracket™ , TeXo™, Idea Mill™, Idea Audit™ and Message Test Express™.
+					<h2>Numbrid räägivad – meie tõlgendame</h2>
+					<p></p>
+					<p>LK Consulting on väike andmeanalüüsi- ja konsultatsiooni firma, kes pakub klientidele lihtsaid ärianalüüsi lahendusi. Meie klientideks on nii eraisikud kui ka ettevõtted, kes on huvitunud kvaliteetses andmeanalüüsis. </p>
+					<p>LK Consulting pakub teenuseid järgmistes valdkondades:</p>
+					<ul>
+						<li>Andmeanalüüs ja töötlus</li>
+						<li>Statistiline modelleerimine</li>
+						<li>Ärimodelleerimine</li>
+						<li>Turu-uuringud</li>
+					</ul>
+					<p></p>
 					
-					Your business needs are unique. Your research experience should be, too. Let us recommend the right research solution to help you:
-					
-					Develop new products
-
-                    Optimize pricing
-
-                    Create stronger segmentation solutions
-
-                    Exploit the value of your brand
-					
-                    Gauge customer satisfaction and loyalty
-					<a href="#"><div>read more</div></a>
-				  
+  
                 </div> <!--center-->
 
                </FORM>
+			   <FORM name="subform" id="FORM">
+                    <br>
+			   		<div class="center">
+					
+					<p>Me saame oma klientide vajadustest aru, kuna me:</p>
+					<ul>
+						<li>mõtleme alati kliendiga kaasa</li>
+						<li>lähenemine kliendile individuaalselt</li>
+						<li>leiame keerulistele küsimustele lihtsad lahendused</li>
+						<li>lähtume heast tavast ja kasutame parimaid metoodikaid</li>
+						<li>austame inimesi ning erinevaid maailmavaateid</li>
+					</ul>
+                </div> <!--center-->
+
+               </FORM>
+
+			   <!--<input type='button' id='activate' name='Activate' class="URL" value='Loe rohkem...'  onclick="enable()";> <br><br>-->
+			   <a href="javascript:enable();" >Loe rohkem...</a>      
 
 		       </div> <!--mainform-->
 		      </div> <!--contentInt-->
