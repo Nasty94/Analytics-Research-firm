@@ -1,14 +1,17 @@
 <?PHP
 
 require_once('./include/fg_membersite.php');
-require_once('/include/membersite_config.php');
+require_once('./include/membersite_config.php');
 
-if($fgmembersite->isAdmin()==0)
-{
-    $fgmembersite->RedirectToURL("login.php");
-    exit;
+
+if($fgmembersite->Login()){
+
+	if($fgmembersite->isAdmin()==0)
+	{
+    	$fgmembersite->RedirectToURL("login.php");
+    	exit;
+	}
 }
-
 
 ?>
 
