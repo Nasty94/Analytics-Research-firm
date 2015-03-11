@@ -199,6 +199,21 @@ class FGMembersite
 	    return strcmp('Annett.Saarik@gmail.com', $admin_email);
 
 	}
+	
+	function isLeadAdmin()
+	{
+
+        if(!$this->DBLogin())
+        {
+            $this->HandleError("Database login failed!");
+            return false;
+        }  
+
+        $admin_email = $_SESSION['email_of_user'];
+
+	    return strcmp('Anastassia.Ivanova.94@gmail.com', $admin_email);
+
+	}
     
     function LogOut()
     {
