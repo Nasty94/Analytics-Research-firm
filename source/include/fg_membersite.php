@@ -6,6 +6,7 @@ require_once("formvalidator.php");
 class FGMembersite
 {
     var $admin_email;
+    var $admin2_email;
     var $from_address;
     
     var $username;
@@ -36,6 +37,11 @@ class FGMembersite
     function SetAdminEmail($email)
     {
         $this->admin_email = $email;
+    }
+    
+     function SetAdmin2Email($email)
+    {
+        $this->admin2_email = $email;
     }
     
     function SetWebsiteName($sitename)
@@ -196,11 +202,11 @@ class FGMembersite
 
         $admin_email = $_SESSION['email_of_user'];
 
-	    return strcmp('Annett.Saarik@gmail.com', $admin_email);
+	    return strcmp('Anastassia.ivanova.94@gmail.com', $admin_email);
 
 	}
 	
-	function isLeadAdmin()
+	function isAdmin2()
 	{
 
         if(!$this->DBLogin())
@@ -209,9 +215,9 @@ class FGMembersite
             return false;
         }  
 
-        $admin_email = $_SESSION['email_of_user'];
+        $admin2_email = $_SESSION['email_of_user'];
 
-	    return strcmp('Anastassia.Ivanova.94@gmail.com', $admin_email);
+	    return strcmp('Annett.Saarik@gmail.com', $admin2_email);
 
 	}
     
