@@ -10,12 +10,12 @@ if(isset($_POST['submitted']))
     echo $fgmembersite->IsAdmin();
     
 
-     if($fgmembersite->IsLeadAdmin()==0)
+     if($fgmembersite->IsAdmin()==0)
 	 {
 	 $fgmembersite->RedirectToURL("admin.php");
 	 }
 	 
-     elseif($fgmembersite->IsAdmin()==0)
+     elseif($fgmembersite->IsAdmin2()==0)
 	 {
 	 $fgmembersite->RedirectToURL("admin.php");
 	 }
