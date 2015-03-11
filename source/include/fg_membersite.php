@@ -202,7 +202,7 @@ class FGMembersite
 
         $admin_email = $_SESSION['email_of_user'];
 
-	    return strcmp('Anastassia.ivanova.94@gmail.com', $admin_email);
+	    return strcmp('anastassia.ivanova.94@gmail.com', $admin_email);
 
 	}
 	
