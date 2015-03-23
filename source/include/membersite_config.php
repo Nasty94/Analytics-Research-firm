@@ -5,10 +5,12 @@ require_once("./include/fg_membersite.php");
 $fgmembersite = new FGMembersite();
 
 //Provide your site name here
-$fgmembersite->SetWebsiteName('consultingLK.com');
+$fgmembersite->SetWebsiteName('LKConsulting.com');
 
 //Provide the email address where you want to get notifications
-$fgmembersite->SetAdminEmail('Annett.Saarik@gmail.com');
+$fgmembersite->SetAdminEmail('anastassia.ivanova.94@gmail.com');
+
+$fgmembersite->SetAdmin2Email('Annett.Saarik@gmail.com');
 
 //Provide your database login details here:
 //hostname, user name, password, database name and table name

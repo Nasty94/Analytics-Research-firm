@@ -6,6 +6,7 @@ require_once("formvalidator.php");
 class FGMembersite
 {
     var $admin_email;
+    var $admin2_email;
     var $from_address;
     
     var $username;
@@ -36,6 +37,11 @@ class FGMembersite
     function SetAdminEmail($email)
     {
         $this->admin_email = $email;
+    }
+    
+     function SetAdmin2Email($email)
+    {
+        $this->admin2_email = $email;
     }
     
     function SetWebsiteName($sitename)
@@ -198,7 +204,22 @@ class FGMembersite
 
         $admin_email = $_SESSION['email_of_user'];
 
-	    return strcmp('Annett.Saarik@gmail.com', $admin_email);
+	    return strcmp('anastassia.ivanova.94@gmail.com', $admin_email);
+
+	}
+	
+	function isAdmin2()
+	{
+
+        if(!$this->DBLogin())
+        {
+            $this->HandleError("Database login failed!");
+            return false;
+        }  
+
+        $admin2_email = $_SESSION['email_of_user'];
+
+	    return strcmp('Annett.Saarik@gmail.com', $admin2_email);
 
 	}
     
@@ -474,7 +495,7 @@ class FGMembersite
         }   
         $confirmcode = $this->SanitizeForSQL($_GET['code']);
         
-        $result = mysqli_query("Select name, email from $this->tablename where confirmcode='$confirmcode'",$this->connection);   
+        $result = mysqli_query($this->connection,"Select name, email from $this->tablename where confirmcode='$confirmcode'");   
         if(!$result || mysqli_num_rows($result) <= 0)
         {
             $this->HandleError("Wrong confirm code.");
@@ -486,7 +507,7 @@ class FGMembersite
         
         $qry = "Update $this->tablename Set confirmcode='y' Where  confirmcode='$confirmcode'";
         
-        if(!mysqli_query( $qry ,$this->connection))
+        if(!mysqli_query($this->connection, $qry ))
         {
             $this->HandleDBError("Error inserting data to the table\nquery:$qry");
             return false;

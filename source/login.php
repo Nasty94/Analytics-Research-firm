@@ -14,8 +14,14 @@ if(isset($_POST['submitted']))
 	 {
 	 $fgmembersite->RedirectToURL("admin.php");
 	 }
+	 
+     elseif($fgmembersite->IsAdmin2()==0)
+	 {
+	 $fgmembersite->RedirectToURL("admin.php");
+	 }
        
      else{
+     	
 	 $fgmembersite->RedirectToURL("login-home.php");
 	 }
    }
