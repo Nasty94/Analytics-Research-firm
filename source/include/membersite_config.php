@@ -10,8 +10,6 @@ $fgmembersite->SetWebsiteName('LKConsulting.com');
 //Provide the email address where you want to get notifications
 $fgmembersite->SetAdminEmail('anastassia.ivanova.94@gmail.com');
 
-$fgmembersite->SetAdmin2Email('Annett.Saarik@gmail.com');
-
 //Provide your database login details here:
 //hostname, user name, password, database name and table name
 //note that the script will create the table (for example, fgusers in this case)
