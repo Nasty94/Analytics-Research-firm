@@ -144,6 +144,8 @@ class FGMembersite
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
         
+        
+
         if(!isset($_SESSION)){ session_start(); }
         if(!$this->CheckLoginInDB($username,$password))
         {
@@ -151,7 +153,7 @@ class FGMembersite
         }
         
         $_SESSION[$this->GetLoginSessionVar()] = $username;
-        
+
         return true;
     }
     
