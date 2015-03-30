@@ -109,7 +109,7 @@ body:not(:-moz-handler-blocked) fieldset {
    text-align: center;
    font-family: 'Open Sans', sans-serif;
    font-weight: normal;
-   font-size: 1.5em;
+   font-size: 3vh;
    padding-bottom: 5px;
    color:red;
    
@@ -121,7 +121,7 @@ body:not(:-moz-handler-blocked) fieldset {
 {
    text-align: center;
    font-family : Arial, sans-serif;
-   font-size:0.8em;
+   font-size:1.5vh;
    font-weight: bold;
 }
 
