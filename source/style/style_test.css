@@ -52,7 +52,7 @@ body {
 	background-position: center; 
 	background-repeat: no-repeat;
     background-attachment: fixed;
-    background-color: #a5ebff;
+    background-color: #D9D9F3;
     font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -106,7 +106,7 @@ h2 {
 	text-align: right;
 	color:red;
 	vertical-align:bottom;
-	text-shadow: 1px 2px #ff0000;
+	
 	
 }
 h3 {
