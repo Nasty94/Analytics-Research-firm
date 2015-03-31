@@ -1,88 +1,14 @@
 <?PHP
 require_once("./include/membersite_config.php");
-require_once("./include/fg_membersite.php");
 
 if(isset($_POST['submitted']))
 {
-   if($fgmembersite->Login())
+   if($fgmembersite->RegisterUser())
    {
-
-    echo $fgmembersite->IsAdmin();
-    
-
-     if($fgmembersite->IsAdmin()==0)
-	 {
-	 $fgmembersite->RedirectToURL("admin_bootstrap.php");
-	 }
-	 
-     elseif($fgmembersite->IsAdmin2()==0)
-	 {
-	 $fgmembersite->RedirectToURL("admin_bootstrap.php");
-	 }
-       
-     else{
-     	
-	 $fgmembersite->RedirectToURL("login-home_bootstrap.php");
-	 }
+        $fgmembersite->RedirectToURL("thank-you.html");
    }
 }
 
-elseif( isset( $_REQUEST["provider"] ) )
-{ 
-	// the selected provider
-	$provider_name = $_REQUEST["provider"];
- 
-	try
-	{
-        
-
-		// inlcude HybridAuth library
-		// change the following paths if necessary 
-		$config   = dirname(__FILE__) . '/hybridauth/config.php';
-		require_once( "hybridauth/Hybrid/Auth.php" );
-		// initialize Hybrid_Auth class with the config file
-		$hybridauth = new Hybrid_Auth( $config );
-		// try to authenticate with the selected provider
-		$adapter = $hybridauth->authenticate( $provider_name );
-		// then grab the user profile 
-		$user_profile = $adapter->getUserProfile();
-
-	}
- 
-	// something went wrong?
-	catch( Exception $e )
-	{
-        echo $e;
-		//header("Location: http://www.example.com/login-error.php");
-	}
-
-	// check if the current user already have authenticated using this provider before 
-	$user_exist = $fgmembersite->get_user_by_provider_and_id( $provider_name, $user_profile->identifier );
-
-
- 
-	// if the used didn't authenticate using the selected provider before 
-	// we create a new entry on database.users for him
-	if(!$user_exist) 
-	{
-		$fgmembersite->create_new_hybridauth_user(
-			$user_profile->email, 
-			$user_profile->firstName, 
-			$user_profile->lastName, 
-			$provider_name,
-			$user_profile->identifier
-		);
-	}
-    
-	// set the user as connected and redirect him
-    $username = $user_profile->identifier;
-    if(!isset($_SESSION)){
-        session_start(); 
-    }
-    $fgmembersite->CheckLoginInDB_Hybrid($user_profile->identifier);
-    $_SESSION[$fgmembersite->GetLoginSessionVar()] = $username;
-	$fgmembersite->RedirectToURL("login_home_bootstrap.php");
-}
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -92,29 +18,30 @@ elseif( isset( $_REQUEST["provider"] ) )
 	<meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
+    <title>Minu konto</title>
      
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
     <script src="scripts/pwdwidget.js" type="text/javascript"></script>  
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>      
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
 	
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
+	<link rel="stylesheet" href="style/menubar_test.css">
+	<link rel="stylesheet" href="style/style_test.css">
 	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
     <link rel="STYLESHEET" type="text/css" href="style/fg_membersite_test.css" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style/menubar_test.css" type="text/css" media="all">
-    <link rel="stylesheet" href="style/style_test.css" type="text/css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style/bootstrap-theme.css">
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
-    
-  
-</head>
-    </html> 
-    <body> 
 
-        <div class="container-fluid">
+        
+    	
+</head>
+
+<body>
+    
+        <div class="container-fluid text-center">
           <div class="row">
              <div class="col-md-8 col-md-offset-2">
                     <div id="english">
@@ -136,11 +63,11 @@ elseif( isset( $_REQUEST["provider"] ) )
             <div class="dropdownmenu">
             <ul id="nav">
             <li class='active'><a href='bootstrap_test.html'>Avaleht</a></li>
-            <li><a href="#">Minu konto</a>
+            <li><a href="login-home_bootstrap.php">Minu konto</a>
                 <div>
                     <ul>
                         <li><a href='register_bootstrap.php'>Uus kasutaja</a></li>
-                        <li><a href='#'>Logi sisse</a></li>
+                        <li><a href='login_bootstrap.php'>Logi sisse</a></li>
                        
                     </ul>
                 </div>
@@ -185,7 +112,7 @@ elseif( isset( $_REQUEST["provider"] ) )
             <ul class="dropdown-menu dropdown-menu-right" role="menu">
               <li role="presentation"><a role="menuitem" tabindex="-1" href="bootstrap_test.html">Avaleht</a></li>
                 <li role="presentation" class="divider"></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href='#'>Logi sisse</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href='login_bootstrap'>Logi sisse</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href='register_bootstrap.php'>Uus kasutaja</a></li>
                 <li role="presentation" class="divider"></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Meist</a></li>
@@ -202,77 +129,83 @@ elseif( isset( $_REQUEST["provider"] ) )
     </div>
     </div>
     </div>
-           <div class="row">
-           <div class="col-md-8 col-md-offset-2">
-               	<div id="main">
-	<div id="white-box" >
-<div class="row">
-<div class="col-md-6 col-lg-offset-3">
-	 <div id="contentInt">
-                 <noscript>
-                        <p class="note">You have disabled Javascript. This website will not function without it.</p>
-                 </noscript>
-       
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          	<div id="main">
+	            <div id="white-box" >
+                    <div class="row">
+                    <div class="col-md-6 col-lg-offset-3">
+	                        <div id="contentInt">
+                            <noscript>
+                                <p class="note">You have disabled Javascript. This website will not function without it.</p>
+                            </noscript>
 
 
-			   		<div class="center">
-
-<!-- Form Code Start -->
+			   		        <div class="center">
 
 <div id='fg_membersite'>
-
-<form id='login' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
-<fieldset>
-<legend>Logi sisse</legend>
+<form id='register' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
+<fieldset >
+<legend>Registreerimisvorm</legend>
 
 <input type='hidden' name='submitted' id='submitted' value='1'/>
 
 <div class='short_explanation'>* required fields</div>
+<input type='text'  class='spmhidip' name='<?php echo $fgmembersite->GetSpamTrapInputName(); ?>' />
 
 <div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
 <div class='container'>
-    <label for='username' >UserName*:</label><br/>
-    <input type='text' name='username' id='username' value='<?php echo $fgmembersite->SafeDisplay('username') ?>' maxlength="50" /><br/>
-    <span id='login_username_errorloc' class='error'></span>
+    <label for='name' >Your Full Name*: </label><br/>
+    <input type='text' name='name' id='name' value='<?php echo $fgmembersite->SafeDisplay('name') ?>' maxlength="50" /><br/>
+    <span id='register_name_errorloc' class='error'></span>
 </div>
 <div class='container'>
+    <label for='email' >Email Address*:</label><br/>
+    <input type='text' name='email' id='email' value='<?php echo $fgmembersite->SafeDisplay('email') ?>' maxlength="50" /><br/>
+    <span id='register_email_errorloc' class='error'></span>
+</div>
+<div class='container'>
+    <label for='phone_number' >Phone_number*:</label><br/>
+    <input type='text' name='phone_number' id='phone_number' value='<?php echo $fgmembersite->SafeDisplay('phone_number') ?>' maxlength="50" /><br/>
+    <span id='register_phone_number_errorloc' class='error'></span>
+</div>
+<div class='container'>
+    <label for='username' >UserName*:</label><br/>
+    <input type='text' name='username' id='username' value='<?php echo $fgmembersite->SafeDisplay('username') ?>' maxlength="50" /><br/>
+    <span id='register_username_errorloc' class='error'></span>
+</div>
+
+<div class='container'>
     <label for='password' >Password*:</label><br/>
-    <input type='password' name='password' id='password' maxlength="50" /><br/>
-    <span id='login_password_errorloc' class='error'></span>
+    <div class='pwdwidgetdiv' id='thepwddiv' ></div>
+    <noscript>
+    <input type='password' name='password' id='password' maxlength="50" />
+    </noscript>    
+    <div id='register_password_errorloc' class='error' style='clear:both'></div>
 </div>
 
 <div class='container'>
     <input type='submit' name='Submit' value='Submit' />
 </div>
-<div class='short_explanation'><a href='reset-pwd-req.php'>Forgot Password?</a></div>
+
+
 </fieldset>
 </form>
-</div>
-</div>
-
-<fieldset>
-    <legend>Või kasuta muud teenusepakkujat:</legend>
-    <a href="login.php?provider=google"><img src="img/google_plus_sm.png" alt="img/google_plus_sm.png" /></img></a>
-</fieldset>
-
 <!-- client-side Form Validations:
 Uses the excellent form validation script from JavaScript-coder.com-->
-
 </div>
-
-
-    </div> <!--center-->
-
-    </div> <!--contentInt-->
-    </div>
-    </div>   
+                            </div><!--center-->
+                            </div> <!--contentInt-->
+                    </div> <!-- reg column -->
+                    </div> <!-- row-->
+		   		   
 
              
-	</div> <!-- white box --> 
-	</div> <!-- main -->
-
-    </div>
-    </div>
+	            </div> <!-- white box --> 
+	        </div> <!-- main -->
+	
+        </div>
+   </div>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">		  
 	        <div id="footer" >
@@ -283,8 +216,27 @@ Uses the excellent form validation script from JavaScript-coder.com-->
     </div>
 
 
-    </div> <!--fluid-container-->
+    </div>
+    <script type='text/javascript'>
+// <![CDATA[
+    var pwdwidget = new PasswordWidget('thepwddiv','password');
+    pwdwidget.MakePWDWidget();
+    
+    var frmvalidator  = new Validator("register");
+    frmvalidator.EnableOnPageErrorDisplay();
+    frmvalidator.EnableMsgsTogether();
+    frmvalidator.addValidation("name","req","Please provide your name");
 
+    frmvalidator.addValidation("email","req","Please provide your email address");
+
+    frmvalidator.addValidation("email","email","Please provide a valid email address");
+
+    frmvalidator.addValidation("username","req","Please provide a username");
+    
+    frmvalidator.addValidation("password","req","Please provide a password");
+
+// ]]>
+</script>
         
     </body>
-
+</html>

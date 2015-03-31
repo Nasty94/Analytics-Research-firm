@@ -22,6 +22,7 @@ time, mark, audio, video {
     background: transparent;
 }
 
+
 #top, #bottom,#left, #right {
 	background: #D9D9F3	;
 	position: fixed;
@@ -45,6 +46,8 @@ body,html {
 	padding: 0px;
     margin: 0px;
     border: 0px none;
+    background-color: #eaeaea;
+    
 }
 
 body {
@@ -52,16 +55,14 @@ body {
 	background-position: center; 
 	background-repeat: no-repeat;
     background-attachment: fixed;
-    background-color: #D9D9F3;
+    background-color: #ff0000;
     font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
+}
 
-	
-	background:#E8E8E8 ;
-	position:absolute;
-
-
+.container-fluid {
+    background-color:#eaeaea;
 }
 bodystyle {
    
@@ -216,7 +217,7 @@ ul {
 
     margin-top:10px;
     width:  auto;
-    max-width: 996px;
+
     margin-left: 0px;
     margin-right: 0px;
 	border-color: #808080 ;
@@ -229,7 +230,6 @@ ul {
 #white-box {
     margin-top:20px;
 	height:auto;
-    max-width: 996px;
     margin-left: 0px;
     border-style: solid;
     background-color: #ffffff;
@@ -247,6 +247,7 @@ ul {
 	
 }
 #contentInt {
+    height: auto;
     padding: 0 50px 100px 50px;
 
 }
@@ -255,8 +256,8 @@ ul {
     padding: 16px;
     color: #cccccc;
     background-color: #414141;
-	margin-left:0px;
-	margin-right:0px;
+	margin-left:auto;
+	margin-right:auto;
 	width:auto;
 	margin-bottom:30px;
 }
@@ -275,8 +276,8 @@ ul {
 
 .center {
     width: auto;
-    max-width: 996px;
-    text-align: left;
+    height: fit-content;
+   
 	color: black;
 	font-family: 'Open Sans', sans-serif;
 }

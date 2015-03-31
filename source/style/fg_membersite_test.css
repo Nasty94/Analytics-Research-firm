@@ -35,10 +35,10 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
-	border-left: 100px solid #a5ebff;
+	
 	
 	background:#E8E8E8 ;
-	position:absolute;
+
 
 
 }
@@ -100,8 +100,9 @@ body:not(:-moz-handler-blocked) fieldset {
 #fg_membersite fieldset
 {
    text-align: center;
-   margin-top:-120px;
+
 }
+
 
 
 #fg_membersite legend, #fg_membersite h2
@@ -109,7 +110,7 @@ body:not(:-moz-handler-blocked) fieldset {
    text-align: center;
    font-family: 'Open Sans', sans-serif;
    font-weight: normal;
-   font-size: 1.5em;
+   font-size: 3vh;
    padding-bottom: 5px;
    color:red;
    
@@ -121,7 +122,7 @@ body:not(:-moz-handler-blocked) fieldset {
 {
    text-align: center;
    font-family : Arial, sans-serif;
-   font-size:0.8em;
+   font-size:1.5vh;
    font-weight: bold;
 }
 
@@ -144,7 +145,7 @@ body:not(:-moz-handler-blocked) fieldset {
 #fg_membersite input[type="text"],
 #fg_membersite input[type="password"]
 {
-  height:30px;
+  height:35px;
   width:220px;
 }
 
@@ -156,7 +157,7 @@ body:not(:-moz-handler-blocked) fieldset {
 
 #fg_membersite input[type="submit"]
 {
-   width:100px;
+   width:auto;
    height:35px;
    padding:5px;
 }
@@ -179,7 +180,8 @@ body:not(:-moz-handler-blocked) fieldset {
 #fg_membersite .container
 {
    margin-top:8px;
-   width: 100%;
+   width: auto;
+
    margin-bottom: 10px;
 }
 #fg_membersite .g_sign {
