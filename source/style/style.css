@@ -179,7 +179,7 @@ ul {
     margin: 0;
     display: inline;
     
-};
+}
 
 #header nav li {
     display: inline;
@@ -219,7 +219,7 @@ ul {
     color: lightgray;
     font-size: 14pt;
     height: 100%;
-	float:center;
+	float: left;
 	
 }
 
