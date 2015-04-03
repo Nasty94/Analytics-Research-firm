@@ -1,20 +1,16 @@
 <?PHP
-require_once("./include/membersite_config.php");
 
-if(!$fgmembersite->CheckLogin())
+require_once('./include/fg_membersite.php');
+require_once('./include/membersite_config.php');
+
+if($fgmembersite->isAdmin()==0)
 {
     $fgmembersite->RedirectToURL("login_bootstrap.php");
     exit;
 }
-if(isset($_POST['submitted']))
-{
-   if($fgmembersite->RegisterUserOrder())
-   {
-        $fgmembersite->RedirectToURL("thank_you_order_bootstrap.php");
-   }
-}
-?>
 
+
+?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
@@ -32,13 +28,13 @@ if(isset($_POST['submitted']))
 	
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
 	<link rel="stylesheet" href="style/menubar_test.css">
+    <link rel="stylesheet" href="style/order_history_table.css">
 	<link rel="stylesheet" href="style/style_test.css">
 	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
     <link rel="STYLESHEET" type="text/css" href="style/fg_membersite_test.css" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style/bootstrap-theme.css">
-    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 
         
     	
@@ -71,10 +67,9 @@ if(isset($_POST['submitted']))
             <li><a href="login-home_bootstrap.php">Minu konto</a>
                 <div>
                     <ul>
-                        
                         <li><a href='clients_data_bootstrap.php'>Minu andmed</a></li>
-                        <li><a href='make_order_bootstrap.php'>Tellimuse tegemine</a></li>
-                        <li><a href='client_orders_bootstrap.php'>Tellimuste ajalugu</a></li>
+                        <li><a href='all_orders_bootstrap.php'>Tellimuste ajalugu</a></li>
+                        <li><a href='all_users_bootstrap.php'>Klientide kontod</a></li>
                         <li><a href='change-pwd_bootstrap.php'>Muuda parooli</a></li>
 			            <li><a href='logout_bootstrap.php'>Logi välja</a></li>
                        
@@ -121,11 +116,11 @@ if(isset($_POST['submitted']))
             <ul class="dropdown-menu dropdown-menu-right" role="menu">
               <li role="presentation"><a role="menuitem" tabindex="-1" href="bootstrap_test.html">Avaleht</a></li>
                 <li role="presentation" class="divider"></li>
-                <li><a href='clients_data_bootstrap.php'>Minu andmed</a></li>
-                <li><a href='make_order_bootstrap.php'>Tellimuse tegemine</a></li>
-                <li><a href='client_orders_bootstrap.php'>Tellimuste ajalugu</a></li>
-                <li><a href='change-pwd_bootstrap.php'>Muuda parooli</a></li>
-			    <li><a href='logout_bootstrap.php'>Logi välja</a></li>
+                        <li><a href='clients_data_bootstrap.php'>Minu andmed</a></li>
+                        <li><a href='all_orders_bootstrap.php'>Tellimuste ajalugu</a></li>
+                        <li><a href='all_users_bootstrap.php'>Klientide kontod</a></li>
+                        <li><a href='change-pwd_bootstrap.php'>Muuda parooli</a></li>
+			            <li><a href='logout_bootstrap.php'>Logi välja</a></li>
                 <li role="presentation" class="divider"></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Meist</a></li>
                 <li role="presentation" class="divider"></li>
@@ -144,7 +139,7 @@ if(isset($_POST['submitted']))
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
           	<div id="main">
-                  <h2>Tere, <?= $fgmembersite->UserFullName(); ?>!</h2>
+                  	<h2>Tere, administraator! Kuupäev: <span id='time'></span></h2> 
 	            <div id="white-box" >
 	                        <div id="contentInt">
                             <noscript>
@@ -154,49 +149,58 @@ if(isset($_POST['submitted']))
                             <div class="row">
                             <div class="col-md-6 col-lg-offset-3">
 			   		        <div class="center">
-                                   <div id='fg_membersite'>
-<form id='register' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
-<fieldset >
-<legend>Minu tellimus</legend>
+                                <h3>Kõik kliendid:</h3>
 
-<input type='hidden' name='submitted' id='submitted' value='1'/>
+        <script type="text/javascript">
+        var sse = new EventSource('./scripts/server-side-script.php');
+        sse.addEventListener('LoggedInUsers',function(e){
+        var data = e.data;
+        //handle your data here
 
-<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
+        },false);
+        </script>
 
-<div class='container'>
-    <label for="name" >Nimi:</label><br/>
-    <input type='text' name='name' id='name' value='<?php echo $fgmembersite->UserFullName() ?>' maxlength="50" required="required" /><br/>   
-    <div id='register_password_errorloc' class='error' style='clear:both'></div>
-</div>
+    <div class="OrderHistoryTable" >
+                <table>
+                   
+                        <tr>
+                            <th>
+                                Rida
+                            </th>
+                            <th>
+                                Kasutaja ID
+                            </th>
+                            <th>
+                                Kasutaja nimi
+                            </th>
+                             <th>
+                                Kasutaja email
+                            </th>
+                        </tr>
+                    
+                        <?php
+                            $results = $fgmembersite->GetAllUserData();
+                            $i = 1;
+                            while($row = mysqli_fetch_array($results))
+                            {
+                        ?>
 
-<div class='container'>
-    <label for='email' >Email:</label><br/>
-    <input type='text' name='email' id='email' value='<?php echo $fgmembersite->UserEmail() ?>' maxlength="50" required="required"/><br/>
-    <span id='register_email_errorloc' class='error'></span>
-</div>
-
-<div class='container'>
-    <label for='phone_number' >Mobiilinumber:</label><br/>
-    <input type='text' name='phone_number' id='phone_number' value='<?php echo $fgmembersite->UserPhoneNumber() ?>' maxlength="50" /><br/>
-    <span id='register_phone_number_errorloc' class='error'></span>
-</div>
-
-<div class='container'>
-    <label for="order" >Tellimuse kirjeldus:</label><br/>
-    <textarea name='order' id='order' maxlength="255" rows="3" required="required"></textarea>   
-    <div id='register_password_errorloc' class='error' style='clear:both'></div>
-</div>
-
-<div class='container'>
-    <input type='submit' name='Submit' value='Sisesta tellimus!' />
-</div>
-
-</fieldset>
-</form>
-
+                                <tr> 
+                                    <td><?php echo $i ?></td>
+                                    <td><?php echo $row['id_user']?></td>
+                                    <td><?php echo $row['name']?></td>
+                                    <td><?php echo $row['email']?></td> 
+                                </tr>
+                        <?php
+                            $i++;
+                            }
+                        ?>           
+                </table>
+    </div>	
                             </div><!--center-->
                             </div>
                             </div>
+
                             </div> <!--contentInt-->
 		   		   
 
@@ -217,7 +221,15 @@ if(isset($_POST['submitted']))
 
 
     </div>
-       </div> 
+    <!-- This is the code for JavaScript, for streaming server time -->
+    <script>
+    var source = new EventSource('streaming_data.php');
+    var d = document.getElementById('time');
+    source.addEventListener('time',function(e){
+        var time = e.data;
+        d.innerHTML = time;
+    },false);
+    </script>    
     </body>
 </html>
 

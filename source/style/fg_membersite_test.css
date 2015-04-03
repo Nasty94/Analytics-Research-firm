@@ -266,3 +266,12 @@ padding-bottom:10px;
    font-weight:bold;
    color:#333;
 }
+
+.entry-content {
+    text-align: left;
+    font-size:  2vh;
+}
+.post-info {
+    text-align: right;
+}
+

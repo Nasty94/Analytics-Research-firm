@@ -1,18 +1,18 @@
 <?PHP
-require_once("./include/membersite_config.php");
 
-if(!$fgmembersite->CheckLogin())
-{
-    $fgmembersite->RedirectToURL("login_bootstrap.php");
-    exit;
+require_once('./include/fg_membersite.php');
+require_once('./include/membersite_config.php');
+
+
+if($fgmembersite->Login()){
+
+	if($fgmembersite->isAdmin()==0)
+	{
+    	$fgmembersite->RedirectToURL("login_bootstrap.php");
+    	exit;
+	}
 }
-if(isset($_POST['submitted']))
-{
-   if($fgmembersite->RegisterUserOrder())
-   {
-        $fgmembersite->RedirectToURL("thank_you_order_bootstrap.php");
-   }
-}
+
 ?>
 
 
@@ -71,10 +71,9 @@ if(isset($_POST['submitted']))
             <li><a href="login-home_bootstrap.php">Minu konto</a>
                 <div>
                     <ul>
-                        
                         <li><a href='clients_data_bootstrap.php'>Minu andmed</a></li>
-                        <li><a href='make_order_bootstrap.php'>Tellimuse tegemine</a></li>
-                        <li><a href='client_orders_bootstrap.php'>Tellimuste ajalugu</a></li>
+                        <li><a href='all_orders_bootstrap.php'>Tellimuste ajalugu</a></li>
+                        <li><a href='all_users_bootstrap.php'>Klientide kontod</a></li>
                         <li><a href='change-pwd_bootstrap.php'>Muuda parooli</a></li>
 			            <li><a href='logout_bootstrap.php'>Logi välja</a></li>
                        
@@ -121,11 +120,11 @@ if(isset($_POST['submitted']))
             <ul class="dropdown-menu dropdown-menu-right" role="menu">
               <li role="presentation"><a role="menuitem" tabindex="-1" href="bootstrap_test.html">Avaleht</a></li>
                 <li role="presentation" class="divider"></li>
-                <li><a href='clients_data_bootstrap.php'>Minu andmed</a></li>
-                <li><a href='make_order_bootstrap.php'>Tellimuse tegemine</a></li>
-                <li><a href='client_orders_bootstrap.php'>Tellimuste ajalugu</a></li>
-                <li><a href='change-pwd_bootstrap.php'>Muuda parooli</a></li>
-			    <li><a href='logout_bootstrap.php'>Logi välja</a></li>
+                        <li><a href='clients_data_bootstrap.php'>Minu andmed</a></li>
+                        <li><a href='all_orders_bootstrap.php'>Tellimuste ajalugu</a></li>
+                        <li><a href='all_users_bootstrap.php'>Klientide kontod</a></li>
+                        <li><a href='change-pwd_bootstrap.php'>Muuda parooli</a></li>
+			            <li><a href='logout_bootstrap.php'>Logi välja</a></li>
                 <li role="presentation" class="divider"></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Meist</a></li>
                 <li role="presentation" class="divider"></li>
@@ -144,59 +143,16 @@ if(isset($_POST['submitted']))
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
           	<div id="main">
-                  <h2>Tere, <?= $fgmembersite->UserFullName(); ?>!</h2>
 	            <div id="white-box" >
 	                        <div id="contentInt">
                             <noscript>
                                 <p class="note">You have disabled Javascript. This website will not function without it.</p>
                             </noscript>
+                            <h1></h1>
 
-                            <div class="row">
-                            <div class="col-md-6 col-lg-offset-3">
+
 			   		        <div class="center">
-                                   <div id='fg_membersite'>
-<form id='register' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
-<fieldset >
-<legend>Minu tellimus</legend>
-
-<input type='hidden' name='submitted' id='submitted' value='1'/>
-
-<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
-
-<div class='container'>
-    <label for="name" >Nimi:</label><br/>
-    <input type='text' name='name' id='name' value='<?php echo $fgmembersite->UserFullName() ?>' maxlength="50" required="required" /><br/>   
-    <div id='register_password_errorloc' class='error' style='clear:both'></div>
-</div>
-
-<div class='container'>
-    <label for='email' >Email:</label><br/>
-    <input type='text' name='email' id='email' value='<?php echo $fgmembersite->UserEmail() ?>' maxlength="50" required="required"/><br/>
-    <span id='register_email_errorloc' class='error'></span>
-</div>
-
-<div class='container'>
-    <label for='phone_number' >Mobiilinumber:</label><br/>
-    <input type='text' name='phone_number' id='phone_number' value='<?php echo $fgmembersite->UserPhoneNumber() ?>' maxlength="50" /><br/>
-    <span id='register_phone_number_errorloc' class='error'></span>
-</div>
-
-<div class='container'>
-    <label for="order" >Tellimuse kirjeldus:</label><br/>
-    <textarea name='order' id='order' maxlength="255" rows="3" required="required"></textarea>   
-    <div id='register_password_errorloc' class='error' style='clear:both'></div>
-</div>
-
-<div class='container'>
-    <input type='submit' name='Submit' value='Sisesta tellimus!' />
-</div>
-
-</fieldset>
-</form>
-
                             </div><!--center-->
-                            </div>
-                            </div>
                             </div> <!--contentInt-->
 		   		   
 
@@ -217,7 +173,6 @@ if(isset($_POST['submitted']))
 
 
     </div>
-       </div> 
+        
     </body>
 </html>
-
