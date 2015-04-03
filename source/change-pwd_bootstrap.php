@@ -1,19 +1,24 @@
 <?PHP
+require_once("./include/membersite_config.php");
 
-require_once('./include/fg_membersite.php');
-require_once('./include/membersite_config.php');
-
-if($fgmembersite->isAdmin()==0)
+if(!$fgmembersite->CheckLogin())
 {
     $fgmembersite->RedirectToURL("login_bootstrap.php");
     exit;
 }
 
+if(isset($_POST['submitted']))
+{
+   if($fgmembersite->ChangePassword())
+   {
+        $fgmembersite->RedirectToURL("changed-pwd_bootstrap.html");
+   }
+}
 
 ?>
 
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<html lang="en-US">
 <head>
     <meta http-equiv="Content type" content="text/html; charset=ISO-8859-1">
 	<meta charset='utf-8'>
@@ -28,13 +33,13 @@ if($fgmembersite->isAdmin()==0)
 	
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
 	<link rel="stylesheet" href="style/menubar_test.css">
-    <link rel="stylesheet" href="style/order_history_table.css">
 	<link rel="stylesheet" href="style/style_test.css">
 	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
     <link rel="STYLESHEET" type="text/css" href="style/fg_membersite_test.css" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style/bootstrap-theme.css">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 
         
     	
@@ -63,13 +68,14 @@ if($fgmembersite->isAdmin()==0)
 
             <div class="dropdownmenu">
             <ul id="nav">
-            <li class='active'><a href='index_loggedin_bootstrap.php'>Avaleht</a></li>
-            <li><a href="login-home_bootstrap.php">Minu konto</a>
+            <li class='active'><a href='#'>Avaleht</a></li>
+            <li><a href="#">Minu konto</a>
                 <div>
                     <ul>
-                        <li><a href='clients_data_bootstrap.php'>Minu andmed</a></li>
-                        <li><a href='all_orders_bootstrap.php'>Tellimuste ajalugu</a></li>
-                        <li><a href='all_users_bootstrap.php'>Klientide kontod</a></li>
+                        
+                       <li><a href='clients_data_bootstrap.php'>Minu andmed</a></li>
+                        <li><a href='make_order_bootstrap.php'>Tellimuse tegemine</a></li>
+                        <li><a href='client_orders_bootstrap.php'>Tellimuste ajalugu</a></li>
                         <li><a href='change-pwd_bootstrap.php'>Muuda parooli</a></li>
 			            <li><a href='logout_bootstrap.php'>Logi välja</a></li>
                        
@@ -98,7 +104,7 @@ if($fgmembersite->isAdmin()==0)
             <li><a href="#">Blog</a>
                 <div>
                     <ul>
-                        <li><a href="./web/articles/article_sample_bootstrap.php">Näidis</a></li>
+                        <li><a href="./web/articles/article_sample.php">Näidis</a></li>
                         <li><a href="#">Page 2</a></li>
                         <li><a href="#">Page 3</a></li>
                         <li><a href="#">Page 4</a></li>
@@ -106,7 +112,7 @@ if($fgmembersite->isAdmin()==0)
                     </ul>
                 </div>
             </li>
-            <li><a href="contact_bootstrap.php">  Kontakt  </a></li>
+            <li><a href="contact.php">  Kontakt  </a></li>
 			<li><a href="#">           </a></li>
             <li class="pad"></li>
         </ul>
@@ -114,20 +120,17 @@ if($fgmembersite->isAdmin()==0)
             <button class="btn btn-success" type="button" id="menu1" data-toggle="dropdown">Menüü
             <span class="caret"></span></button>
             <ul class="dropdown-menu dropdown-menu-right" role="menu">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href='index_loggedin_bootstrap.php'>Avaleht</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Avaleht</a></li>
                 <li role="presentation" class="divider"></li>
-                        <li><a href='clients_data_bootstrap.php'>Minu andmed</a></li>
-                        <li><a href='all_orders_bootstrap.php'>Tellimuste ajalugu</a></li>
-                        <li><a href='all_users_bootstrap.php'>Klientide kontod</a></li>
-                        <li><a href='change-pwd_bootstrap.php'>Muuda parooli</a></li>
-			            <li><a href='logout_bootstrap.php'>Logi välja</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href='login.php'>Logi sisse</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href='register.php'>Uus kasutaja</a></li>
                 <li role="presentation" class="divider"></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Meist</a></li>
                 <li role="presentation" class="divider"></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Turu uuring</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Med statistika</a></li>
                 <li role="presentation" class="divider"></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="./web/articles/article_sample_bootstrap.php">Blogi</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="./web/articles/article_sample.php">Blogi</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Kontakt</a></li>
               
               
@@ -139,68 +142,86 @@ if($fgmembersite->isAdmin()==0)
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
           	<div id="main">
-                  	<h2>Tere, administraator! Kuupäev: <span id='time'></span></h2> 
 	            <div id="white-box" >
 	                        <div id="contentInt">
                             <noscript>
                                 <p class="note">You have disabled Javascript. This website will not function without it.</p>
                             </noscript>
 
-                            <div class="row">
-                            <div class="col-md-6 col-lg-offset-3">
+
+
 			   		        <div class="center">
-                                <h3>Kõik kliendid:</h3>
+                                   <div id='fg_membersite'>
+<form id='changepwd' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
+<fieldset >
+<legend>Muuda parooli</legend>
 
-        <script type="text/javascript">
-        var sse = new EventSource('./scripts/server-side-script.php');
-        sse.addEventListener('LoggedInUsers',function(e){
-        var data = e.data;
-        //handle your data here
+<input type='hidden' name='submitted' id='submitted' value='1'/>
 
-        },false);
-        </script>
+<div class='short_explanation'>* required fields</div>
 
-    <div class="OrderHistoryTable" >
-                <table>
-                   
-                        <tr>
-                            <th>
-                                Rida
-                            </th>
-                            <th>
-                                Kasutaja ID
-                            </th>
-                            <th>
-                                Kasutaja nimi
-                            </th>
-                             <th>
-                                Kasutaja email
-                            </th>
-                        </tr>
-                    
-                        <?php
-                            $results = $fgmembersite->GetAllUserData();
-                            $i = 1;
-                            while($row = mysqli_fetch_array($results))
-                            {
-                        ?>
+<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
+<div class='container'>
+    <label for='oldpwd' >Vana parool*:</label><br/>
+    <div class='pwdwidgetdiv' id='oldpwddiv' ></div><br/>
+    <noscript>
+    <input type='password' name='oldpwd' id='oldpwd' maxlength="50" />
+    </noscript>    
+    <span id='changepwd_oldpwd_errorloc' class='error'></span>
+</div>
 
-                                <tr> 
-                                    <td><?php echo $i ?></td>
-                                    <td><?php echo $row['id_user']?></td>
-                                    <td><?php echo $row['name']?></td>
-                                    <td><?php echo $row['email']?></td> 
-                                </tr>
-                        <?php
-                            $i++;
-                            }
-                        ?>           
-                </table>
-    </div>	
+<div class='container'>
+    <label for='newpwd' >Uus parool*:</label><br/>
+    <div class='pwdwidgetdiv' id='newpwddiv' ></div>
+    <noscript>
+    <input type='password' name='newpwd' id='newpwd' maxlength="50" /><br/>
+    </noscript>
+    <span id='changepwd_newpwd_errorloc' class='error'></span>
+</div>
+
+<br/><br/><br/>
+<div class='container'>
+    <input type='submit' name='Submit' value='Submit' />
+</div>
+
+</fieldset>
+</form>
+
+<!-- client-side Form Validations:
+Uses the excellent form validation script from JavaScript-coder.com-->
+
+<script type='text/javascript'>
+// <![CDATA[
+    var pwdwidget = new PasswordWidget('oldpwddiv','oldpwd');
+    pwdwidget.enableGenerate = false;
+    pwdwidget.enableShowStrength=false;
+    pwdwidget.enableShowStrengthStr =false;
+    pwdwidget.MakePWDWidget();
+    
+    var pwdwidget = new PasswordWidget('newpwddiv','newpwd');
+    pwdwidget.MakePWDWidget();
+    
+    
+    var frmvalidator  = new Validator("changepwd");
+    frmvalidator.EnableOnPageErrorDisplay();
+    frmvalidator.EnableMsgsTogether();
+
+    frmvalidator.addValidation("oldpwd","req","Please provide your old password");
+    
+    frmvalidator.addValidation("newpwd","req","Please provide your new password");
+
+// ]]>
+</script>
+
+
+</div>
+
+                           <!-- What is this? A-->
+<!--
+Form Code End (see html-form-guide.com for more info.)
+-->
+</div>
                             </div><!--center-->
-                            </div>
-                            </div>
-
                             </div> <!--contentInt-->
 		   		   
 
@@ -221,15 +242,6 @@ if($fgmembersite->isAdmin()==0)
 
 
     </div>
-    <!-- This is the code for JavaScript, for streaming server time -->
-    <script>
-    var source = new EventSource('streaming_data.php');
-    var d = document.getElementById('time');
-    source.addEventListener('time',function(e){
-        var time = e.data;
-        d.innerHTML = time;
-    },false);
-    </script>    
+        
     </body>
 </html>
-

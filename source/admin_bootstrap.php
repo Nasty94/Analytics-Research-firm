@@ -143,6 +143,7 @@ if($fgmembersite->Login()){
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
           	<div id="main">
+                <h2>Tere, administraator!</h2>
 	            <div id="white-box" >
 	                        <div id="contentInt">
                             <noscript>

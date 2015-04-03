@@ -244,7 +244,7 @@ elseif( isset( $_REQUEST["provider"] ) )
 <div class='container'>
     <input type='submit' name='Submit' value='Submit' />
 </div>
-<div class='short_explanation'><a href='reset-pwd-req.php'>Forgot Password?</a></div>
+<div class='short_explanation'><a href='reset-pwd-req_bootstrap.php'>Forgot Password?</a></div>
 </fieldset>
 </form>
 </div>

@@ -124,11 +124,11 @@ h3 {
 
 h4 {
     font-family: 'Open Sans', sans-serif;
-    font-weight:bold;
+    font-weight: bolder;
 	font-style:italic;
     font-size: 1vw;
     padding-bottom: 5px;
-	text-align: right;
+	text-align: left;
 	color:black;
 	vertical-align:bottom;
 
@@ -220,12 +220,15 @@ ul {
     margin-left: 0px;
     margin-right: 0px;
 	border-color: #808080 ;
-    color: red;
+    color: gray;
     font-size: 1.2em;
     height: auto;
 	
 }
 
+#main h2 {
+    color:  red;
+}
 #white-box {
     margin-top:20px;
 	height:auto;

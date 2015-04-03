@@ -538,7 +538,7 @@ class FGMembersite
         
         $qry = "Update $this->tablename Set password='".$new_password."', salt='".$salt."' Where  id_user=".$user_rec['id_user']."";
         
-        if(!mysqli_query( $qry ,$this->connection))
+        if(!mysqli_query($this->connection,$qry))
         {
             $this->HandleDBError("Error updating the password \nquery:$qry");
             return false;
@@ -555,7 +555,7 @@ class FGMembersite
         }   
         $email = $this->SanitizeForSQL($email);
         
-        $result = mysqli_query("Select * from $this->tablename where email='$email'",$this->connection);  
+        $result = mysqli_query($this->connection,"Select * from $this->tablename where email='$email'");  
 
         if(!$result || mysqli_num_rows($result) <= 0)
         {

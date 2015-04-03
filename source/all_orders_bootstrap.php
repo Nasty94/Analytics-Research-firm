@@ -64,7 +64,7 @@ if($fgmembersite->isAdmin()==0)
 
             <div class="dropdownmenu">
             <ul id="nav">
-            <li class='active'><a href='bootstrap_test.html'>Avaleht</a></li>
+            <li class='active'><a href='index_loggedin_bootstrap.php'>Avaleht</a></li>
             <li><a href="login-home_bootstrap.php">Minu konto</a>
                 <div>
                     <ul>
@@ -115,7 +115,7 @@ if($fgmembersite->isAdmin()==0)
             <button class="btn btn-success" type="button" id="menu1" data-toggle="dropdown">Menüü
             <span class="caret"></span></button>
             <ul class="dropdown-menu dropdown-menu-right" role="menu">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="bootstrap_test.html">Avaleht</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href='index_loggedin_bootstrap.php'>Avaleht</a></li>
                 <li role="presentation" class="divider"></li>
                         <li><a href='clients_data_bootstrap.php'>Minu andmed</a></li>
                         <li><a href='all_orders_bootstrap.php'>Tellimuste ajalugu</a></li>
