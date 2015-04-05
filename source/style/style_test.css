@@ -1,7 +1,7 @@
 
-@CHARSET "ISO-8859-1";
-@CHARSET "ISO-8859-1";
-@CHARSET "ISO-8859-1";
+@charset "ISO-8859-1";
+@charset "ISO-8859-1";
+@charset "ISO-8859-1";
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -236,7 +236,7 @@ ul {
     border-style: solid;
     background-color: #ffffff;
     padding:16px;
-    border: inset 1px solid #333;
+    border: 1px solid #333;
     -moz-box-shadow: 10px 0px 8px rgba(0, 0, 0, 0.3);
     box-shadow: 1px 0px 8px rgba(0, 0, 0, 0.3);
 	
@@ -277,9 +277,7 @@ ul {
 
 
 .center {
-    width: auto;
-    height: fit-content;
-   
+    width: auto;   
 	color: black;
 	font-family: 'Open Sans', sans-serif;
 }
@@ -326,13 +324,14 @@ input {
 	
 }
 
-
+/*
 @-moz-document url-prefix() {
     .img-responsive{
         width: 100%;
     
     }
 }
+*/
 
 
 
