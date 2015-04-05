@@ -14,9 +14,13 @@ $fgmembersite->SetAdminEmail('anastassia.ivanova.94@gmail.com');
 //hostname, user name, password, database name and table name
 //note that the script will create the table (for example, fgusers in this case)
 //by itself on submitting register.php for the first time
-$fgmembersite->InitDB(/*hostname*/'eu-cdbr-azure-north-b.cloudapp.net',
-                      /*username*/'bc3106a32eb6a9',
-                      /*password*/'ff65da13',
+$fgmembersite->InitDB(
+//					  /*hostname*/'eu-cdbr-azure-north-b.cloudapp.net',
+                      /*hostname*/'%',
+//                      /*username*/'bc3106a32eb6a9',
+                      /*username*/'root2',
+//                      /*password*/'ff65da13',
+                      /*password*/'root2',
                       /*database name*/'lkconsult',
                       /*table name*/'users');
 

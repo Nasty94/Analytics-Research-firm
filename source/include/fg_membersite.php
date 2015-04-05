@@ -21,7 +21,7 @@ class FGMembersite
     //-----Initialization -------
     function FGMembersite()
     {
-        $this->sitename = 'lkconsulting.com';
+        $this->sitename = 'localhost';
         $this->rand_key = '0iQx5oBk66oVZep';
     }
     
