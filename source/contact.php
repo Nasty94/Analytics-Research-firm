@@ -39,8 +39,6 @@ if(isset($_POST['submitted']))
         
     	
 </head>
-<<<<<<< HEAD
-
 <body>
     
         <div class="container-fluid">
@@ -48,7 +46,7 @@ if(isset($_POST['submitted']))
              <div class="col-md-8 col-md-offset-2">
                     <div id="english">
 		            <a id="eng" href="web/lang/eng/index_eng.html">ENG</a>&nbsp;&nbsp;
-=======
+
 	<body> 
 			
 	      <div id="left"></div>

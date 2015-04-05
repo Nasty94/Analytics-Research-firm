@@ -55,8 +55,7 @@ require_once("./include/membersite_config.php");
                 <div>
                     <ul>
                         <li><a href='register.php'>Uus kasutaja</a></li>
-                        <li><a href='change-pwd.php'>Muuda parooli</a></li>
-						<li><a href='logout.php'>Logi sisse</a></li>
+						            <li><a href='logout.php'>Logi sisse</a></li>
                        
                     </ul>
                 </div>
