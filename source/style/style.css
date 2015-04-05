@@ -178,7 +178,7 @@ ul {
 #header nav ul {
     margin: 0;
     display: inline;
-    white-space: collapse;
+    white-space: normal;
 }
 
 #header nav li {
@@ -219,7 +219,7 @@ ul {
     color: lightgray;
     font-size: 14pt;
     height: 100%;
-	float:center;
+	float: inherit;
 	
 }
 
@@ -229,7 +229,7 @@ ul {
     border-style: solid;
     background-color: #ffffff;
     padding:16px;
-    border: inset 1px solid #333;
+    border: solid #333;
     -moz-box-shadow: 10px 0px 8px rgba(0, 0, 0, 0.3);
     box-shadow: 1px 0px 8px rgba(0, 0, 0, 0.3);
 	
@@ -315,6 +315,34 @@ input {
 	
 	
 }
+
+#onlineStatus
+{
+    position:absolute;
+    right:0px;
+    top:0px;
+    font-size:.7em;
+    padding:6px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-left-radius: 10px;
+    color:#fff;
+}
+        
+#command input
+{
+    display:inline;
+}
+      
+.online
+{
+    background-color:#060;
+}
+      
+.offline
+{
+    background-color:#900;
+}
+    
 
 
 
