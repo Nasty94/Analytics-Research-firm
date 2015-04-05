@@ -1,7 +1,5 @@
+@charset "ISO-8859-1";
 
-@charset "ISO-8859-1";
-@charset "ISO-8859-1";
-@charset "ISO-8859-1";
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -196,8 +194,8 @@ ul {
     color: #787878;
     text-decoration: overline;
     padding: 0 14px 0 0;
-/*	-webkit-transition: all .15s linear;
-	-moz-transition: all .15s linear; */
+	-webkit-transition: all .15s linear;
+	-moz-transition: all .15s linear;
 	transition: all .15s linear;
     cursor: pointer;
 
@@ -237,7 +235,7 @@ ul {
     background-color: #ffffff;
     padding:16px;
     border: 1px solid #333;
- /*   -moz-box-shadow: 10px 0px 8px rgba(0, 0, 0, 0.3);*/
+    -moz-box-shadow: 10px 0px 8px rgba(0, 0, 0, 0.3);
     box-shadow: 1px 0px 8px rgba(0, 0, 0, 0.3);
 	
 
@@ -288,8 +286,8 @@ ul {
     padding: 20px;
     background-color: #eaeaea;
     border-radius: 10px;
-	/*-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;*/
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
 }
 
 
@@ -297,8 +295,8 @@ input {
     width: 50px;
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 8px;
-/*	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px; */
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
     margin: 0 0 20px 5px;
     padding: 10px;
     box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2) inset;
@@ -332,6 +330,33 @@ input {
     }
 }
 */
+
+.btn-success {
+  background-image: -webkit-linear-gradient(top, #5cb85c 0%, #419641 100%);
+  background-image:      -o-linear-gradient(top, #5cb85c 0%, #419641 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#5cb85c), to(#419641));
+  background-image:         linear-gradient(to bottom, #5cb85c 0%, #419641 100%);
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5cb85c', endColorstr='#ff419641', GradientType=0);*/
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  background-repeat: repeat-x;
+  border-color: #3e8f3e;
+}
+.btn-success:hover,
+.btn-success:focus {
+  background-color: #419641;
+  background-position: 0 -15px;
+}
+.btn-success:active,
+.btn-success.active {
+  background-color: #419641;
+  border-color: #3e8f3e;
+}
+.btn-success.disabled,
+.btn-success:disabled,
+.btn-success[disabled] {
+  background-color: #419641;
+  background-image: none;
+}
 
 
 
