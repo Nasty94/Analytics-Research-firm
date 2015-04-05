@@ -47,7 +47,7 @@ if(isset($_POST['submitted']))
 		  
 		  <div id="english">
 		  <br>
-		  <a id="eng" href="lang/eng/index_eng.html">ENG</a>&nbsp;&nbsp;
+		  <a id="eng" href="web/lang/eng/index_eng.html">ENG</a>&nbsp;&nbsp;
 	
 		  </div>
 		  <div id="img">
