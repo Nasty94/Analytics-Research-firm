@@ -196,8 +196,8 @@ ul {
     color: #787878;
     text-decoration: overline;
     padding: 0 14px 0 0;
-	-webkit-transition: all .15s linear;
-	-moz-transition: all .15s linear;
+/*	-webkit-transition: all .15s linear;
+	-moz-transition: all .15s linear; */
 	transition: all .15s linear;
     cursor: pointer;
 
@@ -237,7 +237,7 @@ ul {
     background-color: #ffffff;
     padding:16px;
     border: 1px solid #333;
-    -moz-box-shadow: 10px 0px 8px rgba(0, 0, 0, 0.3);
+ /*   -moz-box-shadow: 10px 0px 8px rgba(0, 0, 0, 0.3);*/
     box-shadow: 1px 0px 8px rgba(0, 0, 0, 0.3);
 	
 
@@ -288,8 +288,8 @@ ul {
     padding: 20px;
     background-color: #eaeaea;
     border-radius: 10px;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
+	/*-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;*/
 }
 
 
@@ -297,8 +297,8 @@ input {
     width: 50px;
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 8px;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
+/*	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px; */
     margin: 0 0 20px 5px;
     padding: 10px;
     box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2) inset;
