@@ -64,12 +64,12 @@ $has_comments = (count($comments) > 0);
 
             <div class="dropdownmenu">
             <ul id="nav">
-            <li class='active'><a href='index.html'>Avaleht</a></li>
-            <li><a href="login-home.php">Minu konto</a>
+            <li class='active'><a href='../../index.html'>Avaleht</a></li>
+            <li><a href="../../login-home.php">Minu konto</a>
                 <div>
                     <ul>
-                        <li><a href='register.php'>Uus kasutaja</a></li>
-                        <li><a href='login.php'>Logi sisse</a></li>
+                        <li><a href='../../register.php'>Uus kasutaja</a></li>
+                        <li><a href='../../login.php'>Logi sisse</a></li>
                        
                     </ul>
                 </div>
@@ -112,18 +112,18 @@ $has_comments = (count($comments) > 0);
             <button class="btn btn-success" type="button" id="menu1" data-toggle="dropdown">Menüü
             <span class="caret"></span></button>
             <ul class="dropdown-menu dropdown-menu-right" role="menu">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="index.html">Avaleht</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="../../index.html">Avaleht</a></li>
                 <li role="presentation" class="divider"></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href='login'>Logi sisse</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href='register.php'>Uus kasutaja</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href='../../login'>Logi sisse</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href='../../register.php'>Uus kasutaja</a></li>
                 <li role="presentation" class="divider"></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Meist</a></li>
                 <li role="presentation" class="divider"></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Turu uuring</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Med statistika</a></li>
                 <li role="presentation" class="divider"></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="./web/articles/article_sample.php">Blogi</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Kontakt</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="article_sample.php">Blogi</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="contact.php">Kontakt</a></li>
               
               
             </ul>
