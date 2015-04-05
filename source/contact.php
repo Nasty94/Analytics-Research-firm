@@ -39,6 +39,7 @@ if(isset($_POST['submitted']))
         
     	
 </head>
+<<<<<<< HEAD
 
 <body>
     
@@ -47,6 +48,18 @@ if(isset($_POST['submitted']))
              <div class="col-md-8 col-md-offset-2">
                     <div id="english">
 		            <a id="eng" href="web/lang/eng/index_eng.html">ENG</a>&nbsp;&nbsp;
+=======
+	<body> 
+			
+	      <div id="left"></div>
+		  <div id="right"></div>
+		  <div id="top"></div>
+		  <div id="bottom"></div>
+		  
+		  <div id="english">
+		  <br>
+		  <a id="eng" href="web/lang/eng/index_eng.html">ENG</a>&nbsp;&nbsp;
+>>>>>>> 32420bb182cc287ea2bfe89d205b8d121e40443e
 	
 		  </div>
              </div>
