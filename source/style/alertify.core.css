@@ -3,13 +3,14 @@
 .alertify-show,
 .alertify-log,
 .alertify-hide,
-.alertify-log-hide {
-	/*-webkit-transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
+	/*.alertify-log-hide {
+-webkit-transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
 	   -moz-transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
 	    -ms-transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
 	     -o-transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
-	        transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045); /* easeInBack */ */
-}
+	        transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045); 
+} 
+*/
 .alertify-cover {
 	position: fixed; z-index: 99999;
 	top: 0; right: 0; bottom: 0; left: 0;
