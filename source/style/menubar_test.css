@@ -65,15 +65,15 @@
 	z-index:1;
 
 	border-radius:8px; /*some css3*/
-	/*-moz-border-radius:8px;
-	-webkit-border-radius:8px;
-	transition:0.8s ease-in-out; */
+/*	-moz-border-radius:8px;
+	-webkit-border-radius:8px;*/
+	transition:0.8s ease-in-out; 
 	box-shadow:2px 2px 3px rgba(0, 0, 0, 0.5);
-/*	-moz-box-shadow:2px 2px 3px rgba(0, 0, 0, 0.5);
+/*  -moz-box-shadow:2px 2px 3px rgba(0, 0, 0, 0.5);
 	-webkit-box-shadow:2px 2px 3px rgba(0, 0, 0, 0.5);
 	-moz-transition:0.8s ease-in-out;
 	-o-transition:0.8s ease-in-out;
-	-webkit-transition:all 0.8s ease-in-out; */
+	-webkit-transition:all 0.8s ease-in-out; */	
 }
 #nav ul li {
 	width:180px;
@@ -88,10 +88,8 @@
 	height:200px;
 }
 #nav li:hover ul {
-/*	-moz-transform:translate(0,161px); 
-	-o-transform:translate(0,161px);
-	-webkit-transform:translate(0,161px);
-    transform: translate(0,161px); */
+
+    transform: translate(0,161px); 
 } 
 #nav a:hover,#nav li:hover > a {
 	color:#99ff33;
