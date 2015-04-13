@@ -215,13 +215,13 @@ What will you gain?<br>
 	</section>
                             </div><!--center-->
                             </div> <!--contentInt-->
-          <FORM name="subform" id="FORM">
+        <FORM name="subform" id="FORM">
                     <br>
-			   		<div class="center">                  
+	<div class="center">                  
 	            
 	 <header>
-			<h2>Tagasiside</h2>
-		</header>
+		<h2c>Tagasiside</h2c>
+	</header>
 
     <ol id="posts-list" class="hfeed<?php echo($has_comments?' has-comments':''); ?>">
       <li class="no-comments">Jaga oma arvamust!</li>
@@ -250,7 +250,7 @@ What will you gain?<br>
 		
 		<div id="respond">
 
-      <h3>Mida Sina arvad artiklist?</h3>
+      <h3c>Mida Sina arvad artiklist?</h3c>
 
       <form action="../comment-sys/post_comment.php" method="post" id="commentform">
 
@@ -276,11 +276,12 @@ What will you gain?<br>
         </div>
    </div>
     </div>
-               </FORM>
+     =</FORM>
 
 		
-		 <a href="javascript:enable();" >Loe rohkem...</a>       
+   <a href="javascript:enable();" >Loe rohkem...</a>       
    </div> <!-- white box -->
+   <br><br><br>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">		  
 	        <div id="footer" >
