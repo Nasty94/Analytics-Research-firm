@@ -216,7 +216,7 @@ What will you gain?<br>
                             </div><!--center-->
                             </div> <!--contentInt-->
                             
-	            </div> <!-- white box --> 
+	            
 	 <header>
 			<h2>Tagasiside</h2>
 		</header>
@@ -273,6 +273,7 @@ What will you gain?<br>
 	
         </div>
    </div>
+   </div> <!-- white box -->
     <div class="row">
         <div class="col-md-8 col-md-offset-2">		  
 	        <div id="footer" >
