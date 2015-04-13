@@ -5,8 +5,6 @@ $db = new Persistence();
 $comments = $db->get_comments($comment_post_ID);
 $has_comments = (count($comments) > 0);
 
-
-
 ?>
 
 
@@ -27,6 +25,7 @@ $has_comments = (count($comments) > 0);
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script type='text/javascript' src='../../scripts/gen_validatorv31.js'></script>
     <script src="../../scripts/pwdwidget.js" type="text/javascript"></script>   
+    <script src="../../../js/disable.js"></script>
 	
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
 	<link rel="stylesheet" href="../../style/menubar_test.css">
@@ -215,7 +214,9 @@ What will you gain?<br>
 	</section>
                             </div><!--center-->
                             </div> <!--contentInt-->
-                            
+          <FORM name="subform" id="FORM">
+                    <br>
+			   		<div class="center">                  
 	            
 	 <header>
 			<h2>Tagasiside</h2>
@@ -273,6 +274,11 @@ What will you gain?<br>
 	
         </div>
    </div>
+    </div>
+               </FORM>
+
+		
+		 <a href="javascript:enable();" >Loe rohkem...</a>       
    </div> <!-- white box -->
     <div class="row">
         <div class="col-md-8 col-md-offset-2">		  
