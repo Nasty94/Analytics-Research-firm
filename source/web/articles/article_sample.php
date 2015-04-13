@@ -215,10 +215,60 @@ What will you gain?<br>
 	</section>
                             </div><!--center-->
                             </div> <!--contentInt-->
-		   		   
-
-             
+                            
 	            </div> <!-- white box --> 
+	 <header>
+			<h2>Tagasiside</h2>
+		</header>
+
+    <ol id="posts-list" class="hfeed<?php echo($has_comments?' has-comments':''); ?>">
+      <li class="no-comments">Jaga oma arvamust!</li>
+      <?php
+        foreach ($comments as &$comment) {
+          ?>
+          <li><article id="comment_<?php echo($comment['id']); ?>" class="hentry">	
+    				<footer class="post-info">
+    					<abbr class="published" title="<?php echo($comment['date']); ?>">
+    						<?php echo( date('d F Y', strtotime($comment['date']) ) ); ?>
+    					</abbr>
+
+    					<address class="vcard author">
+    						By <a class="url fn" href="#"><?php echo($comment['comment_author']); ?></a>
+    					</address>
+    				</footer>
+
+    				<div class="entry-content">
+    					<p><?php echo($comment['comment']); ?></p>
+    				</div>
+    			</article></li>
+          <?php
+        }
+      ?>
+		</ol>
+		
+		<div id="respond">
+
+      <h3>Mida Sina arvad artiklist?</h3>
+
+      <form action="../comment-sys/post_comment.php" method="post" id="commentform">
+
+        <label for="comment_author" class="required">Nimi</label>
+        <input type="text" name="comment_author" id="comment_author" value="" tabindex="1" required="required">
+        
+        <label for="email" class="required">Email</label>
+        <input type="email" name="email" id="email" value="" tabindex="2" required="required">
+
+        <label for="comment" class="required">Sinu arvamus</label>
+        <textarea name="comment" id="comment" rows="10" tabindex="4"  required="required"></textarea>
+
+        <input type="hidden" name="comment_post_ID" value="<?php echo($comment_post_ID); ?>" id="comment_post_ID" />
+        <input name="submit" type="submit" value="Submit " style="width:50p"/>
+        
+      </form>
+      
+    </div>
+			
+	</section>
 	        </div> <!-- main -->
 	
         </div>
