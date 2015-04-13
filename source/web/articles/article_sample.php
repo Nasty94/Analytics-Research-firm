@@ -276,7 +276,7 @@ What will you gain?<br>
         </div>
    </div>
     </div>
-     =</FORM>
+     </FORM>
 
 		
    <a href="javascript:enable();" >Loe rohkem...</a>       
