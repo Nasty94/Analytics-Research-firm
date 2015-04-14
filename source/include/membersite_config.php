@@ -17,10 +17,10 @@ $fgmembersite->SetAdminEmail('anastassia.ivanova.94@gmail.com');
 $fgmembersite->InitDB(
                       /*hostname*/'eu-cdbr-azure-north-b.cloudapp.net',
 //                      /*hostname*/'%',
-                      /*username*/'bc3106a32eb6a9',
-//                      /*username*/'root2',
-                      /*password*/'ff65da13',
-//                      /*password*/'root2',
+//                     /*username*/'bc3106a32eb6a9',
+                      /*username*/'root2',
+ //                     /*password*/'ff65da13',
+                      /*password*/'root2',
                       /*database name*/'lkconsult',
                       /*table name*/'users');
 
