@@ -18,9 +18,9 @@ $fgmembersite->InitDB(
                       /*hostname*/'eu-cdbr-azure-north-b.cloudapp.net',
 //                      /*hostname*/'%',
 //                     /*username*/'bc3106a32eb6a9',
-                      /*username*/'root2',
+                      /*username*/'root',
  //                     /*password*/'ff65da13',
-                      /*password*/'root2',
+                      /*password*/'',
                       /*database name*/'lkconsult',
                       /*table name*/'users');
 
