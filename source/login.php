@@ -12,17 +12,17 @@ if(isset($_POST['submitted']))
 
      if($fgmembersite->IsAdmin()==0)
 	 {
-	 $fgmembersite->RedirectToURL("admin_bootstrap.php");
+	 $fgmembersite->RedirectToURL("admin.php");
 	 }
 	 
      elseif($fgmembersite->IsAdmin2()==0)
 	 {
-	 $fgmembersite->RedirectToURL("admin_bootstrap.php");
+	 $fgmembersite->RedirectToURL("admin.php");
 	 }
        
      else{
      	
-	 $fgmembersite->RedirectToURL("login-home_bootstrap.php");
+	 $fgmembersite->RedirectToURL("login-home.php");
 	 }
    }
 }
@@ -81,7 +81,7 @@ elseif( isset( $_REQUEST["provider"] ) )
     }
     $fgmembersite->CheckLoginInDB_Hybrid($user_profile->identifier);
     $_SESSION[$fgmembersite->GetLoginSessionVar()] = $username;
-	$fgmembersite->RedirectToURL("login_home_bootstrap.php");
+	$fgmembersite->RedirectToURL("login_home.php");
 }
 ?>
 
