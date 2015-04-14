@@ -67,7 +67,7 @@ if($fgmembersite->Login()){
 
             <div class="dropdownmenu">
             <ul id="nav">
-            <li class='active'><a href='index_loggedin.html'>Avaleht</a></li>
+            <li class='active'><a href='admin_index.html'>Avaleht</a></li>
             <li><a href="login-home_bootstrap.php">Minu konto</a>
                 <div>
                     <ul>
