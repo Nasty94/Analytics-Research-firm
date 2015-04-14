@@ -31,23 +31,22 @@ if($fgmembersite->Login()){
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Post to blog</title>
+    <title>Minu konto</title>
      
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
-    <script src="scripts/pwdwidget.js" type="text/javascript"></script>   
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
-	
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
-	<link rel="stylesheet" href="style/menubar.css">
-	<link rel="stylesheet" href="style/style.css">
-	<link rel="stylesheet" href="style/verticalmenu.css">
-	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
-    <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <script src="scripts/pwdwidget.js" type="text/javascript"></script>  
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
+    <link rel="stylesheet" href="style/menubar_test.css">
+    <link rel="stylesheet" href="style/style_test.css">
+    <link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
+    <link rel="STYLESHEET" type="text/css" href="style/fg_membersite_test.css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style/bootstrap-theme.css">
-    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">    
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">   
 </head>
 
 <body>
