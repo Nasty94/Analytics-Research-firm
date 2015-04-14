@@ -13,6 +13,10 @@ if($fgmembersite->Login()){
 
 	if($fgmembersite->isAdmin()==0)
 	{
+    	$fgmembersite->RedirectToURL("admin.php");
+    	exit;
+	}
+	else {
     	$fgmembersite->RedirectToURL("login.php");
     	exit;
 	}
@@ -26,7 +30,7 @@ if($fgmembersite->Login()){
 
 	<meta charset="utf-8" />
 	
-	<link rel="stylesheet" href="../../style/comment-main.css" type="text/css" />
+	<link rel="stylesheet" href="style/comment-main.css" type="text/css" />
 	<meta http-equiv="Content type" content="text/html; charset=ISO-8859-1">
 	<meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,15 +38,15 @@ if($fgmembersite->Login()){
     <title>Article sample</title>
      
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <script type='text/javascript' src='../../scripts/gen_validatorv31.js'></script>
-    <script src="../../scripts/pwdwidget.js" type="text/javascript"></script>   
+    <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
+    <script src="scripts/pwdwidget.js" type="text/javascript"></script>   
 	
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
-	<link rel="stylesheet" href="../../style/menubar.css">
-	<link rel="stylesheet" href="../../style/style.css">
-	<link rel="stylesheet" href="../../style/verticalmenu.css">
-	<link rel="STYLESHEET" type="text/css" href="../../style/pwdwidget.css" />
-        <link rel="STYLESHEET" type="text/css" href="../../style/fg_membersite.css" />
+	<link rel="stylesheet" href="style/menubar.css">
+	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="style/verticalmenu.css">
+	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
+        <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         
 </head>
@@ -55,18 +59,18 @@ if($fgmembersite->Login()){
 		  
 		  <div id="img">
      		 
-		  <img src="../../img/LK.jpg" width=auto height=auto>
+		  <img src="img/LK.jpg" width=auto height=auto>
 		  </div <!-- img -->
 		  
 <div class="dropdownmenu">
         <ul id="nav">
-            <li class='active'><a href='../../index.html'>Avaleht</a></li>
+            <li class='active'><a href='index.html'>Avaleht</a></li>
             <li><a href="#">Minu konto</a>
                 <div>
                     <ul>
-                        <li><a href='../../register.php'>Uus kasutaja</a></li>
-                        <li><a href='../../change-pwd.php'>Muuda parooli</a></li>
-			<li><a href='../../logout.php'>Logi välja</a></li>
+                        <li><a href='register.php'>Uus kasutaja</a></li>
+                        <li><a href='change-pwd.php'>Muuda parooli</a></li>
+			<li><a href='logout.php'>Logi välja</a></li>
                        
                     </ul>
                 </div>
@@ -74,8 +78,8 @@ if($fgmembersite->Login()){
             <li><a href="#">Meist</a>
                 <div>
                     <ul>
-                        <li><a href="../../staff.html">Personal</a></li>
-                        <li><a href="../../company.html">Ettevõtest</a></li>
+                        <li><a href="staff.html">Personal</a></li>
+                        <li><a href="company.html">Ettevõtest</a></li>
   
                     </ul>
                 </div>
@@ -101,7 +105,7 @@ if($fgmembersite->Login()){
                     </ul>
                 </div>
             </li>
-            <li><a href="../../contact.php">  Kontakt  </a></li>
+            <li><a href="contact.php">  Kontakt  </a></li>
 			<li><a href="#">           </a></li>
 			
             <li class="pad"></li>
@@ -201,7 +205,7 @@ Content
 
       <h3>Mida Sina arvad artiklist?</h3>
 
-      <form action="../comment-sys/post_comment.php" method="post" id="commentform">
+      <form action="web/comment-sys/post_comment.php" method="post" id="commentform">
 
         <label for="comment_author" class="required">Nimi</label>
         <input type="text" name="comment_author" id="comment_author" value="" tabindex="1" required="required">
