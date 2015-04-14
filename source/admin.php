@@ -67,7 +67,7 @@ if($fgmembersite->Login()){
 
             <div class="dropdownmenu">
             <ul id="nav">
-            <li class='active'><a href='bootstrap_test.html'>Avaleht</a></li>
+            <li class='active'><a href='index_loggedin.html'>Avaleht</a></li>
             <li><a href="login-home_bootstrap.php">Minu konto</a>
                 <div>
                     <ul>
@@ -75,7 +75,7 @@ if($fgmembersite->Login()){
                         <li><a href='all_orders.php'>Tellimuste ajalugu</a></li>
                         <li><a href='all_users.php'>Klientide kontod</a></li>
                         <li><a href='change-pwd.php'>Muuda parooli</a></li>
-			            <li><a href='logout.php'>Logi välja</a></li>
+			<li><a href='logout.php'>Logi välja</a></li>
                        
                     </ul>
                 </div>
@@ -83,8 +83,8 @@ if($fgmembersite->Login()){
 			<li><a href="#">Meist</a>
                 <div>
                     <ul>
-                        <li><a href="#">Personal</a></li>
-                        <li><a href="#">Concepts</a></li>
+                        <li><a href="staff.html">Personal</a></li>
+                        <li><a href="company.html">Concepts</a></li>
   
                     </ul>
                 </div>
