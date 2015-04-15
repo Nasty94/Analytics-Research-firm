@@ -193,10 +193,10 @@ if($fgmembersite->Login()){
 			<div class="entry-content">
 				<form name="form1" method="post" action="$fgmembersite->InsertBlogPostToDB()">
 <p>Title
-<input type="text" name="TITLE" size="50">
+<input type="text" name="TITLE" size="500">
 <br>
 Summary
-<input type="text" name="SUMMARY" size="50">
+<input type="text" name="SUMMARY" size="500">
 <br>
 Content
 <textarea name="CONTENT" cols="60" rows="15"></textarea>
