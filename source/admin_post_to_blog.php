@@ -164,8 +164,8 @@ if($fgmembersite->Login()){
                             </noscript>
                             <h1></h1>
 
-
-			   		        <div class="center">
+       <section id="comments" class="body">
+	<div class="center">
 	
 	  <div class="textart">
 	  <article class="hentry">	
