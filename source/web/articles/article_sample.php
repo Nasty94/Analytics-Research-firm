@@ -212,7 +212,7 @@ What will you gain?<br>
 		</article>
 	</div>
 			
-	</section>
+
 	<section id="comments" class="body">
                             </div><!--center-->
                             </div> <!--contentInt-->
