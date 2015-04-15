@@ -36,8 +36,9 @@ if($fgmembersite->Login()){
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
     <script src="scripts/pwdwidget.js" type="text/javascript"></script>  
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
-
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    
+    <link rel="STYLESHEET" type="text/css" href="style/comment-main.css" />
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
     <link rel="stylesheet" href="style/menubar_test.css">
     <link rel="stylesheet" href="style/style_test.css">
@@ -155,7 +156,7 @@ if($fgmembersite->Login()){
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
           	<div id="main">
-                <h2>Tere, administraator!</h2>
+                <h2c>Tere, administraator!</h2c>
 	            <div id="white-box" >
 	                        <div id="contentInt">
                             <noscript>
@@ -217,7 +218,7 @@ Content
 
 	  
 	  <header>
-			<h2>Tagasiside</h2>
+			<h2c>Tagasiside</h2c>
 		</header>
 
     <ol id="posts-list" class="hfeed<?php echo($has_comments?' has-comments':''); ?>">
@@ -247,7 +248,7 @@ Content
 		
 		<div id="respond">
 
-      <h3>Mida Sina arvad artiklist?</h3>
+      <h3c>Mida Sina arvad artiklist?</h3c>
 
       <form action="web/comment-sys/post_comment.php" method="post" id="commentform">
 
