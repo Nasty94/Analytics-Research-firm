@@ -213,6 +213,7 @@ What will you gain?<br>
 	</div>
 			
 	</section>
+	<section id="comments" class="body">
                             </div><!--center-->
                             </div> <!--contentInt-->
         <FORM name="subform" id="FORM">
