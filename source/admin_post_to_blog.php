@@ -183,7 +183,7 @@ if($fgmembersite->Login()){
 			</footer>
 			<div class="entry-content">
 			<?php
-			PostToBlog();
+			<?= $fgmembersite->UserFullName(); ?>
 			?>
 			
 			</div>
