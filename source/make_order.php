@@ -1,20 +1,23 @@
-<?PHP
+<!--<?PHP
+
 require_once("./include/membersite_config.php");
 
 if(!$fgmembersite->CheckLogin())
 {
-    $fgmembersite->RedirectToURL("login_bootstrap.php");
+    $fgmembersite->RedirectToURL("login.php");
     exit;
 }
+
 if(isset($_POST['submitted']))
 {
    if($fgmembersite->RegisterUserOrder())
    {
-        $fgmembersite->RedirectToURL("thank_you_order_bootstrap.php");
+        $fgmembersite->RedirectToURL("thank_you_order.php");
    }
 }
-?>
 
+?>
+-->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
