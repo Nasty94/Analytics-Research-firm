@@ -12,12 +12,12 @@ if(isset($_POST['submitted']))
 
      if($fgmembersite->IsAdmin()==0)
 	 {
-	 $fgmembersite->RedirectToURL("admin_bootstrap.php");
+	 $fgmembersite->RedirectToURL("admin.php");
 	 }
        
   else{
      	
-	 $fgmembersite->RedirectToURL("login-home_bootstrap.php");
+	 $fgmembersite->RedirectToURL("login-home.php");
 	 }
    }
 }
