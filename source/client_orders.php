@@ -185,6 +185,8 @@ if(!$fgmembersite->CheckLogin())
                          <?php
                              $i++;
                             }
+                            mysqli_free_result($results);
+
                             ?>
                         
                
