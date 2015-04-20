@@ -174,6 +174,7 @@ var userID = echo $fgmembersite->UserID();
 
 ?>
 
+<!--
 <script type="text/javascript">
      $(function () {
       
@@ -304,7 +305,7 @@ var userID = echo $fgmembersite->UserID();
 
 </script>
 
-
+-->
 
 <input type='hidden' name='submitted' id='submitted' value='1'/>
 
