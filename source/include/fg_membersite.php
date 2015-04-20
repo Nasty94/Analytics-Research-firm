@@ -207,21 +207,6 @@ class FGMembersite
 	    return strcmp('anastassia.ivanova.94@gmail.com', $admin_email);
 
 	}
-	
-	function isAdmin2()
-	{
-
-        if(!$this->DBLogin())
-        {
-            $this->HandleError("Database login failed!");
-            return false;
-        }  
-
-        $admin2_email = $_SESSION['email_of_user'];
-
-	    return strcmp('Annett.Saarik@gmail.com', $admin2_email);
-
-	}
     
     function LogOut()
     {
@@ -444,7 +429,7 @@ class FGMembersite
 		$_SESSION['phone_of_user'] = $row['phone_number'];
 		$_SESSION['id_of_user']  = $row['id_user'];
 
-	
+	    mysqli_free_result($result);
         
         return true;
     }
@@ -474,7 +459,7 @@ class FGMembersite
         $_SESSION['email_of_user'] = $row['email'];
 		$_SESSION['phone_of_user'] = $row['phone_number'];
 
-	
+	    mysqli_free_result($result);
         
         return true;
     }
