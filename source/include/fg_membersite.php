@@ -25,7 +25,7 @@ class FGMembersite
         $this->rand_key = '0iQx5oBk66oVZep';
     }
     
-    function InitDB($host,$uname,$pwd,$database,$tablename)
+    function InitDB($host,$uname,$pwd ,$database,$tablename)
     {
         $this->db_host  = $host;
         $this->username = $uname;
@@ -1228,6 +1228,36 @@ class FGMembersite
         }
         return $str;
     }
+    
+    /*BLOG stuff*/
+	
+	function InsertBlogPostToDB(){
+	
+	
+	$table = "BLOG";
+    mysqli_query ($this->connection,"CREATE TABLE IF NOT EXISTS '$table' (ID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY ('id') ) ");
+    mysqli_query ($this->connection,"ALTER TABLE '$table' ADO 'TITLE' TEXT NOT NULL");
+    mysqli_query ($this->connection,"ALTER TABLE '$table' ADO 'SUMMARY' TEXT NOT NULL");
+    mysqli_query ($this->connection,"ALTER TABLE '$table' ADO 'CONTENT' TEXT NOT NULL");
+	
+	$sql = "INSERT INTO $table SET
+            TITLE = '$_POST(TITLE)',
+            SUMMARY = '$_POST(SUMMARY)',
+            CONTENT = '$_POST(CONTENT)'";
+    $query = mysqli_query($this->connection,$sql);
+
+    $select_sql = "SELECT * from $table";
+    $result = mysqli_query($this->connection,$select_sql); while( $row = $mysqli_fetch_array($this->connection,$result));
+   }
+   
+    function PostToBlog() 
+	{
+	$table = "BLOG";
+	echo "<h1>$row(TITLE)</h1>";
+    echo "<p><B>$row(SUMMARY)</B></p>";
+    echo "<h1>$row(CONTENT)</h1>";
+	}
+	
   
 	
 }

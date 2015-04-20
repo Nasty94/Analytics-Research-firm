@@ -53,7 +53,7 @@
 
             <div class="dropdownmenu">
             <ul id="nav">
-            <li class='active'><a href='index.html'>Avaleht</a></li>
+            <li class='active'><a href='#'>Avaleht</a></li>
             <li><a href="login-home.php">Minu konto</a>
                 <div>
                     <ul>
