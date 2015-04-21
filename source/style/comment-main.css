@@ -392,7 +392,7 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 #add-comment input[type='email'],
 #add-comment input[type='url'] {float: left; width: 200px;}
 
-#add-comment textarea {float: left; height: 150px; width: 495px;}
+#add-comment textarea {float: left; height: 150px; width: auto;}
 
 #add-comment p.req {clear: both; margin: 0 .5em 1em 0; text-align: right;}
 
@@ -405,7 +405,7 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	margin-bottom: 2em;
 	overflow: hidden;
 	padding: 20px 20px;
-	width: 760px;
+	width: auto;
 
 	border-radius: 10px;
 	-moz-border-radius: 10px;

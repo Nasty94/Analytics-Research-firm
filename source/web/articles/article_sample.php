@@ -176,6 +176,7 @@ Commitment
 <br>
 As a leader you must ensure that your employees are engaged through knowledge of what creates their commitment. Different people respond to different measures. To become extremely engaged some employee’s need you set up goals with them. On the other hand, others must feel safe and secure to be committed to their work.
 <br>
+
 Respect and trust
 <br>
 As a leader you can ensure respect by inspiring and contributing to open communication. A work environment where there is room to discuss different views and to admit mistakes. This creates mutual trust and the chance to learn from each other. Conversely many secrets and taboos typically lead to people being suspicious of each other and to sub-optimise within their own areas.
@@ -210,18 +211,21 @@ What will you gain?<br>
 </p>
 			</div>
 		</article>
+
 	</div>
+
 			
 
-	<section id="comments" class="body">
-                            </div><!--center-->
-                            </div> <!--contentInt-->
-        <FORM name="subform" id="FORM">
-                    <br>
-	<div class="center">                  
+
+	<div class="center"> 
+
+      	<section id="comments" class="body">
+
+        <form name="subform" id="FORM">
+                    <br>                
 	            
 	 <header>
-		<h2c>Tagasiside</h2c>
+		<h2>Tagasiside</h2>
 	</header>
 
     <ol id="posts-list" class="hfeed<?php echo($has_comments?' has-comments':''); ?>">
@@ -244,14 +248,16 @@ What will you gain?<br>
     					<p><?php echo($comment['comment']); ?></p>
     				</div>
     			</article></li>
+        
           <?php
         }
       ?>
 		</ol>
-		
+        </form>
+		 <a href="javascript:enable();" >Loe rohkem...</a> 
 		<div id="respond">
 
-      <h3c>Mida Sina arvad artiklist?</h3c>
+      <h3>Mida Sina arvad artiklist?</h3>
 
       <form action="../comment-sys/post_comment.php" method="post" id="commentform">
 
@@ -265,22 +271,23 @@ What will you gain?<br>
         <textarea name="comment" id="comment" rows="10" tabindex="4"  required="required"></textarea>
 
         <input type="hidden" name="comment_post_ID" value="<?php echo($comment_post_ID); ?>" id="comment_post_ID" />
-        <input name="submit" type="submit" value="Submit " style="width:50p"/>
+        <input name="submit" type="submit" value="Submit " style="width:50px"/>
         
       </form>
-      
+    
     </div>
 			
 	</section>
-	        </div> <!-- main -->
-	
+	        </div>
+	    </div>
+        </div>
         </div>
    </div>
     </div>
      </FORM>
 
 		
-   <a href="javascript:enable();" >Loe rohkem...</a>       
+          
    </div> <!-- white box -->
    <br><br><br>
     <div class="row">
