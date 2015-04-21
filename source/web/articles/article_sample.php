@@ -254,7 +254,7 @@ What will you gain?<br>
       ?>
 		</ol>
         </form>
-		 <a href="javascript:enable();" >Loe rohkem...</a> 
+		 <a href="javascript:enable();" >Vaata kommentaare</a> 
 		<div id="respond">
 
       <h3>Mida Sina arvad artiklist?</h3>
@@ -271,7 +271,7 @@ What will you gain?<br>
         <textarea name="comment" id="comment" rows="10" tabindex="4"  required="required"></textarea>
 
         <input type="hidden" name="comment_post_ID" value="<?php echo($comment_post_ID); ?>" id="comment_post_ID" />
-        <input name="submit" type="submit" value="Submit " style="width:50px"/>
+        <input name="submit" type="submit" value="Submit"/>
         
       </form>
     
