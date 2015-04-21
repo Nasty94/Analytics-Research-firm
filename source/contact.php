@@ -15,10 +15,11 @@ if(isset($_POST['submitted']))
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
-    <meta http-equiv="Content type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="content type" content="text/html; charset=ISO-8859-1">
 	<meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Minu konto</title>
      
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
@@ -45,20 +46,8 @@ if(isset($_POST['submitted']))
           <div class="row">
              <div class="col-md-8 col-md-offset-2">
                     <div id="english">
-		            <a id="eng" href="web/lang/eng/index_eng.html">ENG</a>&nbsp;&nbsp;
-
-	<body> 
-			
-	      <div id="left"></div>
-		  <div id="right"></div>
-		  <div id="top"></div>
-		  <div id="bottom"></div>
+		            <a id="eng" href="web/lang/eng/index_eng.html">ENG</a>&nbsp;&nbsp; 
 		  
-		  <div id="english">
-		  <br>
-		  <a id="eng" href="web/lang/eng/index_eng.html">ENG</a>&nbsp;&nbsp;
-
-		  </div>
              </div>
            </div>
            <div class="row">
@@ -158,7 +147,7 @@ if(isset($_POST['submitted']))
 	<br>
 	Tel: XXXXXX
 	<br>
-    <img id="facebook" src="img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
+    <img id="facebook" src="img/facebook.png" alt= "img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
     <br>
 
 </div><!--center-->
@@ -168,19 +157,19 @@ if(isset($_POST['submitted']))
 <div id='fg_membersite'>
 <form name="contactform" method="post" action="./include/send_form_email.php">
  
-<table width="450px">
+<table>
  
 <tr>
  
- <td valign="top">
+ <td>
  
   <label for="first_name">First Name *</label>
  
  </td>
  
- <td valign="top">
+ <td>
  
-  <input  type="text" name="first_name" maxlength="50" size="30">
+  <input  type="text" id="first_name" maxlength="50" size="30">
  
  </td>
  
@@ -188,15 +177,15 @@ if(isset($_POST['submitted']))
  
 <tr>
  
- <td valign="top"">
+ <td>
  
   <label for="last_name">Last Name *</label>
  
  </td>
  
- <td valign="top">
+ <td>
  
-  <input  type="text" name="last_name" maxlength="50" size="30">
+  <input  type="text" id="last_name" maxlength="50" size="30">
  
  </td>
  
@@ -204,15 +193,15 @@ if(isset($_POST['submitted']))
  
 <tr>
  
- <td valign="top">
+ <td>
  
   <label for="email">Email Address *</label>
  
  </td>
  
- <td valign="top">
+ <td>
  
-  <input  type="text" name="email" maxlength="80" size="30">
+  <input  type="text" id="email" maxlength="80" size="30">
  
  </td>
  
@@ -220,15 +209,15 @@ if(isset($_POST['submitted']))
  
 <tr>
  
- <td valign="top">
+ <td >
  
   <label for="telephone">Telephone Number</label>
  
  </td>
  
- <td valign="top">
+ <td>
  
-  <input  type="text" name="telephone" maxlength="30" size="30">
+  <input  type="text" id="telephone" maxlength="30" size="30">
  
  </td>
  
@@ -236,15 +225,15 @@ if(isset($_POST['submitted']))
  
 <tr>
  
- <td valign="top">
+ <td>
  
   <label for="comments">Comments *</label>
  
  </td>
  
- <td valign="top">
+ <td>
  
-  <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
+  <textarea  id="comments" maxlength="1000" cols="25" rows="6"></textarea>
  
  </td>
  
@@ -286,7 +275,7 @@ if(isset($_POST['submitted']))
 
 
     </div>
-        
+        </div>
     </body>
 </html>
 
