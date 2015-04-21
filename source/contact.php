@@ -57,7 +57,6 @@ if(isset($_POST['submitted']))
 		  <div id="english">
 		  <br>
 		  <a id="eng" href="web/lang/eng/index_eng.html">ENG</a>&nbsp;&nbsp;
->>>>>>> 32420bb182cc287ea2bfe89d205b8d121e40443e
 	
 		  </div>
              </div>
