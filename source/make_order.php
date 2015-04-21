@@ -1,20 +1,20 @@
 <?PHP
 
-// require_once("./include/membersite_config.php");
+require_once("./include/membersite_config.php");
 
-// if(!$fgmembersite->CheckLogin())
-// {
-//     $fgmembersite->RedirectToURL("login.php");
-//     exit;
-// }
+if(!$fgmembersite->CheckLogin())
+{
+    $fgmembersite->RedirectToURL("login.php");
+    exit;
+}
 
-// if(isset($_POST['submitted']))
-// {
-//    if($fgmembersite->RegisterUserOrder())
-//    {
-//         $fgmembersite->RedirectToURL("thank_you_order.php");
-//    }
-// }
+if(isset($_POST['submitted']))
+{
+   if($fgmembersite->RegisterUserOrder())
+   {
+        $fgmembersite->RedirectToURL("thank_you_order.php");
+   }
+}
 
 ?>
 
