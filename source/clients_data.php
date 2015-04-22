@@ -62,7 +62,7 @@ if(!$fgmembersite->CheckLogin())
 
             <div class="dropdownmenu">
             <ul id="nav">
-            <li class='active'><a href='index.html'>Avaleht</a></li>
+            <li class='active'><a href='index_loggedin.html'>Avaleht</a></li>
             <li><a href="login-home.php">Minu konto</a>
                 <div>
                     <ul>
@@ -71,21 +71,21 @@ if(!$fgmembersite->CheckLogin())
                         <li><a href='make_order.php'>Tellimuse tegemine</a></li>
                         <li><a href='client_orders.php'>Tellimuste ajalugu</a></li>
                         <li><a href='change-pwd.php'>Muuda parooli</a></li>
-			            <li><a href='logout.php'>Logi välja</a></li>
+			<li><a href='logout.php'>Logi välja</a></li>
                        
                     </ul>
                 </div>
             </li>
-			<li><a href="#">Meist</a>
+	<li><a href="#">Meist</a>
                 <div>
                     <ul>
-                        <li><a href="staff.html">Personal</a></li>
-                        <li><a href="company.html">Concepts</a></li>
+                        <li><a href="staff_loggedin.html">Personal</a></li>
+                        <li><a href="company_loggedin.html">Concepts</a></li>
   
                     </ul>
                 </div>
             </li>
-			<li><a href="#">Teenused</a>
+	<li><a href="#">Teenused</a>
                 <div>
                     <ul>
                         <li><a href="#">Turuuring</a></li>
@@ -106,8 +106,8 @@ if(!$fgmembersite->CheckLogin())
                     </ul>
                 </div>
             </li>
-            <li><a href="contact.php">  Kontakt  </a></li>
-			<li><a href="#">           </a></li>
+            <li><a href="login-contact.php">  Kontakt  </a></li>
+		
             <li class="pad"></li>
         </ul>
           <div class="dropdown">
