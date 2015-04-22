@@ -12,7 +12,7 @@ if(!$fgmembersite->CheckLogin())
 <html lang="en-US">
 <head>
     <meta http-equiv="Content type" content="text/html; charset=ISO-8859-1">
-	<meta charset='utf-8'>
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Minu konto</title>
@@ -22,15 +22,15 @@ if(!$fgmembersite->CheckLogin())
     <script src="scripts/pwdwidget.js" type="text/javascript"></script>  
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
 	
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
-	<link rel="stylesheet" href="style/menubar_test.css">
-	<link rel="stylesheet" href="style/style_test.css">
-	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
+    <link rel="stylesheet" href="style/menubar_test.css">
+    <link rel="stylesheet" href="style/style_test.css">
+    <link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
     <link rel="STYLESHEET" type="text/css" href="style/fg_membersite_test.css" />
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style/bootstrap-theme.css">
-    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+   
 
         
     	
@@ -59,7 +59,7 @@ if(!$fgmembersite->CheckLogin())
 
             <div class="dropdownmenu">
             <ul id="nav">
-            <li class='active'><a href='index.html'>Avaleht</a></li>
+            <li class='active'><a href='index_loggedin.html'>Avaleht</a></li>
             <li><a href="#">Minu konto</a>
                 <div>
                     <ul>
@@ -68,7 +68,7 @@ if(!$fgmembersite->CheckLogin())
                         <li><a href='make_order.php'>Tellimuse tegemine</a></li>
                         <li><a href='client_orders.php'>Tellimuste ajalugu</a></li>
                         <li><a href='change-pwd.php'>Muuda parooli</a></li>
-			            <li><a href='logout.php'>Logi välja</a></li>
+			<li><a href='logout.php'>Logi välja</a></li>
                        
                     </ul>
                 </div>
@@ -76,13 +76,13 @@ if(!$fgmembersite->CheckLogin())
 			<li><a href="#">Meist</a>
                 <div>
                     <ul>
-                        <li><a href="#">Personal</a></li>
-                        <li><a href="#">Concepts</a></li>
+                        <li><a href="staff.html">Personal</a></li>
+                        <li><a href="company.html">Concepts</a></li>
   
                     </ul>
                 </div>
             </li>
-			<li><a href="#">Teenused</a>
+           <li><a href="#">Teenused</a>
                 <div>
                     <ul>
                         <li><a href="#">Turuuring</a></li>
@@ -104,7 +104,7 @@ if(!$fgmembersite->CheckLogin())
                 </div>
             </li>
             <li><a href="contact.php">  Kontakt  </a></li>
-			<li><a href="#">           </a></li>
+		
             <li class="pad"></li>
         </ul>
           <div class="dropdown">
