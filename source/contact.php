@@ -34,7 +34,7 @@ if(isset($_POST['submitted']))
     <link rel="STYLESHEET" type="text/css" href="style/fg_membersite_test.css" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style/bootstrap-theme.css">
+    <link rel="stylesheet" href="style/bootstrap-theme.css.map">
 
 
         
