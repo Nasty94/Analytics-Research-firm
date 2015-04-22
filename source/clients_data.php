@@ -79,8 +79,8 @@ if(!$fgmembersite->CheckLogin())
 			<li><a href="#">Meist</a>
                 <div>
                     <ul>
-                        <li><a href="#">Personal</a></li>
-                        <li><a href="#">Concepts</a></li>
+                        <li><a href="staff.html">Personal</a></li>
+                        <li><a href="company.html">Concepts</a></li>
   
                     </ul>
                 </div>
