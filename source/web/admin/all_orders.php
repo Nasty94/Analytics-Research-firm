@@ -1,34 +1,46 @@
+<?PHP
 
-<!DOCTYPE html>
+require_once('../../include/fg_membersite.php');
+require_once('../../include/membersite_config.php');
+
+if($fgmembersite->isAdmin()==0)
+{
+    $fgmembersite->RedirectToURL("../../login_bootstrap.php");
+    exit;
+}
+
+
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
-
-    <meta charset='utf-8'>
+    <meta http-equiv="Content type" content="text/html; charset=ISO-8859-1">
+	<meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ettevõttest</title>
+    <title>Kõik tellimused</title>
      
-    
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script type='text/javascript' src='../../scripts/gen_validatorv31.js'></script>
     <script src="../../scripts/pwdwidget.js" type="text/javascript"></script>  
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
 	
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
-    <link rel="stylesheet" href="../../style/menubar_test.css">
-    <link rel="stylesheet" href="../../style/alertify.core.css" type="text/css">
-    <link rel="stylesheet" href="../../style/style_test.css">
-    <link rel="STYLESHEET" type="text/css" href="../../style/pwdwidget.css" />
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
+	<link rel="stylesheet" href="../../style/menubar_test.css">
+    <link rel="stylesheet" href="../../style/order_history_table.css">
+	<link rel="stylesheet" href="../../style/style_test.css">
+	<link rel="STYLESHEET" type="text/css" href="../../style/pwdwidget.css" />
     <link rel="STYLESHEET" type="text/css" href="../../style/fg_membersite_test.css" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../style/bootstrap-theme.css">
-    	
+ 	
 </head>
 
 <body>
     
-        <div class="container-fluid">
+        <div class="container-fluid text-center">
           <div class="row">
              <div class="col-md-8 col-md-offset-2">
                     <div id="english">
@@ -49,15 +61,15 @@
 
             <div class="dropdownmenu">
             <ul id="nav">
-            <li class='active'><a href='admin_index.html'>Avaleht</a></li>
-            <li><a href="../../login-home_bootstrap.php">Minu konto</a>
+            <li class='active'><a href='admin_index.php'>Avaleht</a></li>
+            <li><a href="../../login-home.php">Minu konto</a>
                 <div>
                     <ul>
                         <li><a href='../../clients_data.php'>Minu andmed</a></li>
                         <li><a href='all_orders.php'>Tellimuste ajalugu</a></li>
                         <li><a href='all_users.php'>Klientide kontod</a></li>
                         <li><a href='../../change-pwd.php'>Muuda parooli</a></li>
-		             	<li><a href='../../logout.php'>Logi välja</a></li>
+			            <li><a href='../../logout.php'>Logi välja</a></li>
                        
                     </ul>
                 </div>
@@ -65,8 +77,8 @@
 			<li><a href="#">Meist</a>
                 <div>
                     <ul>
-                        <li><a href="admin_satff.html">Personal</a></li>
-                        <li><a href="#">Concepts</a></li>
+                        <li><a href="admin_staff.html">Personal</a></li>
+                        <li><a href="admin_company.html">Concepts</a></li>
   
                     </ul>
                 </div>
@@ -100,7 +112,7 @@
             <button class="btn btn-success" type="button" id="menu1" data-toggle="dropdown">Menüü
             <span class="caret"></span></button>
             <ul class="dropdown-menu dropdown-menu-right" role="menu">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="../../bootstrap_test.html">Avaleht</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href='admin_index.php'>Avaleht</a></li>
                 <li role="presentation" class="divider"></li>
                         <li><a href='../../clients_data.php'>Minu andmed</a></li>
                         <li><a href='all_orders.php'>Tellimuste ajalugu</a></li>
@@ -115,7 +127,7 @@
                 <li role="presentation" class="divider"></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="../articles/article_sample.php">Blogi</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Kontakt</a></li>
-                            
+              
               
             </ul>
           </div>
@@ -125,50 +137,67 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
           	<div id="main">
+                  	<h2>Tere, administraator! Kuupäev: <span id='time'></span></h2> 
 	            <div id="white-box" >
 	                        <div id="contentInt">
                             <noscript>
                                 <p class="note">You have disabled Javascript. This website will not function without it.</p>
                             </noscript>
-                            
 
-                    <FORM name="mainform" id="FORMmain">
-                    <br>
-			   		<div class="center">
-              
-                    <h3>Meist:</h3>
-					<p>LKC OÜ on hea ja usaldusväärne partner Teile, kuna
-					Me oleme kiired kliendi küsimuste mõistmises. Oskame kiiresti hinnata uuritavat valdkonda ning me ei vaja pikka tutvustamist.
-					Me oleme paindlikud ja innovaatilised. Hoiame end kursis maailma parimate lahendustega.</p>
-					<p>Meil on hea arusaamine inimestest ja nende vajadustest.
-					Meie käitumine on klientide ootustega arvestatav.</p>
+                            <div class="row">
+                            <div class="col-md-6 col-lg-offset-3">
+			   		        <div class="center">
+                                       <h3>Klientide tellimused:</h3>
+    <div class="OrderHistoryTable" >
+                <table >
+                   
+                        <tr>
+                            <th>
+                                Rida
+                            </th>
+                            <th>
+                                ID
+                            </th>
+                            <th>
+                                Tellija nimi
+                            </th>
+                             <th>
+                                Tellija kontakt
+                            </th>
+                            <th>
+                                Tellimuse kirjeldus
+                            </th>
+                        </tr>
+                            <?php
 
-					<h3>Eesmärk, väärtused ja visioon</h3>
-					<p>Missioon</p>
-					<p>Meie eesmärk:</p>
-					<p>Pakkuda kõrge kvaliteediga statistilise andmeanalüüsi teenuseid eraisikutele ja ettevõtetele.</p>
-					<p>Meie väärtused:</p>
-					<p>Muudame keerulise lihtsaks ja arusaadavaks. Soovime luua tugevaid ning pikaajalisi kliendisuhteid. Oleme ausad ja otsekohesed.</p>
-
-					
-					<p>Visioon</p>
-					<p>Meie visioon on olla juhtivakas konsultatsiooni firmaks, mis toetab inimeste ja ettevõtete arengut läbi andmemodelleerimise.</p>  
-
-                </div> <!--center-->
-                </FORM>
-
+                            $results = $fgmembersite->GetAllOrders();
+                            $i = 1;
+                            while($row = mysqli_fetch_array($results))
+                            {
+                            ?>
+                                <tr> 
+                                    <td><?php echo $i ?></td>
+                                    <td><?php echo $row['order_id']?></td>
+                                    <td><?php echo $row['name']?></td>
+                                    <td><?php echo $row['email']?></td>
+                                    <td><?php echo $row['order_content']?></td>
+                            <?php
+                            $i++;
+                            }
+                            ?>
+                        
                
-			   <FORM name="subform" id="FORM">
-                    <br>
-			   		<div class="center">
-					
-					Kontakt
-                           </div>
-                </FORM>
+                </table>
+            </div>	
+                            </div><!--center-->
+                            </div>
+                            </div>
 
-            </div><!--center-->
-            </div> <!--contentInt-->            
-	        </div> <!-- white box --> 
+                            </div> <!--contentInt-->
+		   		   
+
+             
+	            </div> <!-- white box --> 
 	        </div> <!-- main -->
 	
         </div>
@@ -181,6 +210,17 @@
 	        </div>
         </div>
     </div>
-        
+
+
+    </div>
+    <!-- This is the code for JavaScript, for streaming server time -->
+    <script>
+    var source = new EventSource('streaming_data.php');
+    var d = document.getElementById('time');
+    source.addEventListener('time',function(e){
+        var time = e.data;
+        d.innerHTML = time;
+    },false);
+    </script>    
     </body>
 </html>
