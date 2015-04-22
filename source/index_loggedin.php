@@ -9,7 +9,7 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Minu konto</title>
+    <title>Avaleht</title>
      
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
@@ -68,8 +68,8 @@
 			<li><a href="#">Meist</a>
                 <div>
                     <ul>
-                        <li><a href="#">Personal</a></li>
-                        <li><a href="#">Concepts</a></li>
+                        <li><a href="staff_loggedin">Personal</a></li>
+                        <li><a href="company_loggedin">Concepts</a></li>
   
                     </ul>
                 </div>
@@ -95,8 +95,8 @@
                     </ul>
                 </div>
             </li>
-            <li><a href="contact.php">  Kontakt  </a></li>
-			<li><a href="#">           </a></li>
+            <li><a href="login-contact.php">  Kontakt  </a></li>
+			
             <li class="pad"></li>
         </ul>
           <div class="dropdown">
