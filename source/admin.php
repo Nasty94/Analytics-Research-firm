@@ -80,8 +80,8 @@ if($fgmembersite->Login()){
 			<li><a href="#">Meist</a>
                 <div>
                     <ul>
-                        <li><a href="staff.html">Personal</a></li>
-                        <li><a href="company.html">Concepts</a></li>
+                        <li><a href="staff_loggedin.html">Personal</a></li>
+                        <li><a href="company_loggedin.html">Concepts</a></li>
   
                     </ul>
                 </div>
@@ -114,8 +114,8 @@ if($fgmembersite->Login()){
                     </ul>
                 </div>
             </li>
-            <li><a href="contact.php">  Kontakt  </a></li>
-			<li><a href="#">           </a></li>
+            <li><a href="login-contact.php">  Kontakt  </a></li>
+			
             <li class="pad"></li>
         </ul>
           <div class="dropdown">
@@ -128,7 +128,7 @@ if($fgmembersite->Login()){
                         <li><a href='all_orders.php'>Tellimuste ajalugu</a></li>
                         <li><a href='all_users.php'>Klientide kontod</a></li>
                         <li><a href='change-pwd.php'>Muuda parooli</a></li>
-			            <li><a href='logout.php'>Logi välja</a></li>
+			<li><a href='logout.php'>Logi välja</a></li>
                 <li role="presentation" class="divider"></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Meist</a></li>
                 <li role="presentation" class="divider"></li>
