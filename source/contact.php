@@ -26,6 +26,7 @@ if(isset($_POST['submitted']))
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
+    <script src="scripts/pwdwidget.js" type="text/javascript"></script> 
 	
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
     <link rel="stylesheet" href="style/menubar_test.css">
