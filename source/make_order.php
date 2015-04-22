@@ -1,20 +1,20 @@
 <?PHP
 
-// require_once("./include/membersite_config.php");
+require_once("./include/membersite_config.php");
 
-// if(!$fgmembersite->CheckLogin())
-// {
-//     $fgmembersite->RedirectToURL("login.php");
-//     exit;
-// }
+ if(!$fgmembersite->CheckLogin())
+ {
+     $fgmembersite->RedirectToURL("login.php");
+     exit;
+ }
 
-// if(isset($_POST['submitted']))
-// {
-//    if($fgmembersite->RegisterUserOrder())
-//    {
-//         $fgmembersite->RedirectToURL("thank_you_order.php");
-//    }
-// }
+ if(isset($_POST['submitted']))
+ {
+    if($fgmembersite->RegisterUserOrder())
+    {
+         $fgmembersite->RedirectToURL("thank_you_order.php");
+    }
+ }
 
 ?>
 
@@ -73,7 +73,7 @@
 
             <div class="dropdownmenu">
             <ul id="nav">
-            <li class='active'><a href='index.html'>Avaleht</a></li>
+            <li class='active'><a href='index_loggedin.html'>Avaleht</a></li>
             <li><a href="login-home.php">Minu konto</a>
                 <div>
                     <ul>
@@ -82,16 +82,16 @@
                         <li><a href='make_order.php'>Tellimuse tegemine</a></li>
                         <li><a href='client_orders.php'>Tellimuste ajalugu</a></li>
                         <li><a href='change-pwd.php'>Muuda parooli</a></li>
-			            <li><a href='logout.php'>Logi välja</a></li>
+			<li><a href='logout.php'>Logi välja</a></li>
                        
                     </ul>
                 </div>
             </li>
-			<li><a href="#">Meist</a>
+	   <li><a href="#">Meist</a>
                 <div>
                     <ul>
-                        <li><a href="#">Personal</a></li>
-                        <li><a href="#">Concepts</a></li>
+                        <li><a href="staff.html">Personal</a></li>
+                        <li><a href="company.html">Concepts</a></li>
   
                     </ul>
                 </div>
