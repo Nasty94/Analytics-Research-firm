@@ -77,8 +77,8 @@ $has_comments = (count($comments) > 0);
 			<li><a href="#">Meist</a>
                 <div>
                     <ul>
-                        <li><a href="#">Personal</a></li>
-                        <li><a href="#">Concepts</a></li>
+                        <li><a href="../../staff.html">Personal</a></li>
+                        <li><a href="../../company.html">Concepts</a></li>
   
                     </ul>
                 </div>
@@ -104,7 +104,7 @@ $has_comments = (count($comments) > 0);
                     </ul>
                 </div>
             </li>
-            <li><a href="contact.php">  Kontakt  </a></li>
+            <li><a href="../../contact.php">  Kontakt  </a></li>
 			<li><a href="#">           </a></li>
             <li class="pad"></li>
         </ul>
