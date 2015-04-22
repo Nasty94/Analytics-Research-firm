@@ -118,7 +118,7 @@ require_once("./include/membersite_config.php");
                 </div>
             </li>
             <li><a href="contact.php">  Kontakt  </a></li>
-			<li><a href="#">           </a></li>
+		
             <li class="pad"></li>
         </ul>
           <div class="dropdown">
@@ -174,7 +174,6 @@ var userID = echo $fgmembersite->UserID();
 
 ?>
 
-<!--
 <script type="text/javascript">
      $(function () {
       
@@ -305,7 +304,7 @@ var userID = echo $fgmembersite->UserID();
 
 </script>
 
--->
+
 
 <input type='hidden' name='submitted' id='submitted' value='1'/>
 
