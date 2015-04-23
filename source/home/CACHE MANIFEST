@@ -2,7 +2,7 @@ CACHE MANIFEST
 # version 1
     
 CACHE:
-/.html
+/make_order.php
 /contact.html
 /images/background.jpg
 /styles/basic.css

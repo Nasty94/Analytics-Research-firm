@@ -18,7 +18,7 @@ require_once("./include/membersite_config.php");
 
 ?>
 
-
+<!--
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html manifest="home/manifest">
@@ -82,7 +82,7 @@ require_once("./include/membersite_config.php");
                         <li><a href='make_order.php'>Tellimuse tegemine</a></li>
                         <li><a href='client_orders.php'>Tellimuste ajalugu</a></li>
                         <li><a href='change-pwd.php'>Muuda parooli</a></li>
-			<li><a href='logout.php'>Logi välja</a></li>
+			             <li><a href='logout.php'>Logi välja</a></li>
                        
                     </ul>
                 </div>
@@ -341,16 +341,16 @@ var userID = echo $fgmembersite->UserID();
 </fieldset>
 </form>
 
-                            </div><!--center-->
+
                             </div>
                             </div>
-                            </div> <!--contentInt-->
+                            </div>
+                            </div> 
 		   		   
 
-             
-	            </div> <!-- white box --> 
-	        </div> <!-- main -->
-	
+            
+	            </div>  
+	        </div> 
         </div>
    </div>
     <div class="row">
@@ -367,4 +367,4 @@ var userID = echo $fgmembersite->UserID();
        </div> 
     </body>
 </html>
-
+-->
