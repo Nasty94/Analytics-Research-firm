@@ -1,0 +1,13 @@
+CACHE MANIFEST
+# version 1
+    
+CACHE:
+/.html
+/contact.html
+/images/background.jpg
+/styles/basic.css
+    
+FALLBACK:
+/events.aspx /events.htm
+    
+NETWORK:

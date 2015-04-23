@@ -25,7 +25,7 @@ class FGMembersite
         $this->rand_key = '0iQx5oBk66oVZep';
     }
     
-    function InitDB($host,$uname,$pwd ,$database,$tablename)
+    function InitDB($host,$uname,$pwd,$database,$tablename)
     {
         $this->db_host  = $host;
         $this->username = $uname;
