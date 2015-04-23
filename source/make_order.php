@@ -1,11 +1,12 @@
 <?PHP
 require_once("./include/membersite_config.php");
 
-if(!$fgmembersite->CheckLogin())
-{
-    $fgmembersite->RedirectToURL("login.php");
-    exit;
-}
+//if(!$fgmembersite->CheckLogin())
+//{
+//    $fgmembersite->RedirectToURL("login.php");
+//    exit;
+//}
+
 if(isset($_POST['submitted']))
 {
    if($fgmembersite->RegisterUserOrder())
@@ -26,8 +27,8 @@ if(isset($_POST['submitted']))
     <title>Minu konto</title>
      
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    
     <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
+    <script type='text/javascript' src='offline.js'></script>
     <script src="scripts/pwdwidget.js" type="text/javascript"></script>   
 	
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
@@ -35,21 +36,18 @@ if(isset($_POST['submitted']))
 	<link rel="stylesheet" href="style/style.css">
 	<link rel="stylesheet" href="style/verticalmenu.css">
 	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
-        <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
+    <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-        <link rel="STYLESHEET" type="text/css" href="style/fg_membersite_form.css" />
+    <link rel="STYLESHEET" type="text/css" href="style/fg_membersite_form.css" />
         
-    	
 </head>
 
 <body>
 
-	
 	      <div id="left"></div>
 		  <div id="right"></div>
 		  <div id="top"></div>
 		  <div id="bottom"></div>
-		  
 		  <div id="img">
      		 
 		  <img src="img/LK.jpg" width=auto height=auto alt="img/LK.jpg">
@@ -109,7 +107,7 @@ if(isset($_POST['submitted']))
     </div>
 
 <div id="main" style="height:1000px">
-	<h2>Tere, <?= $fgmembersite->UserFullName(); ?>!</h2>
+	<h2>Tere, <?php echo $fgmembersite->UserFullName(); ?>!</h2>
 
 <div id="white-box" >
 
@@ -118,6 +116,8 @@ if(isset($_POST['submitted']))
 <form id='register' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
 <fieldset >
 <legend>Minu tellimus</legend>
+
+<div id="onlineStatus"></div>
 
 <input type='hidden' name='submitted' id='submitted' value='1'/>
 
