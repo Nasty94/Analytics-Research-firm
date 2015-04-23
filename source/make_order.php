@@ -111,13 +111,15 @@ if(isset($_POST['submitted']))
 
 <div id="white-box" >
 
+<div id="onlineStatus"></div>
+
 <!-- Form Code Start -->
 <div id='fg_membersite_form'>
 <form id='register' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
 <fieldset >
 <legend>Minu tellimus</legend>
 
-<div id="onlineStatus"></div>
+
 
 <input type='hidden' name='submitted' id='submitted' value='1'/>
 

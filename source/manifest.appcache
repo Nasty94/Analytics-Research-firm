@@ -2,9 +2,9 @@ CACHE MANIFEST
 # version 1
     
 CACHE:
-/contact.html
-/images/background.jpg
-/styles/basic.css
+/make_order.php
+/img/LK.jpg
+/style/style.css
     
 FALLBACK:
 * /thank-you.html
