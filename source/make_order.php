@@ -1,5 +1,7 @@
 <?PHP
+
 require_once("./include/membersite_config.php");
+require_once('./include/fg_membersite.php');
 
 //if(!$fgmembersite->CheckLogin())
 //{
@@ -64,7 +66,7 @@ if(isset($_POST['submitted']))
                         <li><a href='make_order.php'>Tellimuse tegemine</a></li>
                         <li><a href='client_orders.php'>Tellimuste ajalugu</a></li>
                         <li><a href='change-pwd.php'>Muuda parooli</a></li>
-			<li><a href='logout.php'>Logi välja</a></li>
+			            <li><a href='logout.php'>Logi välja</a></li>
                        
                     </ul>
                 </div>
