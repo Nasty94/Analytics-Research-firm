@@ -104,7 +104,7 @@ if($fgmembersite->isAdmin()==0)
                     </ul>
                 </div>
             </li>
-            <li><a href="../../login-contact.php">  Kontakt  </a></li>
+            <li><a href="admin_contact.php">  Kontakt  </a></li>
 			
             <li class="pad"></li>
         </ul>
@@ -215,7 +215,7 @@ if($fgmembersite->isAdmin()==0)
     </div>
     <!-- This is the code for JavaScript, for streaming server time -->
     <script>
-    var source = new EventSource('streaming_data.php');
+    var source = new EventSource('../../streaming_data.php');
     var d = document.getElementById('time');
     source.addEventListener('time',function(e){
         var time = e.data;

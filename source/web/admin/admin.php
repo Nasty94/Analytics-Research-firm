@@ -114,7 +114,7 @@ if($fgmembersite->Login()){
                     </ul>
                 </div>
             </li>
-            <li><a href="../../login-contact.php">  Kontakt  </a></li>
+            <li><a href="admin_contact.php">  Kontakt  </a></li>
 			
             <li class="pad"></li>
         </ul>

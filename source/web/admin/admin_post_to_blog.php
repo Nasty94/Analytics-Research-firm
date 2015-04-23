@@ -123,7 +123,7 @@ if($fgmembersite->Login()){
                     </ul>
                 </div>
             </li>
-            <li><a href="../../login-contact.php">  Kontakt  </a></li>
+            <li><a href="admin_contact.php">  Kontakt  </a></li>
 			´
             <li class="pad"></li>
         </ul>
@@ -222,7 +222,7 @@ Content
 		</header>
 
     <ol id="posts-list" class="hfeed<?php echo($has_comments?' has-comments':''); ?>">
-      <li class="no-comments">Jaga oma arvamusega!</li>
+      <li class="no-comments">Jaga oma arvamust!</li>
       <?php
         foreach ($comments as &$comment) {
           ?>

@@ -151,7 +151,7 @@ if($fgmembersite->isAdmin()==0)
                                 <h3>Kõik kliendid:</h3>
 
         <script type="text/javascript">
-        var sse = new EventSource('./scripts/server-side-script.php');
+        var sse = new EventSource('../../scripts/server-side-script.php');
         sse.addEventListener('LoggedInUsers',function(e){
         var data = e.data;
         //handle your data here
@@ -222,7 +222,7 @@ if($fgmembersite->isAdmin()==0)
     </div>
     <!-- This is the code for JavaScript, for streaming server time -->
     <script>
-    var source = new EventSource('streaming_data.php');
+    var source = new EventSource('../../streaming_data.php');
     var d = document.getElementById('time');
     source.addEventListener('time',function(e){
         var time = e.data;

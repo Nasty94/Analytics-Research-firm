@@ -1,12 +1,25 @@
+<?PHP
+require_once("../../include/membersite_config.php");
 
-<!DOCTYPE html >
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+if(isset($_POST['submitted']))
+{
+   if($fgmembersite->RegisterUser())
+   {
+        $fgmembersite->RedirectToURL("../../thank-you_bootstrap.html");
+   }
+}
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="en-US">
 <head>
-
+    <meta http-equiv="Content type" content="text/html; charset=ISO-8859-1">
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Personal</title>
+    <title>Kontakt</title>
      
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script type='text/javascript' src='../../scripts/gen_validatorv31.js'></script>
@@ -22,6 +35,9 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../style/bootstrap-theme.css">
 
+
+        
+    	
 </head>
 
 <body>
@@ -48,22 +64,21 @@
             <div class="dropdownmenu">
             <ul id="nav">
             <li class='active'><a href='admin_index.html'>Avaleht</a></li>
-            <li><a href="../../login-home_bootstrap.php">Minu konto</a>
+            <li><a href="../../login-home.php">Minu konto</a>
                 <div>
                     <ul>
                         <li><a href='../../clients_data.php'>Minu andmed</a></li>
-                        <li><a href='all_orders.php'>Tellimuste ajalugu</a></li>
-                        <li><a href='all_users.php'>Klientide kontod</a></li>
+                        <li><a href='make_order.php'>Tellimuse tegemine</a></li>
+                        <li><a href='client_orders.php'>Tellimuste ajalugu</a></li>
                         <li><a href='../../change-pwd.php'>Muuda parooli</a></li>
-		            	<li><a href='../../logout.php'>Logi välja</a></li>
-                       
+                        <li><a href='../../logout.php'>Logi välja</a></li>
                     </ul>
                 </div>
             </li>
-			<li><a href="#">Meist</a>
+	 <li><a href="#">Meist</a>
                 <div>
                     <ul>
-                        <li><a href="#">Personal</a></li>
+                        <li><a href="admin_staff.html">Personal</a></li>
                         <li><a href="admin_company.html">Concepts</a></li>
   
                     </ul>
@@ -82,7 +97,7 @@
             <li><a href="#">Blog</a>
                 <div>
                     <ul>
-                        <li><a href="./web/articles/article_sample.php">Näidis</a></li>
+                        <li><a href="../articles/article_sample.php">Näidis</a></li>
                         <li><a href="#">Page 2</a></li>
                         <li><a href="#">Page 3</a></li>
                         <li><a href="#">Page 4</a></li>
@@ -90,18 +105,21 @@
                     </ul>
                 </div>
             </li>
-            <li><a href="admin_contact.php">  Kontakt  </a></li>
-			
+            <li><a href="#.php">  Kontakt  </a></li>
+		
             <li class="pad"></li>
         </ul>
           <div class="dropdown">
-            <button class="btn btn-success" type="button" id="menu1" data-toggle="dropdown">Menüü
+             <button class="btn btn-success" type="button" id="menu1" data-toggle="dropdown">Menüü
             <span class="caret"></span></button>
             <ul class="dropdown-menu dropdown-menu-right" role="menu">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="admin_index.html">Avaleht</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="../../bootstrap_test.html">Avaleht</a></li>
                 <li role="presentation" class="divider"></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href='../../login.php'>Logi sisse</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href='../../register.php'>Uus kasutaja</a></li>
+                        <li><a href='../../clients_data.php'>Minu andmed</a></li>
+                        <li><a href='all_orders.php'>Tellimuste ajalugu</a></li>
+                        <li><a href='all_users.php'>Klientide kontod</a></li>
+                        <li><a href='../../change-pwd.php'>Muuda parooli</a></li>
+			            <li><a href='../../logout.php'>Logi välja</a></li>
                 <li role="presentation" class="divider"></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Meist</a></li>
                 <li role="presentation" class="divider"></li>
@@ -111,59 +129,144 @@
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="../articles/article_sample.php">Blogi</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Kontakt</a></li>
               
-              
             </ul>
           </div>
     </div>
     </div>
     </div>
-    <div class="row">
+   <div class="row">
         <div class="col-md-8 col-md-offset-2">
-		  <div id="main">
+          	<div id="main">
+	            <div id="white-box" >
+	                        <div id="contentInt">
 
-		   <div id="white-box" >
+                            <noscript>
+                                <p class="note">You have disabled Javascript. This website will not function without it.</p>
+                            </noscript>
+                    <div class="row">
+                    <div class="col-md-6 col-lg-offset-3">
+                            <div class="center">
+                                    Kontakt
+	<br><br>
+	
+	Email: leena.ivanova@yahoo.com
+	<br>
+	Tel: XXXXXX
+	<br>
+    <img id="facebook" src="img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
+    <br>
+
+</div><!--center-->
+
+<br>			   
+<!-- Form Code Start -->
+<div id='fg_membersite'>
+<form name="contactform" method="post" action="./include/send_form_email.php">
+ 
+<table width="450px">
+ 
+<tr>
+ 
+ <td valign="top">
+ 
+  <label for="first_name">First Name *</label>
+ 
+ </td>
+ 
+ <td valign="top">
+ 
+  <input  type="text" name="first_name" maxlength="50" size="30">
+ 
+ </td>
+ 
+</tr>
+ 
+<tr>
+ 
+ <td valign="top"">
+ 
+  <label for="last_name">Last Name *</label>
+ 
+ </td>
+ 
+ <td valign="top">
+ 
+  <input  type="text" name="last_name" maxlength="50" size="30">
+ 
+ </td>
+ 
+</tr>
+ 
+<tr>
+ 
+ <td valign="top">
+ 
+  <label for="email">Email Address *</label>
+ 
+ </td>
+ 
+ <td valign="top">
+ 
+  <input  type="text" name="email" maxlength="80" size="30">
+ 
+ </td>
+ 
+</tr>
+ 
+<tr>
+ 
+ <td valign="top">
+ 
+  <label for="telephone">Telephone Number</label>
+ 
+ </td>
+ 
+ <td valign="top">
+ 
+  <input  type="text" name="telephone" maxlength="30" size="30">
+ 
+ </td>
+ 
+</tr>
+ 
+<tr>
+ 
+ <td valign="top">
+ 
+  <label for="comments">Comments *</label>
+ 
+ </td>
+ 
+ <td valign="top">
+ 
+  <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
+ 
+ </td>
+ 
+</tr>
+ 
+<tr>
+ 
+ <td colspan="2" style="text-align:center">
+ 
+  <input type="submit" value="Submit">  
+ 
+ </td>
+ 
+</tr>
+ 
+</table>
+ 
+</form>
+                            </div><!--center-->
+                        </div>
+                        </div>
+                            </div> <!--contentInt-->
 		   		   
 
-              <div id="contentInt">
-                 <noscript>
-                        <p class="note">You have disabled Javascript. This website will not function without it.</p>
-                 </noscript>
-				 
-				  				  
-	
-               <FORM name="mainform" id="FORMmain">
-
-			   		<div class="center">
-					
-					<h3>Meie inimesed:</h3>
-					<h4>Jelena Korotõtš - Konsultant ja asutaja </h4>
-					<p>Jelenal on 10-aastane kogemus finantsandmete analüüsi valdkonnas, lisaks sellele teadmisi klientide käitumisanalüüsist.</p>
-					<p>Ta tegeles statistiliste mudelite loomise ning nende abil saadud informatsiooni kujutamise ja  tõlgendamisega. Jelenale pakub sügavat huvi meditsiiniline statistika. Teda iseloomustab sihikindlus, soov areneda ja valmidus proovida uusi asju.</p>
-					
-					<h4>Haridus:</h4>
-					<p>2005 – 2011 Tartu Ülikool, Matemaatika-Informaatikateaduskond,  Matemaatiline statistika MSc</p>  
-					<p>2014 - … Estonian Business School,  Rahvusvaheline ärijuhtimine MA</p>
-  
-                </div> <!--center-->
-
-               </FORM>
-			   <FORM name="subform" id="FORM">
-                    <br>
-			   		<div class="center">
-					
-					Kontakt
-                </div> <!--center-->
-
-               </FORM>
-
-
-			                      
-
-		       </div> <!--mainform-->
-		      </div> <!--contentInt-->
-		      </div> <!-- white box -->
-			  
-		    </div> <!-- main -->
+             
+	            </div> <!-- white box --> 
+	        </div> <!-- main -->
 	
         </div>
    </div>
@@ -181,3 +284,4 @@
         
     </body>
 </html>
+
