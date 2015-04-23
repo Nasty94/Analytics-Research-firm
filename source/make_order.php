@@ -1,20 +1,20 @@
 <?PHP
 
-// require_once("./include/membersite_config.php");
+require_once("./include/membersite_config.php");
 
-// if(!$fgmembersite->CheckLogin())
-// {
-//     $fgmembersite->RedirectToURL("login.php");
-//     exit;
-// }
+ if(!$fgmembersite->CheckLogin())
+ {
+     $fgmembersite->RedirectToURL("login.php");
+     exit;
+ }
 
-// if(isset($_POST['submitted']))
-// {
-//    if($fgmembersite->RegisterUserOrder())
-//    {
-//         $fgmembersite->RedirectToURL("thank_you_order.php");
-//    }
-// }
+ if(isset($_POST['submitted']))
+ {
+    if($fgmembersite->RegisterUserOrder())
+    {
+         $fgmembersite->RedirectToURL("thank_you_order.php");
+    }
+ }
 
 ?>
 
@@ -26,25 +26,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
     <meta http-equiv="Content type" content="text/html; charset=ISO-8859-1">
-	<meta charset='utf-8'>
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Minu konto</title>
+    <title>Make order</title>
      
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
     <script src="scripts/pwdwidget.js" type="text/javascript"></script>  
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
 	
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
-	<link rel="stylesheet" href="style/menubar_test.css">
-	<link rel="stylesheet" href="style/style_test.css">
-	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
+    <link rel="stylesheet" href="style/menubar_test.css">
+    <link rel="stylesheet" href="style/style_test.css">
+    <link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
     <link rel="STYLESHEET" type="text/css" href="style/fg_membersite_test.css" />
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style/bootstrap-theme.css">
-    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+  
 
         
     	
@@ -73,7 +73,7 @@
 
             <div class="dropdownmenu">
             <ul id="nav">
-            <li class='active'><a href='index.html'>Avaleht</a></li>
+            <li class='active'><a href='index_loggedin.html'>Avaleht</a></li>
             <li><a href="login-home.php">Minu konto</a>
                 <div>
                     <ul>
@@ -82,21 +82,21 @@
                         <li><a href='make_order.php'>Tellimuse tegemine</a></li>
                         <li><a href='client_orders.php'>Tellimuste ajalugu</a></li>
                         <li><a href='change-pwd.php'>Muuda parooli</a></li>
-			            <li><a href='logout.php'>Logi välja</a></li>
+			<li><a href='logout.php'>Logi välja</a></li>
                        
                     </ul>
                 </div>
             </li>
-			<li><a href="#">Meist</a>
+	   <li><a href="#">Meist</a>
                 <div>
                     <ul>
-                        <li><a href="#">Personal</a></li>
-                        <li><a href="#">Concepts</a></li>
+                        <li><a href="staff_loggedin.html">Personal</a></li>
+                        <li><a href="company_loggedin.html">Concepts</a></li>
   
                     </ul>
                 </div>
             </li>
-			<li><a href="#">Teenused</a>
+	<li><a href="#">Teenused</a>
                 <div>
                     <ul>
                         <li><a href="#">Turuuring</a></li>
@@ -117,15 +117,15 @@
                     </ul>
                 </div>
             </li>
-            <li><a href="contact.php">  Kontakt  </a></li>
-			<li><a href="#">           </a></li>
+            <li><a href="login-contact.php">  Kontakt  </a></li>
+		
             <li class="pad"></li>
         </ul>
           <div class="dropdown">
             <button class="btn btn-success" type="button" id="menu1" data-toggle="dropdown">Menüü
             <span class="caret"></span></button>
             <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="index.html">Avaleht</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="index_loggedin.html">Avaleht</a></li>
                 <li role="presentation" class="divider"></li>
                 <li><a href='clients_data.php'>Minu andmed</a></li>
                 <li><a href='make_order.php'>Tellimuse tegemine</a></li>
@@ -139,7 +139,7 @@
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Med statistika</a></li>
                 <li role="presentation" class="divider"></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="./web/articles/article_sample.php">Blogi</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Kontakt</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="login-contact.php">Kontakt</a></li>
               
               
             </ul>
@@ -174,7 +174,6 @@ var userID = echo $fgmembersite->UserID();
 
 ?>
 
-<!--
 <script type="text/javascript">
      $(function () {
       
@@ -305,7 +304,7 @@ var userID = echo $fgmembersite->UserID();
 
 </script>
 
--->
+
 
 <input type='hidden' name='submitted' id='submitted' value='1'/>
 

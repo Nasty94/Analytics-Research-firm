@@ -143,27 +143,26 @@ $headers = 'From: '.$email_from."\r\n".
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content type" content="text/html; charset=ISO-8859-1">
-	<meta charset='utf-8'>
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	
     <meta content="utf-8" http-equiv="encoding">
-	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    
     <title>Äitah!</title>
      
-	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script type='text/javascript' src='../scripts/gen_validatorv31.js'></script>
-	<script src="../js/disable.js"></script>
-    <script src="scripts/pwdwidget.js" type="text/javascript"></script>   
+    <script src="../js/disable.js"></script>
+    <script src="../scripts/pwdwidget.js" type="text/javascript"></script>   
 	
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
-	<link rel="stylesheet" href="../style/menubar.css">
-	<link rel="stylesheet" href="../style/style.css">
-	<link rel="stylesheet" href="../style/verticalmenu.css">
-	<link rel="STYLESHEET" type="text/css" href="../style/pwdwidget.css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
+    <link rel="stylesheet" href="../style/menubar.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/verticalmenu.css">
+    <link rel="STYLESHEET" type="text/css" href="../style/pwdwidget.css" />
     <link rel="STYLESHEET" type="text/css" href="../style/fg_membersite.css" />
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="STYLESHEET" type="text/css" href="../style/fg_membersite_form.css" />
         
     	
