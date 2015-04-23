@@ -5,6 +5,8 @@ CACHE:
 /make_order.php
 /img/LK.jpg
 /style/style.css
+/offline.js
+http://code.jquery.com/jquery-latest.min.js
     
 FALLBACK:
 * /thank-you.html

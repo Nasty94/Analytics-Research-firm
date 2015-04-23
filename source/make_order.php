@@ -9,6 +9,8 @@ require_once('./include/fg_membersite.php');
 //    exit;
 //}
 
+// 
+
 if(isset($_POST['submitted']))
 {
    if($fgmembersite->RegisterUserOrder())
@@ -17,6 +19,7 @@ if(isset($_POST['submitted']))
    }
 }
 ?>
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US" manifest="manifest.appcache">
@@ -30,7 +33,7 @@ if(isset($_POST['submitted']))
      
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
-    <script type='text/javascript' src='offline.js'></script>
+    <script type='text/javascript' src='/offline.js'></script>
     <script src="scripts/pwdwidget.js" type="text/javascript"></script>   
 	
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
@@ -113,15 +116,13 @@ if(isset($_POST['submitted']))
 
 <div id="white-box" >
 
-<div id="onlineStatus"></div>
-
 <!-- Form Code Start -->
 <div id='fg_membersite_form'>
 <form id='register' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
 <fieldset >
 <legend>Minu tellimus</legend>
 
-
+<div id="onlineStatus"> Tere </div>
 
 <input type='hidden' name='submitted' id='submitted' value='1'/>
 
