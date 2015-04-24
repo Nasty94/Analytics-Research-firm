@@ -20,11 +20,10 @@ if(isset($_POST['submitted']))
 ?>
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US" manifest="/source/manifest.appcache">
 
 <head>
-    <meta http-equiv="Content type" content="text/html; charset=ISO-8859-1">
 	<meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,29 +33,39 @@ if(isset($_POST['submitted']))
     <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
     <script type='text/javascript' src='offline.js'></script>
     <script src="scripts/pwdwidget.js" type="text/javascript"></script>   
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
 	
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
-	<link rel="stylesheet" href="style/menubar.css">
+	<link rel="stylesheet" href="style/menubar_test.css">
 	<link rel="stylesheet" href="style/style_test.css">
-	<link rel="stylesheet" href="style/verticalmenu.css">
 	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
-    <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
+    <link rel="STYLESHEET" type="text/css" href="style/fg_membersite_test.css" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="STYLESHEET" type="text/css" href="style/fg_membersite_form.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/bootstrap-theme.css.map">
         
 </head>
 
 <body>
+    <div class="container-fluid text-center">
+         <div class="row">
+             <div class="col-md-8 col-md-offset-2">
+                    <div id="english">
+		            <a id="eng" href="web/lang/eng/index_eng.html">ENG</a>&nbsp;&nbsp;
+	
+		  </div>
+             </div>
+           </div>
+    <div class="row">
+    <div class="col-md-8 col-md-offset-2">   
+        <div id="img">  		 
+		  <img src="img/LK.jpg" class="img-responsive" alt="img/LK.jpg">
+    </div> <!-- img -->
+    </div>
+    </div>
 
-	      <div id="left"></div>
-		  <div id="right"></div>
-		  <div id="top"></div>
-		  <div id="bottom"></div>
-		  <div id="img">
-     		 
-		  <img src="img/LK.jpg" width=auto height=auto alt="img/LK.jpg">
-		  </div> <!-- img -->
-
+          <div class="row">
+          <div class="col-md-8 col-md-offset-2">
 <div class="dropdownmenu">
         <ul id="nav">
             <li class='active'><a href='index_loggedin.php'>Avaleht</a></li>
@@ -108,15 +117,46 @@ if(isset($_POST['submitted']))
 			
             <li class="pad"></li>
         </ul>
+        <div class="dropdown">
+            <button class="btn btn-success" type="button" id="menu1" data-toggle="dropdown">Menüü
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="index.html">Avaleht</a></li>
+                <li role="presentation" class="divider"></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href='login'>Logi sisse</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href='register.php'>Uus kasutaja</a></li>
+                <li role="presentation" class="divider"></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Meist</a></li>
+                <li role="presentation" class="divider"></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Turu uuring</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Med statistika</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="./web/articles/article_sample.php">Blogi</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Kontakt</a></li>
+              
+              
+            </ul>
+          </div>
     </div>
-
-<div id="main" style="height:1000px">
+          </div>
+          </div>
+<div class="row">
+        <div class="col-md-8 col-md-offset-2">
+<div id="main">
 	<h2>Tere, <?php echo $fgmembersite->UserFullName(); ?>!</h2>
 
 <div id="white-box" >
 
+<div class="row">
+<div class="col-md-6 col-lg-offset-3">
+<div id="contentInt">
+                 <noscript>
+                        <p class="note">You have disabled Javascript. This website will not function without it.</p>
+                 </noscript>                  
+
+<div class="center">
 <!-- Form Code Start -->
-<div id='fg_membersite_form'>
+<div id='fg_membersite'>
 <form id='register' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
 <fieldset >
 <legend>Minu tellimus</legend>
@@ -158,20 +198,19 @@ if(isset($_POST['submitted']))
 </fieldset>
 </form>	
 
-<div id="contentInt">
-                 <noscript>
-                        <p class="note">You have disabled Javascript. This website will not function without it.</p>
-                 </noscript>                  
 
-<div class="center">
    
 
 </div><!--center-->
-</div><!--contentInt-->
-	
+</div>
+</div>
+</div>	
  </div>  <!-- fg_membersite_form -->   		   
 	</div> <!-- white box --> 
 	</div> <!-- main -->  
+
+</div>
+    </div>
 
 <div id="block" >
                      
@@ -183,11 +222,15 @@ if(isset($_POST['submitted']))
 </div>
 
 
-
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
 	<div id="footer">
                       © 2015  LK Consulting <br>
 					  This is a proof-of-concept web application.
 	</div>
+            </div>
+            </div>
+        </div>
 
 </body>
 </html>
