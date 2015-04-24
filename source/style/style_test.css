@@ -357,4 +357,76 @@ input {
 }
 
 
-
+**
+    CSS style for the offline function
+    
+    **/
+      
+#section
+{
+    position:relative;
+    padding:10px;
+    width:250px;
+    border:5px solid #ccc;
+    background-color:#fff;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:25px;
+}
+      
+#section a
+{
+    font-size:.7em;
+}
+      
+#section a, section a:link, section a:hover, section a:visited,
+section a:active
+{
+    color:#999;
+    text-decoration:none;
+}
+      
+#input,textarea
+{
+    font-family:Segoe UI,Arial,Helvetica,Sans-Serif;
+}
+      
+#input
+{
+    display:block;
+}
+      
+#onlineStatus
+{
+    position:absolute;
+    padding:6px;
+    color:#fff;
+}
+        
+#command input
+{
+    display:inline;
+}
+      
+.online
+{
+    background-color:#060;
+}
+      
+.offline
+{
+    background-color:#900;
+}
+      
+#log li
+{
+    font-size:.7em;
+}
+      
+#version
+{
+    font-size:.7em;
+    color:#ccc;
+}

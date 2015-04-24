@@ -3,13 +3,12 @@
 require_once("./include/membersite_config.php");
 require_once('./include/fg_membersite.php');
 
-//if(!$fgmembersite->CheckLogin())
-//{
-//    $fgmembersite->RedirectToURL("login.php");
-//    exit;
-//}
+if(!$fgmembersite->CheckLogin())
+{
+    $fgmembersite->RedirectToURL("login.php");
+    exit;
+}
 
-// 
 
 if(isset($_POST['submitted']))
 {
@@ -38,7 +37,7 @@ if(isset($_POST['submitted']))
 	
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
 	<link rel="stylesheet" href="style/menubar.css">
-	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="style/style_test.css">
 	<link rel="stylesheet" href="style/verticalmenu.css">
 	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
     <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
