@@ -1,17 +1,3 @@
-<?PHP
-require_once("./include/membersite_config.php");
-
-if(isset($_POST['submitted']))
-{
-   if($fgmembersite->RegisterUser())
-   {
-        $fgmembersite->RedirectToURL("thank-you_bootstrap.html");
-   }
-}
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -152,7 +138,7 @@ if(isset($_POST['submitted']))
 	<br>
 	Tel: XXXXXX
 	<br>
-    <img id="facebook" src="img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
+    <img id="facebook" src="img/facebook.png" alt="img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
     <br>
 
 </div><!--center-->
@@ -160,98 +146,37 @@ if(isset($_POST['submitted']))
 <br>			   
 <!-- Form Code Start -->
 <div id='fg_membersite'>
-<form name="contactform" method="post" action="./include/send_form_email.php">
- 
-<table width="450px">
+<form id="contactform">
+    <input type='hidden' name='function' id='function' value='contactemail'/>
+<table>
  
 <tr>
- 
- <td valign="top">
- 
-  <label for="first_name">First Name *</label>
- 
- </td>
- 
- <td valign="top">
- 
-  <input  type="text" name="first_name" maxlength="50" size="30">
- 
- </td>
- 
+ <td><label for="first_name">First Name *</label></td>
+ <td><input  type="text" name="first_name" id="first_name" maxlength="50" size="30"></td> 
 </tr>
  
 <tr>
- 
- <td valign="top"">
- 
-  <label for="last_name">Last Name *</label>
- 
- </td>
- 
- <td valign="top">
- 
-  <input  type="text" name="last_name" maxlength="50" size="30">
- 
- </td>
- 
+ <td><label for="last_name">Last Name *</label></td>
+ <td><input  type="text" name="last_name" id="last_name" maxlength="50" size="30"></td> 
 </tr>
  
 <tr>
- 
- <td valign="top">
- 
-  <label for="email">Email Address *</label>
- 
- </td>
- 
- <td valign="top">
- 
-  <input  type="text" name="email" maxlength="80" size="30">
- 
- </td>
- 
+ <td><label for="email">Email Address *</label></td>
+ <td><input  type="text" name="email" id="email" maxlength="80" size="30"></td>
 </tr>
  
 <tr>
- 
- <td valign="top">
- 
-  <label for="telephone">Telephone Number</label>
- 
- </td>
- 
- <td valign="top">
- 
-  <input  type="text" name="telephone" maxlength="30" size="30">
- 
- </td>
- 
+ <td><label for="telephone">Telephone Number</label></td>
+ <td><input  type="text" name="telephone" id="telephone" maxlength="30" size="30"></td>
 </tr>
  
 <tr>
- 
- <td valign="top">
- 
-  <label for="comments">Comments *</label>
- 
- </td>
- 
- <td valign="top">
- 
-  <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
- 
- </td>
- 
+ <td><label for="comments">Comments *</label></td>
+ <td><textarea  name="comments" id="comments"  maxlength="1000" cols="25" rows="6"></textarea></td>
 </tr>
  
 <tr>
- 
- <td colspan="2" style="text-align:center">
- 
-  <input type="submit" value="Submit">  
- 
- </td>
- 
+ <td colspan="2" style="text-align:center"><input type="Submit" name='Submit' value="Submit"></td>
 </tr>
  
 </table>
@@ -280,6 +205,8 @@ if(isset($_POST['submitted']))
 
 
     </div>
+
+    <SCRIPT SRC="./js/ajax.js"></SCRIPT>>
         
     </body>
 </html>
