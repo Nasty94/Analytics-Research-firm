@@ -21,7 +21,7 @@ if(isset($_POST['submitted']))
 
 
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US" manifest="manifest.appcache">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 
 <head>
 	<meta charset='utf-8'>
@@ -160,8 +160,6 @@ if(isset($_POST['submitted']))
 <form id='register' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
 <fieldset >
 <legend>Minu tellimus</legend>
-
-<div id="onlineStatus"></div>
 
 <input type='hidden' name='submitted' id='submitted' value='1'/>
 
