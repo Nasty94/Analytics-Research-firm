@@ -6,7 +6,7 @@ if(isset($_POST['submitted']))
 {
    if($fgmembersite->EmailResetPasswordLink())
    {
-        $fgmembersite->RedirectToURL("reset-pwd-link-sent_bootstrap.html");
+        $fgmembersite->RedirectToURL("reset-pwd-link-sent.html");
         exit;
    }
 }
@@ -26,7 +26,8 @@ if(isset($_POST['submitted']))
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
     <script src="scripts/pwdwidget.js" type="text/javascript"></script>  
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="js/basic.js"></script>
 	
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
 	<link rel="stylesheet" href="style/menubar_test.css">
@@ -173,21 +174,10 @@ if(isset($_POST['submitted']))
 
 </fieldset>
 </form>
-<!-- client-side Form Validations:
-Uses the excellent form validation script from JavaScript-coder.com-->
 
 
-<script type='text/javascript'>
-// <![CDATA[
-
-    var frmvalidator  = new Validator("resetreq");
-    frmvalidator.EnableOnPageErrorDisplay();
-    frmvalidator.EnableMsgsTogether();
-
-    frmvalidator.addValidation("email","req","Please provide the email address used to sign-up");
-    frmvalidator.addValidation("email","email","Please provide the email address used to sign-up");
-
-// ]]>
+<script>
+    setValidator();
 </script>
 
 </div>

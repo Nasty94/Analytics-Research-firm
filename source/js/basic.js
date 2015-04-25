@@ -92,3 +92,62 @@ function isChrome() {
 	return navigator.userAgent.indexOf('Chrome')!=-1;
 
 }
+
+function showTime() {
+	var source = new EventSource('streaming_data.php');
+    var d = document.getElementById('time');
+    source.addEventListener('time',function(e){
+        var time = e.data;
+        d.innerHTML = time;
+    },false);
+}
+
+
+function setValidator()  {
+
+    var frmvalidator  = new Validator("resetreq");
+    frmvalidator.EnableOnPageErrorDisplay();
+    frmvalidator.EnableMsgsTogether();
+
+    frmvalidator.addValidation("email","req","Please provide the email address used to sign-up");
+    frmvalidator.addValidation("email","email","Please provide the email address used to sign-up");
+}
+
+function chpwdValidator() {
+	    var pwdwidget = new PasswordWidget('oldpwddiv','oldpwd');
+    pwdwidget.enableGenerate = false;
+    pwdwidget.enableShowStrength=false;
+    pwdwidget.enableShowStrengthStr =false;
+    pwdwidget.MakePWDWidget();
+    
+    var pwdwidget = new PasswordWidget('newpwddiv','newpwd');
+    pwdwidget.MakePWDWidget();
+    
+    
+    var frmvalidator  = new Validator("changepwd");
+    frmvalidator.EnableOnPageErrorDisplay();
+    frmvalidator.EnableMsgsTogether();
+
+    frmvalidator.addValidation("oldpwd","req","Please provide your old password");
+    
+    frmvalidator.addValidation("newpwd","req","Please provide your new password");
+}
+
+function regValidator() {
+	    var pwdwidget = new PasswordWidget('thepwddiv','password');
+    pwdwidget.MakePWDWidget();
+    
+    var frmvalidator  = new Validator("register");
+    frmvalidator.EnableOnPageErrorDisplay();
+    frmvalidator.EnableMsgsTogether();
+    frmvalidator.addValidation("name","req","Please provide your name");
+
+    frmvalidator.addValidation("email","req","Please provide your email address");
+
+    frmvalidator.addValidation("email","email","Please provide a valid email address");
+
+    frmvalidator.addValidation("username","req","Please provide a username");
+    
+    frmvalidator.addValidation("password","req","Please provide a password");
+
+}

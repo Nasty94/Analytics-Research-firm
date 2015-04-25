@@ -24,7 +24,8 @@ if($fgmembersite->isAdmin()==0)
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
     <script src="scripts/pwdwidget.js" type="text/javascript"></script>  
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="js/basic.js"></script>
 	
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
     <link rel="stylesheet" href="style/menubar_test.css">
@@ -223,12 +224,7 @@ if($fgmembersite->isAdmin()==0)
     </div>
     <!-- This is the code for JavaScript, for streaming server time -->
     <script>
-    var source = new EventSource('streaming_data.php');
-    var d = document.getElementById('time');
-    source.addEventListener('time',function(e){
-        var time = e.data;
-        d.innerHTML = time;
-    },false);
+        showTime(); 
     </script>    
     </body>
 </html>
