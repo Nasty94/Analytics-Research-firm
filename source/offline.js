@@ -93,12 +93,12 @@ applicationCache.swapCache();
 window.location.reload();
 }
 
-window.addEventListener("online", function (e) {
+window.addEventListener("Olete hetkel võrgus!", function (e) {
 reportOnlineStatus();
 saveToServer();
 }, true);
 
-window.addEventListener("offline", function (e) {
+window.addEventListener("Te pole hetkel võrgus", function (e) {
 reportOnlineStatus();
 }, true);
 
