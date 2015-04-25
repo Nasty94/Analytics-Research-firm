@@ -1,16 +1,14 @@
 CACHE MANIFEST
-# 2015-04-25:v2
-
-index.html
-make_order.php
-
+# version 1
+    
 CACHE:
+/make_order.html
+/contact.html
 /img/LK.jpg
-/style/style_test.css
-/offline.js
-
+/styles/style_test.css
+    
 FALLBACK:
 * /thank-you.html
-
+    
 NETWORK:
 *
