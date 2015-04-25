@@ -81,10 +81,10 @@ function reportOnlineStatus() {
     var status = $("#onlineStatus");
 
     if (isOnLine()) {
-        status.text("Online");
+        status.text("Olete hetkel võrgus!");
     }
     else {
-        status.text("Offline");
+        status.text("Te pole hetkel võrgus!");
     }
 }
 
@@ -93,12 +93,12 @@ applicationCache.swapCache();
 window.location.reload();
 }
 
-window.addEventListener("online", function (e) {
+window.addEventListener("Online", function (e) {
 reportOnlineStatus();
 saveToServer();
 }, true);
 
-window.addEventListener("offline", function (e) {
+window.addEventListener("Offline", function (e) {
 reportOnlineStatus();
 }, true);
 
