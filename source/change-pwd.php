@@ -35,7 +35,7 @@ if(isset($_POST['submitted']))
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
 	<link rel="stylesheet" href="style/menubar_test.css">
 	<link rel="stylesheet" href="style/style_test.css">
-	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
+	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget_test.css" />
     <link rel="STYLESHEET" type="text/css" href="style/fg_membersite_test.css" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
