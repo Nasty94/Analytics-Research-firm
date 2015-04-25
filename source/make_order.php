@@ -21,7 +21,7 @@ if(isset($_POST['submitted']))
 
 
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US" manifest="/manifest.appcache">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US" manifest="manifest.appcache">
 
 <head>
 	<meta charset='utf-8'>
