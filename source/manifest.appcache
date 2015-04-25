@@ -2,9 +2,8 @@ CACHE MANIFEST
 # version 1
     
 CACHE:
-/make_order.php
 /img/LK.jpg
-/style/style.css
+/style/style_test.css
 /offline.js
 http://code.jquery.com/jquery-latest.min.js
     
