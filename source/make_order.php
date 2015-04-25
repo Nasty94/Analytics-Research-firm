@@ -21,7 +21,7 @@ if(isset($_POST['submitted']))
 
 
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US" manifest="/source/manifest.appcache">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US" manifest="/manifest.appcache">
 
 <head>
 	<meta charset='utf-8'>
@@ -161,7 +161,7 @@ if(isset($_POST['submitted']))
 <fieldset >
 <legend>Minu tellimus</legend>
 
-<div id="onlineStatus"> Tere </div>
+<div id="onlineStatus"></div>
 
 <input type='hidden' name='submitted' id='submitted' value='1'/>
 
