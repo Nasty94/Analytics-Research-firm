@@ -1,25 +1,7 @@
-<?PHP
-require_once("./include/membersite_config.php");
-
-if(isset($_POST['submitted']))
-{
-   if($fgmembersite->RegisterUser())
-   {
-        $fgmembersite->RedirectToURL("thank-you_bootstrap.html");
-   }
-}
-
-?>
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
-
-    <meta http-equiv="Content type" content="text/html; charset=ISO-8859-1">
 	<meta charset='utf-8'>
-    <meta http-equiv="content type" content="text/html; charset=ISO-8859-1">
-    <meta charset='utf-8'>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,6 +11,8 @@ if(isset($_POST['submitted']))
     <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
     <script src="scripts/pwdwidget.js" type="text/javascript"></script> 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+    <script src="http://malsup.github.com/jquery.form.js"></script>
 	
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
     <link rel="stylesheet" href="style/menubar_test.css">
@@ -51,17 +35,6 @@ if(isset($_POST['submitted']))
                     <div id="english">
 		            <a id="eng" href="web/lang/eng/index_eng.html">ENG</a>&nbsp;&nbsp;
 
-	<body> 
-			
-	      <div id="left"></div>
-		  <div id="right"></div>
-		  <div id="top"></div>
-		  <div id="bottom"></div>
-		  
-		  <div id="english">
-		  <br>
-		  <a id="eng" href="web/lang/eng/index_eng.html">ENG</a>&nbsp;&nbsp;
-	
 		  </div>
              </div>
            </div>
@@ -162,7 +135,7 @@ if(isset($_POST['submitted']))
 	<br>
 	Tel: XXXXXX
 	<br>
-    <img id="facebook" src="img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
+    <img id="facebook" src="img/facebook.png" alt="img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
     <br>
 
 </div><!--center-->
@@ -170,98 +143,37 @@ if(isset($_POST['submitted']))
 <br>			   
 <!-- Form Code Start -->
 <div id='fg_membersite'>
-<form name="contactform" method="post" action="./include/send_form_email.php">
- 
-<table width="450px">
+<form id="contactform">
+    <input type='hidden' name='function' id='function' value='contactemail'/>
+<table>
  
 <tr>
- 
- <td valign="top">
- 
-  <label for="first_name">First Name *</label>
- 
- </td>
- 
- <td valign="top">
- 
-  <input  type="text" name="first_name" maxlength="50" size="30">
- 
- </td>
- 
+ <td><label for="first_name">First Name *</label></td>
+ <td><input  type="text" name="first_name" id="first_name" maxlength="50" size="30"></td> 
 </tr>
  
 <tr>
- 
- <td valign="top"">
- 
-  <label for="last_name">Last Name *</label>
- 
- </td>
- 
- <td valign="top">
- 
-  <input  type="text" name="last_name" maxlength="50" size="30">
- 
- </td>
- 
+ <td><label for="last_name">Last Name *</label></td>
+ <td><input  type="text" name="last_name" id="last_name" maxlength="50" size="30"></td> 
 </tr>
  
 <tr>
- 
- <td valign="top">
- 
-  <label for="email">Email Address *</label>
- 
- </td>
- 
- <td valign="top">
- 
-  <input  type="text" name="email" maxlength="80" size="30">
- 
- </td>
- 
+ <td><label for="email">Email Address *</label></td>
+ <td><input  type="text" name="email" id="email" maxlength="80" size="30"></td>
 </tr>
  
 <tr>
- 
- <td valign="top">
- 
-  <label for="telephone">Telephone Number</label>
- 
- </td>
- 
- <td valign="top">
- 
-  <input  type="text" name="telephone" maxlength="30" size="30">
- 
- </td>
- 
+ <td><label for="telephone">Telephone Number</label></td>
+ <td><input  type="text" name="telephone" id="telephone" maxlength="30" size="30"></td>
 </tr>
  
 <tr>
- 
- <td valign="top">
- 
-  <label for="comments">Comments *</label>
- 
- </td>
- 
- <td valign="top">
- 
-  <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
- 
- </td>
- 
+ <td><label for="comments">Comments *</label></td>
+ <td><textarea  name="comments" id="comments"  maxlength="1000" cols="25" rows="6"></textarea></td>
 </tr>
  
 <tr>
- 
- <td colspan="2" style="text-align:center">
- 
-  <input type="submit" value="Submit">  
- 
- </td>
- 
+ <td colspan="2" style="text-align:center"><input type="Submit" name='Submit' value="Submit"></td>
 </tr>
  
 </table>
@@ -290,6 +202,33 @@ if(isset($_POST['submitted']))
 
 
     </div>
+
+        <script>
+            $(document).ready(function () {
+                $('#contactform').submit(function (event) {
+
+                    sendContactForm();
+                    return false;
+                });
+
+
+                function sendContactForm() {
+                    $.ajax({
+                        type: "POST",
+                        url: 'ajaxphp.php',
+                        data: $("#contactform").serialize(),
+
+                        success: function (errorMessage) {
+                            alert("Sõnum saadetud!\n" + "Võtame teiega peagi ühendust.");
+                        },
+                        error: function (data) {
+                            alert("Midagi läks valesti  " + data.msg);
+                        }
+                    });
+
+                }
+            });
+        </script>
         
     </body>
 </html>

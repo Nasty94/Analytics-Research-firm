@@ -3,6 +3,7 @@ error_reporting(E_ALL); ini_set('display_errors', 1);
 require_once("class.phpmailer.php");
 require_once("formvalidator.php");
 
+
 class FGMembersite
 {
     var $admin_email;
@@ -792,6 +793,48 @@ class FGMembersite
     		echo "Message sent!";
 		}	
     }
+
+    function SendContactEmail()
+    {
+		require 'PHPMailerAutoload.php';
+		$mailer = new PHPMailer;
+		//$mailer->SMTPDebug = 2;
+		//$mailer->Debugoutput = 'html';
+        
+        $mailer->CharSet = 'utf-8';
+		$mailer->IsSMTP();
+		$mailer->Host = 'smtp.gmail.com';
+		$mailer->Port = 587;
+		$mailer->SMTPSecure = 'tls';
+		$mailer->SMTPAuth = TRUE;
+		$mailer->Username = 'lkcmailer@gmail.com';  
+		$mailer->Password = 'lkconsulting';
+        $mailer->addReplyTo('lkcmailer@gmail.com', 'First Last');  
+        
+        $mailer->AddAddress($_POST['email'],$_POST['first_name']);
+        
+        //$mailer->Subject = "Your registration with ".$this->sitename;
+
+        $mailer->setFrom($this->GetFromAddress(),"lkcmailer");   
+		$mailer->From ='LKCmailer';
+        $mailer->Subject = 'Saabunud kommentaar lehelt '.$this->sitename;
+        
+        $mailer->Body ="Hello ".$_POST['first_name']."\r\n\r\n".
+        "Teile on saabunud kommentaar lehelt ".$this->sitename."\r\n\r\n".
+        $_POST['comments']."\r\n".
+        "\r\n".
+        "Parimat,\r\n".
+        "LKCmailer\r\n".
+        $this->sitename;
+
+		if (!$mailer->send()) {
+    		echo "Mailer Error: " . $mailer->ErrorInfo;
+		} else {
+    		echo "Message sent!";
+		}	
+    }
+
+
     function GetAbsoluteURLFolder()
     {
         $scriptFolder = (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on')) ? 'https://' : 'http://';
