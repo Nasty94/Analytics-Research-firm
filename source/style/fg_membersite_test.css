@@ -1,7 +1,4 @@
 
-@CHARSET "ISO-8859-1";
-@CHARSET "ISO-8859-1";
-@CHARSET "ISO-8859-1";
 #bottom,#left, #right {
 	background: #D9D9F3;
 	position: fixed;
@@ -204,7 +201,7 @@ body:not(:-moz-handler-blocked) fieldset {
 #fg_membersite  fieldset#antispam
 {
    padding:2px;
-   border-top:px solid #EEE;
+   border-top:#EEE;
    border-left:0;
    border-right:0;
    border-bottom:0;
@@ -238,8 +235,7 @@ body:not(:-moz-handler-blocked) fieldset {
    font-family : Arial, sans-serif;
    font-size: 0.3em;
    opacity: .2;
-   -moz-opacity: .2;
-   filter: alpha(opacity=20);   
+  
 }
 #fg_membersite  #fg_crdiv p
 {
