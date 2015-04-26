@@ -44,10 +44,15 @@ Pragma: no-cache
 NB! https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#cache-control
 According to this diagramm we made our site none cashed.
 
-OUR RESULT:
+OUR RESULT(BEFORE)
 
 MOBILE: 1. Speed 64/100 and User experience 100/100
 DESKTOP: Suggestions Summary  84/100
 
+OUR RESULT AFTER:
+
+MOBILE: 100/100 both Speed and User experience
+DESKTOP: 100/100
 
 SEE  web.config
+
