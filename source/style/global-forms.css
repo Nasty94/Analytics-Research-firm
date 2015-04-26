@@ -58,7 +58,7 @@ label {font-size: 1.1em; height: 25px; line-height: 25px;}
 		text-shadow: 1px 1px 1px #000;
 	}
 	
-	input:required, textarea:required {outline: 1px solid #C74350;}
+	/*input:required, textarea:required {outline: 1px solid #C74350;}*/
 	
 	/* Textarea */
 	textarea {width: 99%; margin-bottom: 7px;}

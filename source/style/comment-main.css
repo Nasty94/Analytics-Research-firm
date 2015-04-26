@@ -53,7 +53,7 @@ strong, b {font-weight: bold;}
 em, i {font-style: italic;}
 
 ::-moz-selection {background: #F6CF74; color: #fff;}
-::selection {background: #F6CF74; color: #fff;}
+/*::selection {background: #F6CF74; color: #fff;}*/
 
 /* Lists */
 ul {
@@ -379,8 +379,6 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	padding: 15px 20px;
 	
 	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
 }
 #comments-list footer {color: #888; padding: .5em 1em 0 0; text-align: right;}
 
@@ -396,7 +394,7 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 
 #add-comment p.req {clear: both; margin: 0 .5em 1em 0; text-align: right;}
 
-#add-comment input[type='submit'] {float: center; margin: 0 .5em; width:auto;}
+#add-comment input[type='submit'] {float: inherit; margin: 0 .5em; width:auto;}
 #add-comment * {margin-bottom: .5em;}
 
 
