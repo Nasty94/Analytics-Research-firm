@@ -48,3 +48,6 @@ OUR RESULT:
 
 MOBILE: 1. Speed 64/100 and User experience 100/100
 DESKTOP: Suggestions Summary  84/100
+
+
+SEE .htaccess and web.config

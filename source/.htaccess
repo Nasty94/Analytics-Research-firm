@@ -1,8 +1,7 @@
 <IfModule mod_expires.c>
+Cache-Control: no-cache, no-store, must-revalidate
+Pragma: no-cache
 
-Header unset ETag
-FileETag None
-#3 months
 # Enable expirations
 ExpiresActive On
 
