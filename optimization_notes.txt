@@ -1,0 +1,13 @@
+1. Adding expiration deaders.
+
+Thiswill help to improve perfomance. 
+The point of using browser caching and expiry headers is to reduce the number of HTTP requests, 
+which improves the performance for your returning visitors.
+
+The first time someone visits the site, their browser will fetch all  images, css files, javascript files, etc. 
+Normally that happens every time the same visitor comes back to the site.
+
+With Expires headers we tell our website visitor’s browser that the files you specify are not changing until after a certain time, for example a month.
+
+This means that the browser doesn’t have to to re-fetch images, css, javascript etc every time your visitor comes back to our site.
+
