@@ -1,5 +1,8 @@
 <IfModule mod_expires.c>
 
+Header unset ETag
+FileETag None
+#3 months
 # Enable expirations
 ExpiresActive On
 

@@ -11,3 +11,40 @@ With Expires headers we tell our website visitor’s browser that the files you 
 
 This means that the browser doesn’t have to to re-fetch images, css, javascript etc every time your visitor comes back to our site.
 
+2. CSS delivery optimization:
+
+Remove render-blocking JavaScript:
+
+    http://code.jquery.com/jquery-latest.min.js
+    http://lk-consulting.azurewebsites.net/source/js/disable.js
+    http://lk-consulting.azurewebsites.net/source/offline.js
+    http://lk-consulting.azurewebsites.net/source/scripts/jquery-1.11.0.min.js
+    https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js
+    http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js
+
+Optimize CSS Delivery of the following:
+
+    http://lk-consulting.azurewebsites.net/source/style/alertify.core.css
+    http://lk-consulting.azurewebsites.net/source/style/style_test.css
+    http://fonts.googleapis.com/css?family=Open+Sans:400,600
+    http://lk-consulting.azurewebsites.net/source/style/menubar_test.css
+    http://lk-consulting.azurewebsites.net/source/style/bootstrap.min.css
+	
+Unfortunately, we have not done this because accoring to this tutorial: https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery
+We will have to put css and js inside the HTML which comes against this cource's requirements.
+
+3. Optimized image
+
+If we will use compressed image then the quality of it will not be so good.
+
+4. Leverage browser cashing
+Cache-Control: no-cache, no-store, must-revalidate
+Pragma: no-cache
+
+NB! https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#cache-control
+According to this diagramm we made our site none cashed.
+
+OUR RESULT:
+
+MOBILE: 1. Speed 64/100 and User experience 100/100
+DESKTOP: Suggestions Summary  84/100
