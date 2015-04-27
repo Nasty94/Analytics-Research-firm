@@ -2,12 +2,10 @@ CACHE MANIFEST
 # version 1
     
 CACHE:
-/index.html
+http://lk-consulting.azurewebsites.net/source/index.html
 /img/LK.jpg
 /styles/style_test.css
     
-FALLBACK:
-* /thank-you.html
-    
 NETWORK:
+http://lk-consulting.azurewebsites.net/source/index.html/?code=*
 *
