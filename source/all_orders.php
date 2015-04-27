@@ -148,8 +148,6 @@ if($fgmembersite->isAdmin()==0)
                                 <p class="note">You have disabled Javascript. This website will not function without it.</p>
                             </noscript>
 
-                            <div class="row">
-                            <div class="col-md-6 col-lg-offset-3">
 			   		        <div class="center">
                                        <h3>Klientide tellimused:</h3>
     <div class="OrderHistoryTable" >
@@ -213,10 +211,7 @@ if($fgmembersite->isAdmin()==0)
 					  This is a proof-of-concept web application.
 	        </div>
         </div>
-    </div>
 
-
-    </div>
     <!-- This is the code for JavaScript, for streaming server time -->
     <script>
         showTime(); 

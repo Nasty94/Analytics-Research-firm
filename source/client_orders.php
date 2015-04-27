@@ -4,7 +4,7 @@ require_once("./include/fg_membersite.php");
 
 if(!$fgmembersite->CheckLogin())
 {	
-    $fgmembersite->RedirectToURL("login_bootstrap.php");
+    $fgmembersite->RedirectToURL("login.php");
     exit;
 }
 
@@ -32,7 +32,7 @@ if(!$fgmembersite->CheckLogin())
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style/bootstrap-theme.css">
-
+    <link rel="STYLESHEET" type="text/css" href="style/order_history_table.css" />
 
         
     	
@@ -140,7 +140,7 @@ if(!$fgmembersite->CheckLogin())
                             <noscript>
                                 <p class="note">You have disabled Javascript. This website will not function without it.</p>
                             </noscript>
-                            <h1></h1>
+              
 
 
 			   		        <div class="center">

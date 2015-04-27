@@ -23,7 +23,7 @@
     border-collapse: collapse;
         border-spacing: 0;
 	width:100%;
-	height:100%;
+	height:auto;
 	margin:0px;padding:0px;
 }.OrderHistoryTable tr:last-child td:last-child {
 	-moz-border-radius-bottomright:14px;
