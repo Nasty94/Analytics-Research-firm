@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
-	<meta charset='utf-8'>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Minu konto</title>
      

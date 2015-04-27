@@ -402,8 +402,8 @@ section a:active
 {
     position:absolute;
     padding:6px;
-    color:#000000;
-
+    border-bottom-left-radius: 10px;
+    font-size: 1.5vh;
 }
         
 #command input
