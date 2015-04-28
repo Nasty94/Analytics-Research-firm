@@ -127,15 +127,12 @@
                     <div class="row">
                     <div class="col-md-6 col-lg-offset-3">
                             <div class="center">
-                                    Kontakt
-	<br><br>
 	<h3>Saatke meile e-mail</h3>
 	Email: consultinglk@yahoo.com
 	<br>
 	Või võtke ühendust online
 	<br>
-    <img id="facebook" src="img/facebook.png" alt="img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
-    <br>
+    
 
 </div><!--center-->
 
@@ -178,6 +175,9 @@
 </table>
  
 </form>
+<br>Me oleme ka facebook-is
+<img id="facebook" src="img/facebook.png" alt="img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
+    <br>
                             </div><!--center-->
                         </div>
                         </div>
