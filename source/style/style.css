@@ -133,6 +133,19 @@ h4 {
 }
 
 
+h5 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight:bold;
+    font-size: 18pt;
+    padding-bottom: 5px;
+	text-align: left;
+	color:black;
+	vertical-align:bottom;
+	
+	
+}
+
+
 p {
     margin-bottom: 20px;
 }
