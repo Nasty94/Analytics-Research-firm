@@ -143,7 +143,8 @@
 					<ul>
 						<li>Andmeanalüüs ja töötlus</li>
 						<li>Statistiline modelleerimine</li>
-						<li>Ärimodelleerimine</li>
+						<li>Meditsiinistatistika</li>
+						<li>Finantsaruannete analüüs</li>
 						<li>Turu-uuringud</li>
 					</ul>
 					<p></p>
