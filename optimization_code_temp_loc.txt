@@ -1,4 +1,14 @@
-<--!<configuration>
+<configuration>
+    <system.web>
+        <customErrors defaultRedirect="http://lk-consulting.azurewebsites.net/source/"
+              mode="Off">
+    
+        </customErrors>
+    </system.web>
+</configuration>
+
+
+<configuration>
     <system.web>
         <customErrors mode="RemoteOnly" defaultRedirect="source/"/>
     </system.web>
@@ -30,4 +40,4 @@
     </modules>
   </system.webServer>
 </configuration>
--->
+
