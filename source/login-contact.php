@@ -134,9 +134,10 @@
                             <div class="center">
                                     Kontakt
 	<br><br>
-	Email: leena.ivanova@yahoo.com
+	<h3>Saatke meile e-mail</h3>
+	Email: consultinglk@yahoo.com
 	<br>
-	Tel: XXXXXX
+	Või võtke ühendust online
 	<br>
     <img id="facebook" src="img/facebook.png" alt="img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
     <br>
