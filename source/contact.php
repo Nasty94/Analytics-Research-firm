@@ -130,10 +130,9 @@
 	<h3>Saatke meile e-mail</h3>
 	Email: consultinglk@yahoo.com
 	<br>
-	Või võtke ühendust online
+	Või saatke kirja online
 	<br>
     
-
 </div><!--center-->
 
 <br>			   
@@ -177,7 +176,7 @@
 </form>
 <br>Me oleme ka facebook-is
 <img id="facebook" src="img/facebook.png" alt="img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
-    <br>
+    </tr>
                             </div><!--center-->
                         </div>
                         </div>
