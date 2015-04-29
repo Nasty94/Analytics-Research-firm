@@ -88,8 +88,13 @@ if(!$fgmembersite->CheckLogin())
 	<li><a href="#">Teenused</a>
                 <div>
                     <ul>
-                        <li><a href="#">Turuuring</a></li>
-                        <li><a href="#">Med. statistika</a></li>
+                        <li><a href="./web/services/loggedin/data_analysis_loggedin.html">Andmeanalüüs ja töötlus</a></li>
+						<li><a href="./web/services/loggedin/stat_modelling_loggedin.html">Statistiline modelleerimine</a></li>
+					    <li><a href="./web/services/loggedin/med_stat_loggedin.html">Meditsiinistatistika</a></li>
+                        <li><a href="./web/services/loggedin/market_research_loggedin.html">Turuuring</a></li>
+                        <li><a href="./web/services/loggedin/finance_loggedin.html">Finantsaruannete analüüs</a></li>
+						<li><a href="./web/services/loggedin/consultations_loggedin.html">Konsultatsioonid</a></li>
+  
   
                     </ul>
                 </div>
@@ -107,6 +112,7 @@ if(!$fgmembersite->CheckLogin())
                 </div>
             </li>
             <li><a href="login-contact.php">  Kontakt  </a></li>
+             <li><a href="tech_support_loggedin.html">  Abi  </a></li>	
 		
             <li class="pad"></li>
         </ul>
@@ -124,11 +130,16 @@ if(!$fgmembersite->CheckLogin())
                 <li role="presentation" class="divider"></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Meist</a></li>
                 <li role="presentation" class="divider"></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Turu uuring</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Med statistika</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="./web/services/loggedin/data_analysis_loggedin.html">Andmeanalüüs ja töötlus</a></li>
+			  <li role="presentation"><a role="menuitem" tabindex="-1" href="./web/services/loggedin/stat_modelling_loggedin.html"> Statistiline modelleerimine</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="./web/services/loggedin/med_stat_logedin.html">Meditsiinistatistika</a></li>
+			  <li role="presentation"><a role="menuitem" tabindex="-1" href="./web/services/loggedin/market_research_loggedin.html">Turuuuring</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="./web/services/loggedin/finance_loggedin.html">Finantsaruannete analüüs</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="./web/services/loggedin/consultations_loggedin.html">Konsultatsioonid</a></li>
                 <li role="presentation" class="divider"></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="./web/articles/article_sample.php">Blogi</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Kontakt</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="login-contact.php">Kontakt</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="./web/services/loggedin/tech_support_loggedin.php">Abi</a></li>
               
               
             </ul>
