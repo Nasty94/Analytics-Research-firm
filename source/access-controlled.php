@@ -64,8 +64,12 @@ if(!$fgmembersite->CheckLogin())
 			<li><a href="#">Teenused</a>
                 <div>
                     <ul>
-                        <li><a href="#">Turuuring</a></li>
-                        <li><a href="#">Med. statistika</a></li>
+                          <li><a href="./web/services/data_analysis.html">Andmeanalüüs ja töötlus</a></li>
+						<li><a href="./web/services/stat_modelling.html">Statistiline modelleerimine</a></li>
+					    <li><a href="./web/services/med_stat.html">Meditsiinistatistika</a></li>
+                        <li><a href="./web/services/market_research.html">Turuuring</a></li>
+                        <li><a href="./web/services/finance.html">Finantsaruannete analüüs</a></li>
+					    <li><a href="./web/services/consultations.html">Konsultatsioonid</a></li>
   
                     </ul>
                 </div>
@@ -83,7 +87,7 @@ if(!$fgmembersite->CheckLogin())
                 </div>
             </li>
             <li><a href="contact.php">  Kontakt  </a></li>
-			<li><a href="#">           </a></li>
+	    <li><a href="tech_support.html">    Abi    </a></li>
 			
             <li class="pad"></li>
         </ul>
