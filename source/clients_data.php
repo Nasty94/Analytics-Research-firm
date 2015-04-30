@@ -5,8 +5,6 @@ if(!$fgmembersite->CheckLogin())
     $fgmembersite->RedirectToURL("login_bootstrap.php");
     exit;
 }
-
-
 ?>
 
 
@@ -14,7 +12,7 @@ if(!$fgmembersite->CheckLogin())
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
     <meta http-equiv="Content type" content="text/html; charset=ISO-8859-1">
-	<meta charset='utf-8'>
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Minu konto</title>
@@ -31,7 +29,7 @@ if(!$fgmembersite->CheckLogin())
     <link rel="STYLESHEET" type="text/css" href="style/fg_membersite_test.css" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style/bootstrap-theme.css.map">
+    <link rel="stylesheet" type="text/css" href="style/bootstrap-theme.css.map">
   
 </head>
 
