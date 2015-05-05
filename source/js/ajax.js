@@ -11,7 +11,7 @@
                 function sendContactForm() {
                     $.ajax({
                         type: "POST",
-                        url: 'ajaxphp.php',
+                        url: '../ajaxphp.php',
                         data: $("#contactform").serialize(),
 
                         success: function (errorMessage) {
