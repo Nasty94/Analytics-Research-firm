@@ -821,7 +821,7 @@ class FGMembersite
  
     $email_to = "anastassia.ivanova.94@gmail.com";
  
-    $email_subject = "Your email subject line";
+    $email_subject = "New message from user";
     
 	died($error)
  
@@ -923,7 +923,7 @@ class FGMembersite
  
 $headers = 'From: '.$email_from."\r\n".
  
-'Reply-To: '.$email_from."\r\n" .
+'Reply-To: '.$email_to."\r\n" .
  
 'X-Mailer: PHP/' . phpversion();
  
