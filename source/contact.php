@@ -147,7 +147,7 @@
 <br>			   
 <!-- Form Code Start -->
 <div id='fg_membersite'>
-<form id="contactform" method="post" action="./include/send_form_email.php">
+<form id="contactform" >
     <input type='hidden' name='function' id='function' value='contactemail'/>
 <table>
  
@@ -210,7 +210,7 @@
 
     </div>
 
-       <!--<SCRIPT SRC="./js/ajax.js"></SCRIPT>>-->
+       <SCRIPT SRC="./js/ajax.js"></SCRIPT>
         
     </body>
 </html>
