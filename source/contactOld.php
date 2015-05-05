@@ -1,25 +1,39 @@
-<!DOCTYPE html>
+<?PHP
+require_once("./include/membersite_config.php");
+
+if(isset($_POST['submitted']))
+{
+   if($fgmembersite->RegisterUser())
+   {
+        $fgmembersite->RedirectToURL("thank-you_bootstrap.html");
+   }
+}
+
+?>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
-
+    <meta http-equiv="Content type" content="text/html; charset=ISO-8859-1">
+	<meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Minu konto</title>
      
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
+    <script src="scripts/pwdwidget.js" type="text/javascript"></script>  
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
-    <script src="scripts/pwdwidget.js" type="text/javascript"></script> 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
-    <script src="http://malsup.github.com/jquery.form.js"></script>
 	
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
-    <link rel="stylesheet" href="style/menubar_test.css">
-    <link rel="stylesheet" href="style/style_test.css">
-    <link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" type="text/css">
+	<link rel="stylesheet" href="style/menubar_test.css">
+	<link rel="stylesheet" href="style/style_test.css">
+	<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
     <link rel="STYLESHEET" type="text/css" href="style/fg_membersite_test.css" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style/bootstrap-theme.css.map">
+    <link rel="stylesheet" href="style/bootstrap-theme.css">
 
 
         
@@ -33,6 +47,18 @@
                     <div id="english">
 		            <a id="eng" href="web/lang/eng/index_eng.html">ENG</a>&nbsp;&nbsp;
 
+	<body> 
+			
+	      <div id="left"></div>
+		  <div id="right"></div>
+		  <div id="top"></div>
+		  <div id="bottom"></div>
+		  
+		  <div id="english">
+		  <br>
+		  <a id="eng" href="web/lang/eng/index_eng.html">ENG</a>&nbsp;&nbsp;
+>>>>>>> 32420bb182cc287ea2bfe89d205b8d121e40443e
+	
 		  </div>
              </div>
            </div>
@@ -70,12 +96,8 @@
 			<li><a href="#">Teenused</a>
                 <div>
                     <ul>
-                          <li><a href="./web/services/data_analysis.html">Andmeanalüüs ja töötlus</a></li>
-						<li><a href="./web/services/stat_modelling.html">Statistiline modelleerimine</a></li>
-					    <li><a href="./web/services/med_stat.html">Meditsiinistatistika</a></li>
-                        <li><a href="./web/services/market_research.html">Turuuring</a></li>
-                        <li><a href="./web/services/finance.html">Finantsaruannete analüüs</a></li>
-					    <li><a href="./web/services/consultations.html">Konsultatsioonid</a></li>
+                        <li><a href="#">Turuuring</a></li>
+                        <li><a href="#">Med. statistika</a></li>
   
                     </ul>
                 </div>
@@ -93,7 +115,7 @@
                 </div>
             </li>
             <li><a href="contact_bootstrap.php">  Kontakt  </a></li>
-	    <li><a href="tech_support.html">    Abi   </a></li>
+			<li><a href="#">           </a></li>
             <li class="pad"></li>
         </ul>
           <div class="dropdown">
@@ -107,16 +129,11 @@
                 <li role="presentation" class="divider"></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Meist</a></li>
                 <li role="presentation" class="divider"></li>
-               <li role="presentation"><a role="menuitem" tabindex="-1" href="./web/services/data_analysis.html">Andmeanalüüs ja töötlus</a></li>
-			  <li role="presentation"><a role="menuitem" tabindex="-1" href="./web/services/stat_modelling.html"> Statistiline modelleerimine</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="./web/services/med_stat.html">Meditsiinistatistika</a></li>
-			  <li role="presentation"><a role="menuitem" tabindex="-1" href="./web/services/market_research.html">Turuuuring</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="./web/services/finance.html">Finantsaruannete analüüs</a></li>
-				<li role="presentation"><a role="menuitem" tabindex="-1" href="./web/services/consultations.html">Konsultatsioonid</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Turu uuring</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Med statistika</a></li>
                 <li role="presentation" class="divider"></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="./web/services/articles/article_sample.php">Blogi</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="contact.php">Kontakt</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="tech_support.html">Abi</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="./web/articles/article_sample.php">Blogi</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Kontakt</a></li>
               
               
             </ul>
@@ -136,56 +153,117 @@
                     <div class="row">
                     <div class="col-md-6 col-lg-offset-3">
                             <div class="center">
-	<h3>Saatke meile e-mail</h3>
-	Email: consultinglk@yahoo.com
+                                    Kontakt
+	<br><br>
+	Email: leena.ivanova@yahoo.com
 	<br>
-	Või saatke kirja online
+	Tel: XXXXXX
 	<br>
-    
+    <img id="facebook" src="img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
+    <br>
+
 </div><!--center-->
 
 <br>			   
 <!-- Form Code Start -->
 <div id='fg_membersite'>
-<form id="contactform" >
-    <input type='hidden' name='function' id='function' value='contactemail'/>
-<table>
+<form name="contactform" method="post" action="./include/send_form_email.php">
+ 
+<table width="450px">
  
 <tr>
- <td><label for="first_name">First Name *</label></td>
- <td><input  type="text" name="first_name" id="first_name" maxlength="50" size="30"></td> 
+ 
+ <td valign="top">
+ 
+  <label for="first_name">First Name *</label>
+ 
+ </td>
+ 
+ <td valign="top">
+ 
+  <input  type="text" name="first_name" maxlength="50" size="30">
+ 
+ </td>
+ 
 </tr>
  
 <tr>
- <td><label for="last_name">Last Name *</label></td>
- <td><input  type="text" name="last_name" id="last_name" maxlength="50" size="30"></td> 
+ 
+ <td valign="top"">
+ 
+  <label for="last_name">Last Name *</label>
+ 
+ </td>
+ 
+ <td valign="top">
+ 
+  <input  type="text" name="last_name" maxlength="50" size="30">
+ 
+ </td>
+ 
 </tr>
  
 <tr>
- <td><label for="email">Email Address *</label></td>
- <td><input  type="text" name="email" id="email" maxlength="80" size="30"></td>
+ 
+ <td valign="top">
+ 
+  <label for="email">Email Address *</label>
+ 
+ </td>
+ 
+ <td valign="top">
+ 
+  <input  type="text" name="email" maxlength="80" size="30">
+ 
+ </td>
+ 
 </tr>
  
 <tr>
- <td><label for="telephone">Telephone Number</label></td>
- <td><input  type="text" name="telephone" id="telephone" maxlength="30" size="30"></td>
+ 
+ <td valign="top">
+ 
+  <label for="telephone">Telephone Number</label>
+ 
+ </td>
+ 
+ <td valign="top">
+ 
+  <input  type="text" name="telephone" maxlength="30" size="30">
+ 
+ </td>
+ 
 </tr>
  
 <tr>
- <td><label for="comments">Comments *</label></td>
- <td><textarea  name="comments" id="comments"  maxlength="1000" cols="25" rows="6"></textarea></td>
+ 
+ <td valign="top">
+ 
+  <label for="comments">Comments *</label>
+ 
+ </td>
+ 
+ <td valign="top">
+ 
+  <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
+ 
+ </td>
+ 
 </tr>
  
 <tr>
- <td colspan="2" style="text-align:center"><input type="Submit" name='Submit' value="Submit"></td>
+ 
+ <td colspan="2" style="text-align:center">
+ 
+  <input type="submit" value="Submit">  
+ 
+ </td>
+ 
 </tr>
  
 </table>
  
 </form>
-<br>Me oleme ka facebook-is
-<img id="facebook" src="img/facebook.png" alt="img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
-    </tr>
                             </div><!--center-->
                         </div>
                         </div>
@@ -209,8 +287,6 @@
 
 
     </div>
-
-       <SCRIPT SRC="./js/ajax.js"></SCRIPT>
         
     </body>
 </html>
