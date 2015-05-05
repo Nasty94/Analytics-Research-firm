@@ -210,7 +210,7 @@
 
     </div>
 
-       <SCRIPT SRC="./js/ajax.js"></SCRIPT>>
+       <!--<SCRIPT SRC="./js/ajax.js"></SCRIPT>>-->
         
     </body>
 </html>
