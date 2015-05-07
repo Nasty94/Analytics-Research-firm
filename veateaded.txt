@@ -2,3 +2,4 @@
 
 2. all_users.php Notice: Undefined variable: _SESSION in D:\home\site\wwwroot\source\include\fg_membersite.php on line 206 
 
+3. contact.php -> pärast Submit: Use of getPreventDefault() is deprecated.  Use defaultPrevented instead.
