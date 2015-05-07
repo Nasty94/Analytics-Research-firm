@@ -1,0 +1,4 @@
+1. all_order.php  does not look good + Notice: Undefined variable: _SESSION in D:\home\site\wwwroot\source\include\fg_membersite.php on line 206 
+
+2. all_users.php Notice: Undefined variable: _SESSION in D:\home\site\wwwroot\source\include\fg_membersite.php on line 206 
+
