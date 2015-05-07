@@ -963,10 +963,10 @@ $headers = 'From: '.$email_from."\r\n".
         "LKCmailer\r\n".
         $this->sitename;
 
-		if (!$mailer->send()) {
-    		echo "Mailer Error: " . $mailer->ErrorInfo;
-		} else {
-    		echo "Message sent!";
+		//if (!$mailer->send()) {
+    	//	echo "Mailer Error: " . $mailer->ErrorInfo;
+		//} else {
+    	//	echo "Message sent!";
 		}	
     }
 
