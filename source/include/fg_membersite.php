@@ -827,17 +827,17 @@ class FGMembersite
 		$mailer->SMTPAuth = TRUE;
 		$mailer->Username = 'lkcmailer@gmail.com';  
 		$mailer->Password = 'lkconsulting';
-        $mailer->addReplyTo('lkcmailer@gmail.com', 'First Last');  
+        $mailer->addReplyTo('lkcmailer@gmail.com', 'LK Consulting OÜ');  
         
         $mailer->AddAddress('anastassia.ivanova.94@gmail.com','Anastassia Ivanova');
         
-        //$mailer->Subject = "Your registration with ".$this->sitename;
+        $mailer->Subject = "Teile on saabunud uus teade: ".$this->sitename;
 
         $mailer->setFrom($_POST['email'],$_POST['first_name']);   
-		$mailer->From =$_POST['first_name'];
-        $mailer->Subject = 'Saabunud kommentaar lehelt '.$this->sitename;
+	//$mailer->From =$_POST['first_name'];
+        //$mailer->Subject = 'Saabunud kommentaar lehelt '.$this->sitename;
         
-        $mailer->Body ="Tere ".$_POST['first_name']."\r\n\r\n".
+        $mailer->Body ="Tere,""\r\n\r\n".
         "Teile on saabunud kommentaar lehelt ".$this->sitename."\r\n\r\n".
         $_POST['comments']."\r\n".
         "\r\n".
