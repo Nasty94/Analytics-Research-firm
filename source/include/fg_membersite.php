@@ -849,7 +849,7 @@ class FGMembersite
     	//	echo "Mailer Error: " . $mailer->ErrorInfo;
 		//} else {
     	//	echo "Message sent!";
-		}	
+	//	}	
     }
 
 
