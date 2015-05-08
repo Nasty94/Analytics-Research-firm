@@ -837,7 +837,7 @@ class FGMembersite
 	//$mailer->From =$_POST['first_name'];
         //$mailer->Subject = 'Saabunud kommentaar lehelt '.$this->sitename;
         
-        $mailer->Body ="Tere,""\r\n".
+        $mailer->Body ="Tere,"."\r\n".
         "Teile on saabunud kommentaar lehelt ".$this->sitename."\r\n".
         $_POST['comments']."\r\n".
         "\r\n".
