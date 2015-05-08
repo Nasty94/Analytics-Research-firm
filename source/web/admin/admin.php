@@ -67,7 +67,7 @@ if($fgmembersite->Login()){
             <div class="dropdownmenu">
             <ul id="nav">
             <li class='active'><a href='admin_index.html'>Avaleht</a></li>
-            <li><a href="../../login-home_bootstrap.php">Minu konto</a>
+            <li><a href="#">Minu konto</a>
                 <div>
                     <ul>
                         <li><a href='../../clients_data.php'>Minu andmed</a></li>
@@ -82,7 +82,7 @@ if($fgmembersite->Login()){
 			<li><a href="#">Meist</a>
                 <div>
                     <ul>
-                        <li><a href="admin_satff.html">Personal</a></li>
+                        <li><a href="admin_staff.html">Personal</a></li>
                         <li><a href="admin_company.html">Concepts</a></li>
   
                     </ul>
@@ -92,7 +92,9 @@ if($fgmembersite->Login()){
                 <div>
                     <ul>
 					    <li><a href="./admin_services/admin_data_analysis.html">Andmeanalüüs ja töötlus</a></li>
+						<br>
 						<li><a href="./admin_services/admin_stat_modelling.html">Statistiline modelleerimine</a></li>
+						<br>
 					    <li><a href="./admin_services/admin_med_stat.html">Meditsiinistatistika</a></li>
                         <li><a href="./admin_services/admin_market_research.html">Turuuring</a></li>
                         <li><a href="./admin_services/admin_finance.html">Finantsaruannete analüüs</a></li>
@@ -103,6 +105,13 @@ if($fgmembersite->Login()){
             </li>
             
             <li><a href="#">Blog</a>
+			<div>
+                    <ul>
+                        <li><a href="admin_post_to_blog.php">Postita blogi</a></li>
+                        
+  
+                    </ul>
+                </div>
                 <div>
                     <ul>
                         <li><a href="../articles/article_sample.php">Näidis</a></li>

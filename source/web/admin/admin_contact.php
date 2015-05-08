@@ -99,6 +99,13 @@ if(isset($_POST['submitted']))
             </li>
             
             <li><a href="#">Blog</a>
+			<div>
+                    <ul>
+                        <li><a href="admin_post_to_blog.php">Postita blogi</a></li>
+                        
+  
+                    </ul>
+                </div>
                 <div>
                     <ul>
                         <li><a href="../articles/article_sample.php">Näidis</a></li>
