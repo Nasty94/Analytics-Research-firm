@@ -74,23 +74,22 @@ if($fgmembersite->Login()){
             <div class="dropdownmenu">
             <ul id="nav">
             <li class='active'><a href='admin_index.html'>Avaleht</a></li>
-            <li><a href="login-home_bootstrap.php">Minu konto</a>
+            <li><a href="#">Minu konto</a>
                 <div>
                     <ul>
                         <li><a href='clients_data.php'>Minu andmed</a></li>
-                        <li><a href='all_orders.php'>Tellimuste ajalugu</a></li>
-                        <li><a href='all_users.php'>Klientide kontod</a></li>
+                        <li><a href='make_order.php'>Tellimuse tegemine</a></li>
+                        <li><a href='client_orders.php'>Tellimuste ajalugu</a></li>
                         <li><a href='change-pwd.php'>Muuda parooli</a></li>
-			<li><a href='logout.php'>Logi välja</a></li>
-                       
+                        <li><a href='logout.php'>Logi välja</a></li>
                     </ul>
                 </div>
             </li>
-			<li><a href="#">Meist</a>
+	  <li><a href="#">Meist</a>
                 <div>
                     <ul>
-                        <li><a href="staff.html">Personal</a></li>
-                        <li><a href="company.html">Concepts</a></li>
+                        <li><a href="web/admin/admin_staff.html">Personal</a></li>
+                        <li><a href="web/admin/admin_company.html">Concepts</a></li>
   
                     </ul>
                 </div>
@@ -98,17 +97,23 @@ if($fgmembersite->Login()){
 			<li><a href="#">Teenused</a>
                 <div>
                     <ul>
-                        <li><a href="#">Turuuring</a></li>
-                        <li><a href="#">Med. statistika</a></li>
+					    <li><a href="web/admin/admin_services/admin_data_analysis.html">Andmeanalüüs ja töötlus</a></li>
+						<br>
+						<li><a href="web/admin/admin_services/admin_stat_modelling.html">Statistiline modelleerimine</a></li>
+						<br>
+					    <li><a href="web/admin/admin_services/admin_med_stat.html">Meditsiinistatistika</a></li>
+                        <li><a href="web/admin/admin_services/admin_market_research.html">Turuuring</a></li>
+                        <li><a href="web/admin/admin_services/admin_finance.html">Finantsaruannete analüüs</a></li>
+						<li><a href="web/admin/admin_services/admin_consultations.html">Konsultatsioonid</a></li>
   
                     </ul>
                 </div>
             </li>
             
             <li><a href="#">Blog</a>
-                <div>
+			    <div>
                     <ul>
-                        <li><a href="admin_post_to_blog.php">Postita blogi</a></li>
+                        <li><a href="web/admin/admin_post_to_blog.php">Postita blogi</a></li>
                         
   
                     </ul>
@@ -123,15 +128,16 @@ if($fgmembersite->Login()){
                     </ul>
                 </div>
             </li>
-            <li><a href="contact.php">  Kontakt  </a></li>
-			<li><a href="#">           </a></li>
+			
+            <li><a href="web/admin/admin_contact.php">  Kontakt  </a></li>
+			<li><a href="web/admin/admin_services/admin_tech.html">  Abi  </a></li>
             <li class="pad"></li>
         </ul>
           <div class="dropdown">
             <button class="btn btn-success" type="button" id="menu1" data-toggle="dropdown">Menüü
             <span class="caret"></span></button>
             <ul class="dropdown-menu dropdown-menu-right" role="menu">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="bootstrap_test.html">Avaleht</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href='admin_index.html'>Avaleht</a></li>
                 <li role="presentation" class="divider"></li>
                         <li><a href='clients_data.php'>Minu andmed</a></li>
                         <li><a href='all_orders.php'>Tellimuste ajalugu</a></li>
@@ -141,11 +147,16 @@ if($fgmembersite->Login()){
                 <li role="presentation" class="divider"></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Meist</a></li>
                 <li role="presentation" class="divider"></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Turu uuring</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Med statistika</a></li>
+			  <li role="presentation"><a role="menuitem" tabindex="-1" href="web/admin/admin_services/admin_data_analysis.html">Andmeanalüüs ja töötlus</a></li>
+			  <li role="presentation"><a role="menuitem" tabindex="-1" href="web/admin/admin_services/admin_stat_modelling.html"> Statistiline modelleerimine</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="web/admin/admin_services/admin_med_stat.html">Meditsiinistatistika</a></li>
+			  <li role="presentation"><a role="menuitem" tabindex="-1" href="web/admin/admin_services/admin_market_research.html">Turuuuring</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="web/admin/admin_services/admin_finance.html">Finantsaruannete analüüs</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="web/admin/admin_services/admin_consultations.html">Konsultatsioonid</a></li>
                 <li role="presentation" class="divider"></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="./web/articles/article_sample.php">Blogi</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Kontakt</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="web/articles/article_sample.php">Blogi</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="web/admin/admin_contact.php">Kontakt</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="web/admin/admin_services/admin_tech.html">Abi</a></li>
               
               
             </ul>
