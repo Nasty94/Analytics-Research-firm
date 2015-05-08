@@ -832,13 +832,13 @@ class FGMembersite
         $mailer->AddAddress('anastassia.ivanova.94@gmail.com','Anastassia Ivanova');
         
         $mailer->Subject = "Teile on saabunud uus teade: ".$this->sitename;
-
-        $mailer->setFrom($_POST['email'],$_POST['first_name']);   
+        $sender =  $_POST['first_name'] + $_POST['first_name'];
+        $mailer->setFrom($_POST['email'],$sender);   
 	//$mailer->From =$_POST['first_name'];
         //$mailer->Subject = 'Saabunud kommentaar lehelt '.$this->sitename;
         
-        $mailer->Body ="Tere,""\r\n\r\n".
-        "Teile on saabunud kommentaar lehelt ".$this->sitename."\r\n\r\n".
+        $mailer->Body ="Tere,""\r\n".
+        "Teile on saabunud kommentaar lehelt ".$this->sitename."\r\n".
         $_POST['comments']."\r\n".
         "\r\n".
         "Parimat,\r\n".
