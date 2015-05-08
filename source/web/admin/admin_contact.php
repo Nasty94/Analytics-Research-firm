@@ -271,7 +271,7 @@ if(isset($_POST['submitted']))
  
 </form>
 <br> Me oleme ka facebook-is:
-<img id="facebook" src="img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
+<img id="facebook" src="../../../img/facebook.png" onclick="window.location='https://www.facebook.com/consultinglk'" />
     <br></td>
                             </div><!--center-->
                         </div>
