@@ -2,7 +2,7 @@
     position:relative;
     background:black;
     min-width: 90px;
-    max-width: 700px;
+    max-width: 800px;
     height:50px;
     border:1px black solid;
     margin-left: 70px;
@@ -80,13 +80,13 @@
 	-webkit-transition:all 0.8s ease-in-out;
 }
 #nav ul li {
-	width:180px;
+	width:270px;
 }
 #nav ul li a {
 	background:transparent;
 	height:20px;
 	line-height:20px;
-	width:160px;
+	width:250px;
 }
 #nav:hover {
 	height:200px;
