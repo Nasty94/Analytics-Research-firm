@@ -117,7 +117,7 @@ if(isset($_POST['submitted']))
                 </div>
             </li>
             <li><a href="admin_contact.php">  Kontakt  </a></li>
-			<li><a href="./admin_services/admin_tech.php">  Abi  </a></li>
+			<li><a href="./admin_services/admin_tech.html">  Abi  </a></li>
             <li class="pad"></li>
         </ul>
           <div class="dropdown">
