@@ -3,7 +3,7 @@
     background:black;
     min-width: 120px;
     max-width: 80px;
-    height:800px;
+    height:1000px;
     border:1px black solid;
     margin-left: 70px;
     margin-right: 70px;
@@ -89,7 +89,7 @@
 	width:250px;
 }
 #nav:hover {
-	height:200px;
+	height:300px;
 }
 #nav li:hover ul {
 	-moz-transform:translate(0,161px); /*some css3*/
