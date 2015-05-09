@@ -39,7 +39,7 @@
 	display:block;
 	float:left;
 	font-size:14px;
-	height:51px;
+	height:70px;
 	line-height:40px;
 	padding:0 10px;
 	position:relative;
@@ -102,4 +102,5 @@
 }
 #nav a:hover,#nav li:hover > a {
 	color:#99ff33;
+	overflow-y:scroll
 }
