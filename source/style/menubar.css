@@ -104,6 +104,7 @@
 	-moz-transform:translate(0,161px); /*some css3*/
 	-o-transform:translate(0,161px);
 	-webkit-transform:translate(0,161px);
+	overflow-y:scroll
     transform: translate(0,161px);
 }
 #nav a:hover,#nav li:hover > a {
