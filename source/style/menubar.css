@@ -21,6 +21,7 @@
 	margin:0;
 	padding:0;
 	position:relative;
+	overflow-y:scroll
 }
 #nav {
 	height:50px;
@@ -45,10 +46,12 @@
 	position:relative;
 	text-decoration:none;
 	z-index:20;
+	overflow-y:scroll
 }
 #nav li:first-child a {
 	background:url(../img/bg-menu.png) no-repeat left top;
 	padding-left:35px;
+	overflow-y:scroll
 }
 #nav li ul li:first-child a {
 	background-image:none;
@@ -59,6 +62,7 @@
 	display:block;
 	height:51px;
 	width:35px;
+	overflow-y:scroll
 }
 #nav ul {
 	background:#009900;
@@ -83,6 +87,7 @@
 }
 #nav ul li {
 	width:270px;
+	overflow-y:scroll
 }
 #nav ul li a {
 	background:transparent;
@@ -93,6 +98,7 @@
 }
 #nav:hover {
 	height:300px;
+	overflow-y:scroll
 }
 #nav li:hover ul {
 	-moz-transform:translate(0,161px); /*some css3*/
