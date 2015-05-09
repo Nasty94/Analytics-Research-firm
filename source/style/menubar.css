@@ -79,6 +79,7 @@
 	-moz-transition:0.8s ease-in-out;
 	-o-transition:0.8s ease-in-out;
 	-webkit-transition:all 0.8s ease-in-out;
+	overflow-y:scroll
 }
 #nav ul li {
 	width:270px;
@@ -87,7 +88,8 @@
 	background:transparent;
 	height:50px;
 	line-height:50px;
-	width:250px;
+	width:300px;
+	overflow-y:scroll
 }
 #nav:hover {
 	height:300px;
