@@ -2,8 +2,8 @@
     position:relative;
     background:black;
     min-width: 120px;
-    max-width: 80px;
-    height:800px;
+    max-width: 800px;
+    height:1000px;
     border:1px black solid;
     margin-left: 70px;
     margin-right: 70px;
@@ -40,7 +40,7 @@
 	display:block;
 	float:left;
 	font-size:14px;
-	height:50px;
+	height:90px;
 	line-height:40px;
 	padding:0 10px;
 	position:relative;
