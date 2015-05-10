@@ -9,8 +9,6 @@
     margin-right: 70px;
     padding:15px;
     border-radius:3px;
-    -moz-border-radius:3px;
-    -webkit-border-radius:3px;
     overflow-y:scroll
 }
 
@@ -74,15 +72,7 @@
 	z-index:1;
 
 	border-radius:8px; /*some css3*/
-	-moz-border-radius:8px;
-	-webkit-border-radius:8px;
-	transition:0.8s ease-in-out;
 	box-shadow:2px 2px 3px rgba(0, 0, 0, 0.5);
-	-moz-box-shadow:2px 2px 3px rgba(0, 0, 0, 0.5);
-	-webkit-box-shadow:2px 2px 3px rgba(0, 0, 0, 0.5);
-	-moz-transition:0.8s ease-in-out;
-	-o-transition:0.8s ease-in-out;
-	-webkit-transition:all 0.8s ease-in-out;
 	overflow-y:scroll
 }
 #nav ul li {
@@ -101,11 +91,7 @@
 	overflow-y:scroll
 }
 #nav li:hover ul {
-	-moz-transform:translate(0,161px); /*some css3*/
-	-o-transform:translate(0,161px);
-	-webkit-transform:translate(0,161px);
 	overflow-y:scroll
-    transform: translate(0,161px);
 }
 #nav a:hover,#nav li:hover > a {
 	color:#99ff33;
