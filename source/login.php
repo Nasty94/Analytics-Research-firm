@@ -76,7 +76,7 @@ elseif( isset( $_REQUEST["provider"] ) )
     }
     $fgmembersite->CheckLoginInDB_Hybrid($user_profile->identifier);
     $_SESSION[$fgmembersite->GetLoginSessionVar()] = $username;
-	$fgmembersite->RedirectToURL("login_home_bootstrap.php");
+	$fgmembersite->RedirectToURL("login-home.php");
 
 }
 ?>
