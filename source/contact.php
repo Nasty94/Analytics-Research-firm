@@ -92,7 +92,7 @@
                     </ul>
                 </div>
             </li>
-            <li><a href="contact_bootstrap.php">  Kontakt  </a></li>
+            <li><a href="contact.php">  Kontakt  </a></li>
 	    <li><a href="tech_support.html">    Abi   </a></li>
             <li class="pad"></li>
         </ul>
