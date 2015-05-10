@@ -143,8 +143,8 @@ img.left, figure.left {float: right; margin: 0 0 2em 2em;}
 		width: 800px;
 		
 		border-radius: 5px;
-		-moz-border-radius: 5px;
-		-webkit-border-radius: 5px;
+		/*-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;*/
 	}
 	
 	#banner nav ul {list-style: none; margin: 0 auto; width: 800px;}
@@ -166,12 +166,12 @@ img.left, figure.left {float: right; margin: 0 0 2em 2em;}
 	
 	#banner nav li:first-child a {
 		border-top-left-radius: 5px;
-		-moz-border-radius-topleft: 5px;
-		-webkit-border-top-left-radius: 5px;
+		/*-moz-border-radius-topleft: 5px;
+		-webkit-border-top-left-radius: 5px;*/
 		
 		border-bottom-left-radius: 5px;
-		-moz-border-radius-bottomleft: 5px;
-		-webkit-border-bottom-left-radius: 5px;
+		/*-moz-border-radius-bottomleft: 5px;
+		-webkit-border-bottom-left-radius: 5px;*/
 	}
 
 /*
@@ -185,8 +185,8 @@ img.left, figure.left {float: right; margin: 0 0 2em 2em;}
 	width: 760px;
 	
 	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
+	/*-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;*/
 }
 
 #featured figure {
@@ -214,8 +214,8 @@ img.left, figure.left {float: right; margin: 0 0 2em 2em;}
 	width: 760px;
 	
 	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
+	/*-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;*/
 }
 
 /*
@@ -291,8 +291,8 @@ img.left, figure.left {float: right; margin: 0 0 2em 2em;}
 	width: 760px;
 	
 	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
+	/*-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;*/
 }
 
 #about .primary {float: left; width: 165px;}
@@ -355,8 +355,8 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 		padding: 10px 20px 15px 20px;
 		
 		border-radius: 5px;
-		-moz-border-radius: 5px;
-		-webkit-border-radius: 5px;
+		/*-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;*/
 	}
 	
 	#about-author strong {
@@ -406,8 +406,8 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	width: auto;
 
 	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
+	/*-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;*/
 }
 
 #comments label {
@@ -434,11 +434,11 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
   width: 100%;
   
   border: 1px solid rgba(0, 0, 0, 0.1);
-  -webkit-border-radius: 5px;
+  /*-webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -o-border-radius: 5px;
   -ms-border-radius: 5px;
-  -khtml-border-radius: 5px;
+  -khtml-border-radius: 5px;*/
   border-radius: 5px;
   
   line-height: 1.4em;

@@ -6,8 +6,8 @@ fieldset {
 	padding: 2em;
 	
 	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
+	/*-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;*/
 }
 legend {font-size: 1.25em; margin-bottom: 0 !important; margin-bottom: 1.429em; padding: 0 .5em;}
 label {font-size: 1.1em; height: 25px; line-height: 25px;}

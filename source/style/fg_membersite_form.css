@@ -80,9 +80,9 @@ a {
     color: #787878;
     text-decoration: none;
     padding: 0 14px 0 0;
-	-webkit-transition: all .15s linear;
+	/*-webkit-transition: all .15s linear;
 	-moz-transition: all .15s linear;
-	transition: all .15s linear;
+	transition: all .15s linear;*/
     cursor: pointer;
 
     position: relative;
@@ -97,9 +97,9 @@ a {
    width: 630px;
    padding:20px;
    border:1px solid #ccc;
--moz-border-radius: 10px;
+/*-moz-border-radius: 10px;
 -webkit-border-radius: 10px;
--khtml-border-radius: 10px;
+-khtml-border-radius: 10px;*/
 border-radius: 10px;   
 margin-top:0px;
 margin-left:500px;
@@ -134,9 +134,9 @@ float:right;
   color : #000; 
   padding : 3px; 
   border : 1px solid #999;
-    -moz-border-radius: 5px;
+    /*-moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-    -khtml-border-radius: 5px;
+    -khtml-border-radius: 5px;*/
     border-radius: 5px;
 
 }
@@ -215,8 +215,8 @@ float:right;
    font-family : Arial, sans-serif;
    font-size: 0.3em;
    opacity: .2;
-   -moz-opacity: .2;
-   filter: alpha(opacity=20);   
+   /*-moz-opacity: .2;
+   filter: alpha(opacity=20);*/   
 }
 #fg_membersite_form  #fg_crdiv p
 {
