@@ -1,6 +1,6 @@
 1. Adding expiration deaders.
 
-Thiswill help to improve perfomance. 
+This will help to improve perfomance. 
 The point of using browser caching and expiry headers is to reduce the number of HTTP requests, 
 which improves the performance for your returning visitors.
 
