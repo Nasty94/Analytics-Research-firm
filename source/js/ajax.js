@@ -16,11 +16,11 @@
 
                         success: function (errorMessage) {
                             document.getElementById("contactform").reset();
-                            alert("Sõnum saadetud!\n" + "Võtame teiega peagi ühendust.");
+                            alert("S&#245;num saadetud!\n" + "V&#245;tame teiega peagi &#252;hendust.");
 
                         },
                         error: function (data) {
-                            alert("Midagi läks valesti  " + data.msg);
+                            alert("Midagi l&#228;ks valesti  " + data.msg);
                         }
                     });
 
