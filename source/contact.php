@@ -140,7 +140,7 @@
 	<h3>Saatke meile e-mail</h3>
 	Email: consultinglk@yahoo.com
 	<br>
-	Või saatke kirja online
+	v&#245;i saatke kirja online
 	<br>
     
 </div><!--center-->
