@@ -16,7 +16,7 @@
 
                         success: function (errorMessage) {
                             document.getElementById("contactform").reset();
-                            alert("S&#245;num saadetud!\n" + "V&#245;tame teiega peagi &#252;hendust.");
+                            alert("S%EF%BF%BDnum saadetud!\n" + "V&#245;tame teiega peagi &#252;hendust.");
 
                         },
                         error: function (data) {
