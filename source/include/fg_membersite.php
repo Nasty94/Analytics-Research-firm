@@ -787,11 +787,11 @@ class FGMembersite
         "Webmaster\r\n".
         $this->sitename;
 
-		//if (!$mailer->send()) {
-    	//	echo "Mailer Error: " . $mailer->ErrorInfo;
-		//} else {
-    	//	echo "Message sent!";
-		//}	
+	if (!$mailer->send()) {
+    		echo "Mailer Error: " . $mailer->ErrorInfo;
+	} else {
+    		echo "Message sent!";
+	}	
     }
 	
 	 
@@ -845,11 +845,11 @@ class FGMembersite
         "LKCmailer\r\n".
         $this->sitename;
 
-		//if (!$mailer->send()) {
-    	//	echo "Mailer Error: " . $mailer->ErrorInfo;
-		//} else {
-    	//	echo "Message sent!";
-	//	}	
+	if (!$mailer->send()) {
+    		echo "Mailer Error: " . $mailer->ErrorInfo;
+	} else {
+    		echo "Message sent!";
+		}	
     }
 
 
